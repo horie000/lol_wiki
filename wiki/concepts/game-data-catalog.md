@@ -3,7 +3,7 @@ title: ゲームデータ個別ページのカタログ
 type: concept
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
@@ -16,16 +16,16 @@ tags:
 
 ## 概要
 
-Data Dragon version `16.18.1` の日本語データを、原典レコード単位で検索できる個別ページへ整理したカタログである。チャンピオンの個別ページに加えて、アイテム、ルーン、サモナースペルをそれぞれ専用ディレクトリへ分け、IDやキーを保持したまま日本語の説明を参照できるようにしている。
+Data Dragon version `16.18.1` の日本語データを、原典レコード単位で検索できる個別ページへ整理したカタログである。チャンピオン、アイテム、ルーン、サモナースペルをそれぞれ専用ディレクトリへ分け、IDやキーを保持したまま日本語の説明を参照できるようにしている。
 
 ## 収録範囲
 
 | 種別 | 原典 | 個別ページ数 | ページ配置 |
 | --- | --- | ---: | --- |
-| チャンピオン | `data/ja_JP/champion/*.json` | 173 | [[wiki/index#エンティティ|チャンピオン一覧]] |
-| アイテム | `data/ja_JP/item.json` | 868 | [[wiki/entities/items/item-1001|アイテムページ]] |
-| ルーン | `data/ja_JP/runesReforged.json` | 62 | [[wiki/entities/runes/absolute-focus|ルーンページ]] |
-| サモナースペル | `data/ja_JP/summoner.json` | 34 | [[wiki/entities/spells/summoner-barrier|スペルページ]] |
+| チャンピオン | `data/ja_JP/champion/*.json` | 173 | [[wiki/entities/champions/aatrox\|チャンピオンページ]] |
+| アイテム | `data/ja_JP/item.json` | 868 | [[wiki/entities/items/item-1001\|アイテムページ]] |
+| ルーン | `data/ja_JP/runesReforged.json` | 62 | [[wiki/entities/runes/absolute-focus\|ルーンページ]] |
+| サモナースペル | `data/ja_JP/summoner.json` | 34 | [[wiki/entities/spells/summoner-barrier\|スペルページ]] |
 
 アイテムは名称が空欄の4レコードを含め、IDをタイトルにしたページを作成している。ルーンは5系統・20スロットの個別選択肢、サモナースペルは通常レコードとモード別レコードを含む原典34件をID単位で保持する。
 
@@ -33,7 +33,10 @@ Data Dragon version `16.18.1` の日本語データを、原典レコード単�
 
 - 原典レコードのID、英語キー、versionをメタデータとして残し、ページタイトルや表示名は日本語の原典値を使う。
 - HTML風の装飾タグを含む短い説明は、可読性のためタグを除去して表示する。原文の完全なツールチップが必要な場合は原典アーカイブを確認する。
+- チャンピオン、アイテム、ルーン、サモナースペルのページは、それぞれ `wiki/entities/champions/`、`wiki/entities/items/`、`wiki/entities/runes/`、`wiki/entities/spells/` に配置する。
 - アイテムの合成関係、利用可能マップ、価格、ステータス、ルーンの系統・スロット、スペルの利用モードや基本パラメータなど、各データ種別に固有のフィールドを個別ページへ整理する。
+- アイテム個別ページのフロントマターには、効果・ステータスから推定した `champion-synergy-*` タグを付け、相性のよいチャンピオン系統やジャングル・汎用用途で絞り込めるようにする。分類の規則と限界は [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類]] に記録する。
+- チャンピオン、アイテム、ルーン、サモナースペルの全個別ページには、共通の出典検索用タグ `data-dragon` を付ける。ページ内の `sources` と同じく、個別データの大元が Data Dragon 配布アーカイブであることを示す。
 - データに存在しない名称や意味は推測しない。名称空欄やマップ名不明などはページ上で未解決として明記する。
 
 ## 制約と未展開情報
@@ -49,6 +52,7 @@ Data Dragon version `16.18.1` の日本語データを、原典レコード単�
 
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 個別ページの原典と配布物全体。
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]] — チャンピオンの集約・詳細レコード。
+- [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類]] — アイテムの相性候補タグ、付与規則、分類上の限界。
 - [[wiki/overview|概要]] — Wiki全体の収録範囲。
 
 ## 出典

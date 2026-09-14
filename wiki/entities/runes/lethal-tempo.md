@@ -3,13 +3,14 @@ title: "リーサルテンポ"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - rune
   - league-of-legends
   - precision
+  - data-dragon
 ---
 
 # リーサルテンポ

@@ -5,7 +5,7 @@ status: active
 source_path: raw/sources/champion.json.md
 ingested: 2026-09-14
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 tags:
   - champion
   - game-data
@@ -44,6 +44,8 @@ version `16.18.1` のチャンピオン情報を収録したJSONデータであ�
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 同一versionの個別JSON、能力詳細、ロケール別配布物。
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]] — トップレベル、レコード、数値フィールドの構造。
 - [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割、リソース、主要数値の分布と品質上の注意。
+- [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類 v16.18.1]] — この原典の役割タグ語彙を相性候補タグの説明に利用した分類。
+- [[wiki/syntheses/champion-power-spikes-v16-18-1|チャンピオンのパワースパイク分類 v16.18.1]] — 基礎ステータスと個別能力説明を用いた序盤・中盤・終盤の分類。
 - [[wiki/index#エンティティ|個別チャンピオン一覧]] — 173件の個別ページへの索引。
 
 ## 未解決の問い

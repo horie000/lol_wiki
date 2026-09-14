@@ -3,12 +3,13 @@ title: "ヒール（SummonerHeal）"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - summoner-spell
   - game-data
+  - data-dragon
 spell_id: "SummonerHeal"
 spell_key: "7"
 spell_name: "ヒール"

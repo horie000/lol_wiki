@@ -3,7 +3,7 @@ title: チャンピオンデータのスキーマ
 type: concept
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
@@ -77,6 +77,7 @@ Data Dragon アーカイブの `16.18.1/data/ja_JP/champion/{id}.json` は、集
 ## 関連ページ
 
 - [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — このスキーマを使った全体集計。
+- [[wiki/syntheses/champion-power-spikes-v16-18-1|チャンピオンのパワースパイク分類 v16.18.1]] — `stats` と個別詳細レコードを使った再現可能な時期分類。
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 個別詳細レコードと配布物全体の構造。
 
 ## 出典
