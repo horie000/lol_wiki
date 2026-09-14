@@ -1,0 +1,87 @@
+---
+title: "コグ＝マウ"
+type: entity
+status: active
+created: 2026-09-14
+updated: 2026-09-14
+sources:
+  - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+tags:
+  - champion
+  - role-marksman
+  - role-mage
+champion_id: "KogMaw"
+champion_key: "96"
+data_version: "16.18.1"
+roles:
+  - "Marksman"
+  - "Mage"
+resource_type: "マナ"
+image_path: "raw/assets/champions/KogMaw.png"
+image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KogMaw.png"
+---
+
+# コグ＝マウ
+
+![[raw/assets/champions/KogMaw.png|128]]
+
+## 基本情報
+
+- **英字ID：** `KogMaw`
+- **キー：** `96`
+- **称号：** 深淵のアギト
+- **データversion：** `16.18.1`
+
+## 紹介
+
+イカシアの荒れ地の奥深くにあるヴォイドの浸食から生まれたコグ＝マウは腐食性の大きな口を持つ好奇心旺盛な腐敗した生物だ。このヴォイドの生物は周囲に存在するものを真に理解するためには、それをかじって唾をかける必要がある。本質的に悪意がある訳ではないが、コグ＝マウの愉快な無邪気さは危険であり、それは狂乱状態になって何かを食べようとする前触れだ──彼は生きるために食べているのではなく、尽きぬ好奇心を満たすために食べている。
+
+## 分類
+
+- **役割タグ：** `Marksman`、`Mage`
+- **リソース種別：** マナ
+
+## 評価値
+
+| フィールド | 値 |
+| --- | ---: |
+| `attack` | 8 |
+| `defense` | 2 |
+| `magic` | 5 |
+| `difficulty` | 6 |
+
+## 数値ステータス
+
+| フィールド | 値 |
+| --- | ---: |
+| `hp` | 635 |
+| `hpperlevel` | 99 |
+| `mp` | 325 |
+| `mpperlevel` | 40 |
+| `movespeed` | 330 |
+| `armor` | 24 |
+| `armorperlevel` | 4.45 |
+| `spellblock` | 33 |
+| `spellblockperlevel` | 1.1 |
+| `attackrange` | 500 |
+| `hpregen` | 3.75 |
+| `hpregenperlevel` | 0.55 |
+| `mpregen` | 8.75 |
+| `mpregenperlevel` | 0.7 |
+| `crit` | 0 |
+| `critperlevel` | 0 |
+| `attackdamage` | 61 |
+| `attackdamageperlevel` | 0 |
+| `attackspeedperlevel` | 2.65 |
+| `attackspeed` | 0.665 |
+
+## 関連ページ
+
+- [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
+- [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]]
+
+## 出典
+
+- [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.KogMaw` のレコード。
+- 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KogMaw.png)

@@ -1,0 +1,4 @@
+interface:
+  display_name: "LLM Wiki"
+  short_description: "Obsidian wiki ingestion, querying, and maintenance"
+  default_prompt: "Use $llm-wiki to ingest a source into this knowledge base."
