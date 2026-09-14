@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/TahmKen
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 舌慣らし：** 巨大な体躯から繰り出す通常攻撃に、自身の合計体力に応じた追加ダメージを付与する。ダメージを受けた敵チャンピオンには「舌慣らし」がスタックされ、3スタックたまった敵チャンピオンに対しては「丸呑み」を使えるようになる。
+
+- **Q — 味見：** 舌をムチを打つように放つ。最初に命中したユニットにダメージを与え、スロウ効果を付与する。対象が敵チャンピオンだった場合は自分の体力を回復する。 敵チャンピオンに「舌慣らし」のスタックを付与する。「舌慣らし」を3スタック付与しているチャンピオンにこのスキルを使用すると、スタックを消費して対象をスタンさせる。
+- **W — 川潜り：** 水中に潜ってから指定地点に現れ、範囲内のすべての敵にダメージを与えてノックアップさせる。
+- **E — ゆるゆる皮膜：** 自動効果: 受けたダメージの一定割合を蓄え、非戦闘時にそれに応じて体力を回復する。 発動効果: 蓄えていた全ダメージを一時的なシールドに変換する。
+- **R — 丸呑み：** 数秒間チャンピオンを丸呑みし、敵には魔法ダメージを与え、味方にはシールドを付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/TahmKen
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.TahmKench` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/TahmKench.png)

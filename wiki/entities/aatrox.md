@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aatrox.
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.651 |
 
+## アビリティ
+
+- **パッシブ — 死兆の構え：** 一定時間ごとに、次の通常攻撃が対象の最大体力に応じた追加魔法ダメージを与え、同量の体力を回復する。
+
+- **Q — ダーキンブレード：** 大剣を叩きつけて物理ダメージを与える。剣を3回振ることが可能で、振るごとに効果範囲が変化する。
+- **W — 炎獄の鎖：** 地面を叩きつけて、最初に命中した敵にダメージを与える。チャンピオンと大型モンスターは数秒以内に攻撃範囲から出なければ、中央に引き寄せられて再度ダメージを受ける。
+- **E — 影進撃：** 自動効果として、敵チャンピオンにダメージを与えると体力が回復する。発動すると、指定方向に向かってダッシュする。
+- **R — ワールドエンダー：** 悪魔形態を解放して周囲の敵ミニオンにフィアー効果を与え、攻撃力、回復量、移動速度が増加する。キルまたはアシストを獲得した場合、この効果が延長される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aatrox.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Aatrox` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aatrox.png)

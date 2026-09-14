@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -77,6 +78,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vex.png
 
 - `info` の4項目がすべて `0` である。未収録値か実値かは原典だけでは判定できない。
 
+## アビリティ
+
+- **パッシブ — フコウとユーウツ：** 一定時間ごとに強化され、次の通常スキルが敵にフィアー効果を与えてダッシュを阻止する。周囲の敵がダッシュするたびにマークを付与する。マークを消費すると追加ダメージを与え、強化効果のクールダウンも短縮される。
+
+- **Q — 無気力ショット：** 途中で加速する飛翔物を発射してダメージを与える。
+- **W — パーソナルスペース：** シールドを獲得して周囲の敵にダメージを与える。
+- **E — ヤミとばし：** 敵にダメージとスロウ効果を与えて、「ユーウツ」を付与するゾーンを発生させる。
+- **R — 影法師：** 敵チャンピオンをマークする飛翔物を発射する。再発動すると対象までダッシュしてダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -85,5 +95,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vex.png
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Vex` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vex.png)

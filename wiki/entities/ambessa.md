@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ambessa
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ドレイクハウンドの猛攻：** スキルを発動中に通常攻撃または移動操作をすると、スキル発動後に短い距離をダッシュして、次の通常攻撃の射程距離、ダメージ、攻撃速度が増加し、気を回復する。
+
+- **Q — カニングスイープ/サンダリングスラム：** 両手のドレイクハウンドを自身の前方に向かって半円状に振り回し、刃が当たった敵に追加ダメージを与える。敵に攻撃が命中すると、次に発動するこのスキルが短時間変化し、自身の前方に向かって両手のドレイクハウンドを直線状に叩きつけ、最初に命中した敵に追加ダメージを与える。
+- **W — 断交：** シールドを獲得し、少しの間身構えた後地面を叩きつけて周囲の敵にダメージを与える。身構えている間にミニオン以外からのダメージをブロックしていた場合、このスキルの与えるダメージが増加する。
+- **E — ラセレイト：** 両手のドレイクハウンドを自身の周囲に振り回し、付近の敵にダメージとスロウ効果を与える。このスキルから「ドレイクハウンドの猛攻」を発動すると、ダッシュ終了後にもう一度攻撃する。
+- **R — 公開処刑：** 指定した直線上の最も遠い敵チャンピオンの場所までブリンクし、到着時に敵にサプレッション効果を付与する。その後、敵を地面に叩きつけ、ダメージを与えスタンさせる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ambessa
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ambessa` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ambessa.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Darius.
 | `attackspeedperlevel` | 1 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 大出血：** 通常攻撃または攻撃スキルが命中した敵を出血させ、5秒間物理ダメージを与える。最大5回まで効果をスタックさせることができる。対象のスタックが最大になると、ダリウスが激怒して攻撃力が大幅に増加する。
+
+- **Q — 皆殺しの斧：** 斧を構えて振り抜き、周囲の敵を攻撃する。刃に当たった敵は、内側の柄に当たった敵より大きなダメージを受ける。刃に当たった敵チャンピオンと大型モンスターの数に応じて自身を回復する。
+- **W — 脚削ぎ：** 次の通常攻撃で敵の動脈を狙い、出血させることでスロウ効果を付与する。
+- **E — 捕縛：** 斧を研ぎ澄まし、対象の物理防御を一部無視して物理ダメージを与えるようになる。スキルを使用すると、刃で敵を引っかけてそばに引き寄せる。
+- **R — ノクサスギロチン：** 敵チャンピオンに飛びかかり、斧を振り下ろして確定ダメージを与える。対象の「大出血」のスタック数に応じてダメージが増加する。「ノクサスギロチン」で敵にとどめを刺すと、少しの間クールダウンが解消される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Darius.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Darius` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Darius.png)

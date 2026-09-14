@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vi.png"
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.644 |
 
+## アビリティ
+
+- **パッシブ — ケンカの作法：** 一定時間ごとにシールドをチャージし、スキルが敵に命中した瞬間に発動する。
+
+- **Q — 真っすぐいってぶっとばす：** ガントレットにエネルギーをチャージした後、指定方向に猛ダッシュしながらパンチを繰り出す。敵ユニットに命中するとダメージとノックバックを与える。これは「メッタ打ち」の連続攻撃回数にもカウントされる。
+- **W — メッタ打ち：** ヴァイのパンチが敵の物理防御を破って追加ダメージを与え、さらに自身の攻撃速度が増加する。
+- **E — 無慈悲な連撃：** ヴァイが次の通常攻撃と同時に、衝撃波を放つ。衝撃波は通常攻撃をした対象の背後に広がり、触れた敵にダメージを与える。
+- **R — 突入捜査：** 進路にいる敵を跳ね飛ばしながら指定した対象に向かって突撃し、接触と同時に対象をノックアップさせ、追いかけるように自身もジャンプしてから、地面に叩きつけてフィニッシュする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vi.png"
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Vi` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vi.png)

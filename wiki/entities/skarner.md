@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Skarner
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 響振動：** スカーナーの通常攻撃、「砕けし大地」、「大地の怒り」、「インペイル」は、敵に「振動」を付与する。「振動」が最大スタックになると、その効果時間をかけて敵に最大体力に応じた魔法ダメージを与える。
+
+- **Q — 砕けし大地/大地の怒り：** 地面から通常攻撃を強化する巨大な岩を掘り起こす。岩は強力な飛翔物として投げることができる。
+- **W — 激震の砦：** シールドを獲得して地震を発生させ、衝撃波で敵にダメージとスロウ効果を与える。
+- **E — イシュタルの衝動：** 前方に突撃して地形を通り抜ける。チャンピオンか大型モンスターに衝突すると、対象を次にぶつかった壁に叩きつけ、ダメージを与えてスタンさせる。
+- **R — インペイル：** 尻尾で前方を貫き、敵チャンピオンにサプレッション効果を与える。サプレッション効果を受けた犠牲者は、スカーナーの動きに追従して引きずられる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Skarner
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Skarner` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Skarner.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Soraka.
 | `attackspeedperlevel` | 2.14 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 救済の足音：** 近くにいる体力の少ない味方に向かって移動する際に、ソラカの移動速度が増加する。
+
+- **Q — 星のささやき：** 指定地点に流れ星が落ち、周囲の敵ユニットに魔法ダメージとスロウ効果を与える。敵チャンピオンに「星のささやき」が命中した場合、ソラカの体力が回復する。
+- **W — 星霊の癒し：** 自身の体力を消費し、指定した味方チャンピオンの体力を回復する。
+- **E — 星の静寂：** 指定した場所に時空の渦を生じさせ、巻き込んだ敵チャンピオンすべてにサイレンス効果を付与する。さらに渦が消滅した瞬間に渦の範囲内に居るすべての敵チャンピオンにスネア効果を付与する。
+- **R — 星に願いを：** ソラカとすべての味方チャンピオンが降り注ぐ希望の光で満たされ、瞬時に体力が回復する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Soraka.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Soraka` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Soraka.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sona.pn
 | `attackspeedperlevel` | 2.3 |
 | `attackspeed` | 0.644 |
 
+## アビリティ
+
+- **パッシブ — パワーコード：** アッチェレランド: 通常スキルを使用し条件を満たすたびに、恒久的に通常スキルヘイストを獲得する。獲得可能な上限を超えると、スキルの使用成功時にアルティメットの残りクールダウン時間が短縮されるようになる。 パワーコード: スキルを数回発動するたびに、次の通常攻撃で追加魔法ダメージを与え、さらに最後に発動した通常スキルに応じた追加効果が発生する。
+
+- **Q — ヒム・オブ・ヴァロー：** ソナが「ヒム・オブ・ヴァロー」を演奏し、音波を放って周囲の敵2体(チャンピオンか中立モンスターを優先)に魔法ダメージを与え、さらに一時的にオーラをまとって、接触した味方の次の攻撃に追加ダメージを付与する。
+- **W — パーセヴァランス：** ソナが「パーセヴァランス」を演奏し、癒しの旋律によって自身と周囲の味方の体力を回復する。さらにしばらくオーラをまとい、接触した味方に一時的なシールドを与える。
+- **E — セレリティ：** ソナが「セレリティ」を演奏して周囲の味方の移動速度を増加させる。さらに一時的にオーラをまとって、接触した味方チャンピオンの移動速度を増加させる。
+- **R — クレッシェンド：** ソナが究極の和音を演奏し、触れた敵チャンピオンに魔法ダメージを与え、強制的に踊らせてスタン効果を付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sona.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Sona` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sona.png)

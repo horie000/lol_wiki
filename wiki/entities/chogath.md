@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Chogath
 | `attackspeedperlevel` | 1.44 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 暴食：** 敵ユニットを倒すたびに体力とマナが回復する。 この回復量はチョ＝ガスのレベルに応じて増加する。
+
+- **Q — ラプチャー：** 指定地点に下から突き出るようにトゲを発生させる。効果範囲内の敵ユニットをノックアップさせてダメージを与え、スロウ効果を付与する。
+- **W — スクリーム：** 扇形の範囲内にいる敵に恐ろしい叫声を浴びせ、魔法ダメージと数秒間のサイレンス効果を与える。
+- **E — ヴォーパルスパイク：** 通常攻撃時に鋭いトゲを発射し、自身の前方にいる敵ユニットにダメージとスロウ効果を与える。
+- **R — 捕食：** 敵ユニットを「捕食」して高い確定ダメージを与える。このスキルで敵ユニットを倒すと自身は巨大化して、最大体力が増加する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Chogath
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Chogath` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Chogath.png)

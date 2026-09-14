@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lulu.pn
 | `attackspeedperlevel` | 2.25 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 仲良し妖精ピックス：** ピックスがくっついているチャンピオンが敵ユニットを攻撃するたびに、ピックスも魔法のビームで援護する。このビームは対象に追従するが、射線に別のユニットが割り込むと、そのユニットに遮られる。
+
+- **Q — ぴかぴかビーム：** ピックスとルルが同時に魔法のビームを発射し、命中したすべての敵にダメージと重度のスロウ効果を付与する。
+- **W — イタズラ：** 味方に使用した場合、短時間攻撃速度と移動速度を増加させる。敵に使用した場合、かわいらしい動物に変身させ、通常攻撃とスキルの使用を封じる。
+- **E — ピックス、おねがい！：** 味方に使用した場合、ピックスをそばに送り込んでダメージを防ぐシールドを付与する。その後ピックスは対象にくっついて移動し、通常攻撃時に魔法のビームで援護する。敵に使用した場合、対象のもとへピックスが飛んでいきダメージを与える。その後ピックスは対象にくっついて移動し、可視状態にする。
+- **R — おおきくなぁれ！：** 味方1体を巨大化させ、周囲にいる敵をノックアップさせる。巨大化した味方は体力が大幅に増加し、体の周囲に数秒間光の輪が発生する。輪の中に入った敵はスロウ状態になる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lulu.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Lulu` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lulu.png)

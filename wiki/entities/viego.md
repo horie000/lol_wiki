@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Viego.p
 | `attackspeedperlevel` | 2.75 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 王の支配：** ヴィエゴの周囲で倒された敵は亡霊になる。ヴィエゴは亡霊に通常攻撃を行うことで、その倒された敵の死体を一時的に操れるようになり、対象の最大体力の一定割合にあたる体力を回復し、対象の通常スキルとアイテムを使用できる。対象のアルティメットスキルは自身のものと入れ替わり、自由に1回発動できるようになる。
+
+- **Q — 滅びの王剣：** 自動効果により、霊体の刃が通常攻撃時効果で現在体力に応じた追加ダメージを与える。直前にスキルで攻撃した敵には2回攻撃を行い、体力を奪う。 このスキルを発動すると、剣で前方に突きを放ち、自身の前にいる敵を貫く。
+- **W — 亡霊の嘆き：** チャージしてから前方にダッシュし、凝縮した「黒き霧」を発射して最初に当たった敵をスタンさせる。
+- **E — 彷徨える苦悶：** 「黒き霧」を出現させて、地形の周囲を覆う。自身は「霧」の中では亡霊となって隠れることができ、カモフラージュ状態となり、移動速度と攻撃速度が増加する。
+- **R — ハートブレイカー：** 近くの地点に瞬間移動し、到着時に敵チャンピオンを斬りつけ、対象の心臓を貫いて衝撃を発生させ、周囲の敵をノックバックさせる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Viego.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Viego` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Viego.png)

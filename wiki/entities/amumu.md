@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Amumu.p
 | `attackspeedperlevel` | 2.18 |
 | `attackspeed` | 0.736 |
 
+## アビリティ
+
+- **パッシブ — 呪いの手：** 通常攻撃で敵に「呪い」をかける。呪われた対象は、魔法ダメージを受ける際に追加確定ダメージを受けるようになる。
+
+- **Q — 絡みつく包帯：** 指定方向にべとべとの包帯を投げつける。敵に当たるとダメージとスタンを与え、包帯をたぐって相手の近くに素早く移動する。
+- **W — めそめそ：** 涙を流し、触れた敵に最大体力の一定割合のダメージを毎秒与え、対象に付与された「呪い」の効果時間を更新する。
+- **E — だだっこ：** 敵から受ける物理ダメージを恒久的に軽減する。発動して怒りを爆発させると、周囲の敵にダメージを与える。自身が攻撃を受けるたびに「だだっこ」のクールダウンが短縮される。
+- **R — めそめそミイラの呪い：** 周囲の敵ユニットを包帯で拘束して「呪い」を付与する。さらにダメージを与えてスタンさせる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Amumu.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Amumu` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Amumu.png)

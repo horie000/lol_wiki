@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fizz.pn
 | `attackspeedperlevel` | 3.1 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — シーファイター：** ユニットをすり抜け、すべてのダメージソースから受けるダメージを一定量軽減させる。
+
+- **Q — ウニトゲストライク：** 対象に向かって突進し反対側へ突き抜ける。命中した対象に魔法ダメージを与え、通常攻撃時効果を発動する。
+- **W — シートライデント：** 自動効果で通常攻撃が敵を出血させ、数秒間かけて魔法ダメージを与える。発動すると次の通常攻撃を強化して追加ダメージを与え、少しの間だけその後の通常攻撃が強化される。
+- **E — プレイ/トリックスター：** 地面に槍を突き立て飛び上がった後、槍の上に器用に乗って敵から対象指定されなくなる。この状態からその場に着地、または再度ジャンプして別の指定地点に着地し範囲内の敵にダメージを与える。
+- **R — フィッシング：** 撒き餌として魚を1匹発射する。魚が命中した敵チャンピオンはスロウ状態になり周囲を魚が旋回する。短時間後、地面から巨大なサメが飛びだして対象をノックアップさせ、周囲の敵を横に跳ね飛ばす。命中した敵は全員魔法ダメージとスロウ効果を受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fizz.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Fizz` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fizz.png)

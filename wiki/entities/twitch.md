@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Twitch.
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.679 |
 
+## アビリティ
+
+- **パッシブ — スゴイ毒ダ！：** 通常攻撃で対象を毒%i:OnHit%通常攻撃時効果に侵し、毎秒確定ダメージを与える。
+
+- **Q — オイラだヨ！：** 数秒間カモフラージュ状態になり、その間移動速度が増加する。カモフラージュの解除時に短時間攻撃速度が増加する。 「スゴイ毒ダ！」でチャンピオンを倒すと、「オイラだヨ！」のクールダウンがリセットされる。
+- **W — コイツを食らエ！：** 毒物が入った容器を投げて破裂させ、効果範囲内の敵ユニットをスロウ状態にし、猛毒効果をかける。
+- **E — ボーン！：** 猛毒状態にした敵を病原菌に侵し、さらにダメージを与える。
+- **R — ヒャッハー！：** クロスボウの最大威力を引き出し、射程距離を大幅に拡大する。発射した矢は命中した敵ユニットを貫通してダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Twitch.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Twitch` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Twitch.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MissFor
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.656 |
 
+## アビリティ
+
+- **パッシブ — ラブタップ：** 新しい対象に通常攻撃するたびに追加物理ダメージを与える。
+
+- **Q — ダブルアップ：** 指定した敵に発砲しダメージを与える。対象の背後に敵がいた場合、跳弾して後ろの敵にもダメージを与える。弾丸はどちらも「ラブタップ」の効果が適用される。
+- **W — ストラット：** 攻撃を受けずにいると、自動効果により移動速度が増加するようになる。発動すると、短時間攻撃速度が増加する。クールダウン中は、「ラブタップ」によってクールダウンが短縮される。
+- **E — レイニングバレット：** 一定範囲内に弾丸の雨を降らせて視界を確保するとともに、範囲内の敵に継続ダメージを与えてスロウ効果を付与する。
+- **R — バレットタイム：** 前方の扇状範囲に大量の銃弾を放ち、範囲内にいる敵に大量のダメージを与える。波状に発射される弾丸の各ウェーブ毎にクリティカル判定を持つ。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MissFor
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.MissFortune` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MissFortune.png)

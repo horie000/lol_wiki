@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sion.pn
 | `attackspeedperlevel` | 1.3 |
 | `attackspeed` | 0.679 |
 
+## アビリティ
+
+- **パッシブ — 名誉ある死：** サイオンは死亡後、体力が急速に減っていく状態で一時的に復活する。攻撃速度が飛躍的に上昇して通常攻撃で体力を回復するようになり、対象の最大体力に応じた追加ダメージを与える。
+
+- **Q — 破滅の斧：** サイオンが斧を振り上げ、力を溜めてから前方に振り下ろして、範囲内の敵すべてにダメージを与える。十分に力を溜めた状態で振り下ろすと、ダメージに加えて命中した敵がノックアップし、その後スタン状態になる。
+- **W — 魂の炉心：** サイオンがシールドを張り、時間が経過するか3秒たった後に再発動すると爆発して、周囲の敵に魔法ダメージを与える。また自動効果として、敵ユニットをキルするたびにサイオンの最大体力が増加する。
+- **E — 殺意の雄叫び：** サイオンが短射程の衝撃波を発射し、最初に命中した敵にダメージとスロウ効果を与え、さらに物理防御を低下させる。ミニオンおよび中立モンスターに当たった場合は長い距離をノックバックし、接触した敵すべてにダメージとスロウ効果を与え、さらに物理防御を低下させる。
+- **R — 猪突猛進：** サイオンが指定方向に突進し、時間とともに加速してゆく。突進中も、わずかに方向を制御できる。敵チャンピオンか壁に衝突すると停止し、敵チャンピオンの場合は突進距離に応じてダメージを与え、さらにノックアップする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sion.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Sion` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sion.png)

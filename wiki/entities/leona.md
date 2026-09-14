@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leona.p
 | `attackspeedperlevel` | 2.9 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — サンライト：** 攻撃スキルが命中した敵に1.5秒間「サンライト」の効果を付与する。この状態の対象に味方チャンピオンがダメージを与えると「サンライト」を消費して追加魔法ダメージを与える。
+
+- **Q — シールド・オブ・デイブレイク：** 次の通常攻撃時に盾を使って攻撃し、追加魔法ダメージを与えて対象にスタン効果を付与する。
+- **W — エクリプス：** 自身の体を盾で保護し、ダメージ軽減率、物理防御、魔法防御を増加させる。効果時間終了時に近くに敵がいる場合は、その全員に魔法ダメージを与え、さらにシールドの効果時間が延長される。
+- **E — ゼニスブレード：** 剣から太陽のエネルギーを放ち、直線上のすべての敵に魔法ダメージを与える。最後に命中した敵チャンピオンに一時的なスネア効果を付与し、レオナが近くまで素早く移動する。
+- **R — ソーラーフレア：** 指定地点に太陽の力を呼び寄せ、効果範囲内の敵ユニットにダメージを与える。範囲の中心部にいる敵にスタン効果を与え、外側にいる敵にはスロウ効果を与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leona.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Leona` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leona.png)

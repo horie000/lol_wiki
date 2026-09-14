@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Riven.p
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ルーンブレード：** スキルを使用すると剣に力が宿り、通常攻撃でその力を消費して追加ダメージを与える。
+
+- **Q — 折れた翼：** 連続して敵を斬りつける。断続的に3回まで再使用でき、3回目を命中させると周囲の敵をノックアップさせる。
+- **W — 気功破：** 「気功破」を放ち、周囲にいる敵にダメージを与えてスタン効果を付与する。
+- **E — 勇躍：** 前方へ短いステップを踏み、敵の攻撃を軽減するシールドを身にまとう。
+- **R — 追放者の剣：** 神秘的な力によって砕けた剣を再生させ、攻撃力と射程を増加させる。さらに効果時間中、強力な遠隔攻撃である「ウィンドスラッシュ」を一度だけ発動できる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Riven.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Riven` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Riven.png)

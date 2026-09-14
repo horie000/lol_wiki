@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Maokai.
 | `attackspeedperlevel` | 2.125 |
 | `attackspeed` | 0.8 |
 
+## アビリティ
+
+- **パッシブ — 魔樹液：** 通常攻撃が自身の体力を回復し、追加ダメージを与える。この効果にはある程度のクールダウンはあるが、スキルを使用するか、敵のスキルが自身に命中すると、このクールダウンが短縮される。
+
+- **Q — 茨打ち：** 衝撃波で周囲の敵ユニットをノックバックして魔法ダメージとスロウ効果を与える。
+- **W — 樹人の進撃：** 巨大な根の塊になって対象指定されなくなり、指定した対象に向かってダッシュする。対象に到達するとスネア効果を与える。
+- **E — 苗木投げ：** 指定地点に苗木を投げて見張らせる。茂みの中ならより効果的になる。
+- **R — 大地の捕縛：** 大量の茨や棘で出来た巨大な壁を召喚する。壁はゆっくりと前進しながら、通り道にいる敵ユニットにダメージとスネア効果を与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Maokai.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Maokai` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Maokai.png)

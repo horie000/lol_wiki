@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nautilu
 | `attackspeedperlevel` | 1 |
 | `attackspeed` | 0.706 |
 
+## アビリティ
+
+- **パッシブ — 鉄の錨：** 対象に最初に行う通常攻撃は与える物理ダメージが増加し、短時間スネア効果を与える。
+
+- **Q — 錨投げ：** 前方に錨を投げる。敵に命中すると自身と対象を同時に引き寄せ、魔法ダメージを与える。錨が地形に命中した場合、自身を錨の地点まで引き寄せる。
+- **W — 大海の激憤：** 一時的にシールドを獲得する。シールドが持続している間は通常攻撃が対象と周囲の敵に継続ダメージを与える。
+- **E — 粉砕水：** 自身の周囲に3回爆発する衝撃波を発生させる。爆発のたびに敵にダメージとスロウ効果を与える。
+- **R — 爆雷発射：** 錨を地面にたたきつけ、狙った敵チャンピオンを追尾する爆雷を発射する。爆雷は対象を追尾しながら、通った場所に衝撃波を引き起こし、巻き込んだ敵ユニットに魔法ダメージとノックアップを与える。爆雷が対象に命中すると爆発がおき、対象にノックアップとスタンを付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nautilu
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Nautilus` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nautilus.png)

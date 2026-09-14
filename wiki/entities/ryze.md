@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ryze.pn
 | `attackspeedperlevel` | 2.11 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 古代の呪術：** ライズのスキルは増加したマナに応じて追加ダメージを与え、魔力に応じて最大マナが一定割合増加する。
+
+- **Q — オーバーロード：** 自動効果: 他の通常スキルを使うと「オーバーロード」のクールダウンがリセットされ、「ルーン」がチャージされる。「ルーン」が2つチャージされた状態で「オーバーロード」を使用すると、少しの間移動速度が増加する。 発動効果: 凝縮したエネルギー弾を直線上に発射して、最初に当たった敵にダメージを与える。すでに対象に「フラックス」が付与されていた場合、「オーバーロード」は追加ダメージを与え、周囲の敵に「フラックス」が波及する。
+- **W — ルーンプリズン：** 対象をルーンの檻に捕らえ、ダメージとスロウ効果を与える。対象に「フラックス」が付与されている場合は、スロウの代わりにスネア状態にする。
+- **E — スペルフラックス：** 純粋な魔力を凝縮したオーブを発射して対象にダメージを与え、対象とその周囲のすべての敵にデバフを与える。ライズのスキルはデバフを受けた敵には追加効果を与える。
+- **R — ポータルワープ：** 自動効果: 「フラックス」が付与された対象に「オーバーロード」で与える追加ダメージが増加する。 発動効果: 近くにポータルを発生させる。数秒後、指定した場所にポータルの範囲内の味方をテレポートさせる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ryze.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ryze` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ryze.png)

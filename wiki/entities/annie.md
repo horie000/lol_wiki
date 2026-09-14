@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Annie.p
 | `attackspeedperlevel` | 1.36 |
 | `attackspeed` | 0.61 |
 
+## アビリティ
+
+- **パッシブ — 火遊びだいすき：** スキルを4回使用すると、次に行う攻撃スキルが対象をスタンさせる。 試合開始時および復活時は「火遊びだいすき」が使用可能な状態でスタートする。
+
+- **Q — ファイアボール：** 火の玉を放って、指定した対象にダメージを与える。このスキルで敵ユニットを倒すと、消費したマナが回復しクールダウンが短縮する。
+- **W — バーニングファイア：** 指定方向に扇状の炎を放ち、範囲内のすべての敵ユニットにダメージを与える。
+- **E — モルテンシールド：** 自身または味方1体にシールドを付与し、移動速度が一時的に上昇する。また、通常攻撃かスキルで自身を攻撃した敵にダメージを与える。
+- **R — やっちゃえ！ティバーズ！：** クマのティバーズを召喚し、範囲内の敵ユニットにダメージを与える。召喚されたティバーズは敵ユニットを攻撃し、身にまとう炎で周囲にいる敵に継続ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Annie.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Annie` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Annie.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Twisted
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — イカサマダイス：** ユニットを1体倒すたびに「幸運のサイコロ」を振り、1～6の追加ゴールドを獲得する。
+
+- **Q — ワイルドカード：** 扇状を描くように敵を貫通する3枚のカードが投げられ、命中した敵ユニットにそれぞれダメージを与える。
+- **W — ドロー：** デッキから魔法のカードを1枚選び、次の通常攻撃に使用する。この通常攻撃には追加効果がつく。
+- **E — スタックデッキ：** 通常攻撃4回ごとに追加ダメージがつき、攻撃速度が増加する。
+- **R — デスティニー：** 敵の運命を予知し、敵のチャンピオン全員を可視状態にする。また、1.5秒後に指定位置へワープする「ゲート」を使用できるようになる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Twisted
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.TwistedFate` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/TwistedFate.png)

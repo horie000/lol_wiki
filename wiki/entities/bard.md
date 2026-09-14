@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Bard.pn
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 旅人の呼び声：** ミィプ: ミィプと呼ばれる精霊を呼び寄せて通常攻撃を支援させ、追加魔法ダメージを与える。一定数のチャイムを集めると、ミィプの攻撃が範囲攻撃になり、命中した敵にスロウ効果も与えるようになる。 いにしえの鐘: 古代のチャイムがランダムに出現し、回収するたびに経験値を獲得して、マナが回復するほか、非戦闘時の移動速度が増加する。
+
+- **Q — 宇宙の法則：** 魔法のエネルギーを発射し、最初に命中した敵にスロウを与える。貫通したエネルギーが壁に当たった場合は最初の対象が、別の敵ユニットに当たった場合は両方の対象がスタン状態になる。
+- **W — 回復の遺物：** 体力を回復する遺物を出現させる。遺物は短時間徐々に効果が増大し、最初に触れた味方の体力を回復して移動速度を増加させると消滅する。
+- **E — 精霊の旅路：** 付近の地形に一方通行の魔法のトンネルを出現させる。敵も味方も同じようにトンネルを通り抜けられるが、レベルに応じて味方が通り抜ける速度は増加する。
+- **R — 運命の調律：** 精霊の魔力を放つ。魔力は放物線を描いて飛んでいき、着弾と同時に範囲内のすべてのユニットとタワーをしばらく停止させる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Bard.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Bard` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Bard.png)

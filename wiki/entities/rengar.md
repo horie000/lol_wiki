@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rengar.
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.667 |
 
+## アビリティ
+
+- **パッシブ — 見えざる襲撃者：** 茂みの中にいると、通常攻撃で対象に向かって飛びつく。 スキルを使用するたびにフェロシティを獲得する。フェロシティが最大になると次に使用するスキルが強化される。 敵チャンピオンを倒すと「骨牙の首飾り」のトロフィーを獲得し、増加攻撃力を獲得する。
+
+- **Q — 逆上：** 次の通常攻撃が追加ダメージを与える。 フェロシティボーナス: 与えるダメージと攻撃速度が増加。
+- **W — 狩りの雄叫び：** レンガーが雄叫びをあげて周囲の敵にダメージを与え、直前に受けたダメージの一部を回復する。 フェロシティボーナス: 自身が受けている行動妨害効果を除去する。
+- **E — 鉄球の投げ縄：** 投げ縄を投げ、最初に命中した対象に短時間スロウ効果を付与する。 フェロシティボーナス: 対象にスネア効果を付与する。
+- **R — 狩猟本能：** 「狩猟本能」の覚醒によってレンガーがカモフラージュ状態となり、広範囲にわたって敵チャンピオンの位置を把握する。「狩猟本能」の覚醒中は移動速度が増加し、茂みの中にいなくても発見した敵に向かってジャンプ攻撃が可能になり、対象の物理防御を低下させる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rengar.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Rengar` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rengar.png)

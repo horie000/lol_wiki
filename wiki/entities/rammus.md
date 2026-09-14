@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rammus.
 | `attackspeedperlevel` | 2.215 |
 | `attackspeed` | 0.7 |
 
+## アビリティ
+
+- **パッシブ — トゲトゲ：** 自身の物理防御と魔法防御に応じて攻撃力が増加する。
+
+- **Q — ころころ：** 体を丸めて高速回転し、移動速度が増加する。衝突した敵に突進してダメージを与え、スロウ効果を付与する。
+- **W — かたくなる：** 防御体勢を取って物理防御と魔法防御を大幅に増加させ、通常攻撃を行ってきた相手にダメージを跳ね返す。
+- **E — ぴりぴり：** 敵チャンピオンまたは中立モンスターをタウントし、固い甲羅に無謀な攻撃をさせる。
+- **R — どーんどーん：** ジャンプしてから指定地点に勢いよく着地し、敵に魔法ダメージとスロウ効果を与える。「ころころ」発動中に使用した場合、範囲の中心付近にいる敵にはノックアップも与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rammus.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Rammus` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rammus.png)

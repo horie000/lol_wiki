@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Syndra.
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 絶大なる魔力：** チャンピオンレベルの上昇および敵へのダメージによって「怒りの破片」を集め、スキルをアップグレードできる。 ダークスフィア: チャージ数が1増加する ダークフォース: 追加確定ダメージを与える 闇の波導: 幅が増加し、すべての対象にスロウ効果を付与する 魔力の奔流: 体力が低下している対象にとどめを刺す
+
+- **Q — ダークスフィア：** 闇のエネルギーの球体をつくりだし、敵に魔法ダメージを与える。 球体は一定時間消滅せず、他のスキルで操作することもできる。
+- **W — ダークフォース：** 発生中の「ダークスフィア」または敵ミニオンや中立モンスター1体を持ち上げて投げ飛ばす。 投げ飛ばされた「ダークスフィア」およびミニオンや中立モンスターが命中した敵は魔法ダメージを受け、移動速度が低下する。
+- **E — 闇の波導：** 敵ユニットおよび発生中の「ダークスフィア」をノックバックし、魔法ダメージを与える。 このスキルでノックバックした「ダークスフィア」が敵ユニットに命中した場合は、さらにスタン効果を付与する。
+- **R — 魔力の奔流：** 発生中のすべての「ダークスフィア」で敵チャンピオン1体を集中攻撃する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Syndra.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Syndra` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Syndra.png)

@@ -41,6 +41,7 @@ version `16.18.1` のチャンピオン情報を収録したJSONデータであ�
 
 ## 関連ページ
 
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 同一versionの個別JSON、能力詳細、ロケール別配布物。
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]] — トップレベル、レコード、数値フィールドの構造。
 - [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割、リソース、主要数値の分布と品質上の注意。
 - [[wiki/index#エンティティ|個別チャンピオン一覧]] — 173件の個別ページへの索引。

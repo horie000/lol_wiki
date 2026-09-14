@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nidalee
 | `attackspeedperlevel` | 3.22 |
 | `attackspeed` | 0.638 |
 
+## アビリティ
+
+- **パッシブ — 品定め：** 茂みに入ると移動速度が2秒間10%増加する。さらに、距離1400の範囲内にいる可視状態の敵チャンピオンに向かって移動する場合は30%増加する。 敵チャンピオンまたは中立モンスターに「槍投げ」または「虎挟み」でダメージを与えると、対象に4秒間「マーキング」を付与し、真の視界を得る。この間、ニダリーの移動速度が10%増加し、さらに、「マーキング」中の対象に向かって移動する場合は30%増加する。また、対象に対する「テイクダウン」と「ジャンプ」の効果が増加する。
+
+- **Q — 槍投げ/テイクダウン：** ヒト形態: 対象に向かって槍を投げる。ダメージ量は槍の飛距離に比例して大きくなる。 クーガー形態: 次の通常攻撃時に大量の追加ダメージを与える。ダメージ量は対象の失った体力に比例して増える。
+- **W — 虎挟み/ジャンプ：** ヒト形態: 地面にトラップを仕掛ける。気づかず踏んだ敵は、ダメージを受けて可視状態になる。 クーガー形態: 指定方向にジャンプし、着地点周辺の範囲内にいる敵ユニットにダメージを与える。
+- **E — 高揚/クロウ：** ヒト形態: クーガーの精霊を呼び出し、味方の体力を回復して短時間攻撃速度を増加させる。 クーガー形態: かぎ爪で攻撃し、自身の前方範囲内の敵ユニットにダメージを与える。
+- **R — クーガーの心：** クーガーに変身し、特別なスキルを使用する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nidalee
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Nidalee` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nidalee.png)

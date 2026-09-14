@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MonkeyK
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.69 |
 
+## アビリティ
+
+- **パッシブ — 岩の皮膚：** チャンピオンまたはモンスターと戦闘中は、スタック可能な物理防御と最大体力に応じた自動回復を獲得する。
+
+- **Q — 強棒打：** 次の通常攻撃の射程が増加して追加ダメージを与え、対象の物理防御を数秒間低下させる。
+- **W — 戦士の幻惑：** インビジブル状態になって指定方向にダッシュする。元いた場所には近くの敵を攻撃する分身が残る。
+- **E — 乱像猿技：** 指定した対象に向かって突撃し、複数の残像を発生させる。残像は対象の近くにいる敵ユニットを攻撃し、対象それぞれにダメージを与える。
+- **R — 旋風猿舞：** 如意棒を伸ばして回転し、自身の移動速度が増加する。 如意棒に触れた敵にダメージを与えてノックアップさせる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MonkeyK
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.MonkeyKing` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MonkeyKing.png)

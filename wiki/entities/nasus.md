@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nasus.p
 | `attackspeedperlevel` | 3.48 |
 | `attackspeed` | 0.638 |
 
+## アビリティ
+
+- **パッシブ — ソウルイーター：** 敵の魂のエネルギーを吸い取り、自身のライフスティールが増加する。
+
+- **Q — サイフォンストライク：** 敵を攻撃してダメージを与える。さらに、対象にとどめを刺すと「サイフォンストライク」の威力が増していく。
+- **W — ウィザー：** 指定した敵チャンピオンを老化させる。効果時間中、敵の移動速度と攻撃速度が徐々に減少する。
+- **E — スピリットファイア：** 指定範囲に神秘的な炎を呼び寄せ、範囲内の敵にダメージを与えて物理防御を低下させる。
+- **R — アヌビスの怒り：** 巨大化して、強力な砂嵐を身にまとう。砂嵐をまとっている間は、体力と通常攻撃の射程距離が増加する。またその間は、周囲の敵にダメージを与え、「サイフォンストライク」のクールダウンが短くなり、物理防御と魔法防御が増加する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nasus.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Nasus` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nasus.png)

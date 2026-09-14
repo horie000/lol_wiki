@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Morgana
 | `attackspeedperlevel` | 1.53 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ソウルサイフォン：** 敵チャンピオン、大型ミニオン、中型および大型ジャングルモンスターにダメージを与えると自身の体力を回復する。
+
+- **Q — ダークバインド：** 闇の魔力で敵にスネア効果と魔法ダメージを与え、冒した罪の深さを思い知らせる。
+- **W — 苦悶の影：** 周囲に呪いの闇を発生させ、範囲内にいる敵に継続的な魔法ダメージを与える。このダメージは対象の体力が低いほど増加する。
+- **E — ブラックシールド：** 仲間のチャンピオンに星炎の加護によるバリアを付与する。このバリアは魔法ダメージと行動妨害を無効化する。
+- **R — 魂の足枷：** 天界の力を解放し、翼を広げて空中に浮かぶ。周囲の敵チャンピオンを黒き痛みの鎖で縛り、そのチャンピオンへ向かう際の移動速度が上昇する。命中時にダメージとスロウ効果を与え、一定時間内に鎖から逃れることができなかった敵には追加でスタン効果を与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Morgana
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Morgana` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Morgana.png)

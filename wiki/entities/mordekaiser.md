@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mordeka
 | `attackspeedperlevel` | 1 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 無窮の闇：** チャンピオンまたはモンスターに通常攻撃かスキルを3回命中させると、ダメージを与える強力なオーラを発生させ、移動速度が増加する。
+
+- **Q — 滅魂の一撃：** 地面にメイスを叩きつけ、命中したすべての敵にダメージを与える。対象が1体のみだった場合はダメージが上昇する。
+- **W — 不滅の鎧：** 与えたダメージや受けたダメージを蓄え、シールドを作り出す。シールドを消費して体力を回復することも可能。
+- **E — 死の呪縛：** 範囲内にいるすべての敵を引き寄せる。
+- **R — 死の国：** 獲物を別の次元へと引きずり込み、ステータスの一部を奪い取る。対象を倒した場合は、その対象が復活するまで奪ったステータスが維持される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mordeka
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Mordekaiser` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mordekaiser.png)

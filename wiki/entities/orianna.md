@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Orianna
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — ぜんまい仕掛け：** 通常攻撃が追加で魔法ダメージを与える。このダメージは同じ対象を続けて攻撃すると増加する。
+
+- **Q — オーダー: 攻撃：** オリアナが指定地点を攻撃するようボールに命じ、軌道上の敵ユニットに魔法ダメージを与える (敵に命中する度にダメージは低下する)。ボールは攻撃後もその場に留まる。
+- **W — オーダー: 乱磁場：** オリアナの命令により、ボールがエネルギー波を発射して周囲の敵に魔法ダメージを与える。後には力場が残され、範囲内に入ると、味方の移動速度が増加し、敵はスロウ状態になる。
+- **E — オーダー: 防御：** オリアナの命令により、ボールが味方チャンピオンに貼りつき、シールドを付与する。ボールは移動時に触れたすべての敵に魔法ダメージを与える。さらに、ボールは貼り付いたチャンピオンの物理防御と魔法防御を増加させる。
+- **R — オーダー: ショックウェーブ：** オリアナが命令してから一瞬後、ボールが衝撃波を発射して周囲の敵に魔法ダメージを与え、ボールの方向へ引き寄せる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Orianna
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Orianna` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Orianna.png)

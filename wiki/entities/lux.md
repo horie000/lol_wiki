@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lux.png
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.669 |
 
+## アビリティ
+
+- **パッシブ — イルミネーション：** 攻撃スキルが命中した対象を数秒間「イルミネーション」でマークする。マークした対象にラックスの攻撃が命中すると、エネルギーが爆発して追加魔法ダメージを与える(追加ダメージの量はラックスのレベルに比例する)。
+
+- **Q — ライトバインド：** 光の玉を発射し、最大2体までの敵にダメージを与えてスネア効果を付与する。
+- **W — プリズムバリア：** 指定方向に杖を投げ、自身と杖に触れた味方チャンピオンに光を屈折させたシールドを付与する。杖は最大距離に達するとラックスのもとへ戻り、触れた味方チャンピオンと杖をキャッチしたラックスに再びシールドを付与する。
+- **E — シンギュラリティ：** 指定地点に特異な光の玉を放ち、範囲内の敵にスロウ効果を付与する。効果時間内に再度発動すると光の玉が爆発し、範囲内の敵にダメージを与える。
+- **R — ファイナルスパーク：** 光のエネルギーを集めてビームを発射し、範囲内の敵にダメージを与える。「イルミネーション」効果を受けている敵に命中すると爆発させて追加魔法ダメージを与え、再度「イルミネーション」を付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lux.png
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Lux` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lux.png)

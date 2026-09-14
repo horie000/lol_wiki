@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zoe.png
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — スパークル！：** スキル使用後、次に行う通常攻撃が追加魔法ダメージを与える。
+
+- **Q — パドルスター：** 途中で進行方向を変えられる星を飛ばす。真っすぐ飛んだ距離の長さに応じてダメージが増加する。
+- **W — スペルシーフ：** 敵のサモナースペルと発動効果アイテムのかけらを拾って1回使用できる。サモナースペルを使用するごとに最大3つの魔法の弾を最も近くにいる対象に向かって飛ばす。
+- **E — スリープバブル：** 対象に眠気を与えてから眠らせる。眠っている間は、対象の魔法防御が低下する。眠りを覚ます攻撃は2倍のダメージを与える(上限あり)。
+- **R — ポータルジャンプ：** 近くの指定した位置に1秒間ブリンクして、もとの位置に戻る。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zoe.png
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Zoe` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zoe.png)

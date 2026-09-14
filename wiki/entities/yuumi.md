@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yuumi.p
 | `attackspeedperlevel` | 1 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ネコはトモダチ：** 一定時間ごとに、通常攻撃またはスキルをチャンピオンに命中させると、自身および次にくっつく味方の体力が回復する。 くっついている間は、その味方との間に特別な絆が生まれる。絆が最も強い味方にくっついている間は、自身のスキルが強化される。
+
+- **Q — きまぐれミサイル：** ミサイルを発射し、最初に当たった対象にダメージとスロウ効果を与える。発射後1.35秒以上経過すると、与えるダメージとスロウ効果が強化される。「ベストフレンド」にくっついている間は、ミサイルのスロウ効果が常に強化され、味方は通常攻撃時効果で追加ダメージを与えるようになる。 くっついている間は少しの間だけミサイルをマウスカーソルで操作できる。
+- **W — ユー＆ミー！：** 対象の味方までダッシュして、タワー以外のすべてから対象指定不可状態になる。「ベストフレンド」にくっついている間は自身の体力回復/シールド効果が増加し、味方は通常攻撃時効果で体力が回復する。
+- **E — バビューン！：** シールドを獲得して、移動速度と攻撃速度が増加する。くっついている場合は、自身ではなく味方にこの効果を与える。
+- **R — ファイナルチャプター：** 詠唱してウェーブを5回発射する。ウェーブは対象が敵の場合はダメージを与えて、味方の場合は体力を回復する。詠唱中も移動と「バビューン！」の発動が可能で、味方にくっつくこともできる。「ベストフレンド」にくっついている間は、このスキルの発射方向をマウスで操作できる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yuumi.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Yuumi` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yuumi.png)

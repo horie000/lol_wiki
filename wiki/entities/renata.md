@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Renata.
 | `attackspeedperlevel` | 2.11 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — レバレッジ：** 通常攻撃が追加ダメージを与えて敵をマークする。味方はマークされた敵にダメージを与えると追加ダメージを与える。
+
+- **Q — 手荒い挨拶：** ミサイルを発射して、最初に命中した敵にスネア効果を与える。その後、再発動してそのユニットを指定方向に投げ飛ばすことができる。
+- **W — 緊急支援：** 味方チャンピオンにバフを付与して戦闘能力を強化し、そのデスを遅らせる。味方はキルかアシストを奪えば、デスを回避できる。
+- **E — ロイヤリティープログラム：** 2発のケミテックミサイルを発射する。ミサイルに触れた味方にはシールドを付与し、敵にはダメージとスロウ効果を与える。
+- **R — 敵対的買収：** 化学物質の波を送り出し、触れた敵をバーサーク状態にする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Renata.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Renata` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Renata.png)

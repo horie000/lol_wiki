@@ -15,8 +15,11 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 ## 原典要約
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1|チャンピオンデータセット v16.18.1]] — 173件のチャンピオン情報を含むJSONデータの構造、内容、制約。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 28ロケールの配布物と、日本語のパッシブ・4スキル詳細の統合範囲、制約。
 
 ## エンティティ
+
+### チャンピオン（173件）
 
 - [[wiki/entities/ivern|アイバーン]] — 豊緑の神秘。役割：Support・Mage。
 - [[wiki/entities/akali|アカリ]] — 主なき暗殺者。役割：Assassin。
@@ -191,10 +194,984 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/entities/vayne|ヴェイン]] — ナイトハンター。役割：Marksman・Assassin。
 - [[wiki/entities/vex|ヴェックス]] — 終わりなき憂鬱。役割：Mage。
 - [[wiki/entities/velkoz|ヴェル＝コズ]] — ヴォイドの瞳。役割：Mage・Support。
+### アイテム（868件）
+
+- [[wiki/entities/items/item-1038|B. F. ソード]] — Data Dragon v16.18.1のアイテム（ID: `1038`）の日本語レコード。
+- [[wiki/entities/items/item-221038|B. F. ソード]] — Data Dragon v16.18.1のアイテム（ID: `221038`）の日本語レコード。
+- [[wiki/entities/items/item-771038|B. F. ソード]] — Data Dragon v16.18.1のアイテム（ID: `771038`）の日本語レコード。
+- [[wiki/entities/items/item-9280|OwO ブラスター]] — Data Dragon v16.18.1のアイテム（ID: `9280`）の日本語レコード。
+- [[wiki/entities/items/item-773174|Shusheiのマナジョッキ]] — Data Dragon v16.18.1のアイテム（ID: `773174`）の日本語レコード。
+- [[wiki/entities/items/item-9187|T.I.B.B.E.R.S]] — Data Dragon v16.18.1のアイテム（ID: `9187`）の日本語レコード。
+- [[wiki/entities/items/item-9287|T.I.B.B.E.R.S (B.E.E.Gエディション)]] — Data Dragon v16.18.1のアイテム（ID: `9287`）の日本語レコード。
+- [[wiki/entities/items/item-9180|UwU ブラスター]] — Data Dragon v16.18.1のアイテム（ID: `9180`）の日本語レコード。
+- [[wiki/entities/items/item-9272|YuumiBot_Final_FINAL]] — Data Dragon v16.18.1のアイテム（ID: `9272`）の日本語レコード。
+- [[wiki/entities/items/item-3400|お前の取り分]] — Data Dragon v16.18.1のアイテム（ID: `3400`）の日本語レコード。
+- [[wiki/entities/items/item-2422|ちょっとだけ魔法がかった靴]] — Data Dragon v16.18.1のアイテム（ID: `2422`）の日本語レコード。
+- [[wiki/entities/items/item-9300|にゃおにゃお]] — Data Dragon v16.18.1のアイテム（ID: `9300`）の日本語レコード。
+- [[wiki/entities/items/item-2138|アイアン エリクサー]] — Data Dragon v16.18.1のアイテム（ID: `2138`）の日本語レコード。
+- [[wiki/entities/items/item-6029|アイアンスパイク ウィップ]] — Data Dragon v16.18.1のアイテム（ID: `6029`）の日本語レコード。
+- [[wiki/entities/items/item-223158|アイオニア ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `223158`）の日本語レコード。
+- [[wiki/entities/items/item-3158|アイオニア ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3158`）の日本語レコード。
+- [[wiki/entities/items/item-773158|アイオニア ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `773158`）の日本語レコード。
+- [[wiki/entities/items/item-773178|アイオニック スパーク]] — Data Dragon v16.18.1のアイテム（ID: `773178`）の日本語レコード。
+- [[wiki/entities/items/item-9193|アイスブラスト アーマー]] — Data Dragon v16.18.1のアイテム（ID: `9193`）の日本語レコード。
+- [[wiki/entities/items/item-226662|アイスボーン ガントレット]] — Data Dragon v16.18.1のアイテム（ID: `226662`）の日本語レコード。
+- [[wiki/entities/items/item-6662|アイスボーン ガントレット]] — Data Dragon v16.18.1のアイテム（ID: `6662`）の日本語レコード。
+- [[wiki/entities/items/item-773025|アイスボーン ガントレット]] — Data Dragon v16.18.1のアイテム（ID: `773025`）の日本語レコード。
+- [[wiki/entities/items/item-2008|アイテム（ID: 2008）]] — Data Dragon v16.18.1のアイテム（ID: `2008`）の日本語レコード。
+- [[wiki/entities/items/item-226660|アイテム（ID: 226660）]] — Data Dragon v16.18.1のアイテム（ID: `226660`）の日本語レコード。
+- [[wiki/entities/items/item-772139|アイテム（ID: 772139）]] — Data Dragon v16.18.1のアイテム（ID: `772139`）の日本語レコード。
+- [[wiki/entities/items/item-772140|アイテム（ID: 772140）]] — Data Dragon v16.18.1のアイテム（ID: `772140`）の日本語レコード。
+- [[wiki/entities/items/item-226696|アクシオム アーク]] — Data Dragon v16.18.1のアイテム（ID: `226696`）の日本語レコード。
+- [[wiki/entities/items/item-6696|アクシオム アーク]] — Data Dragon v16.18.1のアイテム（ID: `6696`）の日本語レコード。
+- [[wiki/entities/items/item-222522|アクチュアライザー]] — Data Dragon v16.18.1のアイテム（ID: `222522`）の日本語レコード。
+- [[wiki/entities/items/item-2522|アクチュアライザー]] — Data Dragon v16.18.1のアイテム（ID: `2522`）の日本語レコード。
+- [[wiki/entities/items/item-1018|アジリティ クローク]] — Data Dragon v16.18.1のアイテム（ID: `1018`）の日本語レコード。
+- [[wiki/entities/items/item-771018|アジリティ クローク]] — Data Dragon v16.18.1のアイテム（ID: `771018`）の日本語レコード。
+- [[wiki/entities/items/item-228004|アダプティブ ヘルム]] — Data Dragon v16.18.1のアイテム（ID: `228004`）の日本語レコード。
+- [[wiki/entities/items/item-223039|アトマの報い]] — Data Dragon v16.18.1のアイテム（ID: `223039`）の日本語レコード。
+- [[wiki/entities/items/item-3039|アトマの報い]] — Data Dragon v16.18.1のアイテム（ID: `3039`）の日本語レコード。
+- [[wiki/entities/items/item-663039|アトマの報い]] — Data Dragon v16.18.1のアイテム（ID: `663039`）の日本語レコード。
+- [[wiki/entities/items/item-9178|アナイアレーター]] — Data Dragon v16.18.1のアイテム（ID: `9178`）の日本語レコード。
+- [[wiki/entities/items/item-228001|アナセマ チェイン]] — Data Dragon v16.18.1のアイテム（ID: `228001`）の日本語レコード。
+- [[wiki/entities/items/item-8001|アナセマ チェイン]] — Data Dragon v16.18.1のアイテム（ID: `8001`）の日本語レコード。
+- [[wiki/entities/items/item-9402|アニマ エコー]] — Data Dragon v16.18.1のアイテム（ID: `9402`）の日本語レコード。
+- [[wiki/entities/items/item-9188|アニマイン]] — Data Dragon v16.18.1のアイテム（ID: `9188`）の日本語レコード。
+- [[wiki/entities/items/item-9278|アニマポカリプス]] — Data Dragon v16.18.1のアイテム（ID: `9278`）の日本語レコード。
+- [[wiki/entities/items/item-773093|アバライス ブレード]] — Data Dragon v16.18.1のアイテム（ID: `773093`）の日本語レコード。
+- [[wiki/entities/items/item-228020|アビサル マスク]] — Data Dragon v16.18.1のアイテム（ID: `228020`）の日本語レコード。
+- [[wiki/entities/items/item-328020|アビサル マスク]] — Data Dragon v16.18.1のアイテム（ID: `328020`）の日本語レコード。
+- [[wiki/entities/items/item-8020|アビサル マスク]] — Data Dragon v16.18.1のアイテム（ID: `8020`）の日本語レコード。
+- [[wiki/entities/items/item-773001|アビサルセプター]] — Data Dragon v16.18.1のアイテム（ID: `773001`）の日本語レコード。
+- [[wiki/entities/items/item-1508|アンチタワー ソックス]] — Data Dragon v16.18.1のアイテム（ID: `1508`）の日本語レコード。
+- [[wiki/entities/items/item-3179|アンブラル グレイブ]] — Data Dragon v16.18.1のアイテム（ID: `3179`）の日本語レコード。
+- [[wiki/entities/items/item-223003|アークエンジェル スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `223003`）の日本語レコード。
+- [[wiki/entities/items/item-3003|アークエンジェル スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `3003`）の日本語レコード。
+- [[wiki/entities/items/item-323003|アークエンジェル スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `323003`）の日本語レコード。
+- [[wiki/entities/items/item-773003|アークエンジェル スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `773003`）の日本語レコード。
+- [[wiki/entities/items/item-3348|アーケイン スイーパー]] — Data Dragon v16.18.1のアイテム（ID: `3348`）の日本語レコード。
+- [[wiki/entities/items/item-223504|アーデント センサー]] — Data Dragon v16.18.1のアイテム（ID: `223504`）の日本語レコード。
+- [[wiki/entities/items/item-323504|アーデント センサー]] — Data Dragon v16.18.1のアイテム（ID: `323504`）の日本語レコード。
+- [[wiki/entities/items/item-3504|アーデント センサー]] — Data Dragon v16.18.1のアイテム（ID: `3504`）の日本語レコード。
+- [[wiki/entities/items/item-773504|アーデント センサー]] — Data Dragon v16.18.1のアイテム（ID: `773504`）の日本語レコード。
+- [[wiki/entities/items/item-773340|イエロートリンケット]] — Data Dragon v16.18.1のアイテム（ID: `773340`）の日本語レコード。
+- [[wiki/entities/items/item-226673|イモータル シールドボウ]] — Data Dragon v16.18.1のアイテム（ID: `226673`）の日本語レコード。
+- [[wiki/entities/items/item-6673|イモータル シールドボウ]] — Data Dragon v16.18.1のアイテム（ID: `6673`）の日本語レコード。
+- [[wiki/entities/items/item-223031|インフィニティ エッジ]] — Data Dragon v16.18.1のアイテム（ID: `223031`）の日本語レコード。
+- [[wiki/entities/items/item-3031|インフィニティ エッジ]] — Data Dragon v16.18.1のアイテム（ID: `3031`）の日本語レコード。
+- [[wiki/entities/items/item-773031|インフィニティ エッジ]] — Data Dragon v16.18.1のアイテム（ID: `773031`）の日本語レコード。
+- [[wiki/entities/items/item-223105|イージスの盾]] — Data Dragon v16.18.1のアイテム（ID: `223105`）の日本語レコード。
+- [[wiki/entities/items/item-3105|イージスの盾]] — Data Dragon v16.18.1のアイテム（ID: `3105`）の日本語レコード。
+- [[wiki/entities/items/item-773105|イージスの盾]] — Data Dragon v16.18.1のアイテム（ID: `773105`）の日本語レコード。
+- [[wiki/entities/items/item-223001|イーブンシュラウド]] — Data Dragon v16.18.1のアイテム（ID: `223001`）の日本語レコード。
+- [[wiki/entities/items/item-3001|イーブンシュラウド]] — Data Dragon v16.18.1のアイテム（ID: `3001`）の日本語レコード。
+- [[wiki/entities/items/item-223091|ウィッツ エンド]] — Data Dragon v16.18.1のアイテム（ID: `223091`）の日本語レコード。
+- [[wiki/entities/items/item-3091|ウィッツ エンド]] — Data Dragon v16.18.1のアイテム（ID: `3091`）の日本語レコード。
+- [[wiki/entities/items/item-773091|ウィッツ エンド]] — Data Dragon v16.18.1のアイテム（ID: `773091`）の日本語レコード。
+- [[wiki/entities/items/item-773152|ウィル・オブ・ザ・エンシェント]] — Data Dragon v16.18.1のアイテム（ID: `773152`）の日本語レコード。
+- [[wiki/entities/items/item-9306|ウィングダガー]] — Data Dragon v16.18.1のアイテム（ID: `9306`）の日本語レコード。
+- [[wiki/entities/items/item-4638|ウォッチフル ワードストーン]] — Data Dragon v16.18.1のアイテム（ID: `4638`）の日本語レコード。
+- [[wiki/entities/items/item-226668|ウルトラ ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `226668`）の日本語レコード。
+- [[wiki/entities/items/item-228002|ウーグレット ウィッチキャップ]] — Data Dragon v16.18.1のアイテム（ID: `228002`）の日本語レコード。
+- [[wiki/entities/items/item-3123|エクスキューショナー コーリング]] — Data Dragon v16.18.1のアイテム（ID: `3123`）の日本語レコード。
+- [[wiki/entities/items/item-773123|エクスキューショナー コーリング]] — Data Dragon v16.18.1のアイテム（ID: `773123`）の日本語レコード。
+- [[wiki/entities/items/item-9190|エコー バットブレード]] — Data Dragon v16.18.1のアイテム（ID: `9190`）の日本語レコード。
+- [[wiki/entities/items/item-773517|エッグノッグ]] — Data Dragon v16.18.1のアイテム（ID: `773517`）の日本語レコード。
+- [[wiki/entities/items/item-223508|エッセンス リーバー]] — Data Dragon v16.18.1のアイテム（ID: `223508`）の日本語レコード。
+- [[wiki/entities/items/item-3508|エッセンス リーバー]] — Data Dragon v16.18.1のアイテム（ID: `3508`）の日本語レコード。
+- [[wiki/entities/items/item-226656|エバーフロスト]] — Data Dragon v16.18.1のアイテム（ID: `226656`）の日本語レコード。
+- [[wiki/entities/items/item-446656|エバーフロスト]] — Data Dragon v16.18.1のアイテム（ID: `446656`）の日本語レコード。
+- [[wiki/entities/items/item-6656|エバーフロスト]] — Data Dragon v16.18.1のアイテム（ID: `6656`）の日本語レコード。
+- [[wiki/entities/items/item-443063|エリーサの奇跡]] — Data Dragon v16.18.1のアイテム（ID: `443063`）の日本語レコード。
+- [[wiki/entities/items/item-773173|エリーサの奇跡]] — Data Dragon v16.18.1のアイテム（ID: `773173`）の日本語レコード。
+- [[wiki/entities/items/item-773209|エルダーリザードの魂]] — Data Dragon v16.18.1のアイテム（ID: `773209`）の日本語レコード。
+- [[wiki/entities/items/item-773207|エンシェントゴーレムの魂]] — Data Dragon v16.18.1のアイテム（ID: `773207`）の日本語レコード。
+- [[wiki/entities/items/item-443061|エントロピーの力]] — Data Dragon v16.18.1のアイテム（ID: `443061`）の日本語レコード。
+- [[wiki/entities/items/item-3113|エーテル ウィスプ]] — Data Dragon v16.18.1のアイテム（ID: `3113`）の日本語レコード。
+- [[wiki/entities/items/item-773141|オカルト ソード]] — Data Dragon v16.18.1のアイテム（ID: `773141`）の日本語レコード。
+- [[wiki/entities/items/item-1040|オブシディアン エッジ]] — Data Dragon v16.18.1のアイテム（ID: `1040`）の日本語レコード。
+- [[wiki/entities/items/item-228005|オブシディアン クリーバー]] — Data Dragon v16.18.1のアイテム（ID: `228005`）の日本語レコード。
+- [[wiki/entities/items/item-226701|オポチュニティー]] — Data Dragon v16.18.1のアイテム（ID: `226701`）の日本語レコード。
+- [[wiki/entities/items/item-6701|オポチュニティー]] — Data Dragon v16.18.1のアイテム（ID: `6701`）の日本語レコード。
+- [[wiki/entities/items/item-772042|オラクル エリクサー]] — Data Dragon v16.18.1のアイテム（ID: `772042`）の日本語レコード。
+- [[wiki/entities/items/item-3364|オラクル レンズ]] — Data Dragon v16.18.1のアイテム（ID: `3364`）の日本語レコード。
+- [[wiki/entities/items/item-2147|オーグメントレベル]] — Data Dragon v16.18.1のアイテム（ID: `2147`）の日本語レコード。
+- [[wiki/entities/items/item-1507|オーバーチャージ]] — Data Dragon v16.18.1のアイテム（ID: `1507`）の日本語レコード。
+- [[wiki/entities/items/item-1523|オーバーチャージ]] — Data Dragon v16.18.1のアイテム（ID: `1523`）の日本語レコード。
+- [[wiki/entities/items/item-1520|オーバーチャージHA]] — Data Dragon v16.18.1のアイテム（ID: `1520`）の日本語レコード。
+- [[wiki/entities/items/item-773056|オームレッカー]] — Data Dragon v16.18.1のアイテム（ID: `773056`）の日本語レコード。
+- [[wiki/entities/items/item-773010|カタリストプロテクター]] — Data Dragon v16.18.1のアイテム（ID: `773010`）の日本語レコード。
+- [[wiki/entities/items/item-3599|カリスタの復讐の黒槍]] — Data Dragon v16.18.1のアイテム（ID: `3599`）の日本語レコード。
+- [[wiki/entities/items/item-3600|カリスタの復讐の黒槍]] — Data Dragon v16.18.1のアイテム（ID: `3600`）の日本語レコード。
+- [[wiki/entities/items/item-1083|カル]] — Data Dragon v16.18.1のアイテム（ID: `1083`）の日本語レコード。
+- [[wiki/entities/items/item-9307|ガイディング ヘックス]] — Data Dragon v16.18.1のアイテム（ID: `9307`）の日本語レコード。
+- [[wiki/entities/items/item-1509|ガスト]] — Data Dragon v16.18.1のアイテム（ID: `1509`）の日本語レコード。
+- [[wiki/entities/items/item-1102|ガストウォーカーの幼体]] — Data Dragon v16.18.1のアイテム（ID: `1102`）の日本語レコード。
+- [[wiki/entities/items/item-1106|ガストウォーカーの幼体]] — Data Dragon v16.18.1のアイテム（ID: `1106`）の日本語レコード。
+- [[wiki/entities/items/item-9176|ガトリング バニーガン]] — Data Dragon v16.18.1のアイテム（ID: `9176`）の日本語レコード。
+- [[wiki/entities/items/item-7050|ガングプランク プレースホルダー]] — Data Dragon v16.18.1のアイテム（ID: `7050`）の日本語レコード。
+- [[wiki/entities/items/item-3172|ガンメタル ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3172`）の日本語レコード。
+- [[wiki/entities/items/item-223193|ガーゴイル ストーンプレート]] — Data Dragon v16.18.1のアイテム（ID: `223193`）の日本語レコード。
+- [[wiki/entities/items/item-3193|ガーゴイル ストーンプレート]] — Data Dragon v16.18.1のアイテム（ID: `3193`）の日本語レコード。
+- [[wiki/entities/items/item-443193|ガーゴイル ストーンプレート]] — Data Dragon v16.18.1のアイテム（ID: `443193`）の日本語レコード。
+- [[wiki/entities/items/item-663193|ガーゴイル ストーンプレート]] — Data Dragon v16.18.1のアイテム（ID: `663193`）の日本語レコード。
+- [[wiki/entities/items/item-2049|ガーディアン アミュレット]] — Data Dragon v16.18.1のアイテム（ID: `2049`）の日本語レコード。
+- [[wiki/entities/items/item-223026|ガーディアン エンジェル]] — Data Dragon v16.18.1のアイテム（ID: `223026`）の日本語レコード。
+- [[wiki/entities/items/item-3026|ガーディアン エンジェル]] — Data Dragon v16.18.1のアイテム（ID: `3026`）の日本語レコード。
+- [[wiki/entities/items/item-773026|ガーディアン エンジェル]] — Data Dragon v16.18.1のアイテム（ID: `773026`）の日本語レコード。
+- [[wiki/entities/items/item-223112|ガーディアン オーブ]] — Data Dragon v16.18.1のアイテム（ID: `223112`）の日本語レコード。
+- [[wiki/entities/items/item-3112|ガーディアン オーブ]] — Data Dragon v16.18.1のアイテム（ID: `3112`）の日本語レコード。
+- [[wiki/entities/items/item-2050|ガーディアン シュラウド]] — Data Dragon v16.18.1のアイテム（ID: `2050`）の日本語レコード。
+- [[wiki/entities/items/item-223185|ガーディアン ダーク]] — Data Dragon v16.18.1のアイテム（ID: `223185`）の日本語レコード。
+- [[wiki/entities/items/item-223184|ガーディアン ハンマー]] — Data Dragon v16.18.1のアイテム（ID: `223184`）の日本語レコード。
+- [[wiki/entities/items/item-3184|ガーディアン ハンマー]] — Data Dragon v16.18.1のアイテム（ID: `3184`）の日本語レコード。
+- [[wiki/entities/items/item-223177|ガーディアン ブレード]] — Data Dragon v16.18.1のアイテム（ID: `223177`）の日本語レコード。
+- [[wiki/entities/items/item-3177|ガーディアン ブレード]] — Data Dragon v16.18.1のアイテム（ID: `3177`）の日本語レコード。
+- [[wiki/entities/items/item-2051|ガーディアン ホーン]] — Data Dragon v16.18.1のアイテム（ID: `2051`）の日本語レコード。
+- [[wiki/entities/items/item-222051|ガーディアン ホーン]] — Data Dragon v16.18.1のアイテム（ID: `222051`）の日本語レコード。
+- [[wiki/entities/items/item-9408|キャロット クラッシュ]] — Data Dragon v16.18.1のアイテム（ID: `9408`）の日本語レコード。
+- [[wiki/entities/items/item-773519|キャンディーコーン]] — Data Dragon v16.18.1のアイテム（ID: `773519`）の日本語レコード。
+- [[wiki/entities/items/item-2015|キルヒアイス シャード]] — Data Dragon v16.18.1のアイテム（ID: `2015`）の日本語レコード。
+- [[wiki/entities/items/item-223067|キンドルジェム]] — Data Dragon v16.18.1のアイテム（ID: `223067`）の日本語レコード。
+- [[wiki/entities/items/item-3067|キンドルジェム]] — Data Dragon v16.18.1のアイテム（ID: `3067`）の日本語レコード。
+- [[wiki/entities/items/item-773067|キンドルジェム]] — Data Dragon v16.18.1のアイテム（ID: `773067`）の日本語レコード。
+- [[wiki/entities/items/item-447101|ギャンブラーの剣]] — Data Dragon v16.18.1のアイテム（ID: `447101`）の日本語レコード。
+- [[wiki/entities/items/item-667101|ギャンブラーの剣]] — Data Dragon v16.18.1のアイテム（ID: `667101`）の日本語レコード。
+- [[wiki/entities/items/item-9283|クアッドブーメラン]] — Data Dragon v16.18.1のアイテム（ID: `9283`）の日本語レコード。
+- [[wiki/entities/items/item-3140|クイックシルバー サッシュ]] — Data Dragon v16.18.1のアイテム（ID: `3140`）の日本語レコード。
+- [[wiki/entities/items/item-773140|クイックシルバー サッシュ]] — Data Dragon v16.18.1のアイテム（ID: `773140`）の日本語レコード。
+- [[wiki/entities/items/item-1093|クエスト: サポート]] — Data Dragon v16.18.1のアイテム（ID: `1093`）の日本語レコード。
+- [[wiki/entities/items/item-1094|クエスト: ジャングル]] — Data Dragon v16.18.1のアイテム（ID: `1094`）の日本語レコード。
+- [[wiki/entities/items/item-1090|クエスト: トップ]] — Data Dragon v16.18.1のアイテム（ID: `1090`）の日本語レコード。
+- [[wiki/entities/items/item-1092|クエスト: ボット]] — Data Dragon v16.18.1のアイテム（ID: `1092`）の日本語レコード。
+- [[wiki/entities/items/item-1091|クエスト: ミッド]] — Data Dragon v16.18.1のアイテム（ID: `1091`）の日本語レコード。
+- [[wiki/entities/items/item-226672|クラーケン スレイヤー]] — Data Dragon v16.18.1のアイテム（ID: `226672`）の日本語レコード。
+- [[wiki/entities/items/item-6672|クラーケン スレイヤー]] — Data Dragon v16.18.1のアイテム（ID: `6672`）の日本語レコード。
+- [[wiki/entities/items/item-772041|クリスタル フラスコ]] — Data Dragon v16.18.1のアイテム（ID: `772041`）の日本語レコード。
+- [[wiki/entities/items/item-3801|クリスタル ブレーサー]] — Data Dragon v16.18.1のアイテム（ID: `3801`）の日本語レコード。
+- [[wiki/entities/items/item-223137|クリプトブルーム]] — Data Dragon v16.18.1のアイテム（ID: `223137`）の日本語レコード。
+- [[wiki/entities/items/item-3137|クリプトブルーム]] — Data Dragon v16.18.1のアイテム（ID: `3137`）の日本語レコード。
+- [[wiki/entities/items/item-1029|クロース アーマー]] — Data Dragon v16.18.1のアイテム（ID: `1029`）の日本語レコード。
+- [[wiki/entities/items/item-771029|クロース アーマー]] — Data Dragon v16.18.1のアイテム（ID: `771029`）の日本語レコード。
+- [[wiki/entities/items/item-223124|グインソー レイジブレード]] — Data Dragon v16.18.1のアイテム（ID: `223124`）の日本語レコード。
+- [[wiki/entities/items/item-3124|グインソー レイジブレード]] — Data Dragon v16.18.1のアイテム（ID: `3124`）の日本語レコード。
+- [[wiki/entities/items/item-773124|グインソー レイジブレード]] — Data Dragon v16.18.1のアイテム（ID: `773124`）の日本語レコード。
+- [[wiki/entities/items/item-223008|グラトナス ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `223008`）の日本語レコード。
+- [[wiki/entities/items/item-3008|グラトナス ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3008`）の日本語レコード。
+- [[wiki/entities/items/item-9405|グリズリーの打撃]] — Data Dragon v16.18.1のアイテム（ID: `9405`）の日本語レコード。
+- [[wiki/entities/items/item-773024|グレイシャル シュラウド]] — Data Dragon v16.18.1のアイテム（ID: `773024`）の日本語レコード。
+- [[wiki/entities/items/item-3024|グレイシャル バックラー]] — Data Dragon v16.18.1のアイテム（ID: `3024`）の日本語レコード。
+- [[wiki/entities/items/item-222504|ケイニック ルーケルン]] — Data Dragon v16.18.1のアイテム（ID: `222504`）の日本語レコード。
+- [[wiki/entities/items/item-2504|ケイニック ルーケルン]] — Data Dragon v16.18.1のアイテム（ID: `2504`）の日本語レコード。
+- [[wiki/entities/items/item-223011|ケミテック ピュートリファイアー]] — Data Dragon v16.18.1のアイテム（ID: `223011`）の日本語レコード。
+- [[wiki/entities/items/item-3011|ケミテック ピュートリファイアー]] — Data Dragon v16.18.1のアイテム（ID: `3011`）の日本語レコード。
+- [[wiki/entities/items/item-226609|ケミパンク チェーンソード]] — Data Dragon v16.18.1のアイテム（ID: `226609`）の日本語レコード。
+- [[wiki/entities/items/item-6609|ケミパンク チェーンソード]] — Data Dragon v16.18.1のアイテム（ID: `6609`）の日本語レコード。
+- [[wiki/entities/items/item-226671|ゲイルフォース]] — Data Dragon v16.18.1のアイテム（ID: `226671`）の日本語レコード。
+- [[wiki/entities/items/item-446671|ゲイルフォース]] — Data Dragon v16.18.1のアイテム（ID: `446671`）の日本語レコード。
+- [[wiki/entities/items/item-6671|ゲイルフォース]] — Data Dragon v16.18.1のアイテム（ID: `6671`）の日本語レコード。
+- [[wiki/entities/items/item-224629|コズミック ドライブ]] — Data Dragon v16.18.1のアイテム（ID: `224629`）の日本語レコード。
+- [[wiki/entities/items/item-4629|コズミック ドライブ]] — Data Dragon v16.18.1のアイテム（ID: `4629`）の日本語レコード。
+- [[wiki/entities/items/item-2033|コラプト ポーション]] — Data Dragon v16.18.1のアイテム（ID: `2033`）の日本語レコード。
+- [[wiki/entities/items/item-226676|コレクター]] — Data Dragon v16.18.1のアイテム（ID: `226676`）の日本語レコード。
+- [[wiki/entities/items/item-6676|コレクター]] — Data Dragon v16.18.1のアイテム（ID: `6676`）の日本語レコード。
+- [[wiki/entities/items/item-667666|コレクター]] — Data Dragon v16.18.1のアイテム（ID: `667666`）の日本語レコード。
+- [[wiki/entities/items/item-2055|コントロール ワード]] — Data Dragon v16.18.1のアイテム（ID: `2055`）の日本語レコード。
+- [[wiki/entities/items/item-3133|コールフィールド ウォーハンマー]] — Data Dragon v16.18.1のアイテム（ID: `3133`）の日本語レコード。
+- [[wiki/entities/items/item-226630|ゴアドリンカー]] — Data Dragon v16.18.1のアイテム（ID: `226630`）の日本語レコード。
+- [[wiki/entities/items/item-6630|ゴアドリンカー]] — Data Dragon v16.18.1のアイテム（ID: `6630`）の日本語レコード。
+- [[wiki/entities/items/item-223005|ゴーストクローラー]] — Data Dragon v16.18.1のアイテム（ID: `223005`）の日本語レコード。
+- [[wiki/entities/items/item-3005|ゴーストクローラー]] — Data Dragon v16.18.1のアイテム（ID: `3005`）の日本語レコード。
+- [[wiki/entities/items/item-220009|ゴールドのステータスの金床クーポン]] — Data Dragon v16.18.1のアイテム（ID: `220009`）の日本語レコード。
+- [[wiki/entities/items/item-9171|サイクロニック スライサー]] — Data Dragon v16.18.1のアイテム（ID: `9171`）の日本語レコード。
+- [[wiki/entities/items/item-772044|サイト ワード]] — Data Dragon v16.18.1のアイテム（ID: `772044`）の日本語レコード。
+- [[wiki/entities/items/item-772049|サイトストーン]] — Data Dragon v16.18.1のアイテム（ID: `772049`）の日本語レコード。
+- [[wiki/entities/items/item-9302|サウンドウェーブ]] — Data Dragon v16.18.1のアイテム（ID: `9302`）の日本語レコード。
+- [[wiki/entities/items/item-1027|サファイア クリスタル]] — Data Dragon v16.18.1のアイテム（ID: `1027`）の日本語レコード。
+- [[wiki/entities/items/item-771027|サファイア クリスタル]] — Data Dragon v16.18.1のアイテム（ID: `771027`）の日本語レコード。
+- [[wiki/entities/items/item-1203|サポートクエスト]] — Data Dragon v16.18.1のアイテム（ID: `1203`）の日本語レコード。
+- [[wiki/entities/items/item-1208|サポートクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1208`）の日本語レコード。
+- [[wiki/entities/items/item-228006|サングイン ブレード]] — Data Dragon v16.18.1のアイテム（ID: `228006`）の日本語レコード。
+- [[wiki/entities/items/item-226610|サンダード スカイ]] — Data Dragon v16.18.1のアイテム（ID: `226610`）の日本語レコード。
+- [[wiki/entities/items/item-6610|サンダード スカイ]] — Data Dragon v16.18.1のアイテム（ID: `6610`）の日本語レコード。
+- [[wiki/entities/items/item-223068|サンファイア イージス]] — Data Dragon v16.18.1のアイテム（ID: `223068`）の日本語レコード。
+- [[wiki/entities/items/item-3068|サンファイア イージス]] — Data Dragon v16.18.1のアイテム（ID: `3068`）の日本語レコード。
+- [[wiki/entities/items/item-773068|サンファイア ケープ]] — Data Dragon v16.18.1のアイテム（ID: `773068`）の日本語レコード。
+- [[wiki/entities/items/item-773073|サンファイア ケープのスタック]] — Data Dragon v16.18.1のアイテム（ID: `773073`）の日本語レコード。
+- [[wiki/entities/items/item-3871|ザズ＝ザクのレルムスパイク]] — Data Dragon v16.18.1のアイテム（ID: `3871`）の日本語レコード。
+- [[wiki/entities/items/item-224403|ザ・金のへら]] — Data Dragon v16.18.1のアイテム（ID: `224403`）の日本語レコード。
+- [[wiki/entities/items/item-4403|ザ・金のへら]] — Data Dragon v16.18.1のアイテム（ID: `4403`）の日本語レコード。
+- [[wiki/entities/items/item-664403|ザ・金のへら]] — Data Dragon v16.18.1のアイテム（ID: `664403`）の日本語レコード。
+- [[wiki/entities/items/item-224644|シャッタードクイーン クラウン]] — Data Dragon v16.18.1のアイテム（ID: `224644`）の日本語レコード。
+- [[wiki/entities/items/item-444644|シャッタードクイーン クラウン]] — Data Dragon v16.18.1のアイテム（ID: `444644`）の日本語レコード。
+- [[wiki/entities/items/item-4644|シャッタードクイーン クラウン]] — Data Dragon v16.18.1のアイテム（ID: `4644`）の日本語レコード。
+- [[wiki/entities/items/item-664644|シャッタードクイーン クラウン]] — Data Dragon v16.18.1のアイテム（ID: `664644`）の日本語レコード。
+- [[wiki/entities/items/item-224645|シャドウフレイム]] — Data Dragon v16.18.1のアイテム（ID: `224645`）の日本語レコード。
+- [[wiki/entities/items/item-4645|シャドウフレイム]] — Data Dragon v16.18.1のアイテム（ID: `4645`）の日本語レコード。
+- [[wiki/entities/items/item-220012|シャードブレード]] — Data Dragon v16.18.1のアイテム（ID: `220012`）の日本語レコード。
+- [[wiki/entities/items/item-773069|シュレリアの思念]] — Data Dragon v16.18.1のアイテム（ID: `773069`）の日本語レコード。
+- [[wiki/entities/items/item-2065|シュレリアの戦歌]] — Data Dragon v16.18.1のアイテム（ID: `2065`）の日本語レコード。
+- [[wiki/entities/items/item-222065|シュレリアの戦歌]] — Data Dragon v16.18.1のアイテム（ID: `222065`）の日本語レコード。
+- [[wiki/entities/items/item-322065|シュレリアの戦歌]] — Data Dragon v16.18.1のアイテム（ID: `322065`）の日本語レコード。
+- [[wiki/entities/items/item-223161|ショウジンの矛]] — Data Dragon v16.18.1のアイテム（ID: `223161`）の日本語レコード。
+- [[wiki/entities/items/item-3161|ショウジンの矛]] — Data Dragon v16.18.1のアイテム（ID: `3161`）の日本語レコード。
+- [[wiki/entities/items/item-226035|シルバーミアの夜明け]] — Data Dragon v16.18.1のアイテム（ID: `226035`）の日本語レコード。
+- [[wiki/entities/items/item-6035|シルバーミアの夜明け]] — Data Dragon v16.18.1のアイテム（ID: `6035`）の日本語レコード。
+- [[wiki/entities/items/item-3349|シンギュラリティ]] — Data Dragon v16.18.1のアイテム（ID: `3349`）の日本語レコード。
+- [[wiki/entities/items/item-3013|シンクロナイズド ソウル]] — Data Dragon v16.18.1のアイテム（ID: `3013`）の日本語レコード。
+- [[wiki/entities/items/item-2420|シーカー アームガード]] — Data Dragon v16.18.1のアイテム（ID: `2420`）の日本語レコード。
+- [[wiki/entities/items/item-773191|シーカー アームガード]] — Data Dragon v16.18.1のアイテム（ID: `773191`）の日本語レコード。
+- [[wiki/entities/items/item-9301|シールドスラム]] — Data Dragon v16.18.1のアイテム（ID: `9301`）の日本語レコード。
+- [[wiki/entities/items/item-223057|シーン]] — Data Dragon v16.18.1のアイテム（ID: `223057`）の日本語レコード。
+- [[wiki/entities/items/item-3057|シーン]] — Data Dragon v16.18.1のアイテム（ID: `3057`）の日本語レコード。
+- [[wiki/entities/items/item-773057|シーン]] — Data Dragon v16.18.1のアイテム（ID: `773057`）の日本語レコード。
+- [[wiki/entities/items/item-1011|ジャイアント ベルト]] — Data Dragon v16.18.1のアイテム（ID: `1011`）の日本語レコード。
+- [[wiki/entities/items/item-221011|ジャイアント ベルト]] — Data Dragon v16.18.1のアイテム（ID: `221011`）の日本語レコード。
+- [[wiki/entities/items/item-771011|ジャイアント ベルト]] — Data Dragon v16.18.1のアイテム（ID: `771011`）の日本語レコード。
+- [[wiki/entities/items/item-1204|ジャングルクエスト]] — Data Dragon v16.18.1のアイテム（ID: `1204`）の日本語レコード。
+- [[wiki/entities/items/item-1205|ジャングルクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1205`）の日本語レコード。
+- [[wiki/entities/items/item-1209|ジャングルクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1209`）の日本語レコード。
+- [[wiki/entities/items/item-1210|ジャングルクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1210`）の日本語レコード。
+- [[wiki/entities/items/item-1211|ジャングルクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1211`）の日本語レコード。
+- [[wiki/entities/items/item-1111|ジャーヴァンI世 ]] — Data Dragon v16.18.1のアイテム（ID: `1111`）の日本語レコード。
+- [[wiki/entities/items/item-9288|ジンクスのトライナマイト]] — Data Dragon v16.18.1のアイテム（ID: `9288`）の日本語レコード。
+- [[wiki/entities/items/item-223050|ジーク コンバージェンス]] — Data Dragon v16.18.1のアイテム（ID: `223050`）の日本語レコード。
+- [[wiki/entities/items/item-3050|ジーク コンバージェンス]] — Data Dragon v16.18.1のアイテム（ID: `3050`）の日本語レコード。
+- [[wiki/entities/items/item-323050|ジーク コンバージェンス]] — Data Dragon v16.18.1のアイテム（ID: `323050`）の日本語レコード。
+- [[wiki/entities/items/item-3086|ジール]] — Data Dragon v16.18.1のアイテム（ID: `3086`）の日本語レコード。
+- [[wiki/entities/items/item-773086|ジール]] — Data Dragon v16.18.1のアイテム（ID: `773086`）の日本語レコード。
+- [[wiki/entities/items/item-773512|ジ＝ロット ポータル]] — Data Dragon v16.18.1のアイテム（ID: `773512`）の日本語レコード。
+- [[wiki/entities/items/item-223009|スイフトネス ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `223009`）の日本語レコード。
+- [[wiki/entities/items/item-3009|スイフトネス ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3009`）の日本語レコード。
+- [[wiki/entities/items/item-773009|スイフトネス ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `773009`）の日本語レコード。
+- [[wiki/entities/items/item-3170|スイフトマーチ]] — Data Dragon v16.18.1のアイテム（ID: `3170`）の日本語レコード。
+- [[wiki/entities/items/item-2150|スキル エリクサー]] — Data Dragon v16.18.1のアイテム（ID: `2150`）の日本語レコード。
+- [[wiki/entities/items/item-1101|スコーチクロウの幼体]] — Data Dragon v16.18.1のアイテム（ID: `1101`）の日本語レコード。
+- [[wiki/entities/items/item-1107|スコーチクロウの幼体]] — Data Dragon v16.18.1のアイテム（ID: `1107`）の日本語レコード。
+- [[wiki/entities/items/item-223087|スタティック シヴ]] — Data Dragon v16.18.1のアイテム（ID: `223087`）の日本語レコード。
+- [[wiki/entities/items/item-3087|スタティック シヴ]] — Data Dragon v16.18.1のアイテム（ID: `3087`）の日本語レコード。
+- [[wiki/entities/items/item-773087|スタティック シヴ]] — Data Dragon v16.18.1のアイテム（ID: `773087`）の日本語レコード。
+- [[wiki/entities/items/item-9174|スタティック ソード]] — Data Dragon v16.18.1のアイテム（ID: `9174`）の日本語レコード。
+- [[wiki/entities/items/item-773050|スタークの熱情]] — Data Dragon v16.18.1のアイテム（ID: `773050`）の日本語レコード。
+- [[wiki/entities/items/item-4641|スターリング ワードストーン]] — Data Dragon v16.18.1のアイテム（ID: `4641`）の日本語レコード。
+- [[wiki/entities/items/item-2019|スチール シジル]] — Data Dragon v16.18.1のアイテム（ID: `2019`）の日本語レコード。
+- [[wiki/entities/items/item-773101|スティンガー]] — Data Dragon v16.18.1のアイテム（ID: `773101`）の日本語レコード。
+- [[wiki/entities/items/item-223053|ステラックの篭手]] — Data Dragon v16.18.1のアイテム（ID: `223053`）の日本語レコード。
+- [[wiki/entities/items/item-3053|ステラックの篭手]] — Data Dragon v16.18.1のアイテム（ID: `3053`）の日本語レコード。
+- [[wiki/entities/items/item-2056|ステルス ワード]] — Data Dragon v16.18.1のアイテム（ID: `2056`）の日本語レコード。
+- [[wiki/entities/items/item-3340|ステルス ワード]] — Data Dragon v16.18.1のアイテム（ID: `3340`）の日本語レコード。
+- [[wiki/entities/items/item-220000|ステータスボーナス]] — Data Dragon v16.18.1のアイテム（ID: `220000`）の日本語レコード。
+- [[wiki/entities/items/item-6032|ステータスボーナス]] — Data Dragon v16.18.1のアイテム（ID: `6032`）の日本語レコード。
+- [[wiki/entities/items/item-226631|ストライドブレイカー]] — Data Dragon v16.18.1のアイテム（ID: `226631`）の日本語レコード。
+- [[wiki/entities/items/item-6631|ストライドブレイカー]] — Data Dragon v16.18.1のアイテム（ID: `6631`）の日本語レコード。
+- [[wiki/entities/items/item-224646|ストームサージ]] — Data Dragon v16.18.1のアイテム（ID: `224646`）の日本語レコード。
+- [[wiki/entities/items/item-4646|ストームサージ]] — Data Dragon v16.18.1のアイテム（ID: `4646`）の日本語レコード。
+- [[wiki/entities/items/item-223095|ストームレイザー]] — Data Dragon v16.18.1のアイテム（ID: `223095`）の日本語レコード。
+- [[wiki/entities/items/item-3095|ストームレイザー]] — Data Dragon v16.18.1のアイテム（ID: `3095`）の日本語レコード。
+- [[wiki/entities/items/item-223065|スピリット ビサージュ]] — Data Dragon v16.18.1のアイテム（ID: `223065`）の日本語レコード。
+- [[wiki/entities/items/item-3065|スピリット ビサージュ]] — Data Dragon v16.18.1のアイテム（ID: `3065`）の日本語レコード。
+- [[wiki/entities/items/item-773065|スピリット ビサージュ]] — Data Dragon v16.18.1のアイテム（ID: `773065`）の日本語レコード。
+- [[wiki/entities/items/item-3211|スペクター カウル]] — Data Dragon v16.18.1のアイテム（ID: `3211`）の日本語レコード。
+- [[wiki/entities/items/item-773211|スペクター カウル]] — Data Dragon v16.18.1のアイテム（ID: `773211`）の日本語レコード。
+- [[wiki/entities/items/item-224004|スペクトラル カトラス]] — Data Dragon v16.18.1のアイテム（ID: `224004`）の日本語レコード。
+- [[wiki/entities/items/item-4004|スペクトラル カトラス]] — Data Dragon v16.18.1のアイテム（ID: `4004`）の日本語レコード。
+- [[wiki/entities/items/item-3850|スペルシーフ エッジ]] — Data Dragon v16.18.1のアイテム（ID: `3850`）の日本語レコード。
+- [[wiki/entities/items/item-1511|スーパー メカ アーマー]] — Data Dragon v16.18.1のアイテム（ID: `1511`）の日本語レコード。
+- [[wiki/entities/items/item-1512|スーパー メカ パワー フィールド]] — Data Dragon v16.18.1のアイテム（ID: `1512`）の日本語レコード。
+- [[wiki/entities/items/item-223040|セラフ エンブレイス]] — Data Dragon v16.18.1のアイテム（ID: `223040`）の日本語レコード。
+- [[wiki/entities/items/item-3040|セラフ エンブレイス]] — Data Dragon v16.18.1のアイテム（ID: `3040`）の日本語レコード。
+- [[wiki/entities/items/item-323040|セラフ エンブレイス]] — Data Dragon v16.18.1のアイテム（ID: `323040`）の日本語レコード。
+- [[wiki/entities/items/item-773040|セラフ エンブレイス]] — Data Dragon v16.18.1のアイテム（ID: `773040`）の日本語レコード。
+- [[wiki/entities/items/item-226694|セリルダの怨恨]] — Data Dragon v16.18.1のアイテム（ID: `226694`）の日本語レコード。
+- [[wiki/entities/items/item-6694|セリルダの怨恨]] — Data Dragon v16.18.1のアイテム（ID: `6694`）の日本語レコード。
+- [[wiki/entities/items/item-3134|セレイテッド ダーク]] — Data Dragon v16.18.1のアイテム（ID: `3134`）の日本語レコード。
+- [[wiki/entities/items/item-3869|セレスティアル オポジション]] — Data Dragon v16.18.1のアイテム（ID: `3869`）の日本語レコード。
+- [[wiki/entities/items/item-223172|ゼファー]] — Data Dragon v16.18.1のアイテム（ID: `223172`）の日本語レコード。
+- [[wiki/entities/items/item-663172|ゼファー]] — Data Dragon v16.18.1のアイテム（ID: `663172`）の日本語レコード。
+- [[wiki/entities/items/item-773172|ゼファー]] — Data Dragon v16.18.1のアイテム（ID: `773172`）の日本語レコード。
+- [[wiki/entities/items/item-223190|ソラリのロケット]] — Data Dragon v16.18.1のアイテム（ID: `223190`）の日本語レコード。
+- [[wiki/entities/items/item-3190|ソラリのロケット]] — Data Dragon v16.18.1のアイテム（ID: `3190`）の日本語レコード。
+- [[wiki/entities/items/item-323190|ソラリのロケット]] — Data Dragon v16.18.1のアイテム（ID: `323190`）の日本語レコード。
+- [[wiki/entities/items/item-773190|ソラリのロケット]] — Data Dragon v16.18.1のアイテム（ID: `773190`）の日本語レコード。
+- [[wiki/entities/items/item-223020|ソーサラー シューズ]] — Data Dragon v16.18.1のアイテム（ID: `223020`）の日本語レコード。
+- [[wiki/entities/items/item-3020|ソーサラー シューズ]] — Data Dragon v16.18.1のアイテム（ID: `3020`）の日本語レコード。
+- [[wiki/entities/items/item-773020|ソーサラー シューズ]] — Data Dragon v16.18.1のアイテム（ID: `773020`）の日本語レコード。
+- [[wiki/entities/items/item-2139|ソーサリー エリクサー]] — Data Dragon v16.18.1のアイテム（ID: `2139`）の日本語レコード。
+- [[wiki/entities/items/item-223075|ソーンメイル]] — Data Dragon v16.18.1のアイテム（ID: `223075`）の日本語レコード。
+- [[wiki/entities/items/item-3075|ソーンメイル]] — Data Dragon v16.18.1のアイテム（ID: `3075`）の日本語レコード。
+- [[wiki/entities/items/item-323075|ソーンメイル]] — Data Dragon v16.18.1のアイテム（ID: `323075`）の日本語レコード。
+- [[wiki/entities/items/item-773075|ソーンメイル]] — Data Dragon v16.18.1のアイテム（ID: `773075`）の日本語レコード。
+- [[wiki/entities/items/item-223157|ゾーニャの砂時計]] — Data Dragon v16.18.1のアイテム（ID: `223157`）の日本語レコード。
+- [[wiki/entities/items/item-3157|ゾーニャの砂時計]] — Data Dragon v16.18.1のアイテム（ID: `3157`）の日本語レコード。
+- [[wiki/entities/items/item-773157|ゾーニャの砂時計]] — Data Dragon v16.18.1のアイテム（ID: `773157`）の日本語レコード。
+- [[wiki/entities/items/item-223748|タイタン ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `223748`）の日本語レコード。
+- [[wiki/entities/items/item-3748|タイタン ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `3748`）の日本語レコード。
+- [[wiki/entities/items/item-1522|タワー パワーアップ]] — Data Dragon v16.18.1のアイテム（ID: `1522`）の日本語レコード。
+- [[wiki/entities/items/item-1515|タワー プレート]] — Data Dragon v16.18.1のアイテム（ID: `1515`）の日本語レコード。
+- [[wiki/entities/items/item-3859|ターゴンの盾]] — Data Dragon v16.18.1のアイテム（ID: `3859`）の日本語レコード。
+- [[wiki/entities/items/item-443079|ターボ ケミタンク]] — Data Dragon v16.18.1のアイテム（ID: `443079`）の日本語レコード。
+- [[wiki/entities/items/item-447120|ダイヤモンドチップスピア]] — Data Dragon v16.18.1のアイテム（ID: `447120`）の日本語レコード。
+- [[wiki/entities/items/item-1042|ダガー]] — Data Dragon v16.18.1のアイテム（ID: `1042`）の日本語レコード。
+- [[wiki/entities/items/item-771042|ダガー]] — Data Dragon v16.18.1のアイテム（ID: `771042`）の日本語レコード。
+- [[wiki/entities/items/item-9276|ダブルバンバン砲]] — Data Dragon v16.18.1のアイテム（ID: `9276`）の日本語レコード。
+- [[wiki/entities/items/item-1082|ダーク シール]] — Data Dragon v16.18.1のアイテム（ID: `1082`）の日本語レコード。
+- [[wiki/entities/items/item-443054|ダークスティール タロン]] — Data Dragon v16.18.1のアイテム（ID: `443054`）の日本語レコード。
+- [[wiki/entities/items/item-1031|チェイン ベスト]] — Data Dragon v16.18.1のアイテム（ID: `1031`）の日本語レコード。
+- [[wiki/entities/items/item-221031|チェイン ベスト]] — Data Dragon v16.18.1のアイテム（ID: `221031`）の日本語レコード。
+- [[wiki/entities/items/item-771031|チェイン ベスト]] — Data Dragon v16.18.1のアイテム（ID: `771031`）の日本語レコード。
+- [[wiki/entities/items/item-3173|チェインレースド クラッシャー]] — Data Dragon v16.18.1のアイテム（ID: `3173`）の日本語レコード。
+- [[wiki/entities/items/item-773023|ツイン シャドウ]] — Data Dragon v16.18.1のアイテム（ID: `773023`）の日本語レコード。
+- [[wiki/entities/items/item-443080|ツインマスク]] — Data Dragon v16.18.1のアイテム（ID: `443080`）の日本語レコード。
+- [[wiki/entities/items/item-3077|ティアマット]] — Data Dragon v16.18.1のアイテム（ID: `3077`）の日本語レコード。
+- [[wiki/entities/items/item-773077|ティアマット]] — Data Dragon v16.18.1のアイテム（ID: `773077`）の日本語レコード。
+- [[wiki/entities/items/item-773518|ティーバッグ]] — Data Dragon v16.18.1のアイテム（ID: `773518`）の日本語レコード。
+- [[wiki/entities/items/item-223302|テルミヌス]] — Data Dragon v16.18.1のアイテム（ID: `223302`）の日本語レコード。
+- [[wiki/entities/items/item-3302|テルミヌス]] — Data Dragon v16.18.1のアイテム（ID: `3302`）の日本語レコード。
+- [[wiki/entities/items/item-9281|テンペスト ガントレット]] — Data Dragon v16.18.1のアイテム（ID: `9281`）の日本語レコード。
+- [[wiki/entities/items/item-226632|ディヴァイン サンダラー]] — Data Dragon v16.18.1のアイテム（ID: `226632`）の日本語レコード。
+- [[wiki/entities/items/item-446632|ディヴァイン サンダラー]] — Data Dragon v16.18.1のアイテム（ID: `446632`）の日本語レコード。
+- [[wiki/entities/items/item-6632|ディヴァイン サンダラー]] — Data Dragon v16.18.1のアイテム（ID: `6632`）の日本語レコード。
+- [[wiki/entities/items/item-447107|デキャピテーター]] — Data Dragon v16.18.1のアイテム（ID: `447107`）の日本語レコード。
+- [[wiki/entities/items/item-226333|デス ダンス]] — Data Dragon v16.18.1のアイテム（ID: `226333`）の日本語レコード。
+- [[wiki/entities/items/item-6333|デス ダンス]] — Data Dragon v16.18.1のアイテム（ID: `6333`）の日本語レコード。
+- [[wiki/entities/items/item-3128|デスファイア グラスプ]] — Data Dragon v16.18.1のアイテム（ID: `3128`）の日本語レコード。
+- [[wiki/entities/items/item-773128|デスファイア グラスプ]] — Data Dragon v16.18.1のアイテム（ID: `773128`）の日本語レコード。
+- [[wiki/entities/items/item-228003|デスブレード]] — Data Dragon v16.18.1のアイテム（ID: `228003`）の日本語レコード。
+- [[wiki/entities/items/item-223742|デッド マン プレート]] — Data Dragon v16.18.1のアイテム（ID: `223742`）の日本語レコード。
+- [[wiki/entities/items/item-3742|デッド マン プレート]] — Data Dragon v16.18.1のアイテム（ID: `3742`）の日本語レコード。
+- [[wiki/entities/items/item-1200|トップレーンクエスト]] — Data Dragon v16.18.1のアイテム（ID: `1200`）の日本語レコード。
+- [[wiki/entities/items/item-1222|トップレーンクエスト]] — Data Dragon v16.18.1のアイテム（ID: `1222`）の日本語レコード。
+- [[wiki/entities/items/item-1221|トップレーンクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1221`）の日本語レコード。
+- [[wiki/entities/items/item-223078|トリニティ フォース]] — Data Dragon v16.18.1のアイテム（ID: `223078`）の日本語レコード。
+- [[wiki/entities/items/item-3078|トリニティ フォース]] — Data Dragon v16.18.1のアイテム（ID: `3078`）の日本語レコード。
+- [[wiki/entities/items/item-773078|トリニティ フォース]] — Data Dragon v16.18.1のアイテム（ID: `773078`）の日本語レコード。
+- [[wiki/entities/items/item-447121|トワイライト・エッジ]] — Data Dragon v16.18.1のアイテム（ID: `447121`）の日本語レコード。
+- [[wiki/entities/items/item-2021|トンネル掘り]] — Data Dragon v16.18.1のアイテム（ID: `2021`）の日本語レコード。
+- [[wiki/entities/items/item-223036|ドミニク リガード]] — Data Dragon v16.18.1のアイテム（ID: `223036`）の日本語レコード。
+- [[wiki/entities/items/item-3036|ドミニク リガード]] — Data Dragon v16.18.1のアイテム（ID: `3036`）の日本語レコード。
+- [[wiki/entities/items/item-226691|ドラクサー ダスクブレード]] — Data Dragon v16.18.1のアイテム（ID: `226691`）の日本語レコード。
+- [[wiki/entities/items/item-446691|ドラクサー ダスクブレード]] — Data Dragon v16.18.1のアイテム（ID: `446691`）の日本語レコード。
+- [[wiki/entities/items/item-6691|ドラクサー ダスクブレード]] — Data Dragon v16.18.1のアイテム（ID: `6691`）の日本語レコード。
+- [[wiki/entities/items/item-447106|ドラゴンハート]] — Data Dragon v16.18.1のアイテム（ID: `447106`）の日本語レコード。
+- [[wiki/entities/items/item-1054|ドラン シールド]] — Data Dragon v16.18.1のアイテム（ID: `1054`）の日本語レコード。
+- [[wiki/entities/items/item-771054|ドラン シールド]] — Data Dragon v16.18.1のアイテム（ID: `771054`）の日本語レコード。
+- [[wiki/entities/items/item-1055|ドラン ブレード]] — Data Dragon v16.18.1のアイテム（ID: `1055`）の日本語レコード。
+- [[wiki/entities/items/item-771055|ドラン ブレード]] — Data Dragon v16.18.1のアイテム（ID: `771055`）の日本語レコード。
+- [[wiki/entities/items/item-1120|ドラン ヘルム]] — Data Dragon v16.18.1のアイテム（ID: `1120`）の日本語レコード。
+- [[wiki/entities/items/item-1086|ドラン ボウ]] — Data Dragon v16.18.1のアイテム（ID: `1086`）の日本語レコード。
+- [[wiki/entities/items/item-1056|ドラン リング]] — Data Dragon v16.18.1のアイテム（ID: `1056`）の日本語レコード。
+- [[wiki/entities/items/item-771056|ドラン リング]] — Data Dragon v16.18.1のアイテム（ID: `771056`）の日本語レコード。
+- [[wiki/entities/items/item-3870|ドリーム メーカー]] — Data Dragon v16.18.1のアイテム（ID: `3870`）の日本語レコード。
+- [[wiki/entities/items/item-226621|ドーンコア]] — Data Dragon v16.18.1のアイテム（ID: `226621`）の日本語レコード。
+- [[wiki/entities/items/item-326621|ドーンコア]] — Data Dragon v16.18.1のアイテム（ID: `326621`）の日本語レコード。
+- [[wiki/entities/items/item-6621|ドーンコア]] — Data Dragon v16.18.1のアイテム（ID: `6621`）の日本語レコード。
+- [[wiki/entities/items/item-223814|ナイト エッジ]] — Data Dragon v16.18.1のアイテム（ID: `223814`）の日本語レコード。
+- [[wiki/entities/items/item-3814|ナイト エッジ]] — Data Dragon v16.18.1のアイテム（ID: `3814`）の日本語レコード。
+- [[wiki/entities/items/item-224636|ナイト ハーベスター]] — Data Dragon v16.18.1のアイテム（ID: `224636`）の日本語レコード。
+- [[wiki/entities/items/item-444636|ナイト ハーベスター]] — Data Dragon v16.18.1のアイテム（ID: `444636`）の日本語レコード。
+- [[wiki/entities/items/item-4636|ナイト ハーベスター]] — Data Dragon v16.18.1のアイテム（ID: `4636`）の日本語レコード。
+- [[wiki/entities/items/item-223115|ナッシャー トゥース]] — Data Dragon v16.18.1のアイテム（ID: `223115`）の日本語レコード。
+- [[wiki/entities/items/item-3115|ナッシャー トゥース]] — Data Dragon v16.18.1のアイテム（ID: `3115`）の日本語レコード。
+- [[wiki/entities/items/item-773115|ナッシャー トゥース]] — Data Dragon v16.18.1のアイテム（ID: `773115`）の日本語レコード。
+- [[wiki/entities/items/item-226675|ナヴォリ フリッカーブレード]] — Data Dragon v16.18.1のアイテム（ID: `226675`）の日本語レコード。
+- [[wiki/entities/items/item-6675|ナヴォリ フリッカーブレード]] — Data Dragon v16.18.1のアイテム（ID: `6675`）の日本語レコード。
+- [[wiki/entities/items/item-1033|ヌルマジック マント]] — Data Dragon v16.18.1のアイテム（ID: `1033`）の日本語レコード。
+- [[wiki/entities/items/item-771033|ヌルマジック マント]] — Data Dragon v16.18.1のアイテム（ID: `771033`）の日本語レコード。
+- [[wiki/entities/items/item-6670|ヌーンクィヴァー]] — Data Dragon v16.18.1のアイテム（ID: `6670`）の日本語レコード。
+- [[wiki/entities/items/item-1057|ネガトロン クローク]] — Data Dragon v16.18.1のアイテム（ID: `1057`）の日本語レコード。
+- [[wiki/entities/items/item-221057|ネガトロン クローク]] — Data Dragon v16.18.1のアイテム（ID: `221057`）の日本語レコード。
+- [[wiki/entities/items/item-771057|ネガトロン クローク]] — Data Dragon v16.18.1のアイテム（ID: `771057`）の日本語レコード。
+- [[wiki/entities/items/item-443069|ハムストリンガー]] — Data Dragon v16.18.1のアイテム（ID: `443069`）の日本語レコード。
+- [[wiki/entities/items/item-223181|ハルブレイカー]] — Data Dragon v16.18.1のアイテム（ID: `223181`）の日本語レコード。
+- [[wiki/entities/items/item-3181|ハルブレイカー]] — Data Dragon v16.18.1のアイテム（ID: `3181`）の日本語レコード。
+- [[wiki/entities/items/item-771039|ハンター マチェット]] — Data Dragon v16.18.1のアイテム（ID: `771039`）の日本語レコード。
+- [[wiki/entities/items/item-3051|ハースバウンド アックス]] — Data Dragon v16.18.1のアイテム（ID: `3051`）の日本語レコード。
+- [[wiki/entities/items/item-2520|バスティオンブレイカー]] — Data Dragon v16.18.1のアイテム（ID: `2520`）の日本語レコード。
+- [[wiki/entities/items/item-9400|バトルキャット バラージ]] — Data Dragon v16.18.1のアイテム（ID: `9400`）の日本語レコード。
+- [[wiki/entities/items/item-9179|バトルバニー クロスボウ]] — Data Dragon v16.18.1のアイテム（ID: `9179`）の日本語レコード。
+- [[wiki/entities/items/item-9184|バニー メガブラスト]] — Data Dragon v16.18.1のアイテム（ID: `9184`）の日本語レコード。
+- [[wiki/entities/items/item-9279|バニープライム バリスタ]] — Data Dragon v16.18.1のアイテム（ID: `9279`）の日本語レコード。
+- [[wiki/entities/items/item-9308|バニーホップ]] — Data Dragon v16.18.1のアイテム（ID: `9308`）の日本語レコード。
+- [[wiki/entities/items/item-6660|バミ シンダー]] — Data Dragon v16.18.1のアイテム（ID: `6660`）の日本語レコード。
+- [[wiki/entities/items/item-223102|バンシー ヴェール]] — Data Dragon v16.18.1のアイテム（ID: `223102`）の日本語レコード。
+- [[wiki/entities/items/item-3102|バンシー ヴェール]] — Data Dragon v16.18.1のアイテム（ID: `3102`）の日本語レコード。
+- [[wiki/entities/items/item-773102|バンシー ヴェール]] — Data Dragon v16.18.1のアイテム（ID: `773102`）の日本語レコード。
+- [[wiki/entities/items/item-2163|バンドルのヘイストジュース]] — Data Dragon v16.18.1のアイテム（ID: `2163`）の日本語レコード。
+- [[wiki/entities/items/item-2162|バンドルの生命力のジュース]] — Data Dragon v16.18.1のアイテム（ID: `2162`）の日本語レコード。
+- [[wiki/entities/items/item-2161|バンドルの知力のジュース]] — Data Dragon v16.18.1のアイテム（ID: `2161`）の日本語レコード。
+- [[wiki/entities/items/item-4642|バンドルグラスの鏡]] — Data Dragon v16.18.1のアイテム（ID: `4642`）の日本語レコード。
+- [[wiki/entities/items/item-222524|バンドルパイプ]] — Data Dragon v16.18.1のアイテム（ID: `222524`）の日本語レコード。
+- [[wiki/entities/items/item-2524|バンドルパイプ]] — Data Dragon v16.18.1のアイテム（ID: `2524`）の日本語レコード。
+- [[wiki/entities/items/item-223006|バーサーカー ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `223006`）の日本語レコード。
+- [[wiki/entities/items/item-3006|バーサーカー ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3006`）の日本語レコード。
+- [[wiki/entities/items/item-773006|バーサーカー ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `773006`）の日本語レコード。
+- [[wiki/entities/items/item-447118|パイロマンサーのマント]] — Data Dragon v16.18.1のアイテム（ID: `447118`）の日本語レコード。
+- [[wiki/entities/items/item-3399|パーティーのおみやげ]] — Data Dragon v16.18.1のアイテム（ID: `3399`）の日本語レコード。
+- [[wiki/entities/items/item-550007|パーティーのおみやげ]] — Data Dragon v16.18.1のアイテム（ID: `550007`）の日本語レコード。
+- [[wiki/entities/items/item-773516|パーフェクト ヘクス コア]] — Data Dragon v16.18.1のアイテム（ID: `773516`）の日本語レコード。
+- [[wiki/entities/items/item-126697|ヒュブリス]] — Data Dragon v16.18.1のアイテム（ID: `126697`）の日本語レコード。
+- [[wiki/entities/items/item-226697|ヒュブリス]] — Data Dragon v16.18.1のアイテム（ID: `226697`）の日本語レコード。
+- [[wiki/entities/items/item-6697|ヒュブリス]] — Data Dragon v16.18.1のアイテム（ID: `6697`）の日本語レコード。
+- [[wiki/entities/items/item-772043|ビジョン ワード]] — Data Dragon v16.18.1のアイテム（ID: `772043`）の日本語レコード。
+- [[wiki/entities/items/item-4643|ビジラント ワードストーン]] — Data Dragon v16.18.1のアイテム（ID: `4643`）の日本語レコード。
+- [[wiki/entities/items/item-773144|ビルジウォーター カトラス]] — Data Dragon v16.18.1のアイテム（ID: `773144`）の日本語レコード。
+- [[wiki/entities/items/item-1037|ピッケル]] — Data Dragon v16.18.1のアイテム（ID: `1037`）の日本語レコード。
+- [[wiki/entities/items/item-771037|ピッケル]] — Data Dragon v16.18.1のアイテム（ID: `771037`）の日本語レコード。
+- [[wiki/entities/items/item-9303|ピロリースワイプ]] — Data Dragon v16.18.1のアイテム（ID: `9303`）の日本語レコード。
+- [[wiki/entities/items/item-9189|ファイナルシティ交通]] — Data Dragon v16.18.1のアイテム（ID: `9189`）の日本語レコード。
+- [[wiki/entities/items/item-9289|ファイナルシティ特急]] — Data Dragon v16.18.1のアイテム（ID: `9289`）の日本語レコード。
+- [[wiki/entities/items/item-223046|ファントム ダンサー]] — Data Dragon v16.18.1のアイテム（ID: `223046`）の日本語レコード。
+- [[wiki/entities/items/item-3046|ファントム ダンサー]] — Data Dragon v16.18.1のアイテム（ID: `3046`）の日本語レコード。
+- [[wiki/entities/items/item-773046|ファントム ダンサー]] — Data Dragon v16.18.1のアイテム（ID: `773046`）の日本語レコード。
+- [[wiki/entities/items/item-3363|ファーサイト オルタレーション]] — Data Dragon v16.18.1のアイテム（ID: `3363`）の日本語レコード。
+- [[wiki/entities/items/item-3044|ファージ]] — Data Dragon v16.18.1のアイテム（ID: `3044`）の日本語レコード。
+- [[wiki/entities/items/item-773044|ファージ]] — Data Dragon v16.18.1のアイテム（ID: `773044`）の日本語レコード。
+- [[wiki/entities/items/item-3108|フィンディッシュの古書]] — Data Dragon v16.18.1のアイテム（ID: `3108`）の日本語レコード。
+- [[wiki/entities/items/item-773108|フィンディッシュの古書]] — Data Dragon v16.18.1のアイテム（ID: `773108`）の日本語レコード。
+- [[wiki/entities/items/item-223121|フィンブルウィンター]] — Data Dragon v16.18.1のアイテム（ID: `223121`）の日本語レコード。
+- [[wiki/entities/items/item-3121|フィンブルウィンター]] — Data Dragon v16.18.1のアイテム（ID: `3121`）の日本語レコード。
+- [[wiki/entities/items/item-323121|フィンブルウィンター]] — Data Dragon v16.18.1のアイテム（ID: `323121`）の日本語レコード。
+- [[wiki/entities/items/item-222512|フィーンドハンターの矢]] — Data Dragon v16.18.1のアイテム（ID: `222512`）の日本語レコード。
+- [[wiki/entities/items/item-2512|フィーンドハンターの矢]] — Data Dragon v16.18.1のアイテム（ID: `2512`）の日本語レコード。
+- [[wiki/entities/items/item-1004|フェアリー チャーム]] — Data Dragon v16.18.1のアイテム（ID: `1004`）の日本語レコード。
+- [[wiki/entities/items/item-771004|フェアリー チャーム]] — Data Dragon v16.18.1のアイテム（ID: `771004`）の日本語レコード。
+- [[wiki/entities/items/item-3114|フォビドゥン アイドル]] — Data Dragon v16.18.1のアイテム（ID: `3114`）の日本語レコード。
+- [[wiki/entities/items/item-1510|フリーキッシュ ガスト]] — Data Dragon v16.18.1のアイテム（ID: `1510`）の日本語レコード。
+- [[wiki/entities/items/item-3851|フロストファング]] — Data Dragon v16.18.1のアイテム（ID: `3851`）の日本語レコード。
+- [[wiki/entities/items/item-226616|フロー ウォーター スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `226616`）の日本語レコード。
+- [[wiki/entities/items/item-326616|フロー ウォーター スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `326616`）の日本語レコード。
+- [[wiki/entities/items/item-6616|フロー ウォーター スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `6616`）の日本語レコード。
+- [[wiki/entities/items/item-223110|フローズン ハート]] — Data Dragon v16.18.1のアイテム（ID: `223110`）の日本語レコード。
+- [[wiki/entities/items/item-3110|フローズン ハート]] — Data Dragon v16.18.1のアイテム（ID: `3110`）の日本語レコード。
+- [[wiki/entities/items/item-323110|フローズン ハート]] — Data Dragon v16.18.1のアイテム（ID: `323110`）の日本語レコード。
+- [[wiki/entities/items/item-773110|フローズン ハート]] — Data Dragon v16.18.1のアイテム（ID: `773110`）の日本語レコード。
+- [[wiki/entities/items/item-4014|フローズン マレット]] — Data Dragon v16.18.1のアイテム（ID: `4014`）の日本語レコード。
+- [[wiki/entities/items/item-773022|フローズン マレット]] — Data Dragon v16.18.1のアイテム（ID: `773022`）の日本語レコード。
+- [[wiki/entities/items/item-1026|ブラスティング ワンド]] — Data Dragon v16.18.1のアイテム（ID: `1026`）の日本語レコード。
+- [[wiki/entities/items/item-221026|ブラスティング ワンド]] — Data Dragon v16.18.1のアイテム（ID: `221026`）の日本語レコード。
+- [[wiki/entities/items/item-771026|ブラスティング ワンド]] — Data Dragon v16.18.1のアイテム（ID: `771026`）の日本語レコード。
+- [[wiki/entities/items/item-223071|ブラック クリーバー]] — Data Dragon v16.18.1のアイテム（ID: `223071`）の日本語レコード。
+- [[wiki/entities/items/item-3071|ブラック クリーバー]] — Data Dragon v16.18.1のアイテム（ID: `3071`）の日本語レコード。
+- [[wiki/entities/items/item-773071|ブラック クリーバー]] — Data Dragon v16.18.1のアイテム（ID: `773071`）の日本語レコード。
+- [[wiki/entities/items/item-447122|ブラックホールガントレット]] — Data Dragon v16.18.1のアイテム（ID: `447122`）の日本語レコード。
+- [[wiki/entities/items/item-223072|ブラッドサースター]] — Data Dragon v16.18.1のアイテム（ID: `223072`）の日本語レコード。
+- [[wiki/entities/items/item-3072|ブラッドサースター]] — Data Dragon v16.18.1のアイテム（ID: `3072`）の日本語レコード。
+- [[wiki/entities/items/item-773072|ブラッドサースター]] — Data Dragon v16.18.1のアイテム（ID: `773072`）の日本語レコード。
+- [[wiki/entities/items/item-3877|ブラッドソング]] — Data Dragon v16.18.1のアイテム（ID: `3877`）の日本語レコード。
+- [[wiki/entities/items/item-4010|ブラッドレターの呪い]] — Data Dragon v16.18.1のアイテム（ID: `4010`）の日本語レコード。
+- [[wiki/entities/items/item-8010|ブラッドレターの呪い]] — Data Dragon v16.18.1のアイテム（ID: `8010`）の日本語レコード。
+- [[wiki/entities/items/item-3076|ブランブル ベスト]] — Data Dragon v16.18.1のアイテム（ID: `3076`）の日本語レコード。
+- [[wiki/entities/items/item-2020|ブルータライザー]] — Data Dragon v16.18.1のアイテム（ID: `2020`）の日本語レコード。
+- [[wiki/entities/items/item-773134|ブルータライザー]] — Data Dragon v16.18.1のアイテム（ID: `773134`）の日本語レコード。
+- [[wiki/entities/items/item-9183|ブレードブーメラン]] — Data Dragon v16.18.1のアイテム（ID: `9183`）の日本語レコード。
+- [[wiki/entities/items/item-1001|ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `1001`）の日本語レコード。
+- [[wiki/entities/items/item-771001|ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `771001`）の日本語レコード。
+- [[wiki/entities/items/item-9274|プランビス エレクトロカーバー]] — Data Dragon v16.18.1のアイテム（ID: `9274`）の日本語レコード。
+- [[wiki/entities/items/item-220010|プリズムのステータスのクーポン]] — Data Dragon v16.18.1のアイテム（ID: `220010`）の日本語レコード。
+- [[wiki/entities/items/item-220007|プリズムアイテム]] — Data Dragon v16.18.1のアイテム（ID: `220007`）の日本語レコード。
+- [[wiki/entities/items/item-223047|プレート スチールキャップ]] — Data Dragon v16.18.1のアイテム（ID: `223047`）の日本語レコード。
+- [[wiki/entities/items/item-3047|プレート スチールキャップ]] — Data Dragon v16.18.1のアイテム（ID: `3047`）の日本語レコード。
+- [[wiki/entities/items/item-773513|プロトタイプ ヘクス コア]] — Data Dragon v16.18.1のアイテム（ID: `773513`）の日本語レコード。
+- [[wiki/entities/items/item-222525|プロトプラズム ハーネス]] — Data Dragon v16.18.1のアイテム（ID: `222525`）の日本語レコード。
+- [[wiki/entities/items/item-2525|プロトプラズム ハーネス]] — Data Dragon v16.18.1のアイテム（ID: `2525`）の日本語レコード。
+- [[wiki/entities/items/item-226698|プロフェイン ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `226698`）の日本語レコード。
+- [[wiki/entities/items/item-6698|プロフェイン ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `6698`）の日本語レコード。
+- [[wiki/entities/items/item-226693|プローラー クロウ]] — Data Dragon v16.18.1のアイテム（ID: `226693`）の日本語レコード。
+- [[wiki/entities/items/item-446693|プローラー クロウ]] — Data Dragon v16.18.1のアイテム（ID: `446693`）の日本語レコード。
+- [[wiki/entities/items/item-6693|プローラー クロウ]] — Data Dragon v16.18.1のアイテム（ID: `6693`）の日本語レコード。
+- [[wiki/entities/items/item-2144|ヘイストジュース]] — Data Dragon v16.18.1のアイテム（ID: `2144`）の日本語レコード。
+- [[wiki/entities/items/item-773514|ヘクス コアMK-1]] — Data Dragon v16.18.1のアイテム（ID: `773514`）の日本語レコード。
+- [[wiki/entities/items/item-773515|ヘクス コアMK-2]] — Data Dragon v16.18.1のアイテム（ID: `773515`）の日本語レコード。
+- [[wiki/entities/items/item-222523|ヘクスオプティックC44]] — Data Dragon v16.18.1のアイテム（ID: `222523`）の日本語レコード。
+- [[wiki/entities/items/item-2523|ヘクスオプティックC44]] — Data Dragon v16.18.1のアイテム（ID: `2523`）の日本語レコード。
+- [[wiki/entities/items/item-3145|ヘクステック オルタネーター]] — Data Dragon v16.18.1のアイテム（ID: `3145`）の日本語レコード。
+- [[wiki/entities/items/item-223146|ヘクステック ガンブレード]] — Data Dragon v16.18.1のアイテム（ID: `223146`）の日本語レコード。
+- [[wiki/entities/items/item-3146|ヘクステック ガンブレード]] — Data Dragon v16.18.1のアイテム（ID: `3146`）の日本語レコード。
+- [[wiki/entities/items/item-663146|ヘクステック ガンブレード]] — Data Dragon v16.18.1のアイテム（ID: `663146`）の日本語レコード。
+- [[wiki/entities/items/item-773146|ヘクステック ガンブレード]] — Data Dragon v16.18.1のアイテム（ID: `773146`）の日本語レコード。
+- [[wiki/entities/items/item-773145|ヘクステック リボルバー]] — Data Dragon v16.18.1のアイテム（ID: `773145`）の日本語レコード。
+- [[wiki/entities/items/item-223152|ヘクステック ロケットベルト]] — Data Dragon v16.18.1のアイテム（ID: `223152`）の日本語レコード。
+- [[wiki/entities/items/item-3152|ヘクステック ロケットベルト]] — Data Dragon v16.18.1のアイテム（ID: `3152`）の日本語レコード。
+- [[wiki/entities/items/item-3155|ヘクスドリンカー]] — Data Dragon v16.18.1のアイテム（ID: `3155`）の日本語レコード。
+- [[wiki/entities/items/item-773155|ヘクスドリンカー]] — Data Dragon v16.18.1のアイテム（ID: `773155`）の日本語レコード。
+- [[wiki/entities/items/item-443081|ヘクスボルト・コンパニオン]] — Data Dragon v16.18.1のアイテム（ID: `443081`）の日本語レコード。
+- [[wiki/entities/items/item-1104|ヘラルドの瞳]] — Data Dragon v16.18.1のアイテム（ID: `1104`）の日本語レコード。
+- [[wiki/entities/items/item-3513|ヘラルドの瞳]] — Data Dragon v16.18.1のアイテム（ID: `3513`）の日本語レコード。
+- [[wiki/entities/items/item-226620|ヘリアの残響]] — Data Dragon v16.18.1のアイテム（ID: `226620`）の日本語レコード。
+- [[wiki/entities/items/item-326620|ヘリアの残響]] — Data Dragon v16.18.1のアイテム（ID: `326620`）の日本語レコード。
+- [[wiki/entities/items/item-6620|ヘリアの残響]] — Data Dragon v16.18.1のアイテム（ID: `6620`）の日本語レコード。
+- [[wiki/entities/items/item-9292|ベアフット ケムディスペンサー]] — Data Dragon v16.18.1のアイテム（ID: `9292`）の日本語レコード。
+- [[wiki/entities/items/item-663064|ベイガーの超越のタリスマン]] — Data Dragon v16.18.1のアイテム（ID: `663064`）の日本語レコード。
+- [[wiki/entities/items/item-9407|ホップアップ ヘックス]] — Data Dragon v16.18.1のアイテム（ID: `9407`）の日本語レコード。
+- [[wiki/entities/items/item-224628|ホライゾン フォーカス]] — Data Dragon v16.18.1のアイテム（ID: `224628`）の日本語レコード。
+- [[wiki/entities/items/item-4628|ホライゾン フォーカス]] — Data Dragon v16.18.1のアイテム（ID: `4628`）の日本語レコード。
+- [[wiki/entities/items/item-226664|ホロウ レディアンス]] — Data Dragon v16.18.1のアイテム（ID: `226664`）の日本語レコード。
+- [[wiki/entities/items/item-6664|ホロウ レディアンス]] — Data Dragon v16.18.1のアイテム（ID: `6664`）の日本語レコード。
+- [[wiki/entities/items/item-3857|ホワイトロックの肩鎧]] — Data Dragon v16.18.1のアイテム（ID: `3857`）の日本語レコード。
+- [[wiki/entities/items/item-1202|ボットレーンクエスト]] — Data Dragon v16.18.1のアイテム（ID: `1202`）の日本語レコード。
+- [[wiki/entities/items/item-1207|ボットレーンクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1207`）の日本語レコード。
+- [[wiki/entities/items/item-226699|ボルテイク サイクロソード]] — Data Dragon v16.18.1のアイテム（ID: `226699`）の日本語レコード。
+- [[wiki/entities/items/item-6699|ボルテイク サイクロソード]] — Data Dragon v16.18.1のアイテム（ID: `6699`）の日本語レコード。
+- [[wiki/entities/items/item-9181|ボルテックス グローブ]] — Data Dragon v16.18.1のアイテム（ID: `9181`）の日本語レコード。
+- [[wiki/entities/items/item-2052|ポロのおやつ]] — Data Dragon v16.18.1のアイテム（ID: `2052`）の日本語レコード。
+- [[wiki/entities/items/item-220013|ポロのおやつ]] — Data Dragon v16.18.1のアイテム（ID: `220013`）の日本語レコード。
+- [[wiki/entities/items/item-773109|マッドレッドの血爪]] — Data Dragon v16.18.1のアイテム（ID: `773109`）の日本語レコード。
+- [[wiki/entities/items/item-773106|マッドレッドの鉤爪]] — Data Dragon v16.18.1のアイテム（ID: `773106`）の日本語レコード。
+- [[wiki/entities/items/item-772004|マナ ポーション]] — Data Dragon v16.18.1のアイテム（ID: `772004`）の日本語レコード。
+- [[wiki/entities/items/item-223004|マナムネ]] — Data Dragon v16.18.1のアイテム（ID: `223004`）の日本語レコード。
+- [[wiki/entities/items/item-3004|マナムネ]] — Data Dragon v16.18.1のアイテム（ID: `3004`）の日本語レコード。
+- [[wiki/entities/items/item-323004|マナムネ]] — Data Dragon v16.18.1のアイテム（ID: `323004`）の日本語レコード。
+- [[wiki/entities/items/item-773004|マナムネ]] — Data Dragon v16.18.1のアイテム（ID: `773004`）の日本語レコード。
+- [[wiki/entities/items/item-773037|マナ操作の宝珠]] — Data Dragon v16.18.1のアイテム（ID: `773037`）の日本語レコード。
+- [[wiki/entities/items/item-223118|マリグナンス]] — Data Dragon v16.18.1のアイテム（ID: `223118`）の日本語レコード。
+- [[wiki/entities/items/item-3118|マリグナンス]] — Data Dragon v16.18.1のアイテム（ID: `3118`）の日本語レコード。
+- [[wiki/entities/items/item-228009|マルチツール]] — Data Dragon v16.18.1のアイテム（ID: `228009`）の日本語レコード。
+- [[wiki/entities/items/item-223156|マルモティウスの胃袋]] — Data Dragon v16.18.1のアイテム（ID: `223156`）の日本語レコード。
+- [[wiki/entities/items/item-3156|マルモティウスの胃袋]] — Data Dragon v16.18.1のアイテム（ID: `3156`）の日本語レコード。
+- [[wiki/entities/items/item-773156|マルモティウスの胃袋]] — Data Dragon v16.18.1のアイテム（ID: `773156`）の日本語レコード。
+- [[wiki/entities/items/item-223139|マーキュリアル シミター]] — Data Dragon v16.18.1のアイテム（ID: `223139`）の日本語レコード。
+- [[wiki/entities/items/item-3139|マーキュリアル シミター]] — Data Dragon v16.18.1のアイテム（ID: `3139`）の日本語レコード。
+- [[wiki/entities/items/item-773139|マーキュリアル シミター]] — Data Dragon v16.18.1のアイテム（ID: `773139`）の日本語レコード。
+- [[wiki/entities/items/item-223111|マーキュリー ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `223111`）の日本語レコード。
+- [[wiki/entities/items/item-3111|マーキュリー ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3111`）の日本語レコード。
+- [[wiki/entities/items/item-773111|マーキュリー ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `773111`）の日本語レコード。
+- [[wiki/entities/items/item-773222|ミカエルのるつぼ]] — Data Dragon v16.18.1のアイテム（ID: `773222`）の日本語レコード。
+- [[wiki/entities/items/item-223222|ミカエルの祝福]] — Data Dragon v16.18.1のアイテム（ID: `223222`）の日本語レコード。
+- [[wiki/entities/items/item-3222|ミカエルの祝福]] — Data Dragon v16.18.1のアイテム（ID: `3222`）の日本語レコード。
+- [[wiki/entities/items/item-323222|ミカエルの祝福]] — Data Dragon v16.18.1のアイテム（ID: `323222`）の日本語レコード。
+- [[wiki/entities/items/item-1201|ミッドレーンクエスト]] — Data Dragon v16.18.1のアイテム（ID: `1201`）の日本語レコード。
+- [[wiki/entities/items/item-1206|ミッドレーンクエストの報酬]] — Data Dragon v16.18.1のアイテム（ID: `1206`）の日本語レコード。
+- [[wiki/entities/items/item-2403|ミニオン吸収装置]] — Data Dragon v16.18.1のアイテム（ID: `2403`）の日本語レコード。
+- [[wiki/entities/items/item-447100|ミラージュ ブレード]] — Data Dragon v16.18.1のアイテム（ID: `447100`）の日本語レコード。
+- [[wiki/entities/items/item-1058|ムダニ デカイ ロッド]] — Data Dragon v16.18.1のアイテム（ID: `1058`）の日本語レコード。
+- [[wiki/entities/items/item-221058|ムダニ デカイ ロッド]] — Data Dragon v16.18.1のアイテム（ID: `221058`）の日本語レコード。
+- [[wiki/entities/items/item-771058|ムダニ デカイ ロッド]] — Data Dragon v16.18.1のアイテム（ID: `771058`）の日本語レコード。
+- [[wiki/entities/items/item-223042|ムラマナ]] — Data Dragon v16.18.1のアイテム（ID: `223042`）の日本語レコード。
+- [[wiki/entities/items/item-3042|ムラマナ]] — Data Dragon v16.18.1のアイテム（ID: `3042`）の日本語レコード。
+- [[wiki/entities/items/item-323042|ムラマナ]] — Data Dragon v16.18.1のアイテム（ID: `323042`）の日本語レコード。
+- [[wiki/entities/items/item-773042|ムラマナ]] — Data Dragon v16.18.1のアイテム（ID: `773042`）の日本語レコード。
+- [[wiki/entities/items/item-226617|ムーンストーンの再生]] — Data Dragon v16.18.1のアイテム（ID: `226617`）の日本語レコード。
+- [[wiki/entities/items/item-326617|ムーンストーンの再生]] — Data Dragon v16.18.1のアイテム（ID: `326617`）の日本語レコード。
+- [[wiki/entities/items/item-6617|ムーンストーンの再生]] — Data Dragon v16.18.1のアイテム（ID: `6617`）の日本語レコード。
+- [[wiki/entities/items/item-447110|ムーンフレア スペルブレード]] — Data Dragon v16.18.1のアイテム（ID: `447110`）の日本語レコード。
+- [[wiki/entities/items/item-3041|メジャイ ソウルスティーラー]] — Data Dragon v16.18.1のアイテム（ID: `3041`）の日本語レコード。
+- [[wiki/entities/items/item-773041|メジャイ ソウルスティーラー]] — Data Dragon v16.18.1のアイテム（ID: `773041`）の日本語レコード。
+- [[wiki/entities/items/item-1103|モスストンパーの幼体]] — Data Dragon v16.18.1のアイテム（ID: `1103`）の日本語レコード。
+- [[wiki/entities/items/item-1105|モスストンパーの幼体]] — Data Dragon v16.18.1のアイテム（ID: `1105`）の日本語レコード。
+- [[wiki/entities/items/item-3117|モビリティ ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3117`）の日本語レコード。
+- [[wiki/entities/items/item-773117|モビリティ ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `773117`）の日本語レコード。
+- [[wiki/entities/items/item-443058|モルテンストーン シールド]] — Data Dragon v16.18.1のアイテム（ID: `443058`）の日本語レコード。
+- [[wiki/entities/items/item-663058|モルテンストーン シールド]] — Data Dragon v16.18.1のアイテム（ID: `663058`）の日本語レコード。
+- [[wiki/entities/items/item-223165|モレロノミコン]] — Data Dragon v16.18.1のアイテム（ID: `223165`）の日本語レコード。
+- [[wiki/entities/items/item-3165|モレロノミコン]] — Data Dragon v16.18.1のアイテム（ID: `3165`）の日本語レコード。
+- [[wiki/entities/items/item-773165|モレロノミコン]] — Data Dragon v16.18.1のアイテム（ID: `773165`）の日本語レコード。
+- [[wiki/entities/items/item-223033|モータル リマインダー]] — Data Dragon v16.18.1のアイテム（ID: `223033`）の日本語レコード。
+- [[wiki/entities/items/item-3033|モータル リマインダー]] — Data Dragon v16.18.1のアイテム（ID: `3033`）の日本語レコード。
+- [[wiki/entities/items/item-223032|ユン・タル ワイルドアロー]] — Data Dragon v16.18.1のアイテム（ID: `223032`）の日本語レコード。
+- [[wiki/entities/items/item-3032|ユン・タル ワイルドアロー]] — Data Dragon v16.18.1のアイテム（ID: `3032`）の日本語レコード。
+- [[wiki/entities/items/item-9172|ユーミボット]] — Data Dragon v16.18.1のアイテム（ID: `9172`）の日本語レコード。
+- [[wiki/entities/items/item-6653|ライアンドリーの仮面]] — Data Dragon v16.18.1のアイテム（ID: `6653`）の日本語レコード。
+- [[wiki/entities/items/item-773151|ライアンドリーの仮面]] — Data Dragon v16.18.1のアイテム（ID: `773151`）の日本語レコード。
+- [[wiki/entities/items/item-226653|ライアンドリーの苦悶]] — Data Dragon v16.18.1のアイテム（ID: `226653`）の日本語レコード。
+- [[wiki/entities/items/item-9175|ライオネスの悲嘆]] — Data Dragon v16.18.1のアイテム（ID: `9175`）の日本語レコード。
+- [[wiki/entities/items/item-4003|ライフライン]] — Data Dragon v16.18.1のアイテム（ID: `4003`）の日本語レコード。
+- [[wiki/entities/items/item-3035|ラスト ウィスパー]] — Data Dragon v16.18.1のアイテム（ID: `3035`）の日本語レコード。
+- [[wiki/entities/items/item-773035|ラスト ウィスパー]] — Data Dragon v16.18.1のアイテム（ID: `773035`）の日本語レコード。
+- [[wiki/entities/items/item-6700|ラッコールの盾]] — Data Dragon v16.18.1のアイテム（ID: `6700`）の日本語レコード。
+- [[wiki/entities/items/item-223089|ラバドン デスキャップ]] — Data Dragon v16.18.1のアイテム（ID: `223089`）の日本語レコード。
+- [[wiki/entities/items/item-3089|ラバドン デスキャップ]] — Data Dragon v16.18.1のアイテム（ID: `3089`）の日本語レコード。
+- [[wiki/entities/items/item-773089|ラバドン デスキャップ]] — Data Dragon v16.18.1のアイテム（ID: `773089`）の日本語レコード。
+- [[wiki/entities/items/item-223094|ラピッド ファイアキャノン]] — Data Dragon v16.18.1のアイテム（ID: `223094`）の日本語レコード。
+- [[wiki/entities/items/item-3094|ラピッド ファイアキャノン]] — Data Dragon v16.18.1のアイテム（ID: `3094`）の日本語レコード。
+- [[wiki/entities/items/item-9284|ラピッド ラビット レインダウン]] — Data Dragon v16.18.1のアイテム（ID: `9284`）の日本語レコード。
+- [[wiki/entities/items/item-223143|ランデュイン オーメン]] — Data Dragon v16.18.1のアイテム（ID: `223143`）の日本語レコード。
+- [[wiki/entities/items/item-3143|ランデュイン オーメン]] — Data Dragon v16.18.1のアイテム（ID: `3143`）の日本語レコード。
+- [[wiki/entities/items/item-773143|ランデュイン オーメン]] — Data Dragon v16.18.1のアイテム（ID: `773143`）の日本語レコード。
+- [[wiki/entities/items/item-223074|ラヴァナス ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `223074`）の日本語レコード。
+- [[wiki/entities/items/item-3074|ラヴァナス ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `3074`）の日本語レコード。
+- [[wiki/entities/items/item-773074|ラヴァナス ハイドラ]] — Data Dragon v16.18.1のアイテム（ID: `773074`）の日本語レコード。
+- [[wiki/entities/items/item-2140|ラース エリクサー]] — Data Dragon v16.18.1のアイテム（ID: `2140`）の日本語レコード。
+- [[wiki/entities/items/item-1043|リカーブ ボウ]] — Data Dragon v16.18.1のアイテム（ID: `1043`）の日本語レコード。
+- [[wiki/entities/items/item-221043|リカーブ ボウ]] — Data Dragon v16.18.1のアイテム（ID: `221043`）の日本語レコード。
+- [[wiki/entities/items/item-771043|リカーブ ボウ]] — Data Dragon v16.18.1のアイテム（ID: `771043`）の日本語レコード。
+- [[wiki/entities/items/item-773154|リグルのランタン]] — Data Dragon v16.18.1のアイテム（ID: `773154`）の日本語レコード。
+- [[wiki/entities/items/item-2001|リコール]] — Data Dragon v16.18.1のアイテム（ID: `2001`）の日本語レコード。
+- [[wiki/entities/items/item-772001|リコール]] — Data Dragon v16.18.1のアイテム（ID: `772001`）の日本語レコード。
+- [[wiki/entities/items/item-2007|リコール無効]] — Data Dragon v16.18.1のアイテム（ID: `2007`）の日本語レコード。
+- [[wiki/entities/items/item-223100|リッチ ベイン]] — Data Dragon v16.18.1のアイテム（ID: `223100`）の日本語レコード。
+- [[wiki/entities/items/item-3100|リッチ ベイン]] — Data Dragon v16.18.1のアイテム（ID: `3100`）の日本語レコード。
+- [[wiki/entities/items/item-773100|リッチ ベイン]] — Data Dragon v16.18.1のアイテム（ID: `773100`）の日本語レコード。
+- [[wiki/entities/items/item-223107|リデンプション]] — Data Dragon v16.18.1のアイテム（ID: `223107`）の日本語レコード。
+- [[wiki/entities/items/item-3107|リデンプション]] — Data Dragon v16.18.1のアイテム（ID: `3107`）の日本語レコード。
+- [[wiki/entities/items/item-323107|リデンプション]] — Data Dragon v16.18.1のアイテム（ID: `323107`）の日本語レコード。
+- [[wiki/entities/items/item-224633|リフトメーカー]] — Data Dragon v16.18.1のアイテム（ID: `224633`）の日本語レコード。
+- [[wiki/entities/items/item-4633|リフトメーカー]] — Data Dragon v16.18.1のアイテム（ID: `4633`）の日本語レコード。
+- [[wiki/entities/items/item-773138|リヴァイアサン]] — Data Dragon v16.18.1のアイテム（ID: `773138`）の日本語レコード。
+- [[wiki/entities/items/item-4635|リーチング リア]] — Data Dragon v16.18.1のアイテム（ID: `4635`）の日本語レコード。
+- [[wiki/entities/items/item-443090|リーパーズ・トール]] — Data Dragon v16.18.1のアイテム（ID: `443090`）の日本語レコード。
+- [[wiki/entities/items/item-223116|リーライ クリスタル セプター]] — Data Dragon v16.18.1のアイテム（ID: `223116`）の日本語レコード。
+- [[wiki/entities/items/item-3116|リーライ クリスタル セプター]] — Data Dragon v16.18.1のアイテム（ID: `3116`）の日本語レコード。
+- [[wiki/entities/items/item-773116|リーライ クリスタル セプター]] — Data Dragon v16.18.1のアイテム（ID: `773116`）の日本語レコード。
+- [[wiki/entities/items/item-223153|ルインドキング ブレード]] — Data Dragon v16.18.1のアイテム（ID: `223153`）の日本語レコード。
+- [[wiki/entities/items/item-3153|ルインドキング ブレード]] — Data Dragon v16.18.1のアイテム（ID: `3153`）の日本語レコード。
+- [[wiki/entities/items/item-773153|ルインドキング ブレード]] — Data Dragon v16.18.1のアイテム（ID: `773153`）の日本語レコード。
+- [[wiki/entities/items/item-223085|ルナーン ハリケーン]] — Data Dragon v16.18.1のアイテム（ID: `223085`）の日本語レコード。
+- [[wiki/entities/items/item-3085|ルナーン ハリケーン]] — Data Dragon v16.18.1のアイテム（ID: `3085`）の日本語レコード。
+- [[wiki/entities/items/item-773085|ルナーン ハリケーン]] — Data Dragon v16.18.1のアイテム（ID: `773085`）の日本語レコード。
+- [[wiki/entities/items/item-1028|ルビー クリスタル]] — Data Dragon v16.18.1のアイテム（ID: `1028`）の日本語レコード。
+- [[wiki/entities/items/item-771028|ルビー クリスタル]] — Data Dragon v16.18.1のアイテム（ID: `771028`）の日本語レコード。
+- [[wiki/entities/items/item-772045|ルビー サイトストーン]] — Data Dragon v16.18.1のアイテム（ID: `772045`）の日本語レコード。
+- [[wiki/entities/items/item-226655|ルーデン エコー]] — Data Dragon v16.18.1のアイテム（ID: `226655`）の日本語レコード。
+- [[wiki/entities/items/item-6655|ルーデン エコー]] — Data Dragon v16.18.1のアイテム（ID: `6655`）の日本語レコード。
+- [[wiki/entities/items/item-3866|ルーニック コンパス]] — Data Dragon v16.18.1のアイテム（ID: `3866`）の日本語レコード。
+- [[wiki/entities/items/item-773107|ルーン ブルワーク]] — Data Dragon v16.18.1のアイテム（ID: `773107`）の日本語レコード。
+- [[wiki/entities/items/item-228008|ルーングレイブ]] — Data Dragon v16.18.1のアイテム（ID: `228008`）の日本語レコード。
+- [[wiki/entities/items/item-447108|ルーン職人]] — Data Dragon v16.18.1のアイテム（ID: `447108`）の日本語レコード。
+- [[wiki/entities/items/item-3855|ルーン鋼の肩当て]] — Data Dragon v16.18.1のアイテム（ID: `3855`）の日本語レコード。
+- [[wiki/entities/items/item-6677|レイジナイフ]] — Data Dragon v16.18.1のアイテム（ID: `6677`）の日本語レコード。
+- [[wiki/entities/items/item-6690|レクトリクス]] — Data Dragon v16.18.1のアイテム（ID: `6690`）の日本語レコード。
+- [[wiki/entities/items/item-220003|レジェンダリーアサシンアイテム]] — Data Dragon v16.18.1のアイテム（ID: `220003`）の日本語レコード。
+- [[wiki/entities/items/item-220006|レジェンダリーサポートアイテム]] — Data Dragon v16.18.1のアイテム（ID: `220006`）の日本語レコード。
+- [[wiki/entities/items/item-220005|レジェンダリータンクアイテム]] — Data Dragon v16.18.1のアイテム（ID: `220005`）の日本語レコード。
+- [[wiki/entities/items/item-220001|レジェンダリーファイターアイテム]] — Data Dragon v16.18.1のアイテム（ID: `220001`）の日本語レコード。
+- [[wiki/entities/items/item-220002|レジェンダリーマークスマンアイテム]] — Data Dragon v16.18.1のアイテム（ID: `220002`）の日本語レコード。
+- [[wiki/entities/items/item-220004|レジェンダリーメイジアイテム]] — Data Dragon v16.18.1のアイテム（ID: `220004`）の日本語レコード。
+- [[wiki/entities/items/item-447115|レジサイド]] — Data Dragon v16.18.1のアイテム（ID: `447115`）の日本語レコード。
+- [[wiki/entities/items/item-773348|レッドトリンケット]] — Data Dragon v16.18.1のアイテム（ID: `773348`）の日本語レコード。
+- [[wiki/entities/items/item-9173|レディアント フィールド]] — Data Dragon v16.18.1のアイテム（ID: `9173`）の日本語レコード。
+- [[wiki/entities/items/item-226667|レディアント ヴァーチュ]] — Data Dragon v16.18.1のアイテム（ID: `226667`）の日本語レコード。
+- [[wiki/entities/items/item-446667|レディアント ヴァーチュ]] — Data Dragon v16.18.1のアイテム（ID: `446667`）の日本語レコード。
+- [[wiki/entities/items/item-6667|レディアント ヴァーチュ]] — Data Dragon v16.18.1のアイテム（ID: `6667`）の日本語レコード。
+- [[wiki/entities/items/item-3858|レリック シールド]] — Data Dragon v16.18.1のアイテム（ID: `3858`）の日本語レコード。
+- [[wiki/entities/items/item-3802|ロスト チャプター]] — Data Dragon v16.18.1のアイテム（ID: `3802`）の日本語レコード。
+- [[wiki/entities/items/item-9168|ロックされた武器スロット]] — Data Dragon v16.18.1のアイテム（ID: `9168`）の日本語レコード。
+- [[wiki/entities/items/item-226657|ロッド オブ エイジス]] — Data Dragon v16.18.1のアイテム（ID: `226657`）の日本語レコード。
+- [[wiki/entities/items/item-326657|ロッド オブ エイジス]] — Data Dragon v16.18.1のアイテム（ID: `326657`）の日本語レコード。
+- [[wiki/entities/items/item-6657|ロッド オブ エイジス]] — Data Dragon v16.18.1のアイテム（ID: `6657`）の日本語レコード。
+- [[wiki/entities/items/item-773027|ロッド オブ エイジス]] — Data Dragon v16.18.1のアイテム（ID: `773027`）の日本語レコード。
+- [[wiki/entities/items/item-1036|ロング ソード]] — Data Dragon v16.18.1のアイテム（ID: `1036`）の日本語レコード。
+- [[wiki/entities/items/item-771036|ロング ソード]] — Data Dragon v16.18.1のアイテム（ID: `771036`）の日本語レコード。
+- [[wiki/entities/items/item-3082|ワーデン メイル]] — Data Dragon v16.18.1のアイテム（ID: `3082`）の日本語レコード。
+- [[wiki/entities/items/item-773082|ワーデン メイル]] — Data Dragon v16.18.1のアイテム（ID: `773082`）の日本語レコード。
+- [[wiki/entities/items/item-3083|ワーモグ アーマー]] — Data Dragon v16.18.1のアイテム（ID: `3083`）の日本語レコード。
+- [[wiki/entities/items/item-443083|ワーモグ アーマー]] — Data Dragon v16.18.1のアイテム（ID: `443083`）の日本語レコード。
+- [[wiki/entities/items/item-773083|ワーモグ アーマー]] — Data Dragon v16.18.1のアイテム（ID: `773083`）の日本語レコード。
+- [[wiki/entities/items/item-3865|ワールド アトラス]] — Data Dragon v16.18.1のアイテム（ID: `3865`）の日本語レコード。
+- [[wiki/entities/items/item-1504|ヴァンガード]] — Data Dragon v16.18.1のアイテム（ID: `1504`）の日本語レコード。
+- [[wiki/entities/items/item-1053|ヴァンパイア セプター]] — Data Dragon v16.18.1のアイテム（ID: `1053`）の日本語レコード。
+- [[wiki/entities/items/item-221053|ヴァンパイア セプター]] — Data Dragon v16.18.1のアイテム（ID: `221053`）の日本語レコード。
+- [[wiki/entities/items/item-771053|ヴァンパイア セプター]] — Data Dragon v16.18.1のアイテム（ID: `771053`）の日本語レコード。
+- [[wiki/entities/items/item-4632|ヴァーダント バリア]] — Data Dragon v16.18.1のアイテム（ID: `4632`）の日本語レコード。
+- [[wiki/entities/items/item-9290|ヴェインのクロマブレード]] — Data Dragon v16.18.1のアイテム（ID: `9290`）の日本語レコード。
+- [[wiki/entities/items/item-223135|ヴォイド スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `223135`）の日本語レコード。
+- [[wiki/entities/items/item-3135|ヴォイド スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `3135`）の日本語レコード。
+- [[wiki/entities/items/item-773135|ヴォイド スタッフ]] — Data Dragon v16.18.1のアイテム（ID: `773135`）の日本語レコード。
+- [[wiki/entities/items/item-223069|ヴォイドの猛火]] — Data Dragon v16.18.1のアイテム（ID: `223069`）の日本語レコード。
+- [[wiki/entities/items/item-772037|不屈のエリクサー]] — Data Dragon v16.18.1のアイテム（ID: `772037`）の日本語レコード。
+- [[wiki/entities/items/item-443056|不死身の大王の王冠]] — Data Dragon v16.18.1のアイテム（ID: `443056`）の日本語レコード。
+- [[wiki/entities/items/item-663056|不死身の大王の王冠]] — Data Dragon v16.18.1のアイテム（ID: `663056`）の日本語レコード。
+- [[wiki/entities/items/item-3168|不滅の道]] — Data Dragon v16.18.1のアイテム（ID: `3168`）の日本語レコード。
+- [[wiki/entities/items/item-3867|世界の恵み]] — Data Dragon v16.18.1のアイテム（ID: `3867`）の日本語レコード。
+- [[wiki/entities/items/item-3803|久遠のカタリスト]] — Data Dragon v16.18.1のアイテム（ID: `3803`）の日本語レコード。
+- [[wiki/entities/items/item-3901|乱れ撃ち 500シルバーサーペント]] — Data Dragon v16.18.1のアイテム（ID: `3901`）の日本語レコード。
+- [[wiki/entities/items/item-773206|亡霊の幽魂]] — Data Dragon v16.18.1のアイテム（ID: `773206`）の日本語レコード。
+- [[wiki/entities/items/item-447123|人形使い]] — Data Dragon v16.18.1のアイテム（ID: `447123`）の日本語レコード。
+- [[wiki/entities/items/item-550002|体力バー スプラッシュ: オレンジ]] — Data Dragon v16.18.1のアイテム（ID: `550002`）の日本語レコード。
+- [[wiki/entities/items/item-550003|体力バー スプラッシュ: グリーン]] — Data Dragon v16.18.1のアイテム（ID: `550003`）の日本語レコード。
+- [[wiki/entities/items/item-550004|体力バー スプラッシュ: ピンク]] — Data Dragon v16.18.1のアイテム（ID: `550004`）の日本語レコード。
+- [[wiki/entities/items/item-550001|体力バー スプラッシュ: ブルー]] — Data Dragon v16.18.1のアイテム（ID: `550001`）の日本語レコード。
+- [[wiki/entities/items/item-550006|体力バー スプラッシュ: レインボー]] — Data Dragon v16.18.1のアイテム（ID: `550006`）の日本語レコード。
+- [[wiki/entities/items/item-550005|体力バーのクリーンアップ: 色をリセット]] — Data Dragon v16.18.1のアイテム（ID: `550005`）の日本語レコード。
+- [[wiki/entities/items/item-2003|体力ポーション]] — Data Dragon v16.18.1のアイテム（ID: `2003`）の日本語レコード。
+- [[wiki/entities/items/item-772003|体力ポーション]] — Data Dragon v16.18.1のアイテム（ID: `772003`）の日本語レコード。
+- [[wiki/entities/items/item-773521|体力ポーション]] — Data Dragon v16.18.1のアイテム（ID: `773521`）の日本語レコード。
+- [[wiki/entities/items/item-3144|偵察兵のパチンコ]] — Data Dragon v16.18.1のアイテム（ID: `3144`）の日本語レコード。
+- [[wiki/entities/items/item-223002|先人の道標]] — Data Dragon v16.18.1のアイテム（ID: `223002`）の日本語レコード。
+- [[wiki/entities/items/item-3002|先人の道標]] — Data Dragon v16.18.1のアイテム（ID: `3002`）の日本語レコード。
+- [[wiki/entities/items/item-323002|先人の道標]] — Data Dragon v16.18.1のアイテム（ID: `323002`）の日本語レコード。
+- [[wiki/entities/items/item-3010|共生靴底]] — Data Dragon v16.18.1のアイテム（ID: `3010`）の日本語レコード。
+- [[wiki/entities/items/item-1006|再生の珠]] — Data Dragon v16.18.1のアイテム（ID: `1006`）の日本語レコード。
+- [[wiki/entities/items/item-771006|再生の珠]] — Data Dragon v16.18.1のアイテム（ID: `771006`）の日本語レコード。
+- [[wiki/entities/items/item-223119|冬の訪れ]] — Data Dragon v16.18.1のアイテム（ID: `223119`）の日本語レコード。
+- [[wiki/entities/items/item-3119|冬の訪れ]] — Data Dragon v16.18.1のアイテム（ID: `3119`）の日本語レコード。
+- [[wiki/entities/items/item-323119|冬の訪れ]] — Data Dragon v16.18.1のアイテム（ID: `323119`）の日本語レコード。
+- [[wiki/entities/items/item-447109|冷酷な一撃]] — Data Dragon v16.18.1のアイテム（ID: `447109`）の日本語レコード。
+- [[wiki/entities/items/item-667109|冷酷な一撃]] — Data Dragon v16.18.1のアイテム（ID: `667109`）の日本語レコード。
+- [[wiki/entities/items/item-6702|前方を偵察]] — Data Dragon v16.18.1のアイテム（ID: `6702`）の日本語レコード。
+- [[wiki/entities/items/item-2152|力のエリクサー]] — Data Dragon v16.18.1のアイテム（ID: `2152`）の日本語レコード。
+- [[wiki/entities/items/item-220011|勇気のクーポン]] — Data Dragon v16.18.1のアイテム（ID: `220011`）の日本語レコード。
+- [[wiki/entities/items/item-773052|勇躍の紋章]] — Data Dragon v16.18.1のアイテム（ID: `773052`）の日本語レコード。
+- [[wiki/entities/items/item-9275|包みこむ光]] — Data Dragon v16.18.1のアイテム（ID: `9275`）の日本語レコード。
+- [[wiki/entities/items/item-771051|喧嘩屋のグローブ]] — Data Dragon v16.18.1のアイテム（ID: `771051`）の日本語レコード。
+- [[wiki/entities/items/item-222526|囁きのサークレット]] — Data Dragon v16.18.1のアイテム（ID: `222526`）の日本語レコード。
+- [[wiki/entities/items/item-2526|囁きのサークレット]] — Data Dragon v16.18.1のアイテム（ID: `2526`）の日本語レコード。
+- [[wiki/entities/items/item-322526|囁きのサークレット]] — Data Dragon v16.18.1のアイテム（ID: `322526`）の日本語レコード。
+- [[wiki/entities/items/item-447116|均衡の守人ジッテ]] — Data Dragon v16.18.1のアイテム（ID: `447116`）の日本語レコード。
+- [[wiki/entities/items/item-1052|増魔の書]] — Data Dragon v16.18.1のアイテム（ID: `1052`）の日本語レコード。
+- [[wiki/entities/items/item-771052|増魔の書]] — Data Dragon v16.18.1のアイテム（ID: `771052`）の日本語レコード。
+- [[wiki/entities/items/item-3903|士気上昇 500シルバーサーペント]] — Data Dragon v16.18.1のアイテム（ID: `3903`）の日本語レコード。
+- [[wiki/entities/items/item-226665|変幻自在のジャック＝ショー]] — Data Dragon v16.18.1のアイテム（ID: `226665`）の日本語レコード。
+- [[wiki/entities/items/item-6665|変幻自在のジャック＝ショー]] — Data Dragon v16.18.1のアイテム（ID: `6665`）の日本語レコード。
+- [[wiki/entities/items/item-3131|天帝の剣]] — Data Dragon v16.18.1のアイテム（ID: `3131`）の日本語レコード。
+- [[wiki/entities/items/item-443060|天帝の剣]] — Data Dragon v16.18.1のアイテム（ID: `443060`）の日本語レコード。
+- [[wiki/entities/items/item-663060|天帝の剣]] — Data Dragon v16.18.1のアイテム（ID: `663060`）の日本語レコード。
+- [[wiki/entities/items/item-773131|天帝の剣]] — Data Dragon v16.18.1のアイテム（ID: `773131`）の日本語レコード。
+- [[wiki/entities/items/item-3070|女神の涙]] — Data Dragon v16.18.1のアイテム（ID: `3070`）の日本語レコード。
+- [[wiki/entities/items/item-323070|女神の涙]] — Data Dragon v16.18.1のアイテム（ID: `323070`）の日本語レコード。
+- [[wiki/entities/items/item-773070|女神の涙]] — Data Dragon v16.18.1のアイテム（ID: `773070`）の日本語レコード。
+- [[wiki/entities/items/item-223142|妖夢の霊剣]] — Data Dragon v16.18.1のアイテム（ID: `223142`）の日本語レコード。
+- [[wiki/entities/items/item-3142|妖夢の霊剣]] — Data Dragon v16.18.1のアイテム（ID: `3142`）の日本語レコード。
+- [[wiki/entities/items/item-773142|妖夢の霊剣]] — Data Dragon v16.18.1のアイテム（ID: `773142`）の日本語レコード。
+- [[wiki/entities/items/item-223073|実験的ヘクスプレート]] — Data Dragon v16.18.1のアイテム（ID: `223073`）の日本語レコード。
+- [[wiki/entities/items/item-3073|実験的ヘクスプレート]] — Data Dragon v16.18.1のアイテム（ID: `3073`）の日本語レコード。
+- [[wiki/entities/items/item-9185|対シャーク海中地雷]] — Data Dragon v16.18.1のアイテム（ID: `9185`）の日本語レコード。
+- [[wiki/entities/items/item-3398|小さなパーティーのおみやげ]] — Data Dragon v16.18.1のアイテム（ID: `3398`）の日本語レコード。
+- [[wiki/entities/items/item-224005|帝国の指令]] — Data Dragon v16.18.1のアイテム（ID: `224005`）の日本語レコード。
+- [[wiki/entities/items/item-324005|帝国の指令]] — Data Dragon v16.18.1のアイテム（ID: `324005`）の日本語レコード。
+- [[wiki/entities/items/item-4005|帝国の指令]] — Data Dragon v16.18.1のアイテム（ID: `4005`）の日本語レコード。
+- [[wiki/entities/items/item-2141|帽子ジュース]] — Data Dragon v16.18.1のアイテム（ID: `2141`）の日本語レコード。
+- [[wiki/entities/items/item-222141|帽子ジュース]] — Data Dragon v16.18.1のアイテム（ID: `222141`）の日本語レコード。
+- [[wiki/entities/items/item-2145|幸運のダイス]] — Data Dragon v16.18.1のアイテム（ID: `2145`）の日本語レコード。
+- [[wiki/entities/items/item-773098|幸運のピック]] — Data Dragon v16.18.1のアイテム（ID: `773098`）の日本語レコード。
+- [[wiki/entities/items/item-1516|建造物の賞金]] — Data Dragon v16.18.1のアイテム（ID: `1516`）の日本語レコード。
+- [[wiki/entities/items/item-1517|建造物の賞金]] — Data Dragon v16.18.1のアイテム（ID: `1517`）の日本語レコード。
+- [[wiki/entities/items/item-1518|建造物の賞金]] — Data Dragon v16.18.1のアイテム（ID: `1518`）の日本語レコード。
+- [[wiki/entities/items/item-1519|建造物の賞金]] — Data Dragon v16.18.1のアイテム（ID: `1519`）の日本語レコード。
+- [[wiki/entities/items/item-2146|強化された幸運のダイス]] — Data Dragon v16.18.1のアイテム（ID: `2146`）の日本語レコード。
+- [[wiki/entities/items/item-2002|強化リコール]] — Data Dragon v16.18.1のアイテム（ID: `2002`）の日本語レコード。
+- [[wiki/entities/items/item-1502|強化装甲]] — Data Dragon v16.18.1のアイテム（ID: `1502`）の日本語レコード。
+- [[wiki/entities/items/item-1505|強化装甲]] — Data Dragon v16.18.1のアイテム（ID: `1505`）の日本語レコード。
+- [[wiki/entities/items/item-1506|強化装甲]] — Data Dragon v16.18.1のアイテム（ID: `1506`）の日本語レコード。
+- [[wiki/entities/items/item-2151|強欲のエリクサー]] — Data Dragon v16.18.1のアイテム（ID: `2151`）の日本語レコード。
+- [[wiki/entities/items/item-223084|心の鋼]] — Data Dragon v16.18.1のアイテム（ID: `223084`）の日本語レコード。
+- [[wiki/entities/items/item-3084|心の鋼]] — Data Dragon v16.18.1のアイテム（ID: `3084`）の日本語レコード。
+- [[wiki/entities/items/item-4402|心身統御のペンダント]] — Data Dragon v16.18.1のアイテム（ID: `4402`）の日本語レコード。
+- [[wiki/entities/items/item-447104|心身統御のペンダント]] — Data Dragon v16.18.1のアイテム（ID: `447104`）の日本語レコード。
+- [[wiki/entities/items/item-773084|心身統御のペンダント]] — Data Dragon v16.18.1のアイテム（ID: `773084`）の日本語レコード。
+- [[wiki/entities/items/item-773047|忍者足袋]] — Data Dragon v16.18.1のアイテム（ID: `773047`）の日本語レコード。
+- [[wiki/entities/items/item-3916|忘却のオーブ]] — Data Dragon v16.18.1のアイテム（ID: `3916`）の日本語レコード。
+- [[wiki/entities/items/item-9293|急速冷凍]] — Data Dragon v16.18.1のアイテム（ID: `9293`）の日本語レコード。
+- [[wiki/entities/items/item-9406|恋人たちのリコシェ]] — Data Dragon v16.18.1のアイテム（ID: `9406`）の日本語レコード。
+- [[wiki/entities/items/item-224637|悪魔の抱擁]] — Data Dragon v16.18.1のアイテム（ID: `224637`）の日本語レコード。
+- [[wiki/entities/items/item-444637|悪魔の抱擁]] — Data Dragon v16.18.1のアイテム（ID: `444637`）の日本語レコード。
+- [[wiki/entities/items/item-4637|悪魔の抱擁]] — Data Dragon v16.18.1のアイテム（ID: `4637`）の日本語レコード。
+- [[wiki/entities/items/item-3147|悲愴な仮面]] — Data Dragon v16.18.1のアイテム（ID: `3147`）の日本語レコード。
+- [[wiki/entities/items/item-773136|悲愴な仮面]] — Data Dragon v16.18.1のアイテム（ID: `773136`）の日本語レコード。
+- [[wiki/entities/items/item-9304|抜刀]] — Data Dragon v16.18.1のアイテム（ID: `9304`）の日本語レコード。
+- [[wiki/entities/items/item-772050|探検家のワード]] — Data Dragon v16.18.1のアイテム（ID: `772050`）の日本語レコード。
+- [[wiki/entities/items/item-447103|操血術師のヘルム]] — Data Dragon v16.18.1のアイテム（ID: `447103`）の日本語レコード。
+- [[wiki/entities/items/item-772038|敏捷のエリクサー]] — Data Dragon v16.18.1のアイテム（ID: `772038`）の日本語レコード。
+- [[wiki/entities/items/item-222530|旋律のダイアデム]] — Data Dragon v16.18.1のアイテム（ID: `222530`）の日本語レコード。
+- [[wiki/entities/items/item-2530|旋律のダイアデム]] — Data Dragon v16.18.1のアイテム（ID: `2530`）の日本語レコード。
+- [[wiki/entities/items/item-322530|旋律のダイアデム]] — Data Dragon v16.18.1のアイテム（ID: `322530`）の日本語レコード。
+- [[wiki/entities/items/item-443059|星空のマント]] — Data Dragon v16.18.1のアイテム（ID: `443059`）の日本語レコード。
+- [[wiki/entities/items/item-663059|星空のマント]] — Data Dragon v16.18.1のアイテム（ID: `663059`）の日本語レコード。
+- [[wiki/entities/items/item-3863|暗黒の刻の三日月鎌]] — Data Dragon v16.18.1のアイテム（ID: `3863`）の日本語レコード。
+- [[wiki/entities/items/item-4630|枯死の宝石]] — Data Dragon v16.18.1のアイテム（ID: `4630`）の日本語レコード。
+- [[wiki/entities/items/item-772009|栄養満点ビスケット]] — Data Dragon v16.18.1のアイテム（ID: `772009`）の日本語レコード。
+- [[wiki/entities/items/item-3902|死の女神 500シルバーサーペント]] — Data Dragon v16.18.1のアイテム（ID: `3902`）の日本語レコード。
+- [[wiki/entities/items/item-1035|残炎のナイフ]] — Data Dragon v16.18.1のアイテム（ID: `1035`）の日本語レコード。
+- [[wiki/entities/items/item-447114|残響]] — Data Dragon v16.18.1のアイテム（ID: `447114`）の日本語レコード。
+- [[wiki/entities/items/item-9192|毒の足跡]] — Data Dragon v16.18.1のアイテム（ID: `9192`）の日本語レコード。
+- [[wiki/entities/items/item-226695|毒蛇の牙]] — Data Dragon v16.18.1のアイテム（ID: `226695`）の日本語レコード。
+- [[wiki/entities/items/item-6695|毒蛇の牙]] — Data Dragon v16.18.1のアイテム（ID: `6695`）の日本語レコード。
+- [[wiki/entities/items/item-1039|氷雨の刃]] — Data Dragon v16.18.1のアイテム（ID: `1039`）の日本語レコード。
+- [[wiki/entities/items/item-3176|永遠の前進]] — Data Dragon v16.18.1のアイテム（ID: `3176`）の日本語レコード。
+- [[wiki/entities/items/item-9404|流浪の嵐]] — Data Dragon v16.18.1のアイテム（ID: `9404`）の日本語レコード。
+- [[wiki/entities/items/item-4015|混乱]] — Data Dragon v16.18.1のアイテム（ID: `4015`）の日本語レコード。
+- [[wiki/entities/items/item-9177|灼熱のショートボウ]] — Data Dragon v16.18.1のアイテム（ID: `9177`）の日本語レコード。
+- [[wiki/entities/items/item-4016|無言の約束]] — Data Dragon v16.18.1のアイテム（ID: `4016`）の日本語レコード。
+- [[wiki/entities/items/item-9273|爆発の抱擁]] — Data Dragon v16.18.1のアイテム（ID: `9273`）の日本語レコード。
+- [[wiki/entities/items/item-447113|爆発オーブ]] — Data Dragon v16.18.1のアイテム（ID: `447113`）の日本語レコード。
+- [[wiki/entities/items/item-4017|獄炎のハチェット]] — Data Dragon v16.18.1のアイテム（ID: `4017`）の日本語レコード。
+- [[wiki/entities/items/item-9401|獅子の光]] — Data Dragon v16.18.1のアイテム（ID: `9401`）の日本語レコード。
+- [[wiki/entities/items/item-9403|獰猛な斬撃]] — Data Dragon v16.18.1のアイテム（ID: `9403`）の日本語レコード。
+- [[wiki/entities/items/item-447102|現実の崩壊]] — Data Dragon v16.18.1のアイテム（ID: `447102`）の日本語レコード。
+- [[wiki/entities/items/item-2143|生命力のジュース]] — Data Dragon v16.18.1のアイテム（ID: `2143`）の日本語レコード。
+- [[wiki/entities/items/item-3023|生命泉のペンダント]] — Data Dragon v16.18.1のアイテム（ID: `3023`）の日本語レコード。
+- [[wiki/entities/items/item-1503|番人の瞳]] — Data Dragon v16.18.1のアイテム（ID: `1503`）の日本語レコード。
+- [[wiki/entities/items/item-773114|病魔]] — Data Dragon v16.18.1のアイテム（ID: `773114`）の日本語レコード。
+- [[wiki/entities/items/item-3853|真なる氷のかけら]] — Data Dragon v16.18.1のアイテム（ID: `3853`）の日本語レコード。
+- [[wiki/entities/items/item-773092|真なる氷のかけら]] — Data Dragon v16.18.1のアイテム（ID: `773092`）の日本語レコード。
+- [[wiki/entities/items/item-1220|真テレポート(トップレーンクエストの報酬)]] — Data Dragon v16.18.1のアイテム（ID: `1220`）の日本語レコード。
+- [[wiki/entities/items/item-3171|真紅のアイオニア ブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3171`）の日本語レコード。
+- [[wiki/entities/items/item-2142|知力のジュース]] — Data Dragon v16.18.1のアイテム（ID: `2142`）の日本語レコード。
+- [[wiki/entities/items/item-2421|砕けたアームガード]] — Data Dragon v16.18.1のアイテム（ID: `2421`）の日本語レコード。
+- [[wiki/entities/items/item-123430|破滅の儀式]] — Data Dragon v16.18.1のアイテム（ID: `123430`）の日本語レコード。
+- [[wiki/entities/items/item-3430|破滅の儀式]] — Data Dragon v16.18.1のアイテム（ID: `3430`）の日本語レコード。
+- [[wiki/entities/items/item-3012|祝福の聖杯]] — Data Dragon v16.18.1のアイテム（ID: `3012`）の日本語レコード。
+- [[wiki/entities/items/item-4013|稲妻の鎖]] — Data Dragon v16.18.1のアイテム（ID: `4013`）の日本語レコード。
+- [[wiki/entities/items/item-771080|精霊石]] — Data Dragon v16.18.1のアイテム（ID: `771080`）の日本語レコード。
+- [[wiki/entities/items/item-443062|紅血の賜物]] — Data Dragon v16.18.1のアイテム（ID: `443062`）の日本語レコード。
+- [[wiki/entities/items/item-9285|終わりなきモブストンパー]] — Data Dragon v16.18.1のアイテム（ID: `9285`）の日本語レコード。
+- [[wiki/entities/items/item-9271|終わりなき旋風]] — Data Dragon v16.18.1のアイテム（ID: `9271`）の日本語レコード。
+- [[wiki/entities/items/item-222502|終わりなき絶望]] — Data Dragon v16.18.1のアイテム（ID: `222502`）の日本語レコード。
+- [[wiki/entities/items/item-2502|終わりなき絶望]] — Data Dragon v16.18.1のアイテム（ID: `2502`）の日本語レコード。
+- [[wiki/entities/items/item-222517|終わりなき飢え]] — Data Dragon v16.18.1のアイテム（ID: `222517`）の日本語レコード。
+- [[wiki/entities/items/item-2517|終わりなき飢え]] — Data Dragon v16.18.1のアイテム（ID: `2517`）の日本語レコード。
+- [[wiki/entities/items/item-773060|統率の旗]] — Data Dragon v16.18.1のアイテム（ID: `773060`）の日本語レコード。
+- [[wiki/entities/items/item-4012|罪喰人]] — Data Dragon v16.18.1のアイテム（ID: `4012`）の日本語レコード。
+- [[wiki/entities/items/item-3066|翼のムーンプレート]] — Data Dragon v16.18.1のアイテム（ID: `3066`）の日本語レコード。
+- [[wiki/entities/items/item-447112|肉喰らう者]] — Data Dragon v16.18.1のアイテム（ID: `447112`）の日本語レコード。
+- [[wiki/entities/items/item-667112|肉喰らう者]] — Data Dragon v16.18.1のアイテム（ID: `667112`）の日本語レコード。
+- [[wiki/entities/items/item-224401|自然の力]] — Data Dragon v16.18.1のアイテム（ID: `224401`）の日本語レコード。
+- [[wiki/entities/items/item-4401|自然の力]] — Data Dragon v16.18.1のアイテム（ID: `4401`）の日本語レコード。
+- [[wiki/entities/items/item-773064|自然の力]] — Data Dragon v16.18.1のアイテム（ID: `773064`）の日本語レコード。
+- [[wiki/entities/items/item-3876|至点のソリ]] — Data Dragon v16.18.1のアイテム（ID: `3876`）の日本語レコード。
+- [[wiki/entities/items/item-124011|花咲く夜明けの剣]] — Data Dragon v16.18.1のアイテム（ID: `124011`）の日本語レコード。
+- [[wiki/entities/items/item-4011|花咲く夜明けの剣]] — Data Dragon v16.18.1のアイテム（ID: `4011`）の日本語レコード。
+- [[wiki/entities/items/item-664011|花咲く夜明けの剣]] — Data Dragon v16.18.1のアイテム（ID: `664011`）の日本語レコード。
+- [[wiki/entities/items/item-2010|英気満点ビスケット]] — Data Dragon v16.18.1のアイテム（ID: `2010`）の日本語レコード。
+- [[wiki/entities/items/item-447105|荘厳の天球の約束]] — Data Dragon v16.18.1のアイテム（ID: `447105`）の日本語レコード。
+- [[wiki/entities/items/item-3174|装甲強化の進撃]] — Data Dragon v16.18.1のアイテム（ID: `3174`）の日本語レコード。
+- [[wiki/entities/items/item-2501|覇王のブラッドメイル]] — Data Dragon v16.18.1のアイテム（ID: `2501`）の日本語レコード。
+- [[wiki/entities/items/item-447111|覇王のブラッドメイル]] — Data Dragon v16.18.1のアイテム（ID: `447111`）の日本語レコード。
+- [[wiki/entities/items/item-9305|触手スラム]] — Data Dragon v16.18.1のアイテム（ID: `9305`）の日本語レコード。
+- [[wiki/entities/items/item-2031|詰め替えポーション]] — Data Dragon v16.18.1のアイテム（ID: `2031`）の日本語レコード。
+- [[wiki/entities/items/item-773028|調和の聖杯]] — Data Dragon v16.18.1のアイテム（ID: `773028`）の日本語レコード。
+- [[wiki/entities/items/item-773005|貫く者アトマ]] — Data Dragon v16.18.1のアイテム（ID: `773005`）の日本語レコード。
+- [[wiki/entities/items/item-1500|貫通弾]] — Data Dragon v16.18.1のアイテム（ID: `1500`）の日本語レコード。
+- [[wiki/entities/items/item-771500|貫通弾]] — Data Dragon v16.18.1のアイテム（ID: `771500`）の日本語レコード。
+- [[wiki/entities/items/item-772039|賢明のエリクサー]] — Data Dragon v16.18.1のアイテム（ID: `772039`）の日本語レコード。
+- [[wiki/entities/items/item-773096|賢者の石]] — Data Dragon v16.18.1のアイテム（ID: `773096`）の日本語レコード。
+- [[wiki/entities/items/item-226692|赤月の刃]] — Data Dragon v16.18.1のアイテム（ID: `226692`）の日本語レコード。
+- [[wiki/entities/items/item-6692|赤月の刃]] — Data Dragon v16.18.1のアイテム（ID: `6692`）の日本語レコード。
+- [[wiki/entities/items/item-443055|起爆]] — Data Dragon v16.18.1のアイテム（ID: `443055`）の日本語レコード。
+- [[wiki/entities/items/item-1524|超成長]] — Data Dragon v16.18.1のアイテム（ID: `1524`）の日本語レコード。
+- [[wiki/entities/items/item-443064|超越のタリスマン]] — Data Dragon v16.18.1のアイテム（ID: `443064`）の日本語レコード。
+- [[wiki/entities/items/item-3330|身代わり人形]] — Data Dragon v16.18.1のアイテム（ID: `3330`）の日本語レコード。
+- [[wiki/entities/items/item-2022|輝きのモート]] — Data Dragon v16.18.1のアイテム（ID: `2022`）の日本語レコード。
+- [[wiki/entities/items/item-222022|輝きのモート]] — Data Dragon v16.18.1のアイテム（ID: `222022`）の日本語レコード。
+- [[wiki/entities/items/item-3175|連呪使いのブーツ]] — Data Dragon v16.18.1のアイテム（ID: `3175`）の日本語レコード。
+- [[wiki/entities/items/item-9277|進化したエンバーショット]] — Data Dragon v16.18.1のアイテム（ID: `9277`）の日本語レコード。
+- [[wiki/entities/items/item-2508|運命の灰]] — Data Dragon v16.18.1のアイテム（ID: `2508`）の日本語レコード。
+- [[wiki/entities/items/item-773160|野獣の灯火]] — Data Dragon v16.18.1のアイテム（ID: `773160`）の日本語レコード。
+- [[wiki/entities/items/item-994403|金のへら]] — Data Dragon v16.18.1のアイテム（ID: `994403`）の日本語レコード。
+- [[wiki/entities/items/item-220008|金床のクーポン]] — Data Dragon v16.18.1のアイテム（ID: `220008`）の日本語レコード。
+- [[wiki/entities/items/item-3854|鋼のショルダーガード]] — Data Dragon v16.18.1のアイテム（ID: `3854`）の日本語レコード。
+- [[wiki/entities/items/item-1501|防衛拡張]] — Data Dragon v16.18.1のアイテム（ID: `1501`）の日本語レコード。
+- [[wiki/entities/items/item-1521|防衛拡張]] — Data Dragon v16.18.1のアイテム（ID: `1521`）の日本語レコード。
+- [[wiki/entities/items/item-447119|雷撃の杖]] — Data Dragon v16.18.1のアイテム（ID: `447119`）の日本語レコード。
+- [[wiki/entities/items/item-3860|霊峰の砦]] — Data Dragon v16.18.1のアイテム（ID: `3860`）の日本語レコード。
+- [[wiki/entities/items/item-3862|霊者の鎌]] — Data Dragon v16.18.1のアイテム（ID: `3862`）の日本語レコード。
+- [[wiki/entities/items/item-223109|騎士の誓い]] — Data Dragon v16.18.1のアイテム（ID: `223109`）の日本語レコード。
+- [[wiki/entities/items/item-3109|騎士の誓い]] — Data Dragon v16.18.1のアイテム（ID: `3109`）の日本語レコード。
+- [[wiki/entities/items/item-323109|騎士の誓い]] — Data Dragon v16.18.1のアイテム（ID: `323109`）の日本語レコード。
+- [[wiki/entities/items/item-773063|魂の屍衣]] — Data Dragon v16.18.1のアイテム（ID: `773063`）の日本語レコード。
+- [[wiki/entities/items/item-222510|黄昏と暁]] — Data Dragon v16.18.1のアイテム（ID: `222510`）の日本語レコード。
+- [[wiki/entities/items/item-2510|黄昏と暁]] — Data Dragon v16.18.1のアイテム（ID: `2510`）の日本語レコード。
+- [[wiki/entities/items/item-773132|黄金の心]] — Data Dragon v16.18.1のアイテム（ID: `773132`）の日本語レコード。
+- [[wiki/entities/items/item-3864|黒き霧の大鎌]] — Data Dragon v16.18.1のアイテム（ID: `3864`）の日本語レコード。
+- [[wiki/entities/items/item-222503|黒炎のトーチ]] — Data Dragon v16.18.1のアイテム（ID: `222503`）の日本語レコード。
+- [[wiki/entities/items/item-2503|黒炎のトーチ]] — Data Dragon v16.18.1のアイテム（ID: `2503`）の日本語レコード。
+
+### ルーン（62件）
+
+- [[wiki/entities/runes/jack-of-all-trades|なんでも屋]] — Data Dragon v16.18.1のルーン「なんでも屋」の系統・効果情報。
+- [[wiki/entities/runes/nullifying-orb|アクシオム アルカニスト]] — Data Dragon v16.18.1のルーン「アクシオム アルカニスト」の系統・効果情報。
+- [[wiki/entities/runes/aftershock|アフターショック]] — Data Dragon v16.18.1のルーン「アフターショック」の系統・効果情報。
+- [[wiki/entities/runes/summon-aery|エアリー召喚]] — Data Dragon v16.18.1のルーン「エアリー召喚」の系統・効果情報。
+- [[wiki/entities/runes/guardian|ガーディアン]] — Data Dragon v16.18.1のルーン「ガーディアン」の系統・効果情報。
+- [[wiki/entities/runes/cash-back|キャッシュバック]] — Data Dragon v16.18.1のルーン「キャッシュバック」の系統・効果情報。
+- [[wiki/entities/runes/grisly-mementos|グリスリー メメント]] — Data Dragon v16.18.1のルーン「グリスリー メメント」の系統・効果情報。
+- [[wiki/entities/runes/glacial-augment|グレイシャルオーグメント]] — Data Dragon v16.18.1のルーン「グレイシャルオーグメント」の系統・効果情報。
+- [[wiki/entities/runes/sudden-impact|サドンインパクト]] — Data Dragon v16.18.1のルーン「サドンインパクト」の系統・効果情報。
+- [[wiki/entities/runes/shield-bash|シールドバッシュ]] — Data Dragon v16.18.1のルーン「シールドバッシュ」の系統・効果情報。
+- [[wiki/entities/runes/time-warp-tonic|タイムワープトニック]] — Data Dragon v16.18.1のルーン「タイムワープトニック」の系統・効果情報。
+- [[wiki/entities/runes/deep-ward|ディープワード]] — Data Dragon v16.18.1のルーン「ディープワード」の系統・効果情報。
+- [[wiki/entities/runes/perfect-timing|トリプル トニック]] — Data Dragon v16.18.1のルーン「トリプル トニック」の系統・効果情報。
+- [[wiki/entities/runes/nimbus-cloak|ニンバスクローク]] — Data Dragon v16.18.1のルーン「ニンバスクローク」の系統・効果情報。
+- [[wiki/entities/runes/biscuit-delivery|ビスケットデリバリー]] — Data Dragon v16.18.1のルーン「ビスケットデリバリー」の系統・効果情報。
+- [[wiki/entities/runes/first-strike|ファーストストライク]] — Data Dragon v16.18.1のルーン「ファーストストライク」の系統・効果情報。
+- [[wiki/entities/runes/fleet-footwork|フリートフットワーク]] — Data Dragon v16.18.1のルーン「フリートフットワーク」の系統・効果情報。
+- [[wiki/entities/runes/press-the-attack|プレスアタック]] — Data Dragon v16.18.1のルーン「プレスアタック」の系統・効果情報。
+- [[wiki/entities/runes/hail-of-blades|ヘイルブレード]] — Data Dragon v16.18.1のルーン「ヘイルブレード」の系統・効果情報。
+- [[wiki/entities/runes/hextech-flashtraption|ヘクステックフラッシュネイター]] — Data Dragon v16.18.1のルーン「ヘクステックフラッシュネイター」の系統・効果情報。
+- [[wiki/entities/runes/bone-plating|ボーンアーマー]] — Data Dragon v16.18.1のルーン「ボーンアーマー」の系統・効果情報。
+- [[wiki/entities/runes/manaflow-band|マナフローバンド]] — Data Dragon v16.18.1のルーン「マナフローバンド」の系統・効果情報。
+- [[wiki/entities/runes/lethal-tempo|リーサルテンポ]] — Data Dragon v16.18.1のルーン「リーサルテンポ」の系統・効果情報。
+- [[wiki/entities/runes/legend-haste|レジェンド: ヘイスト]] — Data Dragon v16.18.1のルーン「レジェンド: ヘイスト」の系統・効果情報。
+- [[wiki/entities/runes/legend-bloodline|レジェンド: 血脈]] — Data Dragon v16.18.1のルーン「レジェンド: 血脈」の系統・効果情報。
+- [[wiki/entities/runes/legend-alacrity|レジェンド: 迅速]] — Data Dragon v16.18.1のルーン「レジェンド: 迅速」の系統・効果情報。
+- [[wiki/entities/runes/grasp-of-the-undying|不死者の握撃]] — Data Dragon v16.18.1のルーン「不死者の握撃」の系統・効果情報。
+- [[wiki/entities/runes/absorb-life|体力吸収]] — Data Dragon v16.18.1のルーン「体力吸収」の系統・効果情報。
+- [[wiki/entities/runes/presence-of-mind|冷静沈着]] — Data Dragon v16.18.1のルーン「冷静沈着」の系統・効果情報。
+- [[wiki/entities/runes/triumph|凱旋]] — Data Dragon v16.18.1のルーン「凱旋」の系統・効果情報。
+- [[wiki/entities/runes/cut-down|切り崩し]] — Data Dragon v16.18.1のルーン「切り崩し」の系統・効果情報。
+- [[wiki/entities/runes/relentless-hunter|執拗な賞金首狩り]] — Data Dragon v16.18.1のルーン「執拗な賞金首狩り」の系統・効果情報。
+- [[wiki/entities/runes/cosmic-insight|宇宙の英知]] — Data Dragon v16.18.1のルーン「宇宙の英知」の系統・効果情報。
+- [[wiki/entities/runes/phase-rush|嵐乗りの勇躍]] — Data Dragon v16.18.1のルーン「嵐乗りの勇躍」の系統・効果情報。
+- [[wiki/entities/runes/gathering-storm|強まる嵐]] — Data Dragon v16.18.1のルーン「強まる嵐」の系統・効果情報。
+- [[wiki/entities/runes/conqueror|征服者]] — Data Dragon v16.18.1のルーン「征服者」の系統・効果情報。
+- [[wiki/entities/runes/conditioning|心身調整]] — Data Dragon v16.18.1のルーン「心身調整」の系統・効果情報。
+- [[wiki/entities/runes/second-wind|息継ぎ]] — Data Dragon v16.18.1のルーン「息継ぎ」の系統・効果情報。
+- [[wiki/entities/runes/demolish|打ちこわし]] — Data Dragon v16.18.1のルーン「打ちこわし」の系統・効果情報。
+- [[wiki/entities/runes/coup-de-grace|最期の慈悲]] — Data Dragon v16.18.1のルーン「最期の慈悲」の系統・効果情報。
+- [[wiki/entities/runes/deathfire-touch|死神の残り火]] — Data Dragon v16.18.1のルーン「死神の残り火」の系統・効果情報。
+- [[wiki/entities/runes/unflinching|気迫]] — Data Dragon v16.18.1のルーン「気迫」の系統・効果情報。
+- [[wiki/entities/runes/waterwalking|水走り]] — Data Dragon v16.18.1のルーン「水走り」の系統・効果情報。
+- [[wiki/entities/runes/font-of-life|生命の泉]] — Data Dragon v16.18.1のルーン「生命の泉」の系統・効果情報。
+- [[wiki/entities/runes/revitalize|生気付与]] — Data Dragon v16.18.1のルーン「生気付与」の系統・効果情報。
+- [[wiki/entities/runes/approach-velocity|疾駆]] — Data Dragon v16.18.1のルーン「疾駆」の系統・効果情報。
+- [[wiki/entities/runes/arcane-comet|秘儀の彗星]] — Data Dragon v16.18.1のルーン「秘儀の彗星」の系統・効果情報。
+- [[wiki/entities/runes/sixth-sense|第六感]] — Data Dragon v16.18.1のルーン「第六感」の系統・効果情報。
+- [[wiki/entities/runes/last-stand|背水の陣]] — Data Dragon v16.18.1のルーン「背水の陣」の系統・効果情報。
+- [[wiki/entities/runes/ultimate-hunter|至極の賞金首狩り]] — Data Dragon v16.18.1のルーン「至極の賞金首狩り」の系統・効果情報。
+- [[wiki/entities/runes/transcendence|至高]] — Data Dragon v16.18.1のルーン「至高」の系統・効果情報。
+- [[wiki/entities/runes/absolute-focus|英気集中]] — Data Dragon v16.18.1のルーン「英気集中」の系統・効果情報。
+- [[wiki/entities/runes/taste-of-blood|血の味わい]] — Data Dragon v16.18.1のルーン「血の味わい」の系統・効果情報。
+- [[wiki/entities/runes/unsealed-spellbook|解放の魔導書]] — Data Dragon v16.18.1のルーン「解放の魔導書」の系統・効果情報。
+- [[wiki/entities/runes/treasure-hunter|貪欲な賞金首狩り]] — Data Dragon v16.18.1のルーン「貪欲な賞金首狩り」の系統・効果情報。
+- [[wiki/entities/runes/overgrowth|超成長]] — Data Dragon v16.18.1のルーン「超成長」の系統・効果情報。
+- [[wiki/entities/runes/cheap-shot|追い打ち]] — Data Dragon v16.18.1のルーン「追い打ち」の系統・効果情報。
+- [[wiki/entities/runes/celerity|追い風]] — Data Dragon v16.18.1のルーン「追い風」の系統・効果情報。
+- [[wiki/entities/runes/scorch|追火]] — Data Dragon v16.18.1のルーン「追火」の系統・効果情報。
+- [[wiki/entities/runes/electrocute|電撃]] — Data Dragon v16.18.1のルーン「電撃」の系統・効果情報。
+- [[wiki/entities/runes/dark-harvest|魂の収穫]] — Data Dragon v16.18.1のルーン「魂の収穫」の系統・効果情報。
+- [[wiki/entities/runes/magical-footwear|魔法の靴]] — Data Dragon v16.18.1のルーン「魔法の靴」の系統・効果情報。
+
+### スペル（34件）
+
+- [[wiki/entities/spells/summoner-exhaust-jade|イグゾースト（SummonerExhaust_Jade）]] — Data Dragon v16.18.1のサモナースペル「イグゾースト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-exhaust|イグゾースト（SummonerExhaust）]] — Data Dragon v16.18.1のサモナースペル「イグゾースト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-dot-jade|イグナイト（SummonerDot_Jade）]] — Data Dragon v16.18.1のサモナースペル「イグナイト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-dot|イグナイト（SummonerDot）]] — Data Dragon v16.18.1のサモナースペル「イグナイト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-mana-jade|クラリティ（SummonerMana_Jade）]] — Data Dragon v16.18.1のサモナースペル「クラリティ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-mana|クラリティ（SummonerMana）]] — Data Dragon v16.18.1のサモナースペル「クラリティ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-clairvoyance-jade|クレアボヤンス（SummonerClairvoyance_Jade）]] — Data Dragon v16.18.1のサモナースペル「クレアボヤンス」の効果と使用条件。
+- [[wiki/entities/spells/summoner-boost-jade|クレンズ（SummonerBoost_Jade）]] — Data Dragon v16.18.1のサモナースペル「クレンズ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-boost|クレンズ（SummonerBoost）]] — Data Dragon v16.18.1のサモナースペル「クレンズ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-haste-jade|ゴースト（SummonerHaste_Jade）]] — Data Dragon v16.18.1のサモナースペル「ゴースト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-haste|ゴースト（SummonerHaste）]] — Data Dragon v16.18.1のサモナースペル「ゴースト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-battle-cry-jade|サージ（SummonerBattleCry_Jade）]] — Data Dragon v16.18.1のサモナースペル「サージ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-smite-jade|スマイト（SummonerSmite_Jade）]] — Data Dragon v16.18.1のサモナースペル「スマイト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-smite|スマイト（SummonerSmite）]] — Data Dragon v16.18.1のサモナースペル「スマイト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-teleport-jade|テレポート（SummonerTeleport_Jade）]] — Data Dragon v16.18.1のサモナースペル「テレポート」の効果と使用条件。
+- [[wiki/entities/spells/summoner-teleport|テレポート（SummonerTeleport）]] — Data Dragon v16.18.1のサモナースペル「テレポート」の効果と使用条件。
+- [[wiki/entities/spells/summoner-barrier-jade|バリア（SummonerBarrier_Jade）]] — Data Dragon v16.18.1のサモナースペル「バリア」の効果と使用条件。
+- [[wiki/entities/spells/summoner-barrier|バリア（SummonerBarrier）]] — Data Dragon v16.18.1のサモナースペル「バリア」の効果と使用条件。
+- [[wiki/entities/spells/summoner-heal-jade|ヒール（SummonerHeal_Jade）]] — Data Dragon v16.18.1のサモナースペル「ヒール」の効果と使用条件。
+- [[wiki/entities/spells/summoner-heal|ヒール（SummonerHeal）]] — Data Dragon v16.18.1のサモナースペル「ヒール」の効果と使用条件。
+- [[wiki/entities/spells/summoner-fortify-jade|フォティファイ（SummonerFortify_Jade）]] — Data Dragon v16.18.1のサモナースペル「フォティファイ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-cherry-flash|フラッシュ（SummonerCherryFlash）]] — Data Dragon v16.18.1のサモナースペル「フラッシュ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-flash-jade|フラッシュ（SummonerFlash_Jade）]] — Data Dragon v16.18.1のサモナースペル「フラッシュ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-flash|フラッシュ（SummonerFlash）]] — Data Dragon v16.18.1のサモナースペル「フラッシュ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-ult-book-smite-placeholder|プレースホルダー＆アタックスマイト（Summoner_UltBookSmitePlaceholder）]] — Data Dragon v16.18.1のサモナースペル「プレースホルダー＆アタックスマイト」の効果と使用条件。
+- [[wiki/entities/spells/summoner-ult-book-placeholder|プレースホルダー（Summoner_UltBookPlaceholder）]] — Data Dragon v16.18.1のサモナースペル「プレースホルダー」の効果と使用条件。
+- [[wiki/entities/spells/summoner-spell-promote-jade|プロモート（SummonerSpell_Promote_Jade）]] — Data Dragon v16.18.1のサモナースペル「プロモート」の効果と使用条件。
+- [[wiki/entities/spells/summoner-poro-throw|ポロトス（SummonerPoroThrow）]] — Data Dragon v16.18.1のサモナースペル「ポロトス」の効果と使用条件。
+- [[wiki/entities/spells/summoner-snowball|マーク（SummonerSnowball）]] — Data Dragon v16.18.1のサモナースペル「マーク」の効果と使用条件。
+- [[wiki/entities/spells/summoner-snow-urf-snowball-mark|マーク（SummonerSnowURFSnowball_Mark）]] — Data Dragon v16.18.1のサモナースペル「マーク」の効果と使用条件。
+- [[wiki/entities/spells/summoner-rally-jade|ラリー（SummonerRally_Jade）]] — Data Dragon v16.18.1のサモナースペル「ラリー」の効果と使用条件。
+- [[wiki/entities/spells/summoner-revive-jade|リバイブ（SummonerRevive_Jade）]] — Data Dragon v16.18.1のサモナースペル「リバイブ」の効果と使用条件。
+- [[wiki/entities/spells/summoner-poro-recall|王のために！（SummonerPoroRecall）]] — Data Dragon v16.18.1のサモナースペル「王のために！」の効果と使用条件。
+- [[wiki/entities/spells/summoner-cherry-hold|逃亡（SummonerCherryHold）]] — Data Dragon v16.18.1のサモナースペル「逃亡」の効果と使用条件。
+
 ## 概念
 
-- [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]] — 識別情報、説明、分類、評価、画像、数値ステータスの構造。
+- [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]] — 集約レコードと個別詳細レコード（能力・ヒント・スキン等）の構造。
+- [[wiki/concepts/game-data-catalog|ゲームデータ個別ページのカタログ]] — アイテム、ルーン、サモナースペルの個別ページ化範囲と制約。
 
 ## 統合・分析
 
-- [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割、リソース、主要数値の分布とデータ品質上の注意。
+- [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割、リソース、主要数値、能力詳細の分布とデータ品質上の注意。

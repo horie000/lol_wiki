@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shen.pn
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.751 |
 
+## アビリティ
+
+- **パッシブ — 内気功：** スキルを使用すると、自身にシールドを展開する。また味方、もしくは敵チャンピオンに対してスキルを使用すると、この効果のクールダウンが短縮される。
+
+- **Q — 護刃招来：** 「スピリットブレード」を自身のもとへ呼び寄せ、通常攻撃に対象の最大体力に応じた追加ダメージを付与する。移動中の「スピリットブレード」が敵チャンピオンを斬りつけると追加ダメージが強化され、斬りつけられた敵はシェンから逃げる際にスロウ状態になる。
+- **W — 防人の帳：** 「スピリットブレード」を中心に、敵チャンピオンの通常攻撃をブロックするフィールドを展開する。
+- **E — 殺気駆け：** 指定方向にダッシュし、触れた敵チャンピオンにタウント効果を与える。
+- **R — 瞬身護法：** 指定した味方チャンピオンにシールドを展開し、印を結んだあと「スピリットブレード」と共にそのチャンピオンのもとへワープする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shen.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Shen` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shen.png)

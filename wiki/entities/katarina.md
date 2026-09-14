@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Katarin
 | `attackspeedperlevel` | 2.74 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 貪欲なる暗殺者：** 自身がダメージを与えた敵チャンピオンがその直後にキルされると、自身の全スキルのクールダウンが大幅に短縮する。 自身が「短剣」を拾うと、周囲の敵を斬りつけて魔法ダメージを与える。
+
+- **Q — バウンドナイフ：** カタリナが対象に向けて敵から敵へと飛び跳ねる「短剣」を投げる。「短剣」は最後に地面に落ちる。
+- **W — プリペレーション：** 少しの間だけカタリナの移動速度が大幅に増加し、「短剣」を頭上に放り投げる。
+- **E — 瞬歩：** 対象の地点へブリンクする。対象が敵ユニットなら攻撃し、そうでない場合はもっとも近くにいる敵ユニットを攻撃する。
+- **R — デスロータス：** 刃の嵐と化し、周囲の敵チャンピオン(最大3人)に目にもとまらぬ速さで短剣を投げて強大な魔法ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Katarin
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Katarina` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Katarina.png)

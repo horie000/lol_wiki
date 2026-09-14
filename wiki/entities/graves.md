@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Graves.
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.475 |
 
+## アビリティ
+
+- **パッシブ — ニュー・デスティニー：** ショットガンには独特の特性がある。弾を撃ち尽くしたらリロードが必要となる。通常攻撃は弾丸を4発発射する。弾丸はユニットを貫通しない。チャンピオン以外のユニットは、複数の弾丸が命中するとノックバックする。
+
+- **Q — エンドライン：** 爆薬の詰まった弾を発射する。弾は発射してから1秒後、あるいは地形に当たると爆発する。
+- **W — スモークスクリーン：** 指定地点に発煙弾を発射し、煙幕を発生させて範囲内の敵の視界を低下させる。着弾時の爆発に巻き込まれた敵は魔法ダメージを受け、一時的に移動速度が低下する。
+- **E — クイックドロー：** グレイブスが前方にダッシュして物理防御と魔法防御が数秒間増加する。敵チャンピオンに向かってダッシュすると、代わりに「確固たる信念」を2スタック獲得する。敵ユニットに通常攻撃を行うと、このスキルのクールダウンが短縮され、防御力増加時間が更新される。
+- **R — コラテラルダメージ：** 強力な炸裂弾を発射して、最初に命中した敵チャンピオンに大ダメージを与える。弾は敵チャンピオンに命中するか、最大射程に達すると炸裂し、扇状の範囲内にいる敵にダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Graves.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Graves` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Graves.png)

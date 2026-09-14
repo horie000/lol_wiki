@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ashe.pn
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — フロストショット：** 通常攻撃が命中した対象にスロウ効果を付与する。さらにその対象に通常攻撃をすると、ダメージが増加する。 アッシュのクリティカルは追加ダメージを一切与えない代わりに、対象により強力なスロウ効果を付与する。
+
+- **Q — レンジャーフォーカス：** 通常攻撃によって「フォーカス」のスタックがたまるようになり、スタックが最大になるとすべて消費して「レンジャーフォーカス」を使用できる。効果時間中は攻撃速度が増加し、通常攻撃が強力な「疾風の矢」に変化する。
+- **W — ボレー：** 矢を扇状に発射し、命中した敵にダメージを与える。同時に、命中した相手に「フロストショット」のレベルに応じたスロウ効果を付与する。
+- **E — スカウトホーク：** マップ上の指定した地点へ「ホークスピリット」を放ち、視界を確保することができる。
+- **R — クリスタルアロー：** アッシュが一直線に飛翔する氷の矢を放つ。最初に命中した敵チャンピオンにダメージを与え、飛距離に応じたスタン効果を付与する。氷の矢は砕けると同時に周囲の敵ユニットにもダメージを与え、移動速度を低下させる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ashe.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ashe` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ashe.png)

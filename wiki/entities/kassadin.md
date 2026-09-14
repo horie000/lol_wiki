@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kassadi
 | `attackspeedperlevel` | 3.7 |
 | `attackspeed` | 0.64 |
 
+## アビリティ
+
+- **パッシブ — ヴォイドストーン：** 受ける魔法ダメージが減少し、ユニットをすり抜けられるようになる。
+
+- **Q — ヴォイドスフィア：** 指定した対象にヴォイドエネルギーの球体を発射してダメージを与え、詠唱を妨害する。 さらに余ったエネルギーがカサディンを包み込み、短時間魔法ダメージを防ぐシールドを発生させる。
+- **W — ネザーブレード：** 自動効果: 通常攻撃に追加魔法ダメージが付与される。 発動効果: 次の通常攻撃に強烈な追加魔法ダメージが付与され、敵に命中するとマナが回復する。
+- **E — ヴォイドパルス：** 自身の付近でスキルが使用されると、そのエネルギーを「ヴォイドパルス」にスタックする。スタックが溜まると同時に「ヴォイドパルス」が発動可能になり、使用すると扇状の範囲内の敵にダメージを与え、スロウ効果を付与する。
+- **R — リフトウォーク：** 近くの地点に瞬間移動し、付近の敵ユニットにダメージを与える。連続して使うとマナコストが増加するが、同時に与えるダメージも増えていく。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kassadi
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Kassadin` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kassadin.png)

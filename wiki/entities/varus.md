@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Varus.p
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 復讐の化身：** キルまたはアシストを獲得すると、一時的に攻撃力と魔力が増加する。相手が敵チャンピオンの場合、このボーナスはさらに大きくなる。
+
+- **Q — 乾坤一擲：** 弓を引き絞り、強力な一矢を放つ。構えてから発動するまでの時間が長ければ長いほど、射程距離とダメージ量が増加する。
+- **W — 枯死の矢筒：** 自動効果: 通常攻撃に追加魔法ダメージがつき、命中時に「枯死の呪い」を付与する。「枯死の呪い」がかかった敵に自身の他のスキルが命中すると、対象の最大体力に応じた魔法ダメージを与える。 発動効果: 次の「乾坤一擲」が強化される。
+- **E — 滅びの矢雨：** 複数の矢を射かけて物理ダメージを与え、範囲内の土壌に穢れをもたらす。穢された範囲内に入った敵は、スロウ状態になり、自己回復スキルの効果と、体力自動回復が低下する。
+- **R — 穢れの連鎖：** 穢れの蔓を放ち、最初に命中した敵にダメージを与え、スネア効果を付与する。蔓は近接する別のチャンピオンの位置に向かって拡散し、命中するとそのチャンピオンにも同様にダメージを与えてスネア効果を付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Varus.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Varus` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Varus.png)

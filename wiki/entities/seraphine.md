@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -79,6 +80,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Seraphi
 
 - `info` の4項目がすべて `0` である。未収録値か実値かは原典だけでは判定できない。
 
+## アビリティ
+
+- **パッシブ — ステージプレゼンス：** 通常スキルを3回使用すると、3回目のスキルが2連続で発動する。さらに味方の近くでスキルを使用すると、自身の次の通常攻撃は射程が増加し、追加魔法ダメージを与える。
+
+- **Q — ハイノート：** 一定範囲内にダメージを与える。
+- **W — サラウンドサウンド：** 周囲の味方にシールドを付与して移動速度を増加させる。自身がすでにシールドを獲得している場合は、周囲の味方の体力を回復する。
+- **E — ビートドロップ：** 直線上の敵にダメージと移動妨害効果を与える。
+- **R — アンコール：** 敵にダメージとチャーム効果を与え、味方および敵のチャンピオンに触れるたびに射程がリフレッシュされていく。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -87,5 +97,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Seraphi
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Seraphine` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Seraphine.png)

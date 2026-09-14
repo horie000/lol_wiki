@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aurora.
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.668 |
 
+## アビリティ
+
+- **パッシブ — 精霊の解放：** スキルおよび通常攻撃で敵にダメージを与えると、その敵を祓い、精霊を解放する。解放された精霊はオーロラの背後に付いてまわり、オーロラの体力を回復する。
+
+- **Q — 折れ重なる魔法：** 呪いの塊を放ち、それが触れたすべての敵に呪いをかける。スキルを再発動すると呪いを自身のもとへ呼び戻し、その際に触れた敵にダメージを与える。
+- **W — ベールを越えて：** 指定方向に飛び跳ね、着地時に精霊界に入って、少しの間、インビジブル状態になり、移動速度が増加する。
+- **E — ウィアーディング：** 二つの領域を融合し、激しくほとばしる精霊魔法を放つ。敵に魔法ダメージとスロウ効果を与え、自身は安全を確保するために後方に飛び跳ねる。
+- **R — 世界の狭間：** 指定方向に飛び跳ね、波動を放ち、それが触れたすべての敵にダメージとスロウ効果を与える。その後、敵にスロウ効果を与えるエリアを作り出し、自身はそのエリアの端から別の端にテレポートできるようになる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aurora.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Aurora` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aurora.png)

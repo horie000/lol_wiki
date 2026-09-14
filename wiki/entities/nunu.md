@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nunu.pn
 | `attackspeedperlevel` | 2.25 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — フレヨルドの呼び声：** ヌヌがウィルンプと近くにいる味方1体の攻撃速度と移動速度を増加させる。さらに、ウィルンプの通常攻撃が対象の周囲にいる敵にもダメージを与えるようになる。
+
+- **Q — 丸かじり：** ウィルンプがミニオンかモンスター、または敵チャンピオンにかぶりつき、ダメージを与えて自身の体力を回復する。
+- **W — 超特大の雪玉！：** ウィルンプが雪玉をつくって転がす。雪玉を転がす間、雪玉のサイズとスピードが増加していく。雪玉は敵にダメージを与えてノックアップする。
+- **E — 雪玉連射：** ヌヌが雪玉を複数投げて敵にダメージを与える。その後、雪玉が当たったチャンピオンと大型モンスターにウィルンプがスネア効果を与える。
+- **R — アブソリュート・ゼロ：** ヌヌとウィルンプが一定範囲内に強力な猛吹雪をつくりだして敵にスロウ効果を与え、詠唱完了時に大ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nunu.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Nunu` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nunu.png)

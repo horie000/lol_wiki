@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Hecarim
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.67 |
 
+## アビリティ
+
+- **パッシブ — ウォーパス：** 増加移動速度の一定割合と同量だけ攻撃力が増加する。
+
+- **Q — ランページ：** 周囲の敵を斬りつけて物理ダメージを与える。1体以上の敵にダメージを与えた場合、それ以降に行う「ランページ」のダメージが増加して、クールダウンが短縮される。
+- **W — ソウルドレイン：** 物理防御と魔法防御を獲得する。また、周囲にいる敵に魔法ダメージを与えて、それらの敵が受けたあらゆるダメージの一定割合を体力として回復する。
+- **E — チャージ：** 移動速度が短時間増加し、ユニットを通り抜けられるようになる。さらに次の通常攻撃に対象をノックバックする効果と、スキル発動後の移動距離に応じた追加物理ダメージが付与される。
+- **R — スペクターズ・オンスロート：** 亡霊の騎士たちを召喚し、指定地点まで突撃して直線上の敵ユニットに魔法ダメージを与える。ヘカリムは到着と同時に衝撃波を放ち、付近の敵を恐怖に陥れて逃走させる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Hecarim
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Hecarim` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Hecarim.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mel.png
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 灼熱の輝き：** スキルを使用するたび、次の通常攻撃で追加の飛翔物を3発発射する(最大9発までスタック可能)。 スキルまたは通常攻撃でダメージを与えると、敵に「圧倒」のスタックを付与する。これは無限にスタックする。敵に蓄積した「圧倒」スタックが一定のダメージ量に達すると、スタックを消費して敵にとどめを刺す。
+
+- **Q — 輝きの連撃：** 指定地点に向かって複数の飛翔物を連続で発射する。飛翔物は爆発して範囲内の敵に繰り返しダメージを与える。
+- **W — 反駁：** 自身の周囲にバリアを形成する。このバリアは敵の発射物をその敵に向けて反射し、自身が受けるダメージを防ぎ、自身の移動速度を増加させる。
+- **E — 陽光の枷：** 前方に輝くオーブを発射し、中心にいた敵にはスネア効果を与え、周囲にいた敵にはスロウ効果と継続ダメージを与える。
+- **R — 黄金蝕：** 距離に関係なく、「圧倒」を付与しているすべての敵を攻撃し、「圧倒」のスタック数に応じて追加ダメージを与える。 「黄金蝕」のスキルレベルが上がると、「圧倒」のダメージが増加する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mel.png
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Mel` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Mel.png)

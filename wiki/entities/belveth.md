@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -77,6 +78,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Belveth
 
 - `partype` が空文字列である。リソース種別を原典から確定できない。
 
+## アビリティ
+
+- **パッシブ — 死のラベンダー：** 大型ミニオン、大型モンスター、チャンピオンからキルまたはアシストを獲得すると、攻撃速度のスタックを恒久的に獲得する。また、スキル使用後に一時的に攻撃速度が増加する。
+
+- **Q — ヴォイドサージ：** 選択した方向にダッシュして、接触したすべての敵にダメージを与える。
+- **W — 天と地：** 尻尾を地面に叩きつけ、敵にダメージを与えてノックアップさせ、スロウ効果を付与する。
+- **E — ロイヤルストーム：** その場で動きを止めて自身の周囲に強烈な嵐を召喚し、最も体力の低い敵を切り裂いて、ライフスティールとダメージ軽減効果を獲得する。
+- **R — 終わりなき晩餐：** ヴォイドコーラルの残片を吸収し、真の姿に変身して最大体力、射程距離、攻撃速度が増加する。ヴォイド出身のエピックモンスターが残したヴォイドコーラルの残片を吸収すると、ヴォイドレモラを召喚できるようになる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -85,5 +95,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Belveth
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Belveth` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Belveth.png)

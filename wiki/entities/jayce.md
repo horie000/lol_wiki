@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jayce.p
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — ヘクステック・コンデンサー：** 武器を切り替えると少しの間移動速度が増加する。
+
+- **Q — スカイバスター/ショックブラスト：** ハンマーモード: 敵に飛びかかって物理ダメージとスロウ効果を与える。 キャノンモード: 電流の玉を発射し、敵に命中するか最大射程に達すると爆発して、範囲内の敵ユニットに物理ダメージを与える。
+- **W — ライトニング/ハイパーチャージ：** ハンマーモード: 自動効果: 攻撃のたびにマナが回復する。 発動効果: 雷のフィールドを発生させ、周囲の敵に数秒間ダメージを与える。 キャノンモード: 爆発的なエネルギーを得て、次の数回の攻撃速度が最大まで増加する。
+- **E — サンダーブロー/アクセルゲート：** ハンマーモード: 敵に魔法ダメージを与え、わずかに突き飛ばす。 キャノンモード: そこを通過したすべての味方チャンピオンの移動速度が増加する「アクセルゲート」を配備する。「ショックブラスト」が「アクセルゲート」を通過すると、弾速、射程、ダメージが増加する。
+- **R — マーキュリーキャノン/マーキュリーハンマー：** ハンマーモード: 「マーキュリーハンマー」が「マーキュリーキャノン」に切り替わり、スキルが変化すると同時に射程距離が広がる。モード変更後の最初の一撃には、対象の物理防御と魔法防御を低下させる効果がつく。 キャノンモード: 「マーキュリーキャノン」が「マーキュリーハンマー」に切り替わり、変化と同時に物理防御と魔法防御が増加する。モード変更後の最初の一撃には魔法ダメージが追加される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jayce.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Jayce` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jayce.png)

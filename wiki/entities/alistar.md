@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Alistar
 | `attackspeedperlevel` | 2.125 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 戦士の咆哮：** 敵チャンピオンをスタンさせるか弾き飛ばした時、または周囲で敵ユニットが倒されると「咆哮」をチャージする。最大までチャージされると自身および近くにいるすべての味方チャンピオンの体力を回復する。
+
+- **Q — 圧砕：** 地面をたたきつけ、周囲にいる敵ユニットにダメージを与えてノックアップする。
+- **W — 頭突き：** 対象に「頭突き」を食らわせてダメージを与え、ノックバックさせる。
+- **E — 踏破：** 周囲の敵を踏みつけてユニットをすり抜けるようになる。これでチャンピオンにダメージを与えた場合、スタックを1つ獲得。スタックが最大になるとチャンピオンに対する次の通常攻撃に追加魔法ダメージとスタン効果を付与する。
+- **R — 不屈の意志：** 荒々しい雄叫びをあげ、自身に付与された行動妨害効果をすべて解除する。効果時間中は自身が受ける物理ダメージと魔法ダメージを軽減する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Alistar
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Alistar` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Alistar.png)

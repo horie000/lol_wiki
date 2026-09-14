@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Urgot.p
 | `attackspeedperlevel` | 3.75 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — エコーフレイム：** 通常攻撃時と「パージ」発動時にその方向にある脚から散発的に炎が放射され、物理ダメージを与える。
+
+- **Q — コラプトシェル：** 指定地点に榴弾を発射する。周囲の敵に物理ダメージを与えて、移動速度を低下させる。
+- **W — パージ：** 最も近くにいる敵に速射攻撃を行う。その間は移動速度が低下する。直前に他のスキルで攻撃した敵チャンピオンを優先して攻撃し、「エコーフレイム」を発動する。
+- **E — ディスデイン：** 指定方向に突撃しながらシールドを展開し、チャンピオン以外の敵ユニットを横に弾き飛ばす。敵チャンピオンを捕まえるとその場で止まり、そのチャンピオンを後方に投げ飛ばす。
+- **R — デスグラインダー：** ケミドリルを発射する。ドリルは最初に当たった敵チャンピオンに突き刺さる。その敵チャンピオンの体力が一定未満になると、アーゴットが弱者とみなして処刑する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Urgot.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Urgot` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Urgot.png)

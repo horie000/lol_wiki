@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yasuo.p
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.697 |
 
+## アビリティ
+
+- **パッシブ — 浪人道：** クリティカル率が増加する。また、移動距離に応じてシールドがチャージされ、敵チャンピオンおよび中立モンスターからダメージを受けると発動する。
+
+- **Q — 抜刀：** 指定方向に突きを放ち、直線上の敵すべてにダメージを与える。 このスキルが命中するとヤスオは「つむじ風」のスタックを数秒間得る。スタックが2つたまるとヤスオは風を身にまとい、次の「抜刀」と同時に「つむじ風」を放つ。「つむじ風」は指定方向に吹き抜け、触れた敵ユニットをノックアップさせる。 「抜刀」は通常攻撃扱いのため、通常攻撃と同じように強化される。
+- **W — 風殺の壁：** 4秒間持続し、少しずつ前進する風の壁を生み出す。敵のあらゆる発射物は、この壁に触れると消滅する。
+- **E — 風薙ぎ：** 指定した敵を通り過ぎるようにダッシュし、魔法ダメージを与える。発動ごとに、その後のダッシュで与えるダメージが増加する(上限あり)。 同一の敵に対しては数秒間、このスキルを再発動できない。 このスキルのダッシュ中に「抜刀」を発動すると、円状に斬撃を繰り出す。
+- **R — 鬼哭啾々：** ノックアップ状態の敵チャンピオンのもとへブリンクし、空中で斬撃を繰り出して物理ダメージを与える。また、範囲内のノックアップ中の敵をさらにノックアップさせる。発動と同時に波動ゲージが満タンになるが「つむじ風」のスタックをすべて消費する。 少しの間、クリティカル時に対象の物理防御増加分を大きく貫通する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yasuo.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Yasuo` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yasuo.png)

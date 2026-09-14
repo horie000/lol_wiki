@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rakan.p
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.635 |
 
+## アビリティ
+
+- **パッシブ — 神秘の翼：** ラカンは定期的にシールドを獲得する。
+
+- **Q — キラリ羽根：** 魔法の羽根を投げて魔法ダメージを与える。敵チャンピオンかエピックモンスターに当たると、ラカンが味方を回復できる。
+- **W — 華麗なる登場：** 指定地点にダッシュして、到着時に周囲の敵ユニットをノックアップさせる。
+- **E — バトルダンス：** 味方チャンピオンのところまで飛びシールドを付与する。このスキルは少しの間だけコスト無しで再使用できる。
+- **R — みんなオレに夢中：** 移動速度が増加して、触れた敵ユニットにチャームと魔法ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rakan.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Rakan` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rakan.png)

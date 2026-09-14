@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kennen.
 | `attackspeedperlevel` | 3.4 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 嵐の刻印：** スキルを3回命中させた敵をスタンさせる。
+
+- **Q — 雷遁手裏剣：** ケネンが狙った場所に手裏剣を連投し、命中した敵ユニットにダメージと「嵐の刻印」を与える。
+- **W — 稲妻の奔流：** 自動効果: ケネンの数回ごとの攻撃が、対象に追加ダメージと「嵐の刻印」を与えるようになる。 発動効果: 周囲の刻印を受けている対象にダメージを与え、 新たに「嵐の刻印」を付与する。
+- **E — 疾風迅雷：** 稲妻と化したケネンがユニットをすり抜け、接触したユニットに「嵐の刻印」を与える。この形態になるときに移動速度が増加し、この形態から抜けるときには攻撃速度が増加する。
+- **R — 雷撃の大嵐：** ケネンが雷雲を召喚し、周囲にいる敵チャンピオンに魔法ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kennen.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Kennen` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kennen.png)

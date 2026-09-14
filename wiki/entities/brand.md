@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Brand.p
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.681 |
 
+## アビリティ
+
+- **パッシブ — 炎上：** スキルで攻撃するたびに対象が炎上し、4秒かけて魔法ダメージを与える。この効果は3回までスタックする。炎上中の敵ユニットを倒すとマナを回復する。チャンピオンまたは大型モンスターに付与されたスタックが最大になると臨界点に達して2秒後に爆発し、周囲の敵にスキル命中時効果を付与して大ダメージを与える。
+
+- **Q — 焦炎：** 指定方向に火の玉を放ち、最初に命中した敵ユニットに魔法ダメージを与える。炎上中の対象は、このスキルが命中するとスタン状態になる。
+- **W — 烈火の柱：** 発動から一瞬遅れて指定地点に火柱を発生させ、範囲内の敵ユニットに魔法ダメージを与える。炎上中の対象は、火柱から受けるダメージが25%増加する。
+- **E — 焼灼：** 強力な爆風で対象を攻撃し、周囲の敵も巻き込んで魔法ダメージを与える。炎上中の対象に爆風が命中すると、効果範囲が2倍になる。
+- **R — 業火：** 指定した対象に最大5回まで跳ね返る強力な火炎弾を放つ。この火炎弾は自身と付近にいる敵の間で跳ね返り、敵に命中するたびに魔法ダメージを与える。この跳ね返りは、優先的に敵チャンピオンの「炎上」スタックを最大にしようとする。炎上中の対象に命中すると、短い間その対象にスロウを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Brand.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Brand` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Brand.png)
