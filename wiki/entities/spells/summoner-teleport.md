@@ -3,12 +3,13 @@ title: "テレポート（SummonerTeleport）"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - summoner-spell
   - game-data
+  - data-dragon
 spell_id: "SummonerTeleport"
 spell_key: "12"
 spell_name: "テレポート"
@@ -42,7 +43,7 @@ modes:
 
 ## 効果
 
-短い詠唱後、対象指定不可になって味方ユニットの位置まで移動する。「真テレポート」にアップグレードされると移動速度が大幅に増加する。 
+短い詠唱後、対象指定不可になって味方ユニットの位置まで移動する。「真テレポート」にアップグレードされると移動速度が大幅に増加する。
 
 ### ツールチップ（原典の表示テンプレート）
 

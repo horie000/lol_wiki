@@ -3,13 +3,14 @@ title: "生気付与"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - rune
   - league-of-legends
   - resolve
+  - data-dragon
 ---
 
 # 生気付与

@@ -3,12 +3,13 @@ title: "プレースホルダー＆アタックスマイト（Summoner_UltBookSm
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - summoner-spell
   - game-data
+  - data-dragon
 spell_id: "Summoner_UltBookSmitePlaceholder"
 spell_key: "55"
 spell_name: "プレースホルダー＆アタックスマイト"

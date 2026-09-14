@@ -3,12 +3,13 @@ title: "逃亡（SummonerCherryHold）"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - summoner-spell
   - game-data
+  - data-dragon
 spell_id: "SummonerCherryHold"
 spell_key: "2201"
 spell_name: "逃亡"

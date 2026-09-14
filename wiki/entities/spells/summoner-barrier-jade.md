@@ -3,12 +3,13 @@ title: "バリア（SummonerBarrier_Jade）"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - summoner-spell
   - game-data
+  - data-dragon
 spell_id: "SummonerBarrier_Jade"
 spell_key: "721"
 spell_name: "バリア"

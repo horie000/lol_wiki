@@ -1,0 +1,111 @@
+---
+title: "ジリアン"
+type: entity
+status: active
+created: 2026-09-14
+updated: 2026-09-15
+sources:
+  - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+tags:
+  - champion
+  - role-support
+  - role-mage
+  - data-dragon
+champion_id: "Zilean"
+champion_key: "26"
+data_version: "16.18.1"
+roles:
+  - "Support"
+  - "Mage"
+resource_type: "マナ"
+image_path: "raw/assets/champions/Zilean.png"
+image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zilean.png"
+---
+
+# ジリアン
+
+![[raw/assets/champions/Zilean.png|128]]
+
+## 基本情報
+
+- **英字ID：** `Zilean`
+- **キー：** `26`
+- **称号：** 時の番人
+- **データversion：** `16.18.1`
+
+## 紹介
+
+ジリアンはかつてはイカシアの強力なメイジだったが、故郷がヴォイドに破壊されるのを目撃して、時の流れに執着するようになった。壊滅的な喪失を嘆く暇すら与えられなかった彼は、未来のあらゆる可能性を予言しようと古代の時空魔法を使った。実質的に不死身となったジリアンは過去と現在と未来の狭間を漂うようになり、自身の周囲の時間の流れを捻じ曲げながら、時計を巻き戻して壊滅したイカシアを元に戻す方法を探し続けている。
+
+## 分類
+
+- **役割タグ：** `Support`、`Mage`
+- **リソース種別：** マナ
+
+## 評価値
+
+| フィールド | 値 |
+| --- | ---: |
+| `attack` | 2 |
+| `defense` | 5 |
+| `magic` | 8 |
+| `difficulty` | 6 |
+
+## 数値ステータス
+
+| フィールド | 値 |
+| --- | ---: |
+| `hp` | 574 |
+| `hpperlevel` | 96 |
+| `mp` | 452 |
+| `mpperlevel` | 50 |
+| `movespeed` | 335 |
+| `armor` | 24 |
+| `armorperlevel` | 5 |
+| `spellblock` | 30 |
+| `spellblockperlevel` | 1.3 |
+| `attackrange` | 550 |
+| `hpregen` | 5.5 |
+| `hpregenperlevel` | 0.5 |
+| `mpregen` | 11.35 |
+| `mpregenperlevel` | 0.8 |
+| `crit` | 0 |
+| `critperlevel` | 0 |
+| `attackdamage` | 52 |
+| `attackdamageperlevel` | 0 |
+| `attackspeedperlevel` | 2.13 |
+| `attackspeed` | 0.658 |
+
+## アビリティ
+
+- **パッシブ — タイムインボトル：** 時間を経験値として溜めて、味方に付与できる。味方のレベルを上げるのに必要な経験値が溜まっている状態で相手を右クリックすると、経験値を与えることができる。同時に、与えた量と同じ経験値を自身も獲得する。
+
+- **Q — タイムボム：** 指定地点に爆弾を投げ、近付いたユニットに付着させる(チャンピオン優先)。付着した爆弾は3秒後に爆発し、範囲ダメージを与える。爆発前にもう一つ「タイムボム」を仕掛けられると即時に爆発し、敵にスタン効果を与える。
+- **W — リワインド：** ジリアンは近い未来の戦いに備え、通常スキルのクールダウンを短縮することができる。
+- **E — タイムワープ：** 対象ユニット周辺の時間軸を短時間ねじ曲げ、対象が敵の場合はスロウを与え、味方の場合は移動速度を増加させる。
+- **R — クロノシフト：** 対象の味方チャンピオンに砂時計の印を付与し、体力がゼロになった瞬間、過去へ遡らせて復活させる。
+
+<!-- power-spike:start -->
+## パワースパイク
+
+- **区分：** 中盤
+- **判定：** [[wiki/syntheses/champion-power-spikes-v16-18-1|パワースパイク分類 v16.18.1]] に基づく原典ベースの推論。
+- **根拠：**
+  - 本分類で採用した序盤の基礎ステータス上位15%と、終盤の能力の蓄積成長・明示的なステータス連動のいずれにも当たらないため、中盤を暫定指定する。
+- **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
+
+<!-- power-spike:end -->
+
+## 関連ページ
+
+- [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
+- [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]]
+
+## 出典
+
+- [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Zilean` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
+- 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
+- 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zilean.png)
