@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-tank
@@ -121,11 +122,33 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nautilu
 
 ### UTILITY（1,618試合）
 
-- **実測ビルド候補：** 騎士の誓い + 装甲強化の進撃（該当n=32、75.0% / 非該当46.5%、差+28.5pt）；騎士の誓い + 装甲強化の進撃 + ソラリのロケット（該当n=30、73.3% / 非該当46.6%、差+26.7pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3109|騎士の誓い]] + [[wiki/entities/items/item-3174|装甲強化の進撃]]（該当n=32、75.0% / 非該当46.5%、差+28.5pt）；[[wiki/entities/items/item-3109|騎士の誓い]] + [[wiki/entities/items/item-3174|装甲強化の進撃]] + [[wiki/entities/items/item-3190|ソラリのロケット]]（該当n=30、73.3% / 非該当46.6%、差+26.7pt）
 - **ステータス傾向：** 移動速度（該当n=1538、47.3% / 非該当43.8%、差+3.5pt）；魔法防御（該当n=1487、47.3% / 非該当44.3%、差+3.1pt）
-- **理論仮説：** ソラリのロケット + 変幻自在のジャック＝ショー（n=4（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）；バンドルパイプ + ジーク コンバージェンス（n=2（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）
+- **理論仮説：** [[wiki/entities/items/item-3190|ソラリのロケット]] + [[wiki/entities/items/item-6665|変幻自在のジャック＝ショー]]（n=4（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）；[[wiki/entities/items/item-2524|バンドルパイプ]] + [[wiki/entities/items/item-3050|ジーク コンバージェンス]]（n=2（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-111|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### UTILITY（対象n=2,057）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/senna|セナ（Senna）]] — 対象側勝率66.0%（33/50）、n=50（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/leona|レオナ（Leona）]] — 対象側勝率35.5%（60/169）、n=169（十分性の目安を満たす）。
+
+### JUNGLE（対象n=26）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

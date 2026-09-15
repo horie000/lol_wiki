@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-assassin
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ekko.pn
 
 ### JUNGLE（258試合）
 
-- **実測ビルド候補：** ラバドン デスキャップ + リッチ ベイン（該当n=30、63.3% / 非該当46.9%、差+16.4pt）；リッチ ベイン + ヘクステック ロケットベルト（該当n=45、60.0% / 非該当46.5%、差+13.5pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3089|ラバドン デスキャップ]] + [[wiki/entities/items/item-3100|リッチ ベイン]]（該当n=30、63.3% / 非該当46.9%、差+16.4pt）；[[wiki/entities/items/item-3100|リッチ ベイン]] + [[wiki/entities/items/item-3152|ヘクステック ロケットベルト]]（該当n=45、60.0% / 非該当46.5%、差+13.5pt）
 - **ステータス傾向：** 体力（該当n=220、50.5% / 非該当39.5%、差+11.0pt）；攻撃速度（該当n=173、49.1% / 非該当48.2%、差+0.9pt）
-- **理論仮説：** メジャイ ソウルスティーラー + ヘクステック ロケットベルト（n=10（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）；黄昏と暁 + ヘクステック ロケットベルト（n=9（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
+- **理論仮説：** [[wiki/entities/items/item-3041|メジャイ ソウルスティーラー]] + [[wiki/entities/items/item-3152|ヘクステック ロケットベルト]]（n=10（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）；[[wiki/entities/items/item-2510|黄昏と暁]] + [[wiki/entities/items/item-3152|ヘクステック ロケットベルト]]（n=9（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
 
 ### MIDDLE（164試合）
 
-- **実測ビルド候補：** リッチ ベイン + 連呪使いのブーツ（該当n=33、66.7% / 非該当49.6%、差+17.0pt）；黄昏と暁 + 連呪使いのブーツ（該当n=54、57.4% / 非該当50.9%、差+6.5pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3100|リッチ ベイン]] + [[wiki/entities/items/item-3175|連呪使いのブーツ]]（該当n=33、66.7% / 非該当49.6%、差+17.0pt）；[[wiki/entities/items/item-2510|黄昏と暁]] + [[wiki/entities/items/item-3175|連呪使いのブーツ]]（該当n=54、57.4% / 非該当50.9%、差+6.5pt）
 - **ステータス傾向：** 攻撃速度（該当n=97、56.7% / 非該当47.8%、差+8.9pt）
-- **理論仮説：** 黄昏と暁 + メジャイ ソウルスティーラー（n=6（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）；黄昏と暁 + ヘクステック ロケットベルト（n=4（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
+- **理論仮説：** [[wiki/entities/items/item-2510|黄昏と暁]] + [[wiki/entities/items/item-3041|メジャイ ソウルスティーラー]]（n=6（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）；[[wiki/entities/items/item-2510|黄昏と暁]] + [[wiki/entities/items/item-3152|ヘクステック ロケットベルト]]（n=4（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-245|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### JUNGLE（対象n=429）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/leona|レオナ（Leona）]] — 対象側勝率55.6%（25/45）、n=45（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/lee-sin|リー・シン（LeeSin）]] — 対象側勝率33.3%（6/18）、サンプル不足（n=18、十分性の目安30未満）。
+
+### MIDDLE（対象n=261）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/jinx|ジンクス（Jinx）]] — 対象側勝率72.0%（18/25）、サンプル不足（n=25、十分性の目安30未満）。
+- **カウンターピック候補：** [[wiki/entities/champions/akali|アカリ（Akali）]] — 対象側勝率46.7%（7/15）、サンプル不足（n=15、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

@@ -246,3 +246,37 @@ This file is append-only. Newest entries are appended at the end.
 - 変更：`scripts/riot_ranked_match_analyzer.py` に `role_gold` 集計と `role-gold.csv` 出力を追加し、仕様書をv0.8へ更新した。平均GPM、中央値・P10・P90、加重GPM、チーム内最終ゴールド比率、分母・勝率をロール別に記録し、解析レポートを `reports/riot-ranked-match-analysis/run-20260915T061543Z/` に保存した。[[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率の統合分析]]、既存の[[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別パワースパイク分析]]、概要、索引、既存ランク戦出典要約へ結果と解釈上の注意を反映した。
 - 結果：平均GPMはBOTTOM 423.4、JUNGLE 405.1、MIDDLE 384.1、TOP 384.0、UTILITY 291.2。チーム内最終ゴールド比率はBOTTOM 22.4%、JUNGLE 21.5%、MIDDLE 20.4%、TOP 20.3%、UTILITY 15.5%だった。
 - 未解決：最終ゴールドは勝敗後の状態であり、15分時点の収入、購入時刻、実際のレーン収入、因果的なロール優劣を示さない。時間帯別パワースパイクの再分析では、パッチ・ロール・チャンピオンを固定し、可能ならTimelineを用いる必要がある。
+
+## [2026-09-15] maintenance | ロール別ゴールド分析の重複統合
+
+- 入力：同時進行で作成された[[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率]]と[[wiki/syntheses/role-gold-share-ranked-matches|ロール別ゴールド獲得シェア]]の2ページ、および完成済み標本・キャッシュ込み標本の解析成果物。
+- 変更：`role-gold-acquisition-rate.md` を正本とし、完成済み3,991試合の分布、勝敗別、試合時間帯別、観測ランク帯別、キャッシュ込み9,938試合との感度比較を統合した。`role-gold-share-ranked-matches.md` は履歴リンクを保つ `superseded` の案内ページへ変更し、原典要約と索引のリンクを正本へ揃えた。
+- 未解決：固定時点のゴールドシェアにはTimelineデータが必要。パッチ、チャンピオン、試合時間、参加者の実際のランクを調整した因果比較は未実施。
+
+## [2026-09-15] lint | Wiki・レポート整合性確認
+
+- 入力：`wiki/`、`reports/` の22実行manifest、最新のチャンピオン・アイテム分析、ロール別ゴールド分析、`scripts/lint.py`、`scripts/item_synergy.py`。
+- 変更：Wiki 1,154コンテンツページの索引掲載を確認し、正規化したWikilink 2,045ファイルを検査した。欠落リンク、重複索引項目、manifestの未生成出力は検出されなかった。`scripts/lint.py`、アイテム分類check、チャンピオンentity同期check、`git diff --check` はすべて成功した。
+- レポート確認：`run-20260915T060638Z` のアイテム・ビルド分析、および `run-20260915T061543Z` のロール別ゴールド分析は、対応する原典要約・統合ページ・索引・過去ログへ反映済みと確認した。機械的なランキング、極端な勝率差、最終所持状態、最終ゴールドだけから新しい因果的推奨は昇格しなかった。
+- 未解決：Timelineがないため、購入時刻、固定時点のゴールド、ビルド完成時刻、途中経過の因果比較は未実施。複数パッチ、チャンピオン、対面、構成、プレイヤーを調整した推定も未実施。
+
+## [2026-09-15] lint | チャンピオンentityのアイテムWikilinkと分析成果物の再検証
+
+- 入力：`wiki/`、`reports/` の22実行manifest、既存の `reports/riot-champion-item-synergy/run-20260915T060638Z/analysis.json`、`scripts/lint.py`、`scripts/item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`。
+- 変更：Lint記録を追記し、Wiki 1,154コンテンツページの索引掲載、内部Wikilink 11,606件、frontmatterと出典追跡、22 manifestの出力存在を確認した。173件のチャンピオンentityにある1,843件のアイテムWikilinkは既存868件のアイテムentityと表示名・IDを照合し、欠落を検出しなかった。entity同期check、通常Lint、アイテム分類check、`git diff --check` は成功し、entity・レポート自体は変更していない。新しい試合レポートも生成していない。
+- レポート確認：最新のチャンピオン・アイテム分析とロール別ゴールド分析の主要結果は、対応する原典要約・統合分析・索引へ反映済みと確認した。機械的なランキング、極端な勝率差、最終所持状態、最終ゴールドだけから新しい因果的推奨は昇格しなかった。
+- 未解決：Timelineがないため、購入時刻、固定時点のゴールド、ビルド完成時刻、途中経過の因果比較は未実施。複数パッチ、チャンピオン、対面、構成、プレイヤーを調整した推定も未実施。
+
+## [2026-09-15] query | 実測コンボ・カウンターピックのentity反映
+
+- 入力：`raw/sources/riot-ranked-matches/`、キュー420、`tier-mode=all`、完全試合13,107件、入力13,120ファイル・19,107レコード。
+- 変更：既存の共通ローダーと`riot_champion_query.py`の正規化を再利用する `scripts/riot_champion_matchup_wiki_sync.py` を追加し、味方コンボ9,532候補、同ロール対面2,264候補を集計した。95% Wilson区間でサンプル数を加味し、n≥30を十分性の目安、n=15–29をサンプル不足として、173件すべてのチャンピオンentityへ各ロールの候補を同期した。[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups|原典要約]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|統合分析]]、索引、概要も更新した。
+- 結果：entity掲載の選定394行のうち、n≥30は262行、n<30は132行。カイ＝サ BOTTOMはレオナ（91/154、59.1%）をコンボ候補、ルシアン（16/46、34.8%）を同ロール対面候補として掲載した。詳細は `reports/riot-champion-matchups/run-20260915T071824Z/` に保存した。
+- 未解決：正規化ロールは最終スコアからの推定で、実際のレーン対面を保証しない。パッチ、プレイヤー、試合時間、味方構成を調整した再現性・因果比較、多重比較への対応は未実施。n<30の候補はentityに残したが、探索的な参考値として扱う。
+
+## [2026-09-15] query | 実測チャンピオン別ルーン選択の分析
+
+- 入力：`raw/sources/riot-ranked-matches/`、`raw/sources/dragontail-16.18.1.tgz`、キュー420、`tier_mode=all`、`min-games=15`。固定スナップショットは `reports/riot-ranked-match-analysis/run-20260915T082512Z/`。
+- 変更：共通Match-v5ローダーを再利用して `champion_id × role × rune_kind × rune_id` の選択率、選択時勝率、チャンピオン全体勝率を追加した。パッチ別の分母重複を除くレポート集約、`champion-rune-summary.csv`、仕様書v0.9、原典要約、統合分析、概要、索引を更新した。
+- 結果：15,572件の完全試合（48パッチ）で、TOPモルデカイザーの征服者は1,692/1,707（99.1%）、BOTTOMジンクスのリーサルテンポは1,910/2,024（94.4%）、UTILITYレオナのアフターショックは1,934/2,055（94.1%）だった。ロールを固定すると定番が明瞭だが、選択時勝率と全体勝率の差は代表例で−0.7〜+0.6ポイントだった。
+- 未解決：48パッチ横断、最終スコア由来のロール、観測ランク帯混合、選択前状態・対面・構成・プレイヤー未調整であり、ルーンの因果効果や推奨は導かない。パッチ・ロール固定とTimelineを用いた再検証、ステータスシャード表示名の補完が必要である。

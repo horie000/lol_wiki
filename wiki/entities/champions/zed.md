@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-assassin
@@ -119,17 +120,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zed.png
 
 ### MIDDLE（318試合）
 
-- **実測ビルド候補：** 不滅の道 + ボルテイク サイクロソード（該当n=31、58.1% / 非該当47.0%、差+11.0pt）；真紅のアイオニア ブーツ + ボルテイク サイクロソード（該当n=117、52.1% / 非該当45.8%、差+6.4pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3168|不滅の道]] + [[wiki/entities/items/item-6699|ボルテイク サイクロソード]]（該当n=31、58.1% / 非該当47.0%、差+11.0pt）；[[wiki/entities/items/item-3171|真紅のアイオニア ブーツ]] + [[wiki/entities/items/item-6699|ボルテイク サイクロソード]]（該当n=117、52.1% / 非該当45.8%、差+6.4pt）
 - **ステータス傾向：** 体力（該当n=208、50.0% / 非該当44.5%、差+5.5pt）；体力再生（該当n=30、50.0% / 非該当47.9%、差+2.1pt）
-- **理論仮説：** ブラック クリーバー + ナイト エッジ（n=13（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；ショウジンの矛 + ナイト エッジ（n=7（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3071|ブラック クリーバー]] + [[wiki/entities/items/item-3814|ナイト エッジ]]（n=13（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3161|ショウジンの矛]] + [[wiki/entities/items/item-3814|ナイト エッジ]]（n=7（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 ### JUNGLE（120試合）
 
-- **実測ビルド候補：** 赤月の刃 + ボルテイク サイクロソード（該当n=30、46.7% / 非該当44.4%、差+2.2pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-6692|赤月の刃]] + [[wiki/entities/items/item-6699|ボルテイク サイクロソード]]（該当n=30、46.7% / 非該当44.4%、差+2.2pt）
 - **ステータス傾向：** 体力（該当n=74、45.9% / 非該当43.5%、差+2.5pt）
-- **理論仮説：** ショウジンの矛 + ナイト エッジ（n=5（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；ブラック クリーバー + ナイト エッジ（n=5（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3161|ショウジンの矛]] + [[wiki/entities/items/item-3814|ナイト エッジ]]（n=5（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3071|ブラック クリーバー]] + [[wiki/entities/items/item-3814|ナイト エッジ]]（n=5（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-238|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### MIDDLE（対象n=553）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/caitlyn|ケイトリン（Caitlyn）]] — 対象側勝率60.0%（21/35）、n=35（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率50.0%（16/32）、n=32（十分性の目安を満たす）。
+
+### JUNGLE（対象n=220）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率66.7%（10/15）、サンプル不足（n=15、十分性の目安30未満）。
+- **カウンターピック候補：** [[wiki/entities/champions/viego|ヴィエゴ（Viego）]] — 対象側勝率43.8%（7/16）、サンプル不足（n=16、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

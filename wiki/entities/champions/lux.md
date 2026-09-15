@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-mage
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lux.png
 
 ### UTILITY（911試合）
 
-- **実測ビルド候補：** 連呪使いのブーツ + ルーデン エコー（該当n=51、60.8% / 非該当50.7%、差+10.1pt）；マリグナンス + シャドウフレイム（該当n=56、60.7% / 非該当50.6%、差+10.1pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3175|連呪使いのブーツ]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（該当n=51、60.8% / 非該当50.7%、差+10.1pt）；[[wiki/entities/items/item-3118|マリグナンス]] + [[wiki/entities/items/item-4645|シャドウフレイム]]（該当n=56、60.7% / 非該当50.6%、差+10.1pt）
 - **ステータス傾向：** 該当・非該当が各30試合以上で正の差を持つ群なし。
-- **理論仮説：** アークエンジェル スタッフ + マリグナンス（n=3（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；モレロノミコン + ライアンドリーの仮面（n=3（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
+- **理論仮説：** [[wiki/entities/items/item-3003|アークエンジェル スタッフ]] + [[wiki/entities/items/item-3118|マリグナンス]]（n=3（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；[[wiki/entities/items/item-3165|モレロノミコン]] + [[wiki/entities/items/item-6653|ライアンドリーの仮面]]（n=3（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
 
 ### MIDDLE（238試合）
 
-- **実測ビルド候補：** ラバドン デスキャップ + 連呪使いのブーツ（該当n=36、63.9% / 非該当55.4%、差+8.4pt）；マリグナンス + 連呪使いのブーツ（該当n=32、62.5% / 非該当55.8%、差+6.7pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3089|ラバドン デスキャップ]] + [[wiki/entities/items/item-3175|連呪使いのブーツ]]（該当n=36、63.9% / 非該当55.4%、差+8.4pt）；[[wiki/entities/items/item-3118|マリグナンス]] + [[wiki/entities/items/item-3175|連呪使いのブーツ]]（該当n=32、62.5% / 非該当55.8%、差+6.7pt）
 - **ステータス傾向：** 該当・非該当が各30試合以上で正の差を持つ群なし。
-- **理論仮説：** マリグナンス + ルーデン エコー（n=10（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；セラフ エンブレイス + ルーデン エコー（n=6（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
+- **理論仮説：** [[wiki/entities/items/item-3118|マリグナンス]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（n=10（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；[[wiki/entities/items/item-3040|セラフ エンブレイス]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（n=6（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-99|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### UTILITY（対象n=1,043）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/dr-mundo|ドクター・ムンド（DrMundo）]] — 対象側勝率65.6%（21/32）、n=32（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率44.3%（43/97）、n=97（十分性の目安を満たす）。
+
+### MIDDLE（対象n=288）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率55.9%（19/34）、n=34（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/ahri|アーリ（Ahri）]] — 対象側勝率44.4%（12/27）、サンプル不足（n=27、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

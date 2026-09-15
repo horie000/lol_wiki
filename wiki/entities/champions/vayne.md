@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-marksman
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Vayne.p
 
 ### BOTTOM（207試合）
 
-- **実測ビルド候補：** グインソー レイジブレード + クラーケン スレイヤー（該当n=38、63.2% / 非該当43.2%、差+20.0pt）；グインソー レイジブレード + ルインドキング ブレード（該当n=113、50.4% / 非該当42.6%、差+7.9pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3124|グインソー レイジブレード]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（該当n=38、63.2% / 非該当43.2%、差+20.0pt）；[[wiki/entities/items/item-3124|グインソー レイジブレード]] + [[wiki/entities/items/item-3153|ルインドキング ブレード]]（該当n=113、50.4% / 非該当42.6%、差+7.9pt）
 - **ステータス傾向：** 魔力（該当n=141、53.9% / 非該当31.8%、差+22.1pt）；魔法防御（該当n=52、57.7% / 非該当43.2%、差+14.5pt）
-- **理論仮説：** 実験的ヘクスプレート + トリニティ フォース（n=1（15未満）；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）；スタティック シヴ + クラーケン スレイヤー（未観測；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力・移動速度）
+- **理論仮説：** [[wiki/entities/items/item-3073|実験的ヘクスプレート]] + [[wiki/entities/items/item-3078|トリニティ フォース]]（n=1（15未満）；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3087|スタティック シヴ]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（未観測；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力・移動速度）
 
 ### TOP（143試合）
 
-- **実測ビルド候補：** グインソー レイジブレード + ルインドキング ブレード（該当n=54、63.0% / 非該当44.9%、差+18.0pt）；実験的ヘクスプレート + ルインドキング ブレード（該当n=34、58.8% / 非該当49.5%、差+9.3pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3124|グインソー レイジブレード]] + [[wiki/entities/items/item-3153|ルインドキング ブレード]]（該当n=54、63.0% / 非該当44.9%、差+18.0pt）；[[wiki/entities/items/item-3073|実験的ヘクスプレート]] + [[wiki/entities/items/item-3153|ルインドキング ブレード]]（該当n=34、58.8% / 非該当49.5%、差+9.3pt）
 - **ステータス傾向：** 魔力（該当n=74、58.1% / 非該当44.9%、差+13.2pt）；体力（該当n=113、54.0% / 非該当43.3%、差+10.6pt）
-- **理論仮説：** 実験的ヘクスプレート + トリニティ フォース（n=6（15未満）；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）；スタティック シヴ + クラーケン スレイヤー（未観測；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力・移動速度）
+- **理論仮説：** [[wiki/entities/items/item-3073|実験的ヘクスプレート]] + [[wiki/entities/items/item-3078|トリニティ フォース]]（n=6（15未満）；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3087|スタティック シヴ]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（未観測；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力・移動速度）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-67|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### BOTTOM（対象n=338）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/lulu|ルル（Lulu）]] — 対象側勝率63.3%（19/30）、n=30（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/jhin|ジン（Jhin）]] — 対象側勝率51.4%（19/37）、n=37（十分性の目安を満たす）。
+
+### TOP（対象n=224）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/akali|アカリ（Akali）]] — 対象側勝率80.0%（12/15）、サンプル不足（n=15、十分性の目安30未満）。
+- **カウンターピック候補：** [[wiki/entities/champions/garen|ガレン（Garen）]] — 対象側勝率33.3%（6/18）、サンプル不足（n=18、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

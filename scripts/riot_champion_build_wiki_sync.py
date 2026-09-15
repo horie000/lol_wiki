@@ -19,6 +19,7 @@ from riot_champion_item_synergy import STATUS_GROUP_NAMES
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_NAME = "scripts/riot_champion_build_wiki_sync.py"
 DEFAULT_ENTITY_ROOT = ROOT / "wiki/entities/champions"
+DEFAULT_ITEM_ROOT = ROOT / "wiki/entities/items"
 DEFAULT_SOURCE_REF = "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 DEFAULT_SOURCE_BODY_LINK = (
     "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|"
@@ -125,6 +126,22 @@ def entity_catalog(entity_root: Path) -> dict[str, dict[str, Any]]:
     return result
 
 
+def item_catalog(item_root: Path) -> dict[str, dict[str, Any]]:
+    result: dict[str, dict[str, Any]] = {}
+    for path in sorted(item_root.glob("*.md")):
+        text = path.read_text(encoding="utf-8")
+        item_id = frontmatter_value(text, "item_id")
+        title = frontmatter_value(text, "title") or path.stem
+        if item_id is None:
+            continue
+        if item_id in result:
+            raise ValueError(f"item_idが重複しています: {item_id}")
+        result[item_id] = {"path": path, "title": title}
+    if not result:
+        raise ValueError(f"アイテムentityを検出できません: {item_root}")
+    return result
+
+
 def normalize_token(value: Any) -> str:
     return "".join(character for character in str(value or "").casefold() if character.isalnum())
 
@@ -205,9 +222,37 @@ def points(value: Any) -> str:
     return "不明" if number is None else f"{number * 100:+.1f}pt"
 
 
-def build_entry(row: Mapping[str, Any]) -> str:
+def item_wikilink(
+    item_id: Any, fallback_name: Any, items: Mapping[str, Mapping[str, Any]], missing: set[str]
+) -> str:
+    normalized_id = str(item_id or "")
+    entry = items.get(normalized_id)
+    if entry is None:
+        if normalized_id:
+            missing.add(normalized_id)
+        return str(fallback_name or "UNKNOWN")
+    path = entry["path"].relative_to(ROOT).with_suffix("")
+    return f"[[{path.as_posix()}|{entry['title']}]]"
+
+
+def build_name_with_links(
+    row: Mapping[str, Any], items: Mapping[str, Mapping[str, Any]], missing: set[str]
+) -> str:
+    item_ids = row.get("build_item_ids")
+    item_names = row.get("build_item_names")
+    if isinstance(item_ids, list) and isinstance(item_names, list) and len(item_ids) == len(item_names):
+        return " + ".join(
+            item_wikilink(item_id, item_name, items, missing)
+            for item_id, item_name in zip(item_ids, item_names)
+        )
+    return str(row.get("build_name", "UNKNOWN"))
+
+
+def build_entry(
+    row: Mapping[str, Any], items: Mapping[str, Mapping[str, Any]], missing: set[str]
+) -> str:
     return (
-        f"{row.get('build_name', 'UNKNOWN')}（該当n={as_int(row.get('build_games')) or 0}、"
+        f"{build_name_with_links(row, items, missing)}（該当n={as_int(row.get('build_games')) or 0}、"
         f"{percent(row.get('build_win_rate'))} / 非該当{percent(row.get('without_build_win_rate'))}、"
         f"差{points(row.get('win_rate_lift_vs_without'))}）"
     )
@@ -222,7 +267,13 @@ def status_entry(row: Mapping[str, Any]) -> str:
     )
 
 
-def theory_entry(row: Mapping[str, Any], signals: set[str], minimum_games: int) -> str:
+def theory_entry(
+    row: Mapping[str, Any],
+    signals: set[str],
+    minimum_games: int,
+    items: Mapping[str, Mapping[str, Any]],
+    missing: set[str],
+) -> str:
     games = as_int(row.get("build_games")) or 0
     state = "未観測" if games == 0 else f"n={games}（{minimum_games}未満）"
     shared = [str(value) for value in row.get("shared_status_groups", [])]
@@ -233,7 +284,7 @@ def theory_entry(row: Mapping[str, Any], signals: set[str], minimum_games: int) 
         reason += "／チャンピオン原典にも言及: " + "・".join(direct_labels)
     else:
         reason += "／スキル相互作用は未検証"
-    return f"{row.get('build_name', 'UNKNOWN')}（{state}；{reason}）"
+    return f"{build_name_with_links(row, items, missing)}（{state}；{reason}）"
 
 
 def rows_for_role(rows: Sequence[Mapping[str, Any]], role: str) -> list[dict[str, Any]]:
@@ -331,12 +382,14 @@ def render_block(
     max_statuses: int,
     max_theories: int,
     source_ref: str,
+    items: Mapping[str, Mapping[str, Any]],
+    missing_items: set[str],
 ) -> str:
-    items = grouped["items"].get(champion_key, [])
+    item_rows = grouped["items"].get(champion_key, [])
     statuses = grouped["statuses"].get(champion_key, [])
     builds = grouped["builds"].get(champion_key, [])
     theories = grouped["theories"].get(champion_key, [])
-    counts = role_game_counts(items, statuses, builds, theories)
+    counts = role_game_counts(item_rows, statuses, builds, theories)
     roles = [role for role, games in counts.items() if games >= role_min_games]
     roles.sort(key=lambda role: (-counts[role], ROLE_ORDER.get(role, 99), role))
     roles = roles[:max_roles]
@@ -380,10 +433,16 @@ def render_block(
         role_builds = rank_builds(rows_for_role(builds, role), comparison_min_games, max_builds)
         role_statuses = rank_statuses(rows_for_role(statuses, role), comparison_min_games, max_statuses)
         role_theories = rank_theories(rows_for_role(theories, role), signals, max_theories)
-        build_text = "；".join(build_entry(row) for row in role_builds)
+        build_text = "；".join(build_entry(row, items, missing_items) for row in role_builds)
         status_text = "；".join(status_entry(row) for row in role_statuses)
         theory_text = "；".join(
-            theory_entry(row, signals, as_int(filters.get("min_games")) or 15)
+            theory_entry(
+                row,
+                signals,
+                as_int(filters.get("min_games")) or 15,
+                items,
+                missing_items,
+            )
             for row in role_theories
         )
         lines.extend(
@@ -450,6 +509,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--analysis", required=True, help="riot_champion_item_synergy.py が生成した analysis.json")
     parser.add_argument("--entity-root", default=str(DEFAULT_ENTITY_ROOT), help="チャンピオンentityディレクトリ")
+    parser.add_argument("--item-root", default=str(DEFAULT_ITEM_ROOT), help="アイテムentityディレクトリ")
     parser.add_argument("--champions", help="同期対象のchampion_key、英字ID、タイトル、ファイル名をカンマ区切りで限定")
     parser.add_argument("--role-min-games", type=int, default=30, help="entityへロールを掲載する最小試合数（既定: 30）")
     parser.add_argument("--comparison-min-games", type=int, help="実測候補の該当・非該当双方の最小試合数。省略時はanalysisのreport_min_games")
@@ -480,17 +540,20 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             raise ValueError("件数・上限オプションは正の整数が必要です")
         analysis_path = resolve_path(args.analysis)
         entity_root = resolve_path(args.entity_root)
+        item_root = resolve_path(args.item_root)
         payload = load_analysis(analysis_path)
         filters = payload.get("filters", {}) if isinstance(payload.get("filters"), Mapping) else {}
         comparison_min_games = args.comparison_min_games or as_int(filters.get("report_min_games")) or 30
         if comparison_min_games <= 0:
             raise ValueError("--comparison-min-games は正の整数が必要です")
         catalog = entity_catalog(entity_root)
+        items = item_catalog(item_root)
         selected_keys = select_entity_keys(catalog, args.champions)
         grouped = group_analysis(payload)
         updated = analysis_updated_date(payload)
         changes: list[tuple[Path, str]] = []
         missing_detail: list[str] = []
+        missing_items: set[str] = set()
         for champion_key in selected_keys:
             entry = catalog[champion_key]
             path = entry["path"]
@@ -509,6 +572,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                 max_statuses=args.max_statuses,
                 max_theories=args.max_theories,
                 source_ref=args.source_ref,
+                items=items,
+                missing_items=missing_items,
             )
             if detail_wikilink(analysis_path, champion_key, str(entry["title"])) is None:
                 missing_detail.append(champion_key)
@@ -525,6 +590,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "entities_selected": len(selected_keys),
             "entities_changed": len(changes),
             "missing_detail_reports": len(missing_detail),
+            "item_entities_detected": len(items),
+            "missing_item_entities": len(missing_items),
             "role_min_games": args.role_min_games,
             "comparison_min_games": comparison_min_games,
             "max_roles": args.max_roles,
@@ -534,6 +601,12 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         }
         if missing_detail:
             summary["missing_detail_examples"] = missing_detail[:10]
+        if missing_items:
+            summary["missing_item_entity_examples"] = sorted(missing_items)[:20]
+        if missing_items:
+            print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
+            print("アイテムentity不足: " + ", ".join(sorted(missing_items)[:20]), file=sys.stderr)
+            return 2
         if args.check:
             print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
             if changes:

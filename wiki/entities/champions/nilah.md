@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-fighter
@@ -121,11 +122,33 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nilah.p
 
 ### BOTTOM（107試合）
 
-- **実測ビルド候補：** イモータル シールドボウ + コレクター（該当n=36、63.9% / 非該当45.1%、差+18.8pt）；インフィニティ エッジ + コレクター（該当n=60、58.3% / 非該当42.6%、差+15.8pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-6673|イモータル シールドボウ]] + [[wiki/entities/items/item-6676|コレクター]]（該当n=36、63.9% / 非該当45.1%、差+18.8pt）；[[wiki/entities/items/item-3031|インフィニティ エッジ]] + [[wiki/entities/items/item-6676|コレクター]]（該当n=60、58.3% / 非該当42.6%、差+15.8pt）
 - **ステータス傾向：** 攻撃速度（該当n=34、55.9% / 非該当49.3%、差+6.6pt）；物理防御（該当n=42、54.8% / 非該当49.2%、差+5.5pt）
-- **理論仮説：** ファントム ダンサー + ナヴォリ フリッカーブレード（未観測；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 移動速度）；フィーンドハンターの矢 + ナヴォリ フリッカーブレード（未観測；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 移動速度）
+- **理論仮説：** [[wiki/entities/items/item-3046|ファントム ダンサー]] + [[wiki/entities/items/item-6675|ナヴォリ フリッカーブレード]]（未観測；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 移動速度）；[[wiki/entities/items/item-2512|フィーンドハンターの矢]] + [[wiki/entities/items/item-6675|ナヴォリ フリッカーブレード]]（未観測；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 移動速度）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-895|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### BOTTOM（対象n=146）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** [[wiki/entities/champions/ashe|アッシュ（Ashe）]] — 対象側勝率60.0%（9/15）、サンプル不足（n=15、十分性の目安30未満）。
+
+### JUNGLE（対象n=2）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

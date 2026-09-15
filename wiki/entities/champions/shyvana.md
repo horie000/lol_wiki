@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-fighter
@@ -122,11 +123,33 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shyvana
 
 ### JUNGLE（521試合）
 
-- **実測ビルド候補：** 黄昏と暁 + クラーケン スレイヤー（該当n=104、66.3% / 非該当48.7%、差+17.7pt）；デス ダンス + クラーケン スレイヤー（該当n=39、64.1% / 非該当51.2%、差+12.9pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-2510|黄昏と暁]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（該当n=104、66.3% / 非該当48.7%、差+17.7pt）；[[wiki/entities/items/item-6333|デス ダンス]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（該当n=39、64.1% / 非該当51.2%、差+12.9pt）
 - **ステータス傾向：** 魔力（該当n=241、58.5% / 非該当46.8%、差+11.7pt）；体力（該当n=485、52.8% / 非該当44.4%、差+8.3pt）
-- **理論仮説：** 実験的ヘクスプレート + トリニティ フォース（n=9（15未満）；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）；ジーク コンバージェンス + 変幻自在のジャック＝ショー（未観測；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力）
+- **理論仮説：** [[wiki/entities/items/item-3073|実験的ヘクスプレート]] + [[wiki/entities/items/item-3078|トリニティ フォース]]（n=9（15未満）；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3050|ジーク コンバージェンス]] + [[wiki/entities/items/item-6665|変幻自在のジャック＝ショー]]（未観測；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-102|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### JUNGLE（対象n=612）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/smolder|スモルダー（Smolder）]] — 対象側勝率70.3%（26/37）、n=37（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/viego|ヴィエゴ（Viego）]] — 対象側勝率61.5%（24/39）、n=39（十分性の目安を満たす）。
+
+### TOP（対象n=32）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

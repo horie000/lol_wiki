@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-assassin
@@ -119,17 +120,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akali.p
 
 ### MIDDLE（967試合）
 
-- **実測ビルド候補：** メジャイ ソウルスティーラー + ヘクステック ガンブレード（該当n=45、97.8% / 非該当49.0%、差+48.8pt）；メジャイ ソウルスティーラー + ヘクステック ガンブレード + 連呪使いのブーツ（該当n=41、97.6% / 非該当49.2%、差+48.3pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3041|メジャイ ソウルスティーラー]] + [[wiki/entities/items/item-3146|ヘクステック ガンブレード]]（該当n=45、97.8% / 非該当49.0%、差+48.8pt）；[[wiki/entities/items/item-3041|メジャイ ソウルスティーラー]] + [[wiki/entities/items/item-3146|ヘクステック ガンブレード]] + [[wiki/entities/items/item-3175|連呪使いのブーツ]]（該当n=41、97.6% / 非該当49.2%、差+48.3pt）
 - **ステータス傾向：** 魔力（該当n=930、52.3% / 非該当27.0%、差+25.2pt）；移動速度（該当n=926、51.8% / 非該当39.0%、差+12.8pt）
-- **理論仮説：** スタティック シヴ + クラーケン スレイヤー（未観測；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力・移動速度）；リフトメーカー + ライアンドリーの仮面（n=12（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 魔力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3087|スタティック シヴ]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（未観測；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力・移動速度）；[[wiki/entities/items/item-4633|リフトメーカー]] + [[wiki/entities/items/item-6653|ライアンドリーの仮面]]（n=12（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 魔力・体力）
 
 ### TOP（130試合）
 
-- **実測ビルド候補：** ゾーニャの砂時計 + シャドウフレイム（該当n=32、65.6% / 非該当33.7%、差+32.0pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3157|ゾーニャの砂時計]] + [[wiki/entities/items/item-4645|シャドウフレイム]]（該当n=32、65.6% / 非該当33.7%、差+32.0pt）
 - **ステータス傾向：** 物理防御（該当n=59、50.8% / 非該当33.8%、差+17.0pt）；体力再生（該当n=31、41.9% / 非該当41.4%、差+0.5pt）
-- **理論仮説：** リフトメーカー + ライアンドリーの仮面（n=9（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 魔力・体力）；リフトメーカー + ブラッドレターの呪い（n=1（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 魔力・体力）
+- **理論仮説：** [[wiki/entities/items/item-4633|リフトメーカー]] + [[wiki/entities/items/item-6653|ライアンドリーの仮面]]（n=9（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 魔力・体力）；[[wiki/entities/items/item-4633|リフトメーカー]] + [[wiki/entities/items/item-8010|ブラッドレターの呪い]]（n=1（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 魔力・体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-84|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### MIDDLE（対象n=1,223）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/master-yi|マスター・イー（MasterYi）]] — 対象側勝率74.2%（23/31）、n=31（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/veigar|ベイガー（Veigar）]] — 対象側勝率27.8%（10/36）、n=36（十分性の目安を満たす）。
+
+### TOP（対象n=174）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率68.8%（11/16）、サンプル不足（n=16、十分性の目安30未満）。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

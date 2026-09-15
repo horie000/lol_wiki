@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-assassin
@@ -119,17 +120,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Talon.p
 
 ### JUNGLE（511試合）
 
-- **実測ビルド候補：** スイフトマーチ + オポチュニティー（該当n=35、82.9% / 非該当48.5%、差+34.3pt）；スイフトマーチ + ナイト エッジ + オポチュニティー（該当n=33、81.8% / 非該当48.7%、差+33.1pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3170|スイフトマーチ]] + [[wiki/entities/items/item-6701|オポチュニティー]]（該当n=35、82.9% / 非該当48.5%、差+34.3pt）；[[wiki/entities/items/item-3170|スイフトマーチ]] + [[wiki/entities/items/item-3814|ナイト エッジ]] + [[wiki/entities/items/item-6701|オポチュニティー]]（該当n=33、81.8% / 非該当48.7%、差+33.1pt）
 - **ステータス傾向：** 体力（該当n=299、54.8% / 非該当45.3%、差+9.6pt）；物理防御（該当n=58、51.7% / 非該当50.8%、差+1.0pt）
-- **理論仮説：** ブラック クリーバー + ナイト エッジ（n=12（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；ナイト エッジ + ケミパンク チェーンソード（n=3（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3071|ブラック クリーバー]] + [[wiki/entities/items/item-3814|ナイト エッジ]]（n=12（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3814|ナイト エッジ]] + [[wiki/entities/items/item-6609|ケミパンク チェーンソード]]（n=3（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 ### MIDDLE（99試合）
 
 - **実測ビルド候補：** 該当・非該当が各30試合以上で正の差を持つ候補なし。
 - **ステータス傾向：** 該当・非該当が各30試合以上で正の差を持つ群なし。
-- **理論仮説：** ブラック クリーバー + サンダード スカイ（n=5（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；ブラック クリーバー + ナイト エッジ（n=3（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3071|ブラック クリーバー]] + [[wiki/entities/items/item-6610|サンダード スカイ]]（n=5（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3071|ブラック クリーバー]] + [[wiki/entities/items/item-3814|ナイト エッジ]]（n=3（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-91|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### JUNGLE（対象n=662）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/jinx|ジンクス（Jinx）]] — 対象側勝率67.5%（27/40）、n=40（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/viego|ヴィエゴ（Viego）]] — 対象側勝率64.9%（24/37）、n=37（十分性の目安を満たす）。
+
+### MIDDLE（対象n=183）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/mordekaiser|モルデカイザー（Mordekaiser）]] — 対象側勝率60.0%（9/15）、サンプル不足（n=15、十分性の目安30未満）。
+- **カウンターピック候補：** [[wiki/entities/champions/ahri|アーリ（Ahri）]] — 対象側勝率53.3%（8/15）、サンプル不足（n=15、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

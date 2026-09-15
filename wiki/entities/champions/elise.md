@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-assassin
@@ -123,15 +124,37 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Elise.p
 
 - **実測ビルド候補：** 該当・非該当が各30試合以上で正の差を持つ候補なし。
 - **ステータス傾向：** 物理防御（該当n=34、47.1% / 非該当37.5%、差+9.6pt）；体力（該当n=41、43.9% / 非該当39.4%、差+4.5pt）
-- **理論仮説：** バンドルパイプ + ジーク コンバージェンス（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）；バンドルパイプ + ソラリのロケット（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）
+- **理論仮説：** [[wiki/entities/items/item-2524|バンドルパイプ]] + [[wiki/entities/items/item-3050|ジーク コンバージェンス]]（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）；[[wiki/entities/items/item-2524|バンドルパイプ]] + [[wiki/entities/items/item-3190|ソラリのロケット]]（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）
 
 ### JUNGLE（63試合）
 
 - **実測ビルド候補：** 該当・非該当が各30試合以上で正の差を持つ候補なし。
 - **ステータス傾向：** 該当・非該当が各30試合以上で正の差を持つ群なし。
-- **理論仮説：** リーライ クリスタル セプター + ブラッドレターの呪い（n=1（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）；ヘクステック ロケットベルト + ブラッドレターの呪い（未観測；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
+- **理論仮説：** [[wiki/entities/items/item-3116|リーライ クリスタル セプター]] + [[wiki/entities/items/item-8010|ブラッドレターの呪い]]（n=1（15未満）；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）；[[wiki/entities/items/item-3152|ヘクステック ロケットベルト]] + [[wiki/entities/items/item-8010|ブラッドレターの呪い]]（未観測；共通stats: 魔力・体力／チャンピオン原典にも言及: 体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-60|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### UTILITY（対象n=135）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/jhin|ジン（Jhin）]] — 対象側勝率61.1%（11/18）、サンプル不足（n=18、十分性の目安30未満）。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+### JUNGLE（対象n=130）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

@@ -395,6 +395,99 @@ def rune_rows(
     return sort_aggregate(rows, "rune_name")
 
 
+def champion_rune_rows(
+    group: ScopeGroup,
+    entries: Sequence[ScopedMatch],
+    *,
+    catalog: DataDragonCatalog,
+    roles: set[str],
+    champion_ids: set[str],
+    min_games: int,
+    include_incomplete: bool,
+) -> list[dict[str, Any]]:
+    """チャンピオン・ロールごとのルーン選択率と関連勝率を集計する。"""
+
+    rows: list[dict[str, Any]] = []
+    role_order = {"ALL": 0, "TOP": 1, "JUNGLE": 2, "MIDDLE": 3, "BOTTOM": 4, "UTILITY": 5, "UNKNOWN": 6}
+    kind_order = {"keystone": 0, "rune": 1, "shard": 2}
+    for patch, patch_entries in group_by_patch(entries).items():
+        eligible_entries = complete_entries(patch_entries, include_incomplete)
+        all_views = [view for entry in eligible_entries for view in participant_views(entry)]
+        filtered_views = [
+            view
+            for view in all_views
+            if participant_matches_filters(view, roles=roles, champion_ids=champion_ids)
+        ]
+        role_labels = ["ALL"] + sorted(
+            {view.role for view in filtered_views if view.role != "UNKNOWN"},
+            key=lambda role: (role_order.get(role, 99), role),
+        )
+        for role_label in role_labels:
+            selected = filtered_views if role_label == "ALL" else [
+                view for view in filtered_views if view.role == role_label
+            ]
+            grouped: defaultdict[tuple[str, str], list[ParticipantView]] = defaultdict(list)
+            for view in selected:
+                champion_key = str(view.champion_id or normalize_alias(view.champion_name))
+                grouped[(champion_key, champion_label(view))].append(view)
+            for (champion_key, champion_name), champion_views in grouped.items():
+                if len(champion_views) < min_games:
+                    continue
+                champion_wins = sum(1 for view in champion_views if view.win is True)
+                rune_holders: defaultdict[tuple[str, int, Optional[int]], list[ParticipantView]] = defaultdict(list)
+                for view in champion_views:
+                    seen: set[tuple[str, int, Optional[int]]] = set()
+                    for rune in view.runes:
+                        rune_id = as_int(rune.get("id"))
+                        if rune_id is None:
+                            continue
+                        kind = str(rune.get("kind") or "rune")
+                        style_id = as_int(rune.get("style_id"))
+                        key = (kind, rune_id, style_id)
+                        if key not in seen:
+                            rune_holders[key].append(view)
+                            seen.add(key)
+                for (kind, rune_id, style_id), holders in rune_holders.items():
+                    if len(holders) < min_games:
+                        continue
+                    wins = sum(1 for view in holders if view.win is True)
+                    rows.append(
+                        {
+                            **base_row(group, patch, role_label),
+                            "champion_id": int(champion_key) if champion_key.isdigit() else champion_key,
+                            "champion_name": champion_name,
+                            "champion_games": len(champion_views),
+                            "champion_wins": champion_wins,
+                            "champion_losses": sum(1 for view in champion_views if view.win is False),
+                            "champion_win_rate": ratio(champion_wins, len(champion_views)),
+                            "rune_kind": kind,
+                            "rune_id": rune_id,
+                            "rune_name": catalog.rune_name(rune_id),
+                            "rune_style_id": style_id,
+                            "rune_style_name": catalog.rune_style_name(style_id) if style_id is not None else "",
+                            "games": len(holders),
+                            "wins": wins,
+                            "losses": sum(1 for view in holders if view.win is False),
+                            "win_rate": ratio(wins, len(holders)),
+                            "pick_rate": ratio(len(holders), len(champion_views)),
+                            "pick_rate_denominator": len(champion_views),
+                            "min_games_applied": min_games,
+                        }
+                    )
+    return sorted(
+        rows,
+        key=lambda row: (
+            -int(row.get("champion_games") or 0),
+            role_order.get(str(row.get("role") or ""), 99),
+            str(row.get("champion_name") or ""),
+            kind_order.get(str(row.get("rune_kind") or ""), 99),
+            -int(row.get("games") or 0),
+            str(row.get("rune_name") or ""),
+            int(row.get("rune_id") or 0),
+        ),
+    )
+
+
 def spell_rows(
     group: ScopeGroup,
     entries: Sequence[ScopedMatch],
@@ -749,6 +842,7 @@ def aggregate(
         "champions": [],
         "items": [],
         "runes": [],
+        "champion_runes": [],
         "spells": [],
         "performance": [],
         "role_gold": [],
@@ -780,6 +874,17 @@ def aggregate(
         )
         result["runes"].extend(
             rune_rows(
+                group,
+                group.entries,
+                catalog=catalog,
+                roles=roles,
+                champion_ids=champion_ids,
+                min_games=min_games,
+                include_incomplete=include_incomplete,
+            )
+        )
+        result["champion_runes"].extend(
+            champion_rune_rows(
                 group,
                 group.entries,
                 catalog=catalog,
@@ -850,6 +955,12 @@ CSV_FIELDS = {
         "scope", "observed_tier", "patch", "role", "rune_kind", "rune_id", "rune_name", "games", "wins",
         "losses", "win_rate", "pick_rate", "pick_rate_denominator", "min_games_applied",
     ),
+    "champion_runes": (
+        "scope", "observed_tier", "patch", "role", "champion_id", "champion_name", "champion_games",
+        "champion_wins", "champion_losses", "champion_win_rate", "rune_kind", "rune_id", "rune_name",
+        "rune_style_id", "rune_style_name", "games", "wins", "losses", "win_rate", "pick_rate",
+        "pick_rate_denominator", "min_games_applied",
+    ),
     "spells": (
         "scope", "observed_tier", "patch", "role", "spell_id", "spell_name", "games", "wins", "losses",
         "win_rate", "pick_rate", "pick_rate_denominator", "min_games_applied",
@@ -884,7 +995,7 @@ def report_overall_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any
         dict(row)
         for row in rows
         if row.get("scope") == "overall"
-        and row.get("observed_tier") == "ALL"
+        and row.get("observed_tier") in {"ALL", "MIXED"}
         and row.get("role", "ALL") == "ALL"
     ]
 
@@ -1011,7 +1122,7 @@ def report_duration_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, An
     filtered = [
         dict(row)
         for row in rows
-        if row.get("scope") == "overall" and row.get("observed_tier") == "ALL"
+        if row.get("scope") == "overall" and row.get("observed_tier") in {"ALL", "MIXED"}
     ]
     all_rows = [row for row in filtered if row.get("patch") == "ALL"]
     patch_rows = sorted(
@@ -1066,6 +1177,117 @@ def report_role_gold_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, A
     return sorted(selected, key=lambda row: role_order.get(str(row.get("role")), 99))
 
 
+def report_champion_rune_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    """観測数の多いチャンピオン・ロールのルーン選択例を抽出する。"""
+    candidates = [
+        dict(row)
+        for row in rows
+        if row.get("scope") == "overall"
+        and row.get("observed_tier") in {"ALL", "MIXED"}
+        and row.get("role") not in {None, "ALL"}
+    ]
+    # champion_rune_rows はパッチごとの行を返すため、レポートの代表値は
+    # パッチをまたいで合算する。チャンピオン分母は同じパッチの重複行を
+    # 一度だけ数え、ルーンの分子・分母はルーンごとに加算する。
+    champion_by_patch: dict[tuple[str, str, str], dict[str, Any]] = {}
+    rune_totals: dict[tuple[str, str, str, str, str, str], dict[str, Any]] = {}
+    for row in candidates:
+        champion_key = (
+            str(row.get("champion_id") or ""),
+            str(row.get("role") or ""),
+            str(row.get("patch") or ""),
+        )
+        champion_by_patch.setdefault(champion_key, {
+            "champion_id": row.get("champion_id"),
+            "champion_name": row.get("champion_name"),
+            "role": row.get("role"),
+            "champion_games": int(row.get("champion_games") or 0),
+            "champion_wins": int(row.get("champion_wins") or 0),
+            "champion_losses": int(row.get("champion_losses") or 0),
+        })
+        rune_key = (
+            champion_key[0],
+            champion_key[1],
+            str(row.get("rune_kind") or ""),
+            str(row.get("rune_id") or ""),
+            str(row.get("rune_style_id") or ""),
+            str(row.get("rune_name") or ""),
+        )
+        current = rune_totals.get(rune_key)
+        if current is None:
+            current = dict(row)
+            current["games"] = 0
+            current["wins"] = 0
+            current["losses"] = 0
+            rune_totals[rune_key] = current
+        current["games"] += int(row.get("games") or 0)
+        current["wins"] += int(row.get("wins") or 0)
+        current["losses"] += int(row.get("losses") or 0)
+
+    champion_totals: dict[tuple[str, str], dict[str, Any]] = {}
+    for (champion_id, role, _patch), row in champion_by_patch.items():
+        key = (champion_id, role)
+        current = champion_totals.get(key)
+        if current is None:
+            current = dict(row)
+            current["champion_games"] = 0
+            current["champion_wins"] = 0
+            current["champion_losses"] = 0
+            champion_totals[key] = current
+        current["champion_games"] += row["champion_games"]
+        current["champion_wins"] += row["champion_wins"]
+        current["champion_losses"] += row["champion_losses"]
+
+    aggregated: list[dict[str, Any]] = []
+    for (champion_id, role, _kind, _rune_id, _style_id, _rune_name), row in rune_totals.items():
+        champion = champion_totals[(champion_id, role)]
+        row["patch"] = "ALL"
+        row["champion_games"] = champion["champion_games"]
+        row["champion_wins"] = champion["champion_wins"]
+        row["champion_losses"] = champion["champion_losses"]
+        row["champion_win_rate"] = ratio(champion["champion_wins"], champion["champion_games"])
+        row["win_rate"] = ratio(row["wins"], row["games"])
+        row["pick_rate"] = ratio(row["games"], row["champion_games"])
+        row["pick_rate_denominator"] = row["champion_games"]
+        aggregated.append(row)
+
+    partitions: defaultdict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for row in aggregated:
+        partitions[(str(row.get("champion_id") or ""), str(row.get("role") or ""))].append(row)
+    top_partitions = sorted(
+        partitions.items(),
+        key=lambda item: (
+            -int(max((row.get("champion_games") or 0 for row in item[1]), default=0)),
+            str(item[1][0].get("champion_name") or ""),
+            str(item[0][1]),
+        ),
+    )[:20]
+    kind_order = {"keystone": 0, "rune": 1, "shard": 2}
+    selected: list[dict[str, Any]] = []
+    for _, partition in top_partitions:
+        for kind in ("keystone", "rune", "shard"):
+            selected.extend(
+                sorted(
+                    (row for row in partition if row.get("rune_kind") == kind),
+                    key=lambda row: (
+                        -(float(row.get("pick_rate")) if row.get("pick_rate") is not None else -1),
+                        -int(row.get("games") or 0),
+                        str(row.get("rune_name") or ""),
+                    ),
+                )[:2]
+            )
+    return sorted(
+        selected,
+        key=lambda row: (
+            -int(row.get("champion_games") or 0),
+            str(row.get("champion_name") or ""),
+            str(row.get("role") or ""),
+            kind_order.get(str(row.get("rune_kind") or ""), 99),
+            -(float(row.get("pick_rate")) if row.get("pick_rate") is not None else -1),
+        ),
+    )
+
+
 def render_report(
     *,
     dataset: Dataset,
@@ -1077,6 +1299,7 @@ def render_report(
     quality = dataset.quality.as_dict()
     champion_report = aggregate_report_rows(analysis["champions"], ("champion_id",), "champion_name")
     rune_report = aggregate_report_rows(analysis["runes"], ("rune_kind", "rune_id"), "rune_name")
+    champion_rune_report = report_champion_rune_rows(analysis["champion_runes"])
     spell_report = aggregate_report_rows(analysis["spells"], ("spell_id",), "spell_name")
     role_gold_report = report_role_gold_rows(analysis["role_gold"])
     duration_report = report_duration_rows(analysis["duration"])
@@ -1120,6 +1343,29 @@ def render_report(
             (("rune_name", "ルーン"), ("rune_kind", "種類"), ("rune_id", "ID"), ("games", "選択試合"), ("win_rate", "勝率")),
         ),
         "",
+        "## チャンピオン別ルーン選択（観測数の多い上位例）",
+        "",
+        "同じチャンピオン・正規化ロールの参加者を分母に、各ルーンを選択した参加者の割合を集計しています。以下は観測数の多い20チャンピオン・ロールからの上位例で、全行は `champion-rune-summary.csv` と `analysis.json` に保存しています。",
+        "",
+        markdown_table(
+            champion_rune_report,
+            (
+                ("champion_name", "チャンピオン"),
+                ("role", "ロール"),
+                ("rune_kind", "種類"),
+                ("rune_name", "ルーン"),
+                ("rune_style_name", "ルーン系統"),
+                ("games", "選択数"),
+                ("champion_games", "チャンピオン試合"),
+                ("pick_rate", "選択率"),
+                ("win_rate", "選択時勝率"),
+                ("champion_win_rate", "チャンピオン勝率"),
+            ),
+            limit=40,
+        ),
+        "",
+        "選択時勝率とチャンピオン全体の勝率の差は未調整の記述統計であり、ルーンの因果効果や推奨を示しません。シャードは1参加者が3つ選ぶため、種類内の選択率を合計して100%にはなりません。",
+        "",
         "## ルーン表示名の注意",
         "",
         "Data Dragon v16.18.1 の `runesReforged.json` はルーンツリー内の選択ルーンを収録していますが、Match-v5 の `perks.statPerks` に含まれるステータスシャードの表示名辞書は収録していません。",
@@ -1135,7 +1381,7 @@ def render_report(
         "",
         "## 試合時間",
         "",
-        "この表の1行は、`overall`（全体）・`observed_tier=ALL`（観測帯を分けない）で、`パッチ=ALL` は全パッチ合算、その他はパッチ別の集計です。時間の単位は分・秒です。",
+        "この表の1行は、`overall`（全体）・`observed_tier=ALL/MIXED`（観測帯を分けない）で、`パッチ=ALL` は全パッチ合算、その他はパッチ別の集計です。時間の単位は分・秒です。",
         "`中央値` は試合の半分がこの時間以内に終了したことを示します。`P10` は短い方から10%地点、`P90` は90%地点で、P10〜P90の間が中央80%の試合時間です。`試合` はその統計の分母です。",
         "具体例として、`パッチ=ALL` の行では、中央値を典型的な試合時間、P10〜P90を極端に短い・長い試合を除いた範囲として読みます。これはチャンピオンのパワースパイク、勝ちやすい時間帯、試合時間の因果要因を示すものではありません。",
         "",
@@ -1321,6 +1567,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     "champions": "champion-summary.csv",
                     "items": "item-summary.csv",
                     "runes": "rune-summary.csv",
+                    "champion_runes": "champion-rune-summary.csv",
                     "spells": "summoner-spell-summary.csv",
                     "performance": "performance-summary.csv",
                     "role_gold": "role-gold.csv",

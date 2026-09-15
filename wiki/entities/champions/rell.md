@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-tank
@@ -125,11 +126,33 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rell.pn
 
 ### UTILITY（648試合）
 
-- **実測ビルド候補：** ジーク コンバージェンス + 騎士の誓い + ソラリのロケット（該当n=60、68.3% / 非該当48.3%、差+20.0pt）；ジーク コンバージェンス + 騎士の誓い（該当n=87、65.5% / 非該当47.8%、差+17.7pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3050|ジーク コンバージェンス]] + [[wiki/entities/items/item-3109|騎士の誓い]] + [[wiki/entities/items/item-3190|ソラリのロケット]]（該当n=60、68.3% / 非該当48.3%、差+20.0pt）；[[wiki/entities/items/item-3050|ジーク コンバージェンス]] + [[wiki/entities/items/item-3109|騎士の誓い]]（該当n=87、65.5% / 非該当47.8%、差+17.7pt）
 - **ステータス傾向：** 魔法防御（該当n=618、51.1% / 非該当30.0%、差+21.1pt）；魔力（該当n=45、55.6% / 非該当49.8%、差+5.8pt）
-- **理論仮説：** ジーク コンバージェンス + 変幻自在のジャック＝ショー（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力・魔法防御）；ソラリのロケット + 変幻自在のジャック＝ショー（未観測；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力・魔法防御）
+- **理論仮説：** [[wiki/entities/items/item-3050|ジーク コンバージェンス]] + [[wiki/entities/items/item-6665|変幻自在のジャック＝ショー]]（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力・魔法防御）；[[wiki/entities/items/item-3190|ソラリのロケット]] + [[wiki/entities/items/item-6665|変幻自在のジャック＝ショー]]（未観測；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力・魔法防御）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-526|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### UTILITY（対象n=797）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率66.7%（32/48）、n=48（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/seraphine|セラフィーン（Seraphine）]] — 対象側勝率35.6%（16/45）、n=45（十分性の目安を満たす）。
+
+### JUNGLE（対象n=3）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

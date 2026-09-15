@@ -353,6 +353,7 @@ class DataDragonCatalog:
         self.archive_path = archive_path
         self.items: dict[int, str] = {}
         self.runes: dict[int, str] = {}
+        self.rune_styles: dict[int, str] = {}
         self.spells: dict[int, str] = {}
         self.champions: dict[str, dict[str, Any]] = {}
         self.aliases: defaultdict[str, set[str]] = defaultdict(set)
@@ -405,6 +406,9 @@ class DataDragonCatalog:
         for style in payload:
             if not isinstance(style, Mapping):
                 continue
+            style_id = as_int(style.get("id"))
+            if style_id is not None:
+                self.rune_styles[style_id] = str(style.get("name") or f"UNKNOWN({style_id})")
             for slot in style.get("slots", []):
                 if not isinstance(slot, Mapping):
                     continue
@@ -449,6 +453,9 @@ class DataDragonCatalog:
 
     def rune_name(self, rune_id: Optional[int]) -> str:
         return self.runes.get(rune_id or -1, f"UNKNOWN({rune_id})")
+
+    def rune_style_name(self, style_id: Optional[int]) -> str:
+        return self.rune_styles.get(style_id or -1, f"UNKNOWN({style_id})")
 
     def spell_name(self, spell_id: Optional[int]) -> str:
         return self.spells.get(spell_id or -1, f"UNKNOWN({spell_id})")

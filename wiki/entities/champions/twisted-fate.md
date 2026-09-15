@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-mage
@@ -121,11 +122,33 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Twisted
 
 ### MIDDLE（242試合）
 
-- **実測ビルド候補：** ラピッド ファイアキャノン + ゾーニャの砂時計（該当n=40、67.5% / 非該当45.0%、差+22.5pt）；ラピッド ファイアキャノン + リッチ ベイン + ゾーニャの砂時計（該当n=33、66.7% / 非該当45.9%、差+20.7pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3094|ラピッド ファイアキャノン]] + [[wiki/entities/items/item-3157|ゾーニャの砂時計]]（該当n=40、67.5% / 非該当45.0%、差+22.5pt）；[[wiki/entities/items/item-3094|ラピッド ファイアキャノン]] + [[wiki/entities/items/item-3100|リッチ ベイン]] + [[wiki/entities/items/item-3157|ゾーニャの砂時計]]（該当n=33、66.7% / 非該当45.9%、差+20.7pt）
 - **ステータス傾向：** 物理防御（該当n=91、57.1% / 非該当43.7%、差+13.4pt）；攻撃速度（該当n=180、51.1% / 非該当41.9%、差+9.2pt）
-- **理論仮説：** ユン・タル ワイルドアロー + クラーケン スレイヤー（n=4（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）；ルインドキング ブレード + クラーケン スレイヤー（n=2（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）
+- **理論仮説：** [[wiki/entities/items/item-3032|ユン・タル ワイルドアロー]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（n=4（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）；[[wiki/entities/items/item-3153|ルインドキング ブレード]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（n=2（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-4|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### MIDDLE（対象n=413）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/miss-fortune|ミス・フォーチュン（MissFortune）]] — 対象側勝率60.0%（18/30）、n=30（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/akali|アカリ（Akali）]] — 対象側勝率27.8%（5/18）、サンプル不足（n=18、十分性の目安30未満）。
+
+### TOP（対象n=17）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

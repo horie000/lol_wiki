@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-fighter
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Camille
 
 ### TOP（157試合）
 
-- **実測ビルド候補：** ステラックの篭手 + ラヴァナス ハイドラ（該当n=30、63.3% / 非該当43.3%、差+20.0pt）；ラヴァナス ハイドラ + トリニティ フォース（該当n=104、53.8% / 非該当34.0%、差+19.9pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3053|ステラックの篭手]] + [[wiki/entities/items/item-3074|ラヴァナス ハイドラ]]（該当n=30、63.3% / 非該当43.3%、差+20.0pt）；[[wiki/entities/items/item-3074|ラヴァナス ハイドラ]] + [[wiki/entities/items/item-3078|トリニティ フォース]]（該当n=104、53.8% / 非該当34.0%、差+19.9pt）
 - **ステータス傾向：** ライフスティール（該当n=116、53.4% / 非該当29.3%、差+24.2pt）；物理防御（該当n=109、51.4% / 非該当37.5%、差+13.9pt）
-- **理論仮説：** トリニティ フォース + サンダード スカイ（n=8（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；ガーディアン エンジェル + デス ダンス（n=2（15未満）；共通stats: 物理防御・攻撃力／チャンピオン原典にも言及: 物理防御・攻撃力）
+- **理論仮説：** [[wiki/entities/items/item-3078|トリニティ フォース]] + [[wiki/entities/items/item-6610|サンダード スカイ]]（n=8（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3026|ガーディアン エンジェル]] + [[wiki/entities/items/item-6333|デス ダンス]]（n=2（15未満）；共通stats: 物理防御・攻撃力／チャンピオン原典にも言及: 物理防御・攻撃力）
 
 ### UTILITY（143試合）
 
 - **実測ビルド候補：** 該当・非該当が各30試合以上で正の差を持つ候補なし。
 - **ステータス傾向：** 魔法防御（該当n=35、51.4% / 非該当48.1%、差+3.3pt）
-- **理論仮説：** ジーク コンバージェンス + ソラリのロケット（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力）；トリニティ フォース + サンダード スカイ（n=2（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3050|ジーク コンバージェンス]] + [[wiki/entities/items/item-3190|ソラリのロケット]]（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力）；[[wiki/entities/items/item-3078|トリニティ フォース]] + [[wiki/entities/items/item-6610|サンダード スカイ]]（n=2（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-164|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### TOP（対象n=299）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/yunara|ユナラ（Yunara）]] — 対象側勝率64.7%（11/17）、サンプル不足（n=17、十分性の目安30未満）。
+- **カウンターピック候補：** [[wiki/entities/champions/aatrox|エイトロックス（Aatrox）]] — 対象側勝率55.6%（10/18）、サンプル不足（n=18、十分性の目安30未満）。
+
+### UTILITY（対象n=185）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率35.3%（6/17）、サンプル不足（n=17、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

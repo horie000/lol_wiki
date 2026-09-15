@@ -11,6 +11,8 @@ sources:
   - "[[wiki/sources/src-2026-02-28-red-ff-item-gold-efficiency]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
 tags:
   - overview
 ---
@@ -23,7 +25,7 @@ tags:
 
 現在は、version `16.18.1` のチャンピオンデータセットとData Dragon配布アーカイブを収録している。基本原典には173件のレコードがあり、日本語の名前・称号・紹介文、役割タグ、リソース種別、画像参照、評価値、数値ステータスが含まれる。配布アーカイブの日本語個別レコードから、各チャンピオンのパッシブと4スキルの説明、868件のアイテム、62件のルーン、34件のサモナースペルを個別ページへ展開している。
 
-これに加えて、2024-09-25〜2026-09-14に収集したキュー420のランク戦データを記述統計として扱っている。試合時間帯別スナップショットは4,672件、最新のアイテム・ビルド分析スナップショットは9,736件、ロール別ゴールド獲得率スナップショットは9,971件の完全試合であり、各原典要約とレポートに解析時点を固定している。
+これに加えて、2024-09-25〜2026-09-14に収集したキュー420のランク戦データを記述統計として扱っている。試合時間帯別スナップショットは4,672件、最新のアイテム・ビルド分析スナップショットは9,736件、ロール別ゴールド獲得率スナップショットは9,971件、コンボ・対面分析スナップショットは13,107件、チャンピオン別ルーン選択スナップショットは15,572件の完全試合であり、各原典要約とレポートに解析時点を固定している。
 
 ## 現在の知見
 
@@ -39,6 +41,8 @@ tags:
 - アイテム868件には、レッド＆ふぉー記事の単価表を適用したゴールド効率、理論価格、算定対象外の効果を個別に記録している。行動妨害耐性、割合物理防御貫通、割合・固定魔法防御貫通、ライフスティール、割合移動速度などを算定し、固定通常攻撃時追加ダメージだけはFirstBloodStats記事の補助単価を使う。記事に単価のないステータスや条件付き効果は対象外である。
 - アイテム868件には、効果・ステータスから相性のよいチャンピオン系統を推定した `champion-synergy-*` タグを付与している。複数タグを許し、`marksman`、`fighter`、`assassin`、`mage`、`tank`、`support`、`jungler`、`utility` の検索で絞り込める。これはData Dragon原典からの候補分類であり、個別チャンピオンの最適ビルドや勝率を断定しない。
 - 収集済みの実試合データから、`scripts/riot_champion_item_synergy.py` でチャンピオン・ロール・個別アイテムに加え、Data Dragon `stats` の同一ステータス群（クリティカル率など）と完成アイテム中核の所持時／非所持時勝率差を集計できる。173件のチャンピオンentityには最大2ロール・各2候補の短い生成ブロックを置き、全候補と詳細表は同じスナップショットの `reports/` へリンクする。これは原典タグや最適ビルドを自動確定するものではなく、パッチ差、試合時間、勝敗後の完成、生存者バイアスを含む探索レポートである。
+- 収集済みの実試合データから、味方コンボと同ロール対面候補も集計している。173件すべてのチャンピオンentityに、実測勝率・分子分母・n<30のサンプル不足表示・詳細レポートへのリンクを追加した。Wilson区間で小標本の極端値を抑えた選定だが、パッチ、構成、プレイヤー、実際のレーン対面を調整した因果推定ではない。
+- 収集済みの実試合データから、チャンピオン・ロール別のルーン選択率も集計している。15,572件の完全試合では、TOPモルデカイザーの征服者99.1%、BOTTOMジンクスのリーサルテンポ94.4%、UTILITYレオナのアフターショック94.1%など、ロールを固定すると定番が明瞭になる一方、選択時勝率との差は多くが1ポイント未満だった。これは選択傾向の観測であり、最適ルーンや因果効果を示さない。
 - チャンピオン173件、アイテム868件、ルーン62件、サモナースペル34件の全個別ページに、Data Dragon由来であることを示す共通タグ `data-dragon` を付与している。
 - サモナーズリフトで購入できるアイテムの高低10例を比較し、消耗品・視界・ジャングル用品・時間限定効果の0%を「弱い」と結論付けられないことを整理した。
 - 個別ページの説明ではHTML風の表示タグを除去しているが、サモナースペル等のツールチップ内プレースホルダーは追加仕様なしに数値化していない。
@@ -52,6 +56,8 @@ tags:
 - [[wiki/sources/src-2017-11-26-firstbloodstats-gold-efficiency|アイテムのゴールド効率について改めてまとめた]]
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate|Riotランク戦試合データ：試合時間帯別チャンピオン勝率]]
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups|Riotランク戦試合データ：チャンピオン別コンボ・カウンターピック分析]]
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]
 - [[wiki/sources/src-2026-02-28-red-ff-item-gold-efficiency|アイテムの金銭効率ランキング：ファイター編【LoL】]]
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
 - [[wiki/concepts/game-data-catalog|ゲームデータ個別ページのカタログ]]
@@ -62,6 +68,8 @@ tags:
 - [[wiki/syntheses/champion-power-spikes-v16-18-1|チャンピオンのパワースパイク分類 v16.18.1]]
 - [[wiki/syntheses/champion-power-spikes-match-duration|チャンピオンのパワースパイク：試合時間帯別勝率の見直し]]
 - [[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率：ランク戦最終スコアの集計]]
+- [[wiki/syntheses/champion-combo-counter-ranked-matches|実測チャンピオン・コンボ／カウンターピック分析]]
+- [[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]
 - [[wiki/log|Wiki ログ]]
 
 ## 未解決の問い
@@ -71,6 +79,8 @@ tags:
 - `item-modifiers.json`、他ロケール、TFT等の周辺データをどの粒度で取り込むか。
 - パッチ・ロール・観測ランク帯を固定した時間帯別勝率の傾向が、全体集計でも再現するか。
 - ロール別GPMの差をパッチ・チャンピオン・試合時間で調整した場合、チャンピオンの時間帯別勝率の観測はどの程度変わるか。
+- コンボ・対面候補をパッチ・ロール・試合時間・プレイヤー構成で調整した場合、どの候補が再現するか。
+- チャンピオン別ルーン選択の定番が、同一パッチ・同一ロールの層別集計でも再現するか。
 
 ## 出典
 
@@ -79,3 +89,5 @@ tags:
 - [[wiki/sources/src-2017-11-26-firstbloodstats-gold-efficiency|アイテムのゴールド効率について改めてまとめた]]
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate|Riotランク戦試合データ：試合時間帯別チャンピオン勝率]]
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups|Riotランク戦試合データ：チャンピオン別コンボ・カウンターピック分析]]
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]

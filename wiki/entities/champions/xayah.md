@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-marksman
@@ -119,11 +120,33 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xayah.p
 
 ### BOTTOM（327試合）
 
-- **実測ビルド候補：** ガンメタル ブーツ + ナヴォリ フリッカーブレード（該当n=32、90.6% / 非該当45.4%、差+45.2pt）；インフィニティ エッジ + ドミニク リガード（該当n=60、66.7% / 非該当46.1%、差+20.6pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3172|ガンメタル ブーツ]] + [[wiki/entities/items/item-6675|ナヴォリ フリッカーブレード]]（該当n=32、90.6% / 非該当45.4%、差+45.2pt）；[[wiki/entities/items/item-3031|インフィニティ エッジ]] + [[wiki/entities/items/item-3036|ドミニク リガード]]（該当n=60、66.7% / 非該当46.1%、差+20.6pt）
 - **ステータス傾向：** ライフスティール（該当n=68、69.1% / 非該当44.8%、差+24.3pt）；物理防御（該当n=43、58.1% / 非該当48.6%、差+9.5pt）
-- **理論仮説：** ファントム ダンサー + ナヴォリ フリッカーブレード（n=3（15未満）；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 攻撃速度・移動速度）；ラピッド ファイアキャノン + ナヴォリ フリッカーブレード（n=1（15未満）；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 攻撃速度・移動速度）
+- **理論仮説：** [[wiki/entities/items/item-3046|ファントム ダンサー]] + [[wiki/entities/items/item-6675|ナヴォリ フリッカーブレード]]（n=3（15未満）；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 攻撃速度・移動速度）；[[wiki/entities/items/item-3094|ラピッド ファイアキャノン]] + [[wiki/entities/items/item-6675|ナヴォリ フリッカーブレード]]（n=1（15未満）；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 攻撃速度・移動速度）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-498|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### BOTTOM（対象n=439）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/rakan|ラカン（Rakan）]] — 対象側勝率45.6%（47/103）、n=103（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/kaisa|カイ＝サ（Kaisa）]] — 対象側勝率45.5%（20/44）、n=44（十分性の目安を満たす）。
+
+### TOP（対象n=2）
+
+- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

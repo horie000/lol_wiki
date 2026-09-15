@@ -1,6 +1,6 @@
 # Riot API ランク戦試合結果解析スクリプト仕様書
 
-- 仕様バージョン：0.8（ロール別ゴールド獲得率追加）
+- 仕様バージョン：0.9（チャンピオン別ルーン選択追加）
 - 作成日：2026-09-15
 - 改訂日：2026-09-15
 - 対象ゲーム：League of Legends
@@ -196,6 +196,19 @@ python3 scripts/riot_ranked_match_analyzer.py \
 - 観測帯、パッチ、ロール、チャンピオン別の内訳
 
 ルーンページの系統やスロットが原典から解決できない場合は、IDだけで集計し、未知メタデータとして記録する。
+
+#### 6.4.1 チャンピオン別ルーン選択
+
+チャンピオンと正規化ロールの組み合わせごとに、同じチャンピオン・ロールの参加者を分母としてルーン選択を集計する。通常のルーン集計とは別に、`champion-rune-summary.csv` と `analysis.json` の `results.champion_runes` へ出力する。
+
+- 粒度は `champion_id × role × rune_kind × rune_id × rune_style_id` とする。`role=ALL` はチャンピオン単位の補助集計として併記し、ロール別の選択率の解釈には使わない。
+- `champion_games`、`champion_wins`、`champion_losses` はチャンピオン・ロールの全参加者、`games`、`wins`、`losses` は当該ルーンを選択した参加者である。
+- `pick_rate = games / champion_games`、`win_rate = wins / games`、`champion_win_rate = champion_wins / champion_games` とし、すべての分子・分母を出力する。
+- 同一参加者の同一ルーンは1回だけ数える。キーストーン、通常ルーン、ステータスシャードを `rune_kind` で分け、シャードは3枠を別々に数えるため種類内の選択率を合計して100%とはしない。
+- パッチ別の行は、同一チャンピオン・ロール・パッチの分母を一度だけ数えてから、`tier_mode=all` の全パッチ行を合算する。観測帯別行を足し合わせて全体値を作らない。
+- `--min-games` はチャンピオン・ロールの母数とルーン選択数の双方に適用する。少数の選択肢は出力から除外するが、品質・解釈上の制約をレポートへ残す。
+- 選択時勝率とチャンピオン全体勝率の差は未調整の記述統計であり、ルーンの因果効果、最適性、推奨を示さない。パッチ、ロール、プレイヤー、試合展開、選択バイアスを含む。
+- `rune_style_id` は Data Dragon のルーン系統で解決し、ステータスシャードのIDは表示名辞書がない場合 `UNKNOWN(<id>)` とする。
 
 ### 6.5 参加者パフォーマンス
 
@@ -400,8 +413,10 @@ CSV/JSONには、チャンピオン・ロール・アイテム、ステータス
 - 実測候補は該当・非該当の双方が `analysis.json` の `report_min_games`（既定30）以上で、勝率差が正のものに限定する。これは表示基準であり統計的有意性ではない。
 - 理論仮説は共通するData Dragon `stats` と、生成ブロック外のチャンピオンページにある原典由来の語彙を使って表示順を決める。スキルとの相互作用を実証したものではない。
 - ブロックから同一実行の `champions/champion-<champion_id>.md` へ直接リンクし、詳細表、負の差、小標本、候補全体はレポート側で確認できるようにする。
+- 生成ブロック内のビルド名・理論仮説に含まれるアイテムは、既存の `wiki/entities/items/item-<item_id>.md` の `title` を表示名としてWikilink化する。アイテム名だけでなく分析結果のアイテムIDでリンク先を確定し、同名のモード別アイテムを取り違えない。
 - entityの `sources` には専用の原典要約を追加し、`updated` を解析スナップショットのAsia/Tokyo生成日へ更新する。詳細レポート自体は原典ではなく、収集済み試合データから生成した派生物として扱う。
 - 通常の解析実行ではentityを暗黙に変更しない。`--dry-run` で対象・差分・詳細レポート欠落を確認し、`--write` で同期し、`--check` で再現性を検証する。
+- アイテムリンク同期は新しい試合レポートを生成しない。既存の `analysis.json` と既存のアイテムentityを入力にして、生成ブロックの表示だけを置換する。対応するアイテムentityがない場合は書き込まずエラーにする。
 
 ```bash
 python3 scripts/riot_champion_build_wiki_sync.py \
@@ -431,6 +446,7 @@ reports/riot-ranked-match-analysis/
     ├── champion-summary.csv
     ├── item-summary.csv
     ├── rune-summary.csv
+    ├── champion-rune-summary.csv
     ├── summoner-spell-summary.csv
     ├── performance-summary.csv
     ├── role-gold.csv
@@ -490,6 +506,8 @@ reports/riot-ranked-match-analysis/
 
 ルーンは `rune_kind` とIDを表示する。`perks.statPerks` のステータスシャードは `runesReforged.json` に表示名がないため、`UNKNOWN(<ID>)` となる場合がある。これは試合レコードの欠損とは区別する。
 
+チャンピオン別ルーン選択は、観測数の多いチャンピオン・ロールから代表例をMarkdownへ掲載し、全行を `champion-rune-summary.csv` と `analysis.json` へ保存する。代表例は探索の入口であり、選択率の高いルーンを推奨として扱わない。
+
 チャンピオン、サモナースペル、ルーンのMarkdown表は、全パッチの `overall`・`role=ALL` 行をID単位で合算し、同じ表示名がパッチごとに重複しないようにする。チャンピオン上位では同じチャンピオンを1行にまとめる。
 
 試合時間は全パッチ合算の `patch=ALL` 行と、試合数の多いパッチ別行を分けて示す。中央値は典型的な試合時間、P10〜P90は中央80%の範囲として説明し、パワースパイクや因果効果とは解釈しない。
@@ -535,6 +553,7 @@ reports/riot-ranked-match-analysis/
 - 参加者、チーム、ID、時刻の欠損を検出し、品質レポートへ記録できる。
 - チャンピオン、アイテム、ルーン、サモナースペルの表示名をローカルデータから解決できる。
 - 勝率、ピック率、バン率、KDA、CS/分、ゴールド/分などの分子・分母を出力できる。
+- チャンピオン・ロール別のルーン選択について、同一分母の選択率、選択時勝率、チャンピオン全体勝率、ルーン系統、分子・分母をCSV/JSON/Markdownへ出力できる。
 - `riot_champion_query.py --champion <name>` で、味方組み合わせの高勝率順と相手別の対象チャンピオン低勝率順を取得できる。
 - 相手別クエリは既定で同ロールに限定し、`all-enemy` へ切り替えられる。
 - 味方組み合わせと相手別の表に、最小ゲーム数、対象チャンピオンの勝敗分子・分母、観測帯、パッチを含める。
@@ -548,6 +567,7 @@ reports/riot-ranked-match-analysis/
 - 同スクリプトが完成アイテムの順不同2個・3個中核をチャンピオン・ロールごとに集計し、実測候補と、共通ステータスから導いた実測不足の理論仮説を分離したチャンピオン別Markdownを生成できる。
 - ステータス群とビルド中核の候補へ、指定Data Dragonで `maps["11"]` が真ではないアイテムを含めない。
 - `riot_champion_build_wiki_sync.py` が `--dry-run`、`--write`、`--check` を提供し、各チャンピオンentityへ短い生成ブロックを1つだけ同期して同一実行の詳細レポートへリンクできる。
+- entity同期が既存のアイテムentityをIDで解決し、ビルド名・理論仮説の全アイテム名を対応するアイテムページへのWikilinkとして出力できる。アイテムentityが不足する場合は書き込まない。
 - entity同期を再実行しても生成ブロック外の本文を変更せず、専用原典要約を `sources` に重複なく追加できる。
 
 ## 11. 確認済みの仕様
@@ -566,5 +586,6 @@ reports/riot-ranked-match-analysis/
 10. チャンピオン・アイテム相関は `scripts/riot_champion_item_synergy.py` に分離し、通常スロット、既定のutility除外、所持時／非所持時差、パッチ限定、実試合結果の解釈上の限界を記録する。
 11. 個別アイテムに加えて、Data Dragon `stats` の同一ステータス群と完成アイテムの順不同中核をチャンピオン別に分析する。実測候補と理論仮説を別表・別節にし、仮説を最適ビルドとして断定しない。
 12. チャンピオン情報の入口はentityとし、そこには短い生成ブロックだけを置く。詳細な候補と表は時刻付きの `reports/` に残し、選択した解析結果から明示的に同期する。
+13. チャンピオン別ルーン選択は `champion_id × role` の参加者を分母にし、パッチ重複を除いて全パッチを合算する。選択率と勝率は記述統計として扱う。
 
 この仕様に基づき、`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py` を実装する。

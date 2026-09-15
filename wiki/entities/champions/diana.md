@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-fighter
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Diana.p
 
 ### JUNGLE（601試合）
 
-- **実測ビルド候補：** ゾーニャの砂時計 + シャドウフレイム（該当n=52、67.3% / 非該当50.1%、差+17.2pt）；ナッシャー トゥース + シャドウフレイム（該当n=37、62.2% / 非該当50.9%、差+11.3pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3157|ゾーニャの砂時計]] + [[wiki/entities/items/item-4645|シャドウフレイム]]（該当n=52、67.3% / 非該当50.1%、差+17.2pt）；[[wiki/entities/items/item-3115|ナッシャー トゥース]] + [[wiki/entities/items/item-4645|シャドウフレイム]]（該当n=37、62.2% / 非該当50.9%、差+11.3pt）
 - **ステータス傾向：** 体力（該当n=503、53.3% / 非該当42.9%、差+10.4pt）；攻撃速度（該当n=408、53.9% / 非該当46.6%、差+7.3pt）
-- **理論仮説：** グインソー レイジブレード + クラーケン スレイヤー（n=1（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）；グインソー レイジブレード + ルインドキング ブレード（n=1（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）
+- **理論仮説：** [[wiki/entities/items/item-3124|グインソー レイジブレード]] + [[wiki/entities/items/item-6672|クラーケン スレイヤー]]（n=1（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）；[[wiki/entities/items/item-3124|グインソー レイジブレード]] + [[wiki/entities/items/item-3153|ルインドキング ブレード]]（n=1（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）
 
 ### MIDDLE（374試合）
 
-- **実測ビルド候補：** 連呪使いのブーツ + シャドウフレイム（該当n=164、58.5% / 非該当39.5%、差+19.0pt）；ゾーニャの砂時計 + 連呪使いのブーツ + シャドウフレイム（該当n=85、60.0% / 非該当44.3%、差+15.7pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3175|連呪使いのブーツ]] + [[wiki/entities/items/item-4645|シャドウフレイム]]（該当n=164、58.5% / 非該当39.5%、差+19.0pt）；[[wiki/entities/items/item-3157|ゾーニャの砂時計]] + [[wiki/entities/items/item-3175|連呪使いのブーツ]] + [[wiki/entities/items/item-4645|シャドウフレイム]]（該当n=85、60.0% / 非該当44.3%、差+15.7pt）
 - **ステータス傾向：** 攻撃速度（該当n=53、56.6% / 非該当46.4%、差+10.2pt）；体力（該当n=273、49.1% / 非該当44.6%、差+4.5pt）
-- **理論仮説：** フィンブルウィンター + ロッド オブ エイジス（未観測；共通stats: 体力・マナ／チャンピオン原典にも言及: 体力・マナ）；黄昏と暁 + ナッシャー トゥース（n=8（15未満）；共通stats: 魔力・攻撃速度／チャンピオン原典にも言及: 攻撃速度）
+- **理論仮説：** [[wiki/entities/items/item-3121|フィンブルウィンター]] + [[wiki/entities/items/item-6657|ロッド オブ エイジス]]（未観測；共通stats: 体力・マナ／チャンピオン原典にも言及: 体力・マナ）；[[wiki/entities/items/item-2510|黄昏と暁]] + [[wiki/entities/items/item-3115|ナッシャー トゥース]]（n=8（15未満）；共通stats: 魔力・攻撃速度／チャンピオン原典にも言及: 攻撃速度）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-131|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### JUNGLE（対象n=761）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/smolder|スモルダー（Smolder）]] — 対象側勝率70.3%（26/37）、n=37（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/viego|ヴィエゴ（Viego）]] — 対象側勝率36.2%（17/47）、n=47（十分性の目安を満たす）。
+
+### MIDDLE（対象n=504）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/caitlyn|ケイトリン（Caitlyn）]] — 対象側勝率58.8%（30/51）、n=51（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率39.4%（13/33）、n=33（十分性の目安を満たす）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-mage
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Brand.p
 
 ### UTILITY（302試合）
 
-- **実測ビルド候補：** リーライ クリスタル セプター + ライアンドリーの仮面（該当n=144、52.8% / 非該当48.1%、差+4.7pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3116|リーライ クリスタル セプター]] + [[wiki/entities/items/item-6653|ライアンドリーの仮面]]（該当n=144、52.8% / 非該当48.1%、差+4.7pt）
 - **ステータス傾向：** 物理防御（該当n=47、51.1% / 非該当50.2%、差+0.9pt）
-- **理論仮説：** 黒炎のトーチ + マリグナンス（n=8（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；セラフ エンブレイス + マリグナンス（未観測；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
+- **理論仮説：** [[wiki/entities/items/item-2503|黒炎のトーチ]] + [[wiki/entities/items/item-3118|マリグナンス]]（n=8（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；[[wiki/entities/items/item-3040|セラフ エンブレイス]] + [[wiki/entities/items/item-3118|マリグナンス]]（未観測；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
 
 ### BOTTOM（104試合）
 
-- **実測ビルド候補：** 黒炎のトーチ + ライアンドリーの仮面（該当n=61、70.5% / 非該当58.1%、差+12.4pt）；黒炎のトーチ + リーライ クリスタル セプター（該当n=50、70.0% / 非該当61.1%、差+8.9pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-2503|黒炎のトーチ]] + [[wiki/entities/items/item-6653|ライアンドリーの仮面]]（該当n=61、70.5% / 非該当58.1%、差+12.4pt）；[[wiki/entities/items/item-2503|黒炎のトーチ]] + [[wiki/entities/items/item-3116|リーライ クリスタル セプター]]（該当n=50、70.0% / 非該当61.1%、差+8.9pt）
 - **ステータス傾向：** 物理防御（該当n=35、74.3% / 非該当60.9%、差+13.4pt）
-- **理論仮説：** 黒炎のトーチ + マリグナンス（未観測；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；ライアンドリーの仮面 + ブラッドレターの呪い（n=8（15未満）；共通stats: 魔力・体力／スキル相互作用は未検証）
+- **理論仮説：** [[wiki/entities/items/item-2503|黒炎のトーチ]] + [[wiki/entities/items/item-3118|マリグナンス]]（未観測；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；[[wiki/entities/items/item-6653|ライアンドリーの仮面]] + [[wiki/entities/items/item-8010|ブラッドレターの呪い]]（n=8（15未満）；共通stats: 魔力・体力／スキル相互作用は未検証）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-63|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### UTILITY（対象n=378）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/jhin|ジン（Jhin）]] — 対象側勝率73.0%（27/37）、n=37（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/seraphine|セラフィーン（Seraphine）]] — 対象側勝率50.0%（15/30）、n=30（十分性の目安を満たす）。
+
+### BOTTOM（対象n=161）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/briar|ブライアー（Briar）]] — 対象側勝率76.5%（13/17）、サンプル不足（n=17、十分性の目安30未満）。
+- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-tank
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/DrMundo
 
 ### TOP（500試合）
 
-- **実測ビルド候補：** スピリット ビサージュ + ワーモグ アーマー + 心の鋼（該当n=82、67.1% / 非該当47.8%、差+19.2pt）；スピリット ビサージュ + 心の鋼（該当n=138、63.8% / 非該当46.1%、差+17.6pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3065|スピリット ビサージュ]] + [[wiki/entities/items/item-3083|ワーモグ アーマー]] + [[wiki/entities/items/item-3084|心の鋼]]（該当n=82、67.1% / 非該当47.8%、差+19.2pt）；[[wiki/entities/items/item-3065|スピリット ビサージュ]] + [[wiki/entities/items/item-3084|心の鋼]]（該当n=138、63.8% / 非該当46.1%、差+17.6pt）
 - **ステータス傾向：** 魔法防御（該当n=249、58.2% / 非該当43.8%、差+14.4pt）；攻撃力（該当n=150、56.7% / 非該当48.6%、差+8.1pt）
-- **理論仮説：** 覇王のブラッドメイル + タイタン ハイドラ（n=14（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；タイタン ハイドラ + サンダード スカイ（未観測；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-2501|覇王のブラッドメイル]] + [[wiki/entities/items/item-3748|タイタン ハイドラ]]（n=14（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）；[[wiki/entities/items/item-3748|タイタン ハイドラ]] + [[wiki/entities/items/item-6610|サンダード スカイ]]（未観測；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 ### JUNGLE（300試合）
 
-- **実測ビルド候補：** 終わりなき絶望 + 心の鋼（該当n=31、64.5% / 非該当45.4%、差+19.2pt）；心の鋼 + タイタン ハイドラ（該当n=36、58.3% / 非該当45.8%、差+12.5pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-2502|終わりなき絶望]] + [[wiki/entities/items/item-3084|心の鋼]]（該当n=31、64.5% / 非該当45.4%、差+19.2pt）；[[wiki/entities/items/item-3084|心の鋼]] + [[wiki/entities/items/item-3748|タイタン ハイドラ]]（該当n=36、58.3% / 非該当45.8%、差+12.5pt）
 - **ステータス傾向：** 攻撃力（該当n=89、56.2% / 非該当43.6%、差+12.6pt）；物理防御（該当n=237、48.5% / 非該当42.9%、差+5.7pt）
-- **理論仮説：** 先人の道標 + デッド マン プレート（未観測；共通stats: 物理防御・体力・移動速度／チャンピオン原典にも言及: 体力・移動速度）；覇王のブラッドメイル + タイタン ハイドラ（n=11（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3002|先人の道標]] + [[wiki/entities/items/item-3742|デッド マン プレート]]（未観測；共通stats: 物理防御・体力・移動速度／チャンピオン原典にも言及: 体力・移動速度）；[[wiki/entities/items/item-2501|覇王のブラッドメイル]] + [[wiki/entities/items/item-3748|タイタン ハイドラ]]（n=11（15未満）；共通stats: 攻撃力・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-36|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### TOP（対象n=638）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/lux|ラックス（Lux）]] — 対象側勝率65.6%（21/32）、n=32（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/mordekaiser|モルデカイザー（Mordekaiser）]] — 対象側勝率50.9%（29/57）、n=57（十分性の目安を満たす）。
+
+### JUNGLE（対象n=400）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/jinx|ジンクス（Jinx）]] — 対象側勝率54.8%（17/31）、n=31（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/viego|ヴィエゴ（Viego）]] — 対象側勝率37.5%（9/24）、サンプル不足（n=24、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-mage
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xerath.
 
 ### UTILITY（439試合）
 
-- **実測ビルド候補：** ホライゾン フォーカス + ルーデン エコー（該当n=159、61.6% / 非該当57.1%、差+4.5pt）；シャドウフレイム + ルーデン エコー（該当n=108、61.1% / 非該当58.0%、差+3.1pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-4628|ホライゾン フォーカス]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（該当n=159、61.6% / 非該当57.1%、差+4.5pt）；[[wiki/entities/items/item-4645|シャドウフレイム]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（該当n=108、61.1% / 非該当58.0%、差+3.1pt）
 - **ステータス傾向：** 体力（該当n=71、69.0% / 非該当56.8%、差+12.2pt）；移動速度（該当n=394、59.6% / 非該当51.1%、差+8.5pt）
-- **理論仮説：** セラフ エンブレイス + ルーデン エコー（n=9（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；マリグナンス + ルーデン エコー（n=4（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
+- **理論仮説：** [[wiki/entities/items/item-3040|セラフ エンブレイス]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（n=9（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；[[wiki/entities/items/item-3118|マリグナンス]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（n=4（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
 
 ### MIDDLE（404試合）
 
-- **実測ビルド候補：** メジャイ ソウルスティーラー + ルーデン エコー（該当n=32、78.1% / 非該当47.8%、差+30.3pt）；ラバドン デスキャップ + ルーデン エコー（該当n=94、58.5% / 非該当47.7%、差+10.8pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3041|メジャイ ソウルスティーラー]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（該当n=32、78.1% / 非該当47.8%、差+30.3pt）；[[wiki/entities/items/item-3089|ラバドン デスキャップ]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（該当n=94、58.5% / 非該当47.7%、差+10.8pt）
 - **ステータス傾向：** 体力（該当n=273、52.4% / 非該当45.8%、差+6.6pt）；物理防御（該当n=43、53.5% / 非該当49.9%、差+3.6pt）
-- **理論仮説：** マリグナンス + ルーデン エコー（n=12（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；セラフ エンブレイス + ルーデン エコー（n=7（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
+- **理論仮説：** [[wiki/entities/items/item-3118|マリグナンス]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（n=12（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）；[[wiki/entities/items/item-3040|セラフ エンブレイス]] + [[wiki/entities/items/item-6655|ルーデン エコー]]（n=7（15未満）；共通stats: 魔力・マナ／チャンピオン原典にも言及: マナ）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-101|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### UTILITY（対象n=554）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/jhin|ジン（Jhin）]] — 対象側勝率57.6%（95/165）、n=165（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/seraphine|セラフィーン（Seraphine）]] — 対象側勝率50.0%（20/40）、n=40（十分性の目安を満たす）。
+
+### MIDDLE（対象n=544）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/mordekaiser|モルデカイザー（Mordekaiser）]] — 対象側勝率64.3%（27/42）、n=42（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/hwei|フェイ（Hwei）]] — 対象側勝率46.2%（18/39）、n=39（十分性の目安を満たす）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 

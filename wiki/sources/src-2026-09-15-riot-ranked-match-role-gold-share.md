@@ -51,7 +51,7 @@ tags:
 
 ## 関連ページ
 
-- [[wiki/syntheses/role-gold-share-ranked-matches|ランク戦におけるロール別ゴールド獲得シェア]] — ロール間、勝敗、試合時間、観測帯の差を統合して解釈する。
+- [[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率：ランク戦最終スコアの集計]] — ロール間、勝敗、試合時間、観測帯の差を統合して解釈する。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate|Riotランク戦試合データ：試合時間帯別チャンピオン勝率]] — 同じ収集データを用いた別時点の試合時間分析。
 
 ## 未解決の問い

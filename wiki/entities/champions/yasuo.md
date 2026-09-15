@@ -9,6 +9,7 @@ sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
 tags:
   - champion
   - role-fighter
@@ -121,17 +122,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yasuo.p
 
 ### MIDDLE（637試合）
 
-- **実測ビルド候補：** インフィニティ エッジ + ガンメタル ブーツ（該当n=156、66.0% / 非該当47.0%、差+19.0pt）；インフィニティ エッジ + ルインドキング ブレード + ガンメタル ブーツ（該当n=116、66.4% / 非該当48.4%、差+18.0pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3031|インフィニティ エッジ]] + [[wiki/entities/items/item-3172|ガンメタル ブーツ]]（該当n=156、66.0% / 非該当47.0%、差+19.0pt）；[[wiki/entities/items/item-3031|インフィニティ エッジ]] + [[wiki/entities/items/item-3153|ルインドキング ブレード]] + [[wiki/entities/items/item-3172|ガンメタル ブーツ]]（該当n=116、66.4% / 非該当48.4%、差+18.0pt）
 - **ステータス傾向：** クリティカル率（該当n=558、53.4% / 非該当39.2%、差+14.2pt）；物理防御（該当n=179、60.9% / 非該当48.0%、差+12.9pt）
-- **理論仮説：** ジーク コンバージェンス + 変幻自在のジャック＝ショー（未観測；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力）；実験的ヘクスプレート + ストライドブレイカー（未観測；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）
+- **理論仮説：** [[wiki/entities/items/item-3050|ジーク コンバージェンス]] + [[wiki/entities/items/item-6665|変幻自在のジャック＝ショー]]（未観測；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・体力）；[[wiki/entities/items/item-3073|実験的ヘクスプレート]] + [[wiki/entities/items/item-6631|ストライドブレイカー]]（未観測；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）
 
 ### TOP（131試合）
 
-- **実測ビルド候補：** ルインドキング ブレード + イモータル シールドボウ（該当n=59、47.5% / 非該当38.9%、差+8.6pt）；インフィニティ エッジ + ルインドキング ブレード + イモータル シールドボウ（該当n=30、46.7% / 非該当41.6%、差+5.1pt）
+- **実測ビルド候補：** [[wiki/entities/items/item-3153|ルインドキング ブレード]] + [[wiki/entities/items/item-6673|イモータル シールドボウ]]（該当n=59、47.5% / 非該当38.9%、差+8.6pt）；[[wiki/entities/items/item-3031|インフィニティ エッジ]] + [[wiki/entities/items/item-3153|ルインドキング ブレード]] + [[wiki/entities/items/item-6673|イモータル シールドボウ]]（該当n=30、46.7% / 非該当41.6%、差+5.1pt）
 - **ステータス傾向：** 物理防御（該当n=40、47.5% / 非該当40.7%、差+6.8pt）
-- **理論仮説：** ドミニク リガード + イモータル シールドボウ（n=9（15未満）；共通stats: 攻撃力・クリティカル率／チャンピオン原典にも言及: 攻撃力・クリティカル率）；モータル リマインダー + イモータル シールドボウ（n=9（15未満）；共通stats: 攻撃力・クリティカル率／チャンピオン原典にも言及: 攻撃力・クリティカル率）
+- **理論仮説：** [[wiki/entities/items/item-3036|ドミニク リガード]] + [[wiki/entities/items/item-6673|イモータル シールドボウ]]（n=9（15未満）；共通stats: 攻撃力・クリティカル率／チャンピオン原典にも言及: 攻撃力・クリティカル率）；[[wiki/entities/items/item-3033|モータル リマインダー]] + [[wiki/entities/items/item-6673|イモータル シールドボウ]]（n=9（15未満）；共通stats: 攻撃力・クリティカル率／チャンピオン原典にも言及: 攻撃力・クリティカル率）
 
 <!-- champion-build-analysis:end -->
+
+<!-- champion-matchup-analysis:start -->
+## 実測コンボ・カウンターピック
+
+- **スナップショット：** キュー420、`tier-mode=all`、完全試合13,107件（入力13,120ファイル・19,107レコード、重複統合後13,107試合）。
+- **選定方法：** 実測の同一チーム味方ペアと、正規化ロールが同じ相手を対象に、最小n=15以上を集計。候補の順位は勝率だけでなく95% Wilson区間（コンボは下限、対面は上限）と試合数を加味した。n<30はサンプル不足として扱う。
+- **読み方：** [[reports/riot-champion-matchups/run-20260915T071824Z/champions/champion-157|詳細な候補表]]。実測の記述統計であり、因果的なシナジー、確定カウンター、推奨編成を意味しない。
+
+### MIDDLE（対象n=811）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/mordekaiser|モルデカイザー（Mordekaiser）]] — 対象側勝率62.2%（51/82）、n=82（十分性の目安を満たす）。
+- **カウンターピック候補：** [[wiki/entities/champions/malzahar|マルザハール（Malzahar）]] — 対象側勝率44.4%（20/45）、n=45（十分性の目安を満たす）。
+
+### TOP（対象n=224）
+
+- **高勝率コンボ候補：** [[wiki/entities/champions/miss-fortune|ミス・フォーチュン（MissFortune）]] — 対象側勝率60.0%（12/20）、サンプル不足（n=20、十分性の目安30未満）。
+- **カウンターピック候補：** [[wiki/entities/champions/yorick|ヨリック（Yorick）]] — 対象側勝率58.8%（10/17）、サンプル不足（n=17、十分性の目安30未満）。
+
+> [!warning] 実測値の限界
+> 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
+<!-- champion-matchup-analysis:end -->
 
 ## 関連ページ
 
