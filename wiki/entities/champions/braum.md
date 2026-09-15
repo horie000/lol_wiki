@@ -7,6 +7,8 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - champion
   - role-tank
@@ -96,6 +98,34 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Braum.p
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 終盤寄り
+- **対象試合：** 208試合、全体勝率 48.1%
+- **時間帯別勝率：** 〜20分 33.3%（n=36）、20〜25分 51.4%（n=37）、25〜30分 51.0%（n=51）、30〜35分 50.0%（n=46）、35分〜 52.6%（n=38）
+- **最高帯：** 35分〜（判定差 19.3ポイント）
+- **判定根拠：** 35分〜が最高、短時間帯との差 19.3%
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
+
+<!-- champion-build-analysis:start -->
+## 実試合ビルド分析
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合9,736件、[[reports/riot-champion-item-synergy/run-20260915T060638Z/champions/champion-201|ブラウムの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]、[[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテム相性タグ分類の実試合再評価]]。
+- **読み方：** 最終所持状態の記述的な相関であり、購入順・因果効果・最適ビルドを確定しない。理論仮説は共通ステータスとチャンピオン原典の語彙から優先表示した未検証候補。
+
+### UTILITY（563試合）
+
+- **実測ビルド候補：** バンドルパイプ + ソラリのロケット（該当n=116、62.1% / 非該当47.2%、差+14.9pt）；バンドルパイプ + 騎士の誓い（該当n=69、62.3% / 非該当48.6%、差+13.7pt）
+- **ステータス傾向：** 魔力（該当n=47、53.2% / 非該当50.0%、差+3.2pt）
+- **理論仮説：** ソラリのロケット + 変幻自在のジャック＝ショー（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・魔法防御）；バンドルパイプ + ジーク コンバージェンス（n=1（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 物理防御・魔法防御）
+
+<!-- champion-build-analysis:end -->
 
 ## 関連ページ
 

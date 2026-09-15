@@ -7,6 +7,8 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - champion
   - role-fighter
@@ -96,6 +98,34 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Illaoi.
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 明瞭な傾向なし
+- **対象試合：** 324試合、全体勝率 53.7%
+- **時間帯別勝率：** 〜20分 59.3%（n=54）、20〜25分 50.0%（n=46）、25〜30分 66.2%（n=74）、30〜35分 44.7%（n=76）、35分〜 48.6%（n=74）
+- **最高帯：** 25〜30分（判定差 21.5ポイント）
+- **判定根拠：** 5つの時間帯を比較できるが、最高帯と端点の差が8ポイント未満、または勝率が非単調だった。
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
+
+<!-- champion-build-analysis:start -->
+## 実試合ビルド分析
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合9,736件、[[reports/riot-champion-item-synergy/run-20260915T060638Z/champions/champion-420|イラオイの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]、[[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテム相性タグ分類の実試合再評価]]。
+- **読み方：** 最終所持状態の記述的な相関であり、購入順・因果効果・最適ビルドを確定しない。理論仮説は共通ステータスとチャンピオン原典の語彙から優先表示した未検証候補。
+
+### TOP（563試合）
+
+- **実測ビルド候補：** ステラックの篭手 + サンダード スカイ（該当n=38、63.2% / 非該当50.9%、差+12.3pt）；ステラックの篭手 + アイスボーン ガントレット（該当n=119、61.3% / 非該当49.1%、差+12.2pt）
+- **ステータス傾向：** 攻撃力（該当n=529、52.7% / 非該当35.3%、差+17.4pt）；物理防御（該当n=477、52.6% / 非該当46.5%、差+6.1pt）
+- **理論仮説：** 先人の道標 + デッド マン プレート（未観測；共通stats: 物理防御・体力・移動速度／チャンピオン原典にも言及: 物理防御・体力・移動速度）；トリニティ フォース + ストライドブレイカー（未観測；共通stats: 攻撃力・攻撃速度・体力／チャンピオン原典にも言及: 攻撃力・体力）
+
+<!-- champion-build-analysis:end -->
 
 ## 関連ページ
 

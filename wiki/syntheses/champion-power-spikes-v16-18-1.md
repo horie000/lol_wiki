@@ -7,6 +7,7 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
 tags:
   - league-of-legends
   - champion
@@ -46,6 +47,20 @@ tags:
 2026-09-15にユーザーが `Marksman` タグを終盤の代表シグナルとする指定を撤回したため、タグは分類から除外した。これにより、タグだけを根拠に終盤としていた29件は中盤の暫定区分へ移った。[[wiki/entities/champions/kaisa|カイ＝サ]]、[[wiki/entities/champions/kindred|キンドレッド]]、[[wiki/entities/champions/senna|セナ]]、[[wiki/entities/champions/smolder|スモルダー]]は `Marksman` タグの有無と独立した能力根拠を持つため、終盤に残る。
 
 以前の判定規則と変更理由は[[wiki/log|Wiki Log]]に時系列で保持する。現在の個別ページは、この改訂後の規則で再生成している。
+
+## 実戦データによる見直し
+
+原典ベースの区分とは別に、収集済みランク戦4,672件を試合時間帯とチャンピオン勝率で比較した。〜20分、20〜25分、25〜30分、30〜35分、35分〜の5帯を使い、各帯15試合以上かつ端点または中間帯の差が8ポイント以上ある場合だけ、序盤寄り・中盤寄り・終盤寄りの観測として記録した。
+
+| 実戦データ上の観測 | チャンピオン数 |
+| --- | ---: |
+| 序盤寄り | 11 |
+| 中盤寄り | 22 |
+| 終盤寄り | 14 |
+| 明瞭な傾向なし | 75 |
+| 判定保留（分母不足） | 51 |
+
+詳細な時間帯別勝率、分子・分母、既存分類との不一致は、[[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]]に分離した。これは試合結果の記述統計であり、既存の能力シグナル分類、実際のパワースパイク時点、因果効果、推奨ビルドを置き換えない。
 
 ## 統合結果
 
@@ -131,14 +146,16 @@ tags:
 
 - 各スキルの基礎ダメージ、レベルごとの値、アイテム係数を同一バージョンで比較可能にする原典は何か。
 - レーン、ジャングル、サポート等の役割ごとのゴールド獲得速度・レベル到達時刻をどう取り込むか。
-- 実戦データを追加した場合、ここでのシグナル分類と勝率・試合時間別の強さはどの程度一致するか。
+- [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]]で観測された差が、パッチ・ロール・観測帯を固定しても再現するか。
 
 ## 関連ページ
 
 - [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割タグを含むデータセット全体の分布。パワースパイク判定自体には役割タグを使わない。
+- [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] — 収集済みランク戦の時間帯別勝率による実戦観測。
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]] — 集約レコードと個別能力詳細の構造。
 
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1|チャンピオンデータセット v16.18.1]] — 173件の基礎ステータス。
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 日本語のパッシブ・4スキル説明。
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate|Riotランク戦試合データ：試合時間帯別チャンピオン勝率]] — 時間帯、勝率、データ品質、解析条件。

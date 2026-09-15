@@ -1,10 +1,11 @@
 # Riot API ランク戦試合結果解析スクリプト仕様書
 
-- 仕様バージョン：0.4（表示仕様改訂）
+- 仕様バージョン：0.8（ロール別ゴールド獲得率追加）
 - 作成日：2026-09-15
 - 改訂日：2026-09-15
 - 対象ゲーム：League of Legends
-- 実装予定：`scripts/riot_ranked_match_analyzer.py`
+- 実装：`scripts/riot_ranked_match_analyzer.py`
+- 関連実装：`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`
 - 関連仕様：[Riot API ランク戦データ収集仕様書](riot-ranked-match-collector-spec.md)
 
 ## 1. 目的
@@ -12,6 +13,8 @@
 取得済みの Match-v5 試合結果を、チャンピオン、ロール、アイテム、ルーン、サモナースペル、チーム構成、試合時間などの単位で集計し、後続の検証や Wiki への分析結果の取り込みを助ける。
 
 このスクリプトは統計量の算出と再現可能なレポート生成を担当する。勝率から因果関係、最適ビルド、チャンピオン間の絶対的な相性を断定しない。分析結果に対する解釈や Wiki ページの作成は別工程とする。
+
+実試合からチャンピオン・アイテムの組み合わせを見直す場合は、最終所持状態を使った条件付きの記述統計を別スクリプトで生成する。これは原典由来の `champion-synergy-*` タグを自動的に置換するものではない。
 
 ## 2. 基本方針
 
@@ -209,7 +212,18 @@ Match-v5 の最終スコアから、参加者単位の値を集計する。た�
 
 値がない項目は0に置換せず欠損として扱い、平均の分母から除外する。
 
-### 6.6 チーム構成・対面集計
+### 6.6 ロール別ゴールド獲得率
+
+全体および `観測ランク帯 × パッチ × ロール` の組み合わせごとに、最終スコアからロール単位のゴールド獲得率を集計する。ロールは通常の5ロール（`TOP`、`JUNGLE`、`MIDDLE`、`BOTTOM`、`UTILITY`）とし、解決できない参加者は `UNKNOWN` として品質確認用に残す。
+
+- 参加者ごとのゴールド/分：`goldEarned / (timePlayed / 60)`。各参加者を同じ重みで平均する `avg_gold_per_min`、中央値、P10、P90を出力する。
+- 加重ゴールド/分：有効な参加者の `goldEarned` 合計を `timePlayed`（分）の合計で割った `weighted_gold_per_min`。ロール全体の総量ベースの速度として扱う。
+- チーム内ゴールド比率：同じ試合・チームの最終 `goldEarned` 合計に対する参加者の比率を算出し、ロール別平均 `avg_team_gold_share` と有効分母を出力する。
+- 分母：参加者数、試合数、ゴールド有効参加者数、チーム内比率の有効参加者数を併記する。勝率は勝敗が解決できた参加者だけを分母とする。
+
+この指標は試合終了時点の最終ゴールドを試合時間で正規化した記述統計であり、15分時点のゴールド差、ゴールド獲得の時間的傾き、購入時刻、レーンで実際に得た収入、勝因を示さない。ロール別の差は、チャンピオン、パッチ、試合展開、構成、プレイヤーサンプルなどの交絡を含む。
+
+### 6.7 チーム構成・対面集計
 
 `--include-matchups` 指定時だけ生成する。最小ゲーム数未満の行は通常表から除外する。
 
@@ -220,7 +234,7 @@ Match-v5 の最終スコアから、参加者単位の値を集計する。た�
 
 対面は `teamPosition` 等の最終スコアから推定した組み合わせであり、レーンで実際に対面したことや、チャンピオン固有のカウンター関係を保証しない。味方ペアや対面の率は、プレイヤー、構成、パッチ、試合選択の交絡を含む記述統計に限定する。
 
-### 6.7 チャンピオン指定クエリ
+### 6.8 チャンピオン指定クエリ
 
 全体集計とは別に、対象チャンピオンを1体指定して、少数の結果をすぐ確認できる専用スクリプトを用意する。
 
@@ -304,6 +318,105 @@ pick_rate,pick_rate_denominator,min_games_applied
 
 複数パッチをまとめた行では `patch` を `ALL` とし、実際に含まれるパッチを `patches` に列挙する。`opponents.csv` には `opponent_scope` と `same_role_match` を追加する。`query.json` には入力条件、対象チャンピオンの解決結果、ランキング順、上位・下位件数、最小ゲーム数、出力ファイルを記録する。
 
+### 6.9 実試合のチャンピオン・アイテム相関
+
+実試合の最終アイテムから、特定チャンピオン・正規化ロールでの所持時と非所持時を比較する。実装は `scripts/riot_champion_item_synergy.py` とする。
+
+- 対象アイテムは通常スロット `item0`～`item5` とし、同じアイテムが複数スロットにあっても1参加者1所持として数える。`item6` は含めない。
+- 既定では `Consumable`、`Trinket`、`Vision`、`Stealth`、`GoldPer` のData Dragonタグを持つアイテムを除外する。`--include-utility` で含められる。
+- 集計単位は `champion_id × role × item_id` とし、`champion_games`、`item_games`、所持時勝率、非所持時勝率、所持時勝率から非所持時勝率を引いた `win_rate_lift_vs_without` を出力する。
+- `item_games` は参加者単位の所持試合数であり、購入率、購入時刻、完成時刻、最初に買ったアイテムを意味しない。
+- 既定の `tier-mode` は `all` とし、同じ試合が複数の観測帯に現れても全体値へ1回だけ含める。`observed` を指定した場合は観測帯別の行も生成する。
+- `--min-games` の既定値は15とする。CSV/JSONのペア行をこの値で絞り、Markdownの上位表には小標本の極端な差を抑える別の表示閾値を適用できる。
+- 複数パッチを合算すると、同じアイテムIDでも効果・名称・採用環境が変化している可能性がある。現行アイテム定義との比較では `--patch` と対応するData Dragonを指定する。
+
+### 6.10 ステータス群・チャンピオン別ビルド分析
+
+個別アイテムの勝率差だけではなく、同じData Dragon `item.json` の `stats` キーを持つアイテム群の採用有無と、完成アイテムの順不同組み合わせをチャンピオン・ロールごとに集計する。実装は `scripts/riot_champion_item_synergy.py` に統合し、同じ入力から再生成できる形で残す。
+
+- ステータス群は `FlatCritChanceMod`（クリティカル率）、`FlatPhysicalDamageMod`（攻撃力）、`PercentAttackSpeedMod`（攻撃速度）など、Data Dragonの `stats` に非ゼロ値があるかで判定する。説明文の発動効果、固有効果、スキルとの相互作用をステータス群へ推測で追加しない。
+- ステータス群とビルド中核に用いるアイテムは、指定したData Dragonの `maps["11"]` が `true` のものに限定する。過去データのアイテムIDが現行のArena等の同一IDへ再割り当てされた場合、その現行サモナーズリフト外定義を候補へ混入させないためである。
+- 同一参加者が同じステータス群のアイテムを複数持っていても、該当参加者を1回だけ数える。したがって「クリティカル率群」は、クリティカル率を持つアイテムを1つ以上最終所持したかを表し、クリティカル率の合計値や購入順ではない。
+- ビルド中核は、通常スロットのうち開始アイテム・素材・utilityを除いた完成アイテムから、順不同の2個・3個組み合わせを作る。最小ゲーム数以上の組み合わせを実測候補として出力する。
+- チャンピオン別Markdownは、ロールごとに実測上の個別アイテム、ステータス群、ビルド中核を「推奨候補」として分けて示す。ただし、推奨候補は最終所持状態の観測相関であり、因果効果や購入順を意味しない。
+- 十分な実測件数がない組み合わせについては、アイテム同士が共有する `stats` 群を理由に理論仮説候補を別表へ出す。これは機械的な仮説生成であり、ゲーム内で強いことを保証する推奨ではない。
+- 既定のステータス群を限定する場合は `--status-groups critical_chance` のように指定し、ビルド中核のサイズは `--build-sizes 2,3` で選択する。
+
+この差は、試合時間、勝敗後まで生存したこと、プレイヤー、対面、構成、パッチ、アイテム選択の逆因果などを調整しない観測値である。実測値の順位を「相性がよい」「弱い」「推奨ビルド」と読み替えない。
+
+#### 専用CLI
+
+```bash
+python3 scripts/riot_champion_item_synergy.py \
+  --input raw/sources/riot-ranked-matches \
+  --output reports/riot-champion-item-synergy \
+  --tier-mode all \
+  --min-games 15
+```
+
+| オプション | 既定値 | 説明 |
+| --- | --- | --- |
+| `--input PATH` | 必須 | 解析スクリプトと同じJSONL、キャッシュ、ディレクトリ入力 |
+| `--output PATH` | `reports/riot-champion-item-synergy` | `raw/` 外の出力先 |
+| `--tier-mode` | `all` | 全体の重複除去、または `observed` の観測帯別集計 |
+| `--patch` | 全パッチ | `gameVersion` の前方一致。現行アイテム定義と揃える場合に指定 |
+| `--roles` / `--champions` | 全件 | ロールまたはチャンピオンの限定 |
+| `--status-groups` | 全群 | `critical_chance` などData Dragon `stats` に基づく群の限定 |
+| `--build-sizes` | `2,3` | 完成アイテム中核のサイズ。2または3をカンマ区切りで指定 |
+| `--min-games` | `15` | CSV/JSONへ掲載するアイテム所持試合数の下限 |
+| `--report-min-games` | `30` | Markdown上位表に載せる所持・非所持双方の試合数の下限 |
+| `--include-utility` | 無効 | 消耗品、視界、トリンケット等を含める |
+| `--format` | `markdown,csv,json` | 出力形式 |
+| `--dry-run` | 無効 | 入力・重複・条件だけ検証して出力しない |
+
+#### 専用出力
+
+```text
+reports/riot-champion-item-synergy/
+└── run-YYYYMMDDTHHMMSSZ/
+    ├── manifest.json
+    ├── report.md
+    ├── quality.json
+    ├── analysis.json
+    ├── champion-item-synergy.csv
+    ├── champion-status-synergy.csv
+    ├── champion-build-synergy.csv
+    ├── theoretical-build-candidates.csv
+    └── champions/
+        ├── index.json
+        └── champion-<champion_id>.md
+```
+
+CSV/JSONには、チャンピオン・ロール・アイテム、ステータス群、ビルド中核の識別子と表示名、該当・非該当の勝敗分子分母、採用率、勝率差、パッチ、観測帯、最小ゲーム数を含める。個人識別情報は含めない。`analysis.json` には `results`（個別アイテム）、`status_group_results`、`build_results`、`theoretical_build_results` を分けて格納する。
+
+`champions/champion-<champion_id>.md` はチャンピオンごとに1ファイルとし、ロール別に「実測からの推奨候補」と「統計が不足する理論仮説」を分離する。理論仮説には未観測か最小ゲーム数未満か、共有するData Dragon `stats` 群を記載する。
+
+### 6.11 チャンピオンentityへの短い分析ブロック同期
+
+チャンピオン情報の入口は `wiki/entities/champions/` とし、詳細な表と全候補は `reports/riot-champion-item-synergy/` に保持する。解析とWiki更新を分離し、選択した実行結果の `analysis.json` を `scripts/riot_champion_build_wiki_sync.py` へ明示的に渡した場合だけentityを更新する。
+
+- 各entityには `<!-- champion-build-analysis:start -->` と `<!-- champion-build-analysis:end -->` で囲んだ生成ブロックを1つ置く。再実行時はこの範囲だけを置換し、原典由来の本文や既存の生成ブロックを変更しない。
+- 生成ブロックは既定で、30試合以上ある上位2ロール、各ロールの実測ビルド候補2件、正の差を持つステータス群2件、理論仮説2件までに抑える。
+- 実測候補は該当・非該当の双方が `analysis.json` の `report_min_games`（既定30）以上で、勝率差が正のものに限定する。これは表示基準であり統計的有意性ではない。
+- 理論仮説は共通するData Dragon `stats` と、生成ブロック外のチャンピオンページにある原典由来の語彙を使って表示順を決める。スキルとの相互作用を実証したものではない。
+- ブロックから同一実行の `champions/champion-<champion_id>.md` へ直接リンクし、詳細表、負の差、小標本、候補全体はレポート側で確認できるようにする。
+- entityの `sources` には専用の原典要約を追加し、`updated` を解析スナップショットのAsia/Tokyo生成日へ更新する。詳細レポート自体は原典ではなく、収集済み試合データから生成した派生物として扱う。
+- 通常の解析実行ではentityを暗黙に変更しない。`--dry-run` で対象・差分・詳細レポート欠落を確認し、`--write` で同期し、`--check` で再現性を検証する。
+
+```bash
+python3 scripts/riot_champion_build_wiki_sync.py \
+  --analysis reports/riot-champion-item-synergy/run-YYYYMMDDTHHMMSSZ/analysis.json \
+  --dry-run
+
+python3 scripts/riot_champion_build_wiki_sync.py \
+  --analysis reports/riot-champion-item-synergy/run-YYYYMMDDTHHMMSSZ/analysis.json \
+  --write
+
+python3 scripts/riot_champion_build_wiki_sync.py \
+  --analysis reports/riot-champion-item-synergy/run-YYYYMMDDTHHMMSSZ/analysis.json \
+  --check
+```
+
 ## 7. 出力仕様
 
 1回の実行ごとに、時刻付きのディレクトリを作成する。
@@ -320,6 +433,7 @@ reports/riot-ranked-match-analysis/
     ├── rune-summary.csv
     ├── summoner-spell-summary.csv
     ├── performance-summary.csv
+    ├── role-gold.csv
     ├── duration-summary.csv
     └── matchup-summary.csv       # --include-matchups 時のみ
 ```
@@ -363,13 +477,16 @@ reports/riot-ranked-match-analysis/
 1. 解析条件と入力範囲
 2. データ品質と除外件数
 3. 試合時間の要約
-4. 観測ランク帯・パッチ別の試合数
-5. チャンピオンの抽出結果
-6. ルーン、サモナースペルの抽出結果
-7. 必要な場合の味方ペア・対面結果
-8. 解釈上の注意と未解決事項
+4. ロール別ゴールド獲得率
+5. 観測ランク帯・パッチ別の試合数
+6. チャンピオンの抽出結果
+7. ルーン、サモナースペルの抽出結果
+8. 必要な場合の味方ペア・対面結果
+9. 解釈上の注意と未解決事項
 
 人間向けMarkdownレポートでは、最終アイテムは勝敗後の所持状態を含み、単純な所持数順が解釈しにくいため、アイテム上位表を掲載しない。アイテムの集計結果は `item-summary.csv` と `analysis.json` に保持する。
+
+チャンピオン・アイテム相関レポートは別出力とし、所持時勝率、非所持時勝率、差、所持試合数を表示する。これはアイテム上位表の代替となる推奨表ではなく、原典由来の相性候補タグを実試合で点検するための探索表である。
 
 ルーンは `rune_kind` とIDを表示する。`perks.statPerks` のステータスシャードは `runesReforged.json` に表示名がないため、`UNKNOWN(<ID>)` となる場合がある。これは試合レコードの欠損とは区別する。
 
@@ -388,7 +505,10 @@ reports/riot-ranked-match-analysis/
 - 収集器はランク帯に所属するプレイヤーの履歴から試合を発見するため、ランク帯の全試合を無作為抽出した標本ではない。
 - 同じ試合の重複参加者、プレイヤーサンプル、履歴ページ上限により、試合の出現確率は均一ではない。
 - Match-v5 の通常レスポンスだけでは、15分時点のゴールド差、購入時刻、スキル使用順、実際のレーン滞在などを復元できない。
+- 最終 `goldEarned / timePlayed` のロール別比較は、試合終了までの時間と勝敗後の状態を含むため、時間ごとのゴールド獲得速度やロール固有の収入源の因果効果を示さない。
 - 最終アイテムは生存者バイアスと勝敗後の購入状態を含むため、アイテム所持率からアイテムの勝率向上を直接結論付けない。
+- チャンピオン・アイテムの所持時／非所持時比較も、同じチャンピオン・ロール内の未調整比較である。差がプラスでも因果的なシナジーを示さず、差がマイナスでもアイテム自体の弱さを示さない。
+- 複数パッチを合算した相関は、現在のData Dragonのアイテム名・タグで過去のアイテムIDを表示するため、アイテム定義の変更をまたいだ厳密な比較には使わない。パッチを限定し、対応する原典を揃える必要がある。
 - `gameVersion`、マップ、キュー、取得期間が異なる集計は混ぜず、パッチ・期間をレポートに必ず表示する。
 - ゲーム内の欠損値を0とみなさない。項目ごとに有効分母を持つ。
 - `min-games` は表示上の安定化であり、統計的有意性の検定や信頼区間を意味しない。
@@ -400,8 +520,10 @@ reports/riot-ranked-match-analysis/
 - Timeline APIを使った時系列イベント解析
 - 購入順、購入時刻、ビルド完成時刻の推定
 - 勝率からの因果推論、最適ビルドやカウンターの自動推薦（専用クエリは観測値の抽出に限る）
+- 実試合の所持時／非所持時差からの自動的な相性タグ書き換え、最適ビルド推薦、因果推論
+- 実測候補またはステータス群だけから、ゲーム内での最適ビルドを確定すること
 - 機械学習モデルの学習・予測
-- Wikiページの自動生成・自動更新
+- 解析実行に伴うWikiページの暗黙更新（選択した `analysis.json` を使う明示的なentity同期は対象内）
 
 ## 10. 受け入れ条件
 
@@ -420,6 +542,13 @@ reports/riot-ranked-match-analysis/
 - 出力に `puuid`、`summonerId`、`summonerName`、Riot IDを含めない。
 - 同じ入力・同じ条件で、時刻と実行ディレクトリ名を除く内容が再現する。
 - `--help`、`--dry-run`、Python構文チェックがAPIキーなしで成功する。
+- `riot_champion_item_synergy.py` が通常スロットの重複アイテムを参加者単位で1回にまとめ、最小ゲーム数15、所持時・非所持時の勝率と差をCSV/JSON/Markdownへ出力できる。
+- チャンピオン・アイテム相関の既定全体集計が同一試合を観測帯の重複で二重計上せず、`--patch` によるパッチ限定と `--include-utility` による補助アイテム包含を検証できる。
+- `riot_champion_item_synergy.py` がData Dragon `stats` によるステータス群（クリティカル率を含む）を参加者単位で重複なく集計し、個別アイテムと別CSV/JSONへ出力できる。
+- 同スクリプトが完成アイテムの順不同2個・3個中核をチャンピオン・ロールごとに集計し、実測候補と、共通ステータスから導いた実測不足の理論仮説を分離したチャンピオン別Markdownを生成できる。
+- ステータス群とビルド中核の候補へ、指定Data Dragonで `maps["11"]` が真ではないアイテムを含めない。
+- `riot_champion_build_wiki_sync.py` が `--dry-run`、`--write`、`--check` を提供し、各チャンピオンentityへ短い生成ブロックを1つだけ同期して同一実行の詳細レポートへリンクできる。
+- entity同期を再実行しても生成ブロック外の本文を変更せず、専用原典要約を `sources` に重複なく追加できる。
 
 ## 11. 確認済みの仕様
 
@@ -434,5 +563,8 @@ reports/riot-ranked-match-analysis/
 7. 粒度の細かいクエリを `scripts/riot_champion_query.py` として分離し、味方組み合わせは全味方、相手は既定で同ロールとする。
 8. 「勝率の低い相手」は、相手の勝率ではなく対象チャンピオン側の `target_win_rate` が低い順とする。
 9. `--min-games 15`、味方上位20件、相手下位20件を専用クエリの既定値とする。
+10. チャンピオン・アイテム相関は `scripts/riot_champion_item_synergy.py` に分離し、通常スロット、既定のutility除外、所持時／非所持時差、パッチ限定、実試合結果の解釈上の限界を記録する。
+11. 個別アイテムに加えて、Data Dragon `stats` の同一ステータス群と完成アイテムの順不同中核をチャンピオン別に分析する。実測候補と理論仮説を別表・別節にし、仮説を最適ビルドとして断定しない。
+12. チャンピオン情報の入口はentityとし、そこには短い生成ブロックだけを置く。詳細な候補と表は時刻付きの `reports/` に残し、選択した解析結果から明示的に同期する。
 
-この仕様に基づき、`scripts/riot_ranked_match_analyzer.py` と `scripts/riot_champion_query.py` を実装する。
+この仕様に基づき、`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py` を実装する。

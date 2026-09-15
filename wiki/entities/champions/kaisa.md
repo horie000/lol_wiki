@@ -7,6 +7,8 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - champion
   - role-marksman
@@ -96,6 +98,34 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kaisa.p
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 序盤寄り
+- **対象試合：** 554試合、全体勝率 46.2%
+- **時間帯別勝率：** 〜20分 57.0%（n=86）、20〜25分 39.8%（n=83）、25〜30分 41.8%（n=134）、30〜35分 45.1%（n=122）、35分〜 48.8%（n=129）
+- **最高帯：** 〜20分（判定差 8.1ポイント）
+- **判定根拠：** 〜20分が最高、長時間帯との差 8.1%
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
+
+<!-- champion-build-analysis:start -->
+## 実試合ビルド分析
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合9,736件、[[reports/riot-champion-item-synergy/run-20260915T060638Z/champions/champion-145|カイ＝サの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]、[[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテム相性タグ分類の実試合再評価]]。
+- **読み方：** 最終所持状態の記述的な相関であり、購入順・因果効果・最適ビルドを確定しない。理論仮説は共通ステータスとチャンピオン原典の語彙から優先表示した未検証候補。
+
+### BOTTOM（1,123試合）
+
+- **実測ビルド候補：** ガンメタル ブーツ + クラーケン スレイヤー（該当n=52、78.8% / 非該当46.7%、差+32.2pt）；グインソー レイジブレード + ガンメタル ブーツ + クラーケン スレイヤー（該当n=51、78.4% / 非該当46.7%、差+31.7pt）
+- **ステータス傾向：** ライフスティール（該当n=104、66.3% / 非該当46.3%、差+20.0pt）；物理防御（該当n=455、54.7% / 非該当43.7%、差+11.0pt）
+- **理論仮説：** フィーンドハンターの矢 + ファントム ダンサー（n=1（15未満）；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 攻撃速度・移動速度）；ファントム ダンサー + ナヴォリ フリッカーブレード（未観測；共通stats: 攻撃速度・クリティカル率・移動速度／チャンピオン原典にも言及: 攻撃速度・移動速度）
+
+<!-- champion-build-analysis:end -->
 
 ## 関連ページ
 

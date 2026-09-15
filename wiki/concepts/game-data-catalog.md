@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - game-data
   - data-catalog
@@ -36,6 +37,8 @@ Data Dragon version `16.18.1` の日本語データを、原典レコード単�
 - チャンピオン、アイテム、ルーン、サモナースペルのページは、それぞれ `wiki/entities/champions/`、`wiki/entities/items/`、`wiki/entities/runes/`、`wiki/entities/spells/` に配置する。
 - アイテムの合成関係、利用可能マップ、価格、ステータス、ルーンの系統・スロット、スペルの利用モードや基本パラメータなど、各データ種別に固有のフィールドを個別ページへ整理する。
 - アイテム個別ページのフロントマターには、効果・ステータスから推定した `champion-synergy-*` タグを付け、相性のよいチャンピオン系統やジャングル・汎用用途で絞り込めるようにする。分類の規則と限界は [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類]] に記録する。
+- 個別ページのタグは原典由来の候補分類として保持する。実試合のチャンピオン・ロール・個別アイテム相関、Data Dragon `stats` の同一ステータス群、完成アイテム中核は `scripts/riot_champion_item_synergy.py` と [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|相性タグ分類の実試合再評価]] で別に確認し、最終所持状態の勝率差やステータス仮説だけで個別タグを書き換えない。
+- チャンピオン情報の入口は `wiki/entities/champions/` とする。各entityには実測候補と理論仮説を分けた短い生成ブロックだけを置き、全候補・負の差・詳細表は同一スナップショットの `reports/riot-champion-item-synergy/` へ直接リンクする。同期は `scripts/riot_champion_build_wiki_sync.py` で明示的に実行する。
 - チャンピオン、アイテム、ルーン、サモナースペルの全個別ページには、共通の出典検索用タグ `data-dragon` を付ける。ページ内の `sources` と同じく、個別データの大元が Data Dragon 配布アーカイブであることを示す。
 - データに存在しない名称や意味は推測しない。名称空欄やマップ名不明などはページ上で未解決として明記する。
 
@@ -51,6 +54,7 @@ Data Dragon version `16.18.1` の日本語データを、原典レコード単�
 ## 関連ページ
 
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 個別ページの原典と配布物全体。
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]] — entityへ同期した短い分析の入力範囲と限界。
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]] — チャンピオンの集約・詳細レコード。
 - [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類]] — アイテムの相性候補タグ、付与規則、分類上の限界。
 - [[wiki/overview|概要]] — Wiki全体の収録範囲。
@@ -58,4 +62,5 @@ Data Dragon version `16.18.1` の日本語データを、原典レコード単�
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — `ja_JP` のアイテム、ルーン、サモナースペル原典。
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]] — チャンピオンentityの実試合ビルド分析ブロック。
 - 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]

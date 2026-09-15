@@ -24,6 +24,8 @@ For Riot ranked-match analysis, read [the analysis specification](../../../docs/
 - `scripts/riot_match_analysis.py` — shared Match-v5/cache loader, deduplication, tier handling, participant normalization, and local Data Dragon name resolution.
 - `scripts/riot_ranked_match_analyzer.py` — aggregate champion, item, rune, summoner-spell, performance, duration, and optional matchup reports.
 - `scripts/riot_champion_query.py` — champion-specific ally-pair and opponent queries. The default minimum sample is 15 games; opponent results are same-role by default.
+- `scripts/riot_champion_item_synergy.py` — reusable participant-level champion/role/item co-occurrence analysis, held-vs-not-held win-rate comparison, Data Dragon item-stat group analysis (including critical chance), completed-item core builds, and per-champion reports with observed candidates separated from metadata-only hypotheses. It supports patch filtering, utility-item exclusion, `--status-groups`, and `--build-sizes`. The default minimum sample is 15 games; the result is descriptive rather than causal.
+- `scripts/riot_champion_build_wiki_sync.py` — syncs a mechanically ranked compact block from one explicitly selected item/build `analysis.json` into champion entity pages while retaining full detail under `reports/`. Its rankings are report candidates, not qualitative curation; do not invoke it as automatic lint promotion. When explicitly using it, run `--dry-run` first, use `--write` only for the intended snapshot, and finish with `--check`; do not edit generated blocks by hand.
 
 Run `--dry-run` first when checking a new input set. Keep `raw/` read-only and write reports to `reports/` or another non-raw output directory. Do not expose PUUIDs, summoner IDs, summoner names, or Riot IDs in generated reports.
 
@@ -50,10 +52,15 @@ Do not silently add remembered or web-derived facts. If outside research would h
 
 ## Lint
 
-1. Inventory generated pages and compare them with `wiki/index.md`.
+1. Inventory generated pages and compare them with `wiki/index.md`. Also inventory in-scope report families from the filesystem under `reports/`. Treat a run as complete only when its manifest and declared outputs exist, then compare complete runs with existing synthesis pages and prior log entries to find material findings that have not been curated into the wiki.
 2. Check broken or ambiguous Wikilinks, orphan pages, duplicate concepts, missing reciprocal links, invalid frontmatter, missing source traceability, stale claims, and unresolved contradictions.
-3. Fix safe structural and consistency issues in `wiki/`. Do not change `raw/`.
-4. Append a lint entry to `wiki/log.md` listing checks, fixes, and unresolved gaps.
-5. Report the wiki's health and recommend the highest-value next sources or questions.
+3. Review candidate report findings against the report's manifest, quality information, machine-readable result, and underlying raw source. Promote a finding only when its method, conditions, denominator, quality, limitations, and raw-source provenance are verifiable; it is non-duplicative and reusable; and it adds more than a newer snapshot, extreme or favorable value, or metadata-only hypothesis.
+4. Integrate eligible findings into the closest existing page in `wiki/syntheses/`, creating a synthesis only when no suitable page exists. Separate observation from interpretation and retain material null results, counterevidence, contradictions, and limitations. Put only a compact summary and synthesis link on an entity page when that improves navigation.
+5. Treat `reports/` as derived artifacts, not sources. Record the selected run path and filters where useful, but cite the corresponding source-summary page backed by `raw/`. If source summaries, reproducibility details, or quality evidence are missing, leave the finding unpromoted and record the gap.
+6. Fix safe structural and consistency issues in `wiki/`. Do not change `raw/`. Reconcile `wiki/index.md` and `wiki/overview.md` when report curation changes them.
+7. Append a lint entry to `wiki/log.md` listing checks, fixes, reports reviewed, findings promoted, important candidates declined with reasons, and unresolved gaps.
+8. Report the wiki's health and recommend the highest-value next sources or questions.
+
+Running `scripts/lint.py` alone does not complete report curation; qualitative selection and evidence review are part of the agent's lint workflow. Rankings or generated blocks from report and sync scripts do not count as curated findings by themselves.
 
 For a targeted lint request, limit edits and reporting to the requested scope.

@@ -7,6 +7,8 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - champion
   - role-fighter
@@ -96,6 +98,34 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Rumble.
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 中盤寄り
+- **対象試合：** 133試合、全体勝率 58.6%
+- **時間帯別勝率：** 〜20分 56.0%（n=25）、20〜25分 52.9%（n=17）、25〜30分 66.7%（n=30）、30〜35分 60.0%（n=20）、35分〜 56.1%（n=41）
+- **最高帯：** 25〜30分（判定差 10.6ポイント）
+- **判定根拠：** 中間帯が最高、端点との差 10.6%
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
+
+<!-- champion-build-analysis:start -->
+## 実試合ビルド分析
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合9,736件、[[reports/riot-champion-item-synergy/run-20260915T060638Z/champions/champion-68|ランブルの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]、[[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテム相性タグ分類の実試合再評価]]。
+- **読み方：** 最終所持状態の記述的な相関であり、購入順・因果効果・最適ビルドを確定しない。理論仮説は共通ステータスとチャンピオン原典の語彙から優先表示した未検証候補。
+
+### TOP（319試合）
+
+- **実測ビルド候補：** シャドウフレイム + ライアンドリーの仮面（該当n=52、59.6% / 非該当44.9%、差+14.7pt）；ゾーニャの砂時計 + シャドウフレイム（該当n=31、58.1% / 非該当46.2%、差+11.9pt）
+- **ステータス傾向：** 物理防御（該当n=177、50.8% / 非該当43.0%、差+7.9pt）
+- **理論仮説：** スピリット ビサージュ + アビサル マスク（未観測；共通stats: 体力・魔法防御／チャンピオン原典にも言及: 体力・魔法防御）；終わりなき絶望 + ランデュイン オーメン（未観測；共通stats: 物理防御・体力／チャンピオン原典にも言及: 物理防御・体力）
+
+<!-- champion-build-analysis:end -->
 
 ## 関連ページ
 

@@ -7,6 +7,8 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - champion
   - role-tank
@@ -96,6 +98,40 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Maokai.
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 明瞭な傾向なし
+- **対象試合：** 215試合、全体勝率 46.5%
+- **時間帯別勝率：** 〜20分 44.4%（n=36）、20〜25分 45.0%（n=20）、25〜30分 48.9%（n=47）、30〜35分 47.3%（n=55）、35分〜 45.6%（n=57）
+- **最高帯：** 25〜30分（判定差 4.5ポイント）
+- **判定根拠：** 5つの時間帯を比較できるが、最高帯と端点の差が8ポイント未満、または勝率が非単調だった。
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
+
+<!-- champion-build-analysis:start -->
+## 実試合ビルド分析
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合9,736件、[[reports/riot-champion-item-synergy/run-20260915T060638Z/champions/champion-57|マオカイの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]、[[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテム相性タグ分類の実試合再評価]]。
+- **読み方：** 最終所持状態の記述的な相関であり、購入順・因果効果・最適ビルドを確定しない。理論仮説は共通ステータスとチャンピオン原典の語彙から優先表示した未検証候補。
+
+### UTILITY（348試合）
+
+- **実測ビルド候補：** 先人の道標 + ソラリのロケット（該当n=51、58.8% / 非該当45.1%、差+13.7pt）
+- **ステータス傾向：** 魔法防御（該当n=254、50.0% / 非該当39.4%、差+10.6pt）
+- **理論仮説：** ジーク コンバージェンス + ソラリのロケット（n=2（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）；バンドルパイプ + ジーク コンバージェンス（n=2（15未満）；共通stats: 物理防御・体力・魔法防御／チャンピオン原典にも言及: 体力）
+
+### TOP（49試合）
+
+- **実測ビルド候補：** 該当・非該当が各30試合以上で正の差を持つ候補なし。
+- **ステータス傾向：** 該当・非該当が各30試合以上で正の差を持つ群なし。
+- **理論仮説：** 冬の訪れ + フィンブルウィンター（未観測；共通stats: 体力・マナ／チャンピオン原典にも言及: 体力・マナ）；終わりなき絶望 + サンファイア イージス（n=8（15未満）；共通stats: 物理防御・体力／チャンピオン原典にも言及: 体力）
+
+<!-- champion-build-analysis:end -->
 
 ## 関連ページ
 

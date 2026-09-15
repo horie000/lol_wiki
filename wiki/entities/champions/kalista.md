@@ -7,6 +7,8 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - champion
   - role-marksman
@@ -94,6 +96,34 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kalista
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 判定保留（分母不足）
+- **対象試合：** 43試合、全体勝率 46.5%
+- **時間帯別勝率：** 〜20分 62.5%（n=8）、20〜25分 42.9%（n=7）、25〜30分 44.4%（n=9）、30〜35分 50.0%（n=12）、35分〜 28.6%（n=7）
+- **最高帯：** 〜20分（判定差 —）
+- **判定根拠：** 5つの時間帯のいずれかで15試合未満のため、時間帯の比較を保留する。
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
+
+<!-- champion-build-analysis:start -->
+## 実試合ビルド分析
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合9,736件、[[reports/riot-champion-item-synergy/run-20260915T060638Z/champions/champion-429|カリスタの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]、[[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテム相性タグ分類の実試合再評価]]。
+- **読み方：** 最終所持状態の記述的な相関であり、購入順・因果効果・最適ビルドを確定しない。理論仮説は共通ステータスとチャンピオン原典の語彙から優先表示した未検証候補。
+
+### BOTTOM（85試合）
+
+- **実測ビルド候補：** グインソー レイジブレード + ルインドキング ブレード（該当n=37、45.9% / 非該当39.6%、差+6.4pt）；グインソー レイジブレード + テルミヌス（該当n=30、43.3% / 非該当41.8%、差+1.5pt）
+- **ステータス傾向：** 魔法防御（該当n=31、51.6% / 非該当37.0%、差+14.6pt）
+- **理論仮説：** スタティック シヴ + クラーケン スレイヤー（未観測；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力）；スタティック シヴ + テルミヌス（n=11（15未満）；共通stats: 攻撃力・攻撃速度／チャンピオン原典にも言及: 攻撃力）
+
+<!-- champion-build-analysis:end -->
 
 ## 関連ページ
 

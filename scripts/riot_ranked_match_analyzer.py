@@ -33,6 +33,7 @@ from riot_match_analysis import (
     parse_formats,
     participant_views,
     patch_prefix,
+    quantile,
     ratio,
     rows_to_csv,
     safe_slug,
@@ -43,7 +44,7 @@ from riot_match_analysis import (
 
 
 SCRIPT_NAME = "scripts/riot_ranked_match_analyzer.py"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 
 def parse_roles(value: Optional[str]) -> set[str]:
@@ -141,6 +142,15 @@ def team_damage_totals(views: Sequence[ParticipantView]) -> dict[tuple[str, str]
         damage = as_float(view.raw.get("totalDamageDealtToChampions"))
         if damage is not None:
             totals[(view.match.match_id, view.team_id)] += damage
+    return dict(totals)
+
+
+def team_gold_totals(views: Sequence[ParticipantView]) -> dict[tuple[str, str], float]:
+    totals: defaultdict[tuple[str, str], float] = defaultdict(float)
+    for view in views:
+        gold = as_float(view.raw.get("goldEarned"))
+        if gold is not None and gold >= 0:
+            totals[(view.match.match_id, view.team_id)] += gold
     return dict(totals)
 
 
@@ -481,6 +491,105 @@ def performance_rows(
     return sorted(rows, key=lambda row: (-int(row.get("participants") or 0), str(row.get("champion_name") or "")))
 
 
+def role_gold_rows(
+    group: ScopeGroup,
+    entries: Sequence[ScopedMatch],
+    *,
+    roles: set[str],
+    champion_ids: set[str],
+    min_games: int,
+    include_incomplete: bool,
+) -> list[dict[str, Any]]:
+    """ロール別の最終ゴールド獲得速度とチーム内配分を集計する。"""
+
+    rows: list[dict[str, Any]] = []
+
+    def summarize(patch: str, selected: Sequence[ParticipantView], all_views: Sequence[ParticipantView]) -> dict[str, Any]:
+        gold_values = [
+            gold
+            for view in selected
+            for gold in [as_float(view.raw.get("goldEarned"))]
+            if gold is not None and gold >= 0
+        ]
+        gold_per_minute = [
+            value
+            for view in selected
+            for value in [per_minute(view, "goldEarned")]
+            if value is not None
+        ]
+        gold_duration_pairs = [
+            (gold, duration / 60)
+            for view in selected
+            for gold, duration in [
+                (as_float(view.raw.get("goldEarned")), as_float(view.raw.get("timePlayed")))
+            ]
+            if gold is not None and gold >= 0 and duration is not None and duration > 0
+        ]
+        team_totals = team_gold_totals(all_views)
+        team_gold_shares = [
+            gold / team_total
+            for view in selected
+            for gold, team_total in [
+                (as_float(view.raw.get("goldEarned")), team_totals.get((view.match.match_id, view.team_id), 0))
+            ]
+            if gold is not None and gold >= 0 and team_total > 0
+        ]
+        wins = sum(1 for view in selected if view.win is True)
+        losses = sum(1 for view in selected if view.win is False)
+        total_gold = sum(gold for gold, _ in gold_duration_pairs)
+        total_minutes = sum(minutes for _, minutes in gold_duration_pairs)
+        return {
+            **base_row(group, patch, "ALL"),
+            "role": role,
+            "matches": len({view.match.match_id for view in selected}),
+            "participants": len(selected),
+            "wins": wins,
+            "losses": losses,
+            "win_rate": ratio(wins, wins + losses),
+            "valid_gold_participants": len(gold_values),
+            "missing_gold_participants": len(selected) - len(gold_values),
+            "gold_coverage_rate": ratio(len(gold_values), len(selected)),
+            "total_gold": total_gold,
+            "total_time_minutes": total_minutes,
+            "weighted_gold_per_min": ratio(total_gold, total_minutes),
+            "avg_gold_per_min": mean(gold_per_minute),
+            "median_gold_per_min": quantile(gold_per_minute, 0.5),
+            "p10_gold_per_min": quantile(gold_per_minute, 0.1),
+            "p90_gold_per_min": quantile(gold_per_minute, 0.9),
+            "team_gold_share_participants": len(team_gold_shares),
+            "avg_team_gold_share": mean(team_gold_shares),
+            "min_games_applied": min_games,
+        }
+
+    patch_groups = list(group_by_patch(entries).items())
+    if entries:
+        patch_groups.insert(0, ("ALL", list(entries)))
+    for patch, patch_entries in patch_groups:
+        eligible_entries = complete_entries(patch_entries, include_incomplete)
+        all_views = [view for entry in eligible_entries for view in participant_views(entry)]
+        filtered = [
+            view
+            for view in all_views
+            if participant_matches_filters(view, roles=roles, champion_ids=champion_ids)
+        ]
+        role_labels = ["ALL"] + sorted({view.role for view in filtered if view.role != "ALL"})
+        for role in role_labels:
+            selected = filtered if role == "ALL" else [view for view in filtered if view.role == role]
+            if len(selected) < min_games:
+                continue
+            rows.append(summarize(patch, selected, all_views))
+    role_order = {"ALL": 0, "TOP": 1, "JUNGLE": 2, "MIDDLE": 3, "BOTTOM": 4, "UTILITY": 5, "UNKNOWN": 6}
+    return sorted(
+        rows,
+        key=lambda row: (
+            0 if row.get("patch") == "ALL" else 1,
+            role_order.get(str(row.get("role")), 99),
+            str(row.get("role") or ""),
+            -int(row.get("participants") or 0),
+        ),
+    )
+
+
 def duration_rows(
     group: ScopeGroup,
     entries: Sequence[ScopedMatch],
@@ -642,6 +751,7 @@ def aggregate(
         "runes": [],
         "spells": [],
         "performance": [],
+        "role_gold": [],
         "duration": [],
         "matchups": [],
     }
@@ -700,6 +810,16 @@ def aggregate(
                 include_incomplete=include_incomplete,
             )
         )
+        result["role_gold"].extend(
+            role_gold_rows(
+                group,
+                group.entries,
+                roles=roles,
+                champion_ids=champion_ids,
+                min_games=min_games,
+                include_incomplete=include_incomplete,
+            )
+        )
         result["duration"].extend(duration_rows(group, group.entries, include_incomplete=include_incomplete))
         if include_matchups:
             result["matchups"].extend(
@@ -738,6 +858,13 @@ CSV_FIELDS = {
         "scope", "observed_tier", "patch", "role", "champion_id", "champion_name", "participants", "avg_kda",
         "avg_cs_per_min", "avg_gold_per_min", "avg_damage_per_min", "avg_damage_share", "avg_vision_score",
         "avg_wards_placed", "avg_wards_killed", "min_games_applied",
+    ),
+    "role_gold": (
+        "scope", "observed_tier", "patch", "role", "matches", "participants", "wins", "losses", "win_rate",
+        "valid_gold_participants", "missing_gold_participants", "gold_coverage_rate", "total_gold",
+        "total_time_minutes", "weighted_gold_per_min", "avg_gold_per_min", "median_gold_per_min",
+        "p10_gold_per_min", "p90_gold_per_min", "team_gold_share_participants", "avg_team_gold_share",
+        "min_games_applied",
     ),
     "duration": (
         "scope", "observed_tier", "patch", "games", "avg_duration_seconds", "median_duration_seconds",
@@ -900,6 +1027,45 @@ def report_duration_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, An
     return selected
 
 
+ROLE_LABELS = {
+    "ALL": "全ロール",
+    "TOP": "TOP",
+    "JUNGLE": "JUNGLE",
+    "MIDDLE": "MIDDLE",
+    "BOTTOM": "BOTTOM",
+    "UTILITY": "UTILITY",
+    "UNKNOWN": "UNKNOWN（未分類）",
+}
+
+
+def format_percent(value: Any, digits: int = 1) -> str:
+    number = as_float(value)
+    if number is None:
+        return ""
+    return f"{number * 100:.{digits}f}%"
+
+
+def report_role_gold_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    selected = [
+        dict(row)
+        for row in rows
+        if row.get("scope") == "overall"
+        and row.get("observed_tier") in {"ALL", "MIXED"}
+        and row.get("patch") == "ALL"
+        and row.get("role") in ROLE_LABELS
+    ]
+    role_order = {"ALL": 0, "TOP": 1, "JUNGLE": 2, "MIDDLE": 3, "BOTTOM": 4, "UTILITY": 5, "UNKNOWN": 6}
+    for row in selected:
+        row["role_label"] = ROLE_LABELS[str(row.get("role"))]
+        row["avg_gold_per_min_display"] = display_number(row.get("avg_gold_per_min"), 1)
+        row["median_gold_per_min_display"] = display_number(row.get("median_gold_per_min"), 1)
+        row["weighted_gold_per_min_display"] = display_number(row.get("weighted_gold_per_min"), 1)
+        row["avg_team_gold_share_display"] = format_percent(row.get("avg_team_gold_share"))
+        row["win_rate_display"] = format_percent(row.get("win_rate"))
+        row["gold_coverage_display"] = format_percent(row.get("gold_coverage_rate"))
+    return sorted(selected, key=lambda row: role_order.get(str(row.get("role")), 99))
+
+
 def render_report(
     *,
     dataset: Dataset,
@@ -912,6 +1078,7 @@ def render_report(
     champion_report = aggregate_report_rows(analysis["champions"], ("champion_id",), "champion_name")
     rune_report = aggregate_report_rows(analysis["runes"], ("rune_kind", "rune_id"), "rune_name")
     spell_report = aggregate_report_rows(analysis["spells"], ("spell_id",), "spell_name")
+    role_gold_report = report_role_gold_rows(analysis["role_gold"])
     duration_report = report_duration_rows(analysis["duration"])
     ally_report = report_matchup_rows(analysis["matchups"], "ally") if args.include_matchups else []
     opponent_report = report_matchup_rows(analysis["matchups"], "opponent") if args.include_matchups else []
@@ -931,7 +1098,7 @@ def render_report(
         f"- 入力後のユニーク試合数：{len({entry.match.match_id for group in groups for entry in group.entries})}",
         "",
         "> [!warning] 解釈上の注意",
-        "> 観測ランク帯は収集時点のプレイヤー所属帯であり、試合時点の全参加者のランクを表さない。勝率、アイテム所持率、味方組み合わせ、対面の値は記述統計であり、因果効果や推奨を意味しない。",
+        "> 観測ランク帯は収集時点のプレイヤー所属帯であり、試合時点の全参加者のランクを表さない。勝率、ゴールド/分、アイテム所持率、味方組み合わせ、対面の値は記述統計であり、因果効果や推奨を意味しない。",
         "",
         "## データ品質",
         "",
@@ -975,6 +1142,26 @@ def render_report(
         markdown_table(
             duration_report,
             (("patch", "パッチ"), ("games", "試合"), ("avg_duration", "平均"), ("median_duration", "中央値"), ("p10_duration", "P10"), ("p90_duration", "P90")),
+        ),
+        "",
+        "## ロール別ゴールド獲得率",
+        "",
+        "ゴールド獲得率は、Match-v5の最終 `goldEarned` を `timePlayed`（分）で割ったゴールド/分です。平均は参加者ごとの値を同じ重みで平均し、加重平均は全ゴールドを全参加者時間で割っています。チーム内比率は、同じ試合・チームの最終ゴールド合計に占める参加者の比率です。",
+        "いずれも試合終了時点の集計であり、15分時点のゴールド差、獲得の傾き、購入時刻、レーンでの実際の収入を表しません。",
+        "",
+        markdown_table(
+            role_gold_report,
+            (
+                ("role_label", "ロール"),
+                ("participants", "参加者"),
+                ("matches", "試合"),
+                ("avg_gold_per_min_display", "平均GPM"),
+                ("median_gold_per_min_display", "中央値GPM"),
+                ("weighted_gold_per_min_display", "加重GPM"),
+                ("avg_team_gold_share_display", "チーム内比率"),
+                ("win_rate_display", "勝率"),
+                ("gold_coverage_display", "Gold有効率"),
+            ),
         ),
     ]
     if args.include_matchups:
@@ -1136,6 +1323,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     "runes": "rune-summary.csv",
                     "spells": "summoner-spell-summary.csv",
                     "performance": "performance-summary.csv",
+                    "role_gold": "role-gold.csv",
                     "duration": "duration-summary.csv",
                     "matchups": "matchup-summary.csv",
                 }[key]

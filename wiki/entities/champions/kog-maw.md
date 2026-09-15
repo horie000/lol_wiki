@@ -7,6 +7,8 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
 tags:
   - champion
   - role-marksman
@@ -96,6 +98,34 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KogMaw.
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 判定保留（分母不足）
+- **対象試合：** 76試合、全体勝率 47.4%
+- **時間帯別勝率：** 〜20分 58.3%（n=12）、20〜25分 40.0%（n=10）、25〜30分 31.6%（n=19）、30〜35分 59.1%（n=22）、35分〜 46.2%（n=13）
+- **最高帯：** 30〜35分（判定差 —）
+- **判定根拠：** 5つの時間帯のいずれかで15試合未満のため、時間帯の比較を保留する。
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
+
+<!-- champion-build-analysis:start -->
+## 実試合ビルド分析
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合9,736件、[[reports/riot-champion-item-synergy/run-20260915T060638Z/champions/champion-96|コグ＝マウの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]]、[[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテム相性タグ分類の実試合再評価]]。
+- **読み方：** 最終所持状態の記述的な相関であり、購入順・因果効果・最適ビルドを確定しない。理論仮説は共通ステータスとチャンピオン原典の語彙から優先表示した未検証候補。
+
+### BOTTOM（133試合）
+
+- **実測ビルド候補：** ルナーン ハリケーン + グインソー レイジブレード + ルインドキング ブレード（該当n=30、76.7% / 非該当45.6%、差+31.0pt）；ルナーン ハリケーン + ルインドキング ブレード（該当n=46、69.6% / 非該当43.7%、差+25.9pt）
+- **ステータス傾向：** 物理防御（該当n=33、69.7% / 非該当47.0%、差+22.7pt）；移動速度（該当n=103、57.3% / 非該当36.7%、差+20.6pt）
+- **理論仮説：** スタティック シヴ + グインソー レイジブレード（n=2（15未満）；共通stats: 魔力・攻撃力・攻撃速度／チャンピオン原典にも言及: 魔力・攻撃力・攻撃速度）；スタティック シヴ + クラーケン スレイヤー（n=1（15未満）；共通stats: 攻撃力・攻撃速度・移動速度／チャンピオン原典にも言及: 攻撃力・攻撃速度）
+
+<!-- champion-build-analysis:end -->
 
 ## 関連ページ
 
