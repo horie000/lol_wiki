@@ -297,11 +297,11 @@ reports/riot-champion-query/
 
 ```text
 scope,tier_mode,observed_tier,patch,target_champion,target_role,
-related_champion,related_role,games,wins,losses,target_win_rate,
+patches,related_champion,related_role,games,wins,losses,target_win_rate,
 pick_rate,pick_rate_denominator,min_games_applied
 ```
 
-`opponents.csv` には `opponent_scope` と `same_role_match` を追加する。`query.json` には入力条件、対象チャンピオンの解決結果、ランキング順、上位・下位件数、最小ゲーム数、出力ファイルを記録する。
+複数パッチをまとめた行では `patch` を `ALL` とし、実際に含まれるパッチを `patches` に列挙する。`opponents.csv` には `opponent_scope` と `same_role_match` を追加する。`query.json` には入力条件、対象チャンピオンの解決結果、ランキング順、上位・下位件数、最小ゲーム数、出力ファイルを記録する。
 
 ## 7. 出力仕様
 
@@ -313,6 +313,7 @@ reports/riot-ranked-match-analysis/
     ├── manifest.json
     ├── report.md
     ├── quality.json
+    ├── analysis.json
     ├── champion-summary.csv
     ├── item-summary.csv
     ├── rune-summary.csv
