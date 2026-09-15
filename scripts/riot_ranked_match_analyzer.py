@@ -488,6 +488,131 @@ def champion_rune_rows(
     )
 
 
+def rune_set_key(rune_set: Mapping[str, Any]) -> tuple[Any, ...]:
+    """ルーンセットをパッチをまたいで同一視するためのキーを返す。"""
+
+    def ids(value: Any) -> tuple[int, ...]:
+        if not isinstance(value, (list, tuple)):
+            return ()
+        return tuple(as_int(item) or 0 for item in value)
+
+    return (
+        as_int(rune_set.get("primary_style_id")) or 0,
+        as_int(rune_set.get("primary_keystone_id")) or 0,
+        ids(rune_set.get("primary_rune_ids")),
+        as_int(rune_set.get("secondary_style_id")) or 0,
+        ids(rune_set.get("secondary_rune_ids")),
+        ids(rune_set.get("shard_ids")),
+    )
+
+
+def rune_set_rows(
+    group: ScopeGroup,
+    entries: Sequence[ScopedMatch],
+    *,
+    catalog: DataDragonCatalog,
+    roles: set[str],
+    champion_ids: set[str],
+    min_games: int,
+    include_incomplete: bool,
+) -> list[dict[str, Any]]:
+    """チャンピオン・ロールごとの完全なルーンセットを集計する。
+
+    セットは主系（キーストーン+3枠）、副系（2枠）、3つのステータス
+    シャードを含む完全一致で数える。表示名を解決できないシャードもIDを
+    保持して集計し、欠落した枠だけを不完全セットとして除外する。
+    """
+
+    rows: list[dict[str, Any]] = []
+    role_order = {"ALL": 0, "TOP": 1, "JUNGLE": 2, "MIDDLE": 3, "BOTTOM": 4, "UTILITY": 5, "UNKNOWN": 6}
+    for patch, patch_entries in group_by_patch(entries).items():
+        eligible_entries = complete_entries(patch_entries, include_incomplete)
+        all_views = [view for entry in eligible_entries for view in participant_views(entry)]
+        filtered_views = [
+            view
+            for view in all_views
+            if participant_matches_filters(view, roles=roles, champion_ids=champion_ids)
+        ]
+        role_labels = ["ALL"] + sorted(
+            {view.role for view in filtered_views if view.role != "UNKNOWN"},
+            key=lambda role: (role_order.get(role, 99), role),
+        )
+        for role_label in role_labels:
+            selected = filtered_views if role_label == "ALL" else [
+                view for view in filtered_views if view.role == role_label
+            ]
+            grouped: defaultdict[tuple[str, str], list[ParticipantView]] = defaultdict(list)
+            for view in selected:
+                champion_key = str(view.champion_id or normalize_alias(view.champion_name))
+                grouped[(champion_key, champion_label(view))].append(view)
+            for (champion_key, champion_name), champion_views in grouped.items():
+                if len(champion_views) < min_games:
+                    continue
+                champion_wins = sum(1 for view in champion_views if view.win is True)
+                set_holders: defaultdict[tuple[Any, ...], list[ParticipantView]] = defaultdict(list)
+                set_values: dict[tuple[Any, ...], dict[str, Any]] = {}
+                for view in champion_views:
+                    value = view.rune_set
+                    if value is None:
+                        continue
+                    key = rune_set_key(value)
+                    set_holders[key].append(view)
+                    set_values.setdefault(key, value)
+                for key, holders in set_holders.items():
+                    # 完全セットはパッチごとに分散しやすいため、パッチ別の
+                    # 小標本をここで捨てず、report/sync側で全パッチ合算後に
+                    # 上位を選ぶ。チャンピオン・ロール母数にはmin_gamesを適用する。
+                    value = set_values[key]
+                    primary_rune_ids = [as_int(item) for item in value["primary_rune_ids"]]
+                    secondary_rune_ids = [as_int(item) for item in value["secondary_rune_ids"]]
+                    shard_ids = [as_int(item) for item in value["shard_ids"]]
+                    if any(item is None for item in primary_rune_ids + secondary_rune_ids + shard_ids):
+                        continue
+                    wins = sum(1 for view in holders if view.win is True)
+                    rows.append(
+                        {
+                            **base_row(group, patch, role_label),
+                            "champion_id": int(champion_key) if champion_key.isdigit() else champion_key,
+                            "champion_name": champion_name,
+                            "champion_games": len(champion_views),
+                            "champion_wins": champion_wins,
+                            "champion_losses": sum(1 for view in champion_views if view.win is False),
+                            "champion_win_rate": ratio(champion_wins, len(champion_views)),
+                            "primary_style_id": value["primary_style_id"],
+                            "primary_style_name": catalog.rune_style_name(value["primary_style_id"]),
+                            "primary_keystone_id": value["primary_keystone_id"],
+                            "primary_keystone_name": catalog.rune_name(value["primary_keystone_id"]),
+                            "primary_rune_ids": primary_rune_ids,
+                            "primary_rune_names": [catalog.rune_name(item) for item in primary_rune_ids],
+                            "secondary_style_id": value["secondary_style_id"],
+                            "secondary_style_name": catalog.rune_style_name(value["secondary_style_id"]),
+                            "secondary_rune_ids": secondary_rune_ids,
+                            "secondary_rune_names": [catalog.rune_name(item) for item in secondary_rune_ids],
+                            "shard_ids": shard_ids,
+                            "shard_names": [catalog.rune_name(item) for item in shard_ids],
+                            "games": len(holders),
+                            "wins": wins,
+                            "losses": sum(1 for view in holders if view.win is False),
+                            "win_rate": ratio(wins, len(holders)),
+                            "pick_rate": ratio(len(holders), len(champion_views)),
+                            "pick_rate_denominator": len(champion_views),
+                            "min_games_applied": min_games,
+                        }
+                    )
+    return sorted(
+        rows,
+        key=lambda row: (
+            -int(row.get("champion_games") or 0),
+            role_order.get(str(row.get("role") or ""), 99),
+            str(row.get("champion_name") or ""),
+            -int(row.get("games") or 0),
+            -(float(row.get("win_rate")) if row.get("win_rate") is not None else -1),
+            str(row.get("primary_keystone_name") or ""),
+            str(row.get("secondary_style_name") or ""),
+        ),
+    )
+
+
 def spell_rows(
     group: ScopeGroup,
     entries: Sequence[ScopedMatch],
@@ -843,6 +968,7 @@ def aggregate(
         "items": [],
         "runes": [],
         "champion_runes": [],
+        "rune_sets": [],
         "spells": [],
         "performance": [],
         "role_gold": [],
@@ -885,6 +1011,17 @@ def aggregate(
         )
         result["champion_runes"].extend(
             champion_rune_rows(
+                group,
+                group.entries,
+                catalog=catalog,
+                roles=roles,
+                champion_ids=champion_ids,
+                min_games=min_games,
+                include_incomplete=include_incomplete,
+            )
+        )
+        result["rune_sets"].extend(
+            rune_set_rows(
                 group,
                 group.entries,
                 catalog=catalog,
@@ -959,6 +1096,14 @@ CSV_FIELDS = {
         "scope", "observed_tier", "patch", "role", "champion_id", "champion_name", "champion_games",
         "champion_wins", "champion_losses", "champion_win_rate", "rune_kind", "rune_id", "rune_name",
         "rune_style_id", "rune_style_name", "games", "wins", "losses", "win_rate", "pick_rate",
+        "pick_rate_denominator", "min_games_applied",
+    ),
+    "rune_sets": (
+        "scope", "observed_tier", "patch", "role", "champion_id", "champion_name", "champion_games",
+        "champion_wins", "champion_losses", "champion_win_rate", "primary_style_id", "primary_style_name",
+        "primary_keystone_id", "primary_keystone_name", "primary_rune_ids", "primary_rune_names",
+        "secondary_style_id", "secondary_style_name", "secondary_rune_ids", "secondary_rune_names",
+        "shard_ids", "shard_names", "games", "wins", "losses", "win_rate", "pick_rate",
         "pick_rate_denominator", "min_games_applied",
     ),
     "spells": (
@@ -1288,6 +1433,128 @@ def report_champion_rune_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[st
     )
 
 
+def report_champion_rune_set_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    """パッチ別のルーンセット行を全パッチ合算し、代表上位を返す。"""
+
+    candidates = [
+        dict(row)
+        for row in rows
+        if row.get("scope") == "overall"
+        and row.get("observed_tier") in {"ALL", "MIXED"}
+        and row.get("role") not in {None, "ALL"}
+    ]
+
+    def id_tuple(value: Any) -> tuple[int, ...]:
+        if isinstance(value, str):
+            values: Any = [item for item in value.split(",") if item != ""]
+        elif isinstance(value, (list, tuple)):
+            values = value
+        else:
+            return ()
+        return tuple(as_int(item) or 0 for item in values)
+
+    champion_by_patch: dict[tuple[str, str, str], dict[str, Any]] = {}
+    set_totals: dict[tuple[Any, ...], dict[str, Any]] = {}
+    for row in candidates:
+        champion_id = str(row.get("champion_id") or "")
+        role = str(row.get("role") or "")
+        patch = str(row.get("patch") or "")
+        champion_key = (champion_id, role, patch)
+        champion_by_patch.setdefault(
+            champion_key,
+            {
+                "champion_id": row.get("champion_id"),
+                "champion_name": row.get("champion_name"),
+                "role": row.get("role"),
+                "champion_games": int(row.get("champion_games") or 0),
+                "champion_wins": int(row.get("champion_wins") or 0),
+                "champion_losses": int(row.get("champion_losses") or 0),
+            },
+        )
+        key = (
+            champion_id,
+            role,
+            str(row.get("primary_style_id") or ""),
+            str(row.get("primary_keystone_id") or ""),
+            id_tuple(row.get("primary_rune_ids")),
+            str(row.get("secondary_style_id") or ""),
+            id_tuple(row.get("secondary_rune_ids")),
+            id_tuple(row.get("shard_ids")),
+        )
+        current = set_totals.get(key)
+        if current is None:
+            current = dict(row)
+            current["games"] = 0
+            current["wins"] = 0
+            current["losses"] = 0
+            set_totals[key] = current
+        current["games"] += int(row.get("games") or 0)
+        current["wins"] += int(row.get("wins") or 0)
+        current["losses"] += int(row.get("losses") or 0)
+
+    champion_totals: dict[tuple[str, str], dict[str, Any]] = {}
+    for (champion_id, role, _patch), row in champion_by_patch.items():
+        key = (champion_id, role)
+        current = champion_totals.get(key)
+        if current is None:
+            current = dict(row)
+            current["champion_games"] = 0
+            current["champion_wins"] = 0
+            current["champion_losses"] = 0
+            champion_totals[key] = current
+        current["champion_games"] += row["champion_games"]
+        current["champion_wins"] += row["champion_wins"]
+        current["champion_losses"] += row["champion_losses"]
+
+    aggregated: list[dict[str, Any]] = []
+    for (champion_id, role, _primary_style, _keystone, _primary_runes, _secondary_style, _secondary_runes, _shards), row in set_totals.items():
+        champion = champion_totals[(champion_id, role)]
+        row["patch"] = "ALL"
+        row["champion_games"] = champion["champion_games"]
+        row["champion_wins"] = champion["champion_wins"]
+        row["champion_losses"] = champion["champion_losses"]
+        row["champion_win_rate"] = ratio(champion["champion_wins"], champion["champion_games"])
+        row["win_rate"] = ratio(row["wins"], row["games"])
+        row["pick_rate"] = ratio(row["games"], row["champion_games"])
+        row["pick_rate_denominator"] = row["champion_games"]
+        aggregated.append(row)
+
+    partitions: defaultdict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
+    for row in aggregated:
+        partitions[(str(row.get("champion_id") or ""), str(row.get("role") or ""))].append(row)
+    top_partitions = sorted(
+        partitions.values(),
+        key=lambda partition: (
+            -int(max((row.get("champion_games") or 0 for row in partition), default=0)),
+            str(partition[0].get("champion_name") or ""),
+            str(partition[0].get("role") or ""),
+        ),
+    )[:20]
+    selected: list[dict[str, Any]] = []
+    for partition in top_partitions:
+        selected.extend(
+            sorted(
+                partition,
+                key=lambda row: (
+                    -int(row.get("games") or 0),
+                    -(float(row.get("win_rate")) if row.get("win_rate") is not None else -1),
+                    str(row.get("primary_keystone_name") or ""),
+                    str(row.get("secondary_style_name") or ""),
+                ),
+            )[:3]
+        )
+    return sorted(
+        selected,
+        key=lambda row: (
+            -int(row.get("champion_games") or 0),
+            str(row.get("champion_name") or ""),
+            str(row.get("role") or ""),
+            -int(row.get("games") or 0),
+            -(float(row.get("win_rate")) if row.get("win_rate") is not None else -1),
+        ),
+    )
+
+
 def render_report(
     *,
     dataset: Dataset,
@@ -1300,6 +1567,7 @@ def render_report(
     champion_report = aggregate_report_rows(analysis["champions"], ("champion_id",), "champion_name")
     rune_report = aggregate_report_rows(analysis["runes"], ("rune_kind", "rune_id"), "rune_name")
     champion_rune_report = report_champion_rune_rows(analysis["champion_runes"])
+    champion_rune_set_report = report_champion_rune_set_rows(analysis.get("rune_sets", []))
     spell_report = aggregate_report_rows(analysis["spells"], ("spell_id",), "spell_name")
     role_gold_report = report_role_gold_rows(analysis["role_gold"])
     duration_report = report_duration_rows(analysis["duration"])
@@ -1365,6 +1633,28 @@ def render_report(
         ),
         "",
         "選択時勝率とチャンピオン全体の勝率の差は未調整の記述統計であり、ルーンの因果効果や推奨を示しません。シャードは1参加者が3つ選ぶため、種類内の選択率を合計して100%にはなりません。",
+        "",
+        "## チャンピオン別ルーンセット上位3件（観測数の多い例）",
+        "",
+        "主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計しています。各チャンピオン・ロールの上位3件を掲載し、全行は `champion-rune-set-summary.csv` と `analysis.json` に保存しています。",
+        "",
+        markdown_table(
+            champion_rune_set_report,
+            (
+                ("champion_name", "チャンピオン"),
+                ("role", "ロール"),
+                ("primary_style_name", "主系"),
+                ("primary_keystone_name", "キーストーン"),
+                ("secondary_style_name", "副系"),
+                ("games", "選択数"),
+                ("champion_games", "チャンピオン試合"),
+                ("pick_rate", "選択率"),
+                ("win_rate", "選択時勝率"),
+            ),
+            limit=60,
+        ),
+        "",
+        "ルーン枠とシャードの詳細IDは `champion-rune-set-summary.csv`／`analysis.json` で確認できる。選択時勝率は未調整の記述統計であり、ルーンセットの因果効果や推奨を示さない。",
         "",
         "## ルーン表示名の注意",
         "",
@@ -1568,6 +1858,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
                     "items": "item-summary.csv",
                     "runes": "rune-summary.csv",
                     "champion_runes": "champion-rune-summary.csv",
+                    "rune_sets": "champion-rune-set-summary.csv",
                     "spells": "summoner-spell-summary.csv",
                     "performance": "performance-summary.csv",
                     "role_gold": "role-gold.csv",

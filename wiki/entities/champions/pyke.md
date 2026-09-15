@@ -10,6 +10,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
 tags:
   - champion
   - role-support
@@ -137,18 +138,45 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pyke.pn
 
 ### UTILITY（対象n=709）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/aatrox|エイトロックス（Aatrox）]] — 対象側勝率66.7%（22/33）、n=33（十分性の目安を満たす）。
-- **カウンターピック候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率43.9%（29/66）、n=66（十分性の目安を満たす）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/aatrox|エイトロックス（Aatrox）]] — 対象側勝率66.7%（22/33）、n=33（十分性の目安を満たす）。
+  - [[wiki/entities/champions/caitlyn|ケイトリン（Caitlyn）]] — 対象側勝率58.5%（24/41）、n=41（十分性の目安を満たす）。
+  - [[wiki/entities/champions/miss-fortune|ミス・フォーチュン（MissFortune）]] — 対象側勝率56.4%（31/55）、n=55（十分性の目安を満たす）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率43.9%（29/66）、n=66（十分性の目安を満たす）。
+  - [[wiki/entities/champions/leona|レオナ（Leona）]] — 対象側勝率46.6%（27/58）、n=58（十分性の目安を満たす）。
+  - [[wiki/entities/champions/seraphine|セラフィーン（Seraphine）]] — 対象側勝率50.0%（24/48）、n=48（十分性の目安を満たす）。
 
 ### JUNGLE（対象n=2）
 
-- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
-- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+- **高勝率コンボ候補（最大3件）：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **低勝率カウンターピック候補（最大3件）：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
 
 > [!warning] 実測値の限界
 > 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
 <!-- champion-matchup-analysis:end -->
+
+<!-- champion-rune-set-analysis:start -->
+## よく選ばれるルーンセット（実測）
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+- **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
+
+### UTILITY（対象1,067試合、全体勝率47.6%）
+
+| 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | 主系覇道：ヘイルブレード／追い打ち・第六感・至極の賞金首狩り；副系不滅：ボーンアーマー・気迫；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 395/1,067 | 37.0% | 46.1% |
+| 2 | 主系覇道：ヘイルブレード／サドンインパクト・第六感・貪欲な賞金首狩り；副系天啓：宇宙の英知・魔法の靴；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 83/1,067 | 7.8% | 49.4% |
+| 3 | 主系覇道：ヘイルブレード／追い打ち・第六感・至極の賞金首狩り；副系不滅：ボーンアーマー・気迫；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5011) | 32/1,067 | 3.0% | 43.8% |
+
+- **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
+- **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
+
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+<!-- champion-rune-set-analysis:end -->
 
 ## 関連ページ
 

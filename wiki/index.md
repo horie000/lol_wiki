@@ -20,7 +20,7 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]] — 9,736件の完全試合から、個別アイテム、ステータス群、順不同ビルド中核をチャンピオン・ロール別に比較した入力範囲、品質、制約。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-role-gold-share|Riotランク戦試合データ：ロール別ゴールド獲得シェア]] — 完成済み3,991試合を対象にしたロール別のチーム内累積ゴールドシェア、品質、制約。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups|Riotランク戦試合データ：チャンピオン別コンボ・カウンターピック分析]] — 13,107件の完全試合から、実測の味方コンボと同ロール対面候補を選定した入力範囲、品質、制約。
-- [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]] — 15,572件の完全試合から、チャンピオン・ロール別のルーン選択率と選択時勝率を集計した入力範囲、品質、制約。
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]] — 20,010件の完全試合から、個別ルーンと完全ルーンセットの選択率・選択時勝率を集計した入力範囲、品質、制約。
 - [[wiki/sources/src-2017-11-26-firstbloodstats-gold-efficiency|アイテムのゴールド効率について改めてまとめた]] — ステータス単価から理論価格とゴールド効率を求める方法、および自動効果を含める際の限界。
 - [[wiki/sources/src-2026-02-28-red-ff-item-gold-efficiency|アイテムの金銭効率ランキング：ファイター編【LoL】]] — 行動妨害耐性、割合貫通、ライフスティール等を含む現行の単価表とファイター系アイテム比較。
 
@@ -1190,4 +1190,4 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/syntheses/role-gold-share-ranked-matches|ランク戦におけるロール別ゴールド獲得シェア]] — 同時作成されたロール別ゴールド分析を正本へ統合した履歴案内（superseded）。
 - [[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率：ランク戦最終スコアの集計]] — ロール別GPM・チーム内シェアと、完成済み3,991試合による勝敗・時間帯・観測帯別の感度分析。
 - [[wiki/syntheses/champion-combo-counter-ranked-matches|実測チャンピオン・コンボ／カウンターピック分析]] — 13,107件の完全試合から、サンプル数を加味して選定した味方コンボと同ロール対面候補、および173件のentityへの反映。
-- [[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]] — 15,572件の完全試合から、チャンピオン・ロール別の定番ルーン、ロール差、選択率と勝率の分離を整理した記述分析。
+- [[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]] — 20,010件の完全試合から、チャンピオン・ロール別の定番ルーン、完全セット上位3件、ロール差、選択率と勝率の分離を整理した記述分析。

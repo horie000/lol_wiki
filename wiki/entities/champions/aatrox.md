@@ -10,6 +10,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
 tags:
   - champion
   - role-fighter
@@ -141,18 +142,45 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Aatrox.
 
 ### TOP（対象n=1,208）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/miss-fortune|ミス・フォーチュン（MissFortune）]] — 対象側勝率61.4%（54/88）、n=88（十分性の目安を満たす）。
-- **カウンターピック候補：** [[wiki/entities/champions/yorick|ヨリック（Yorick）]] — 対象側勝率41.7%（20/48）、n=48（十分性の目安を満たす）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/lucian|ルシアン（Lucian）]] — 対象側勝率67.6%（23/34）、n=34（十分性の目安を満たす）。
+  - [[wiki/entities/champions/pyke|パイク（Pyke）]] — 対象側勝率66.7%（22/33）、n=33（十分性の目安を満たす）。
+  - [[wiki/entities/champions/miss-fortune|ミス・フォーチュン（MissFortune）]] — 対象側勝率61.4%（54/88）、n=88（十分性の目安を満たす）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/yorick|ヨリック（Yorick）]] — 対象側勝率41.7%（20/48）、n=48（十分性の目安を満たす）。
+  - [[wiki/entities/champions/renekton|レネクトン（Renekton）]] — 対象側勝率42.5%（17/40）、n=40（十分性の目安を満たす）。
+  - [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率51.0%（25/49）、n=49（十分性の目安を満たす）。
 
 ### JUNGLE（対象n=103）
 
-- **高勝率コンボ候補：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
-- **カウンターピック候補：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
+- **高勝率コンボ候補（最大3件）：** n=15以上の味方組み合わせなし。サンプル不足のため判断保留。
+- **低勝率カウンターピック候補（最大3件）：** n=15以上の同ロール対面なし。サンプル不足のため判断保留。
 
 > [!warning] 実測値の限界
 > 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
 <!-- champion-matchup-analysis:end -->
+
+<!-- champion-rune-set-analysis:start -->
+## よく選ばれるルーンセット（実測）
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+- **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
+
+### TOP（対象1,635試合、全体勝率51.5%）
+
+| 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | 主系栄華：征服者／凱旋・レジェンド: ヘイスト・背水の陣；副系不滅：ボーンアーマー・生気付与；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 607/1,635 | 37.1% | 50.1% |
+| 2 | 主系栄華：征服者／凱旋・レジェンド: ヘイスト・背水の陣；副系不滅：息継ぎ・生気付与；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 94/1,635 | 5.7% | 57.4% |
+| 3 | 主系栄華：征服者／凱旋・レジェンド: ヘイスト・背水の陣；副系覇道：血の味わい・貪欲な賞金首狩り；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 68/1,635 | 4.2% | 44.1% |
+
+- **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
+- **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
+
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+<!-- champion-rune-set-analysis:end -->
 
 ## 関連ページ
 

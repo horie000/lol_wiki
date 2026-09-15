@@ -10,6 +10,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
 tags:
   - champion
   - role-assassin
@@ -141,18 +142,48 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zed.png
 
 ### MIDDLE（対象n=553）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/caitlyn|ケイトリン（Caitlyn）]] — 対象側勝率60.0%（21/35）、n=35（十分性の目安を満たす）。
-- **カウンターピック候補：** [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率50.0%（16/32）、n=32（十分性の目安を満たす）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/caitlyn|ケイトリン（Caitlyn）]] — 対象側勝率60.0%（21/35）、n=35（十分性の目安を満たす）。
+  - [[wiki/entities/champions/jinx|ジンクス（Jinx）]] — 対象側勝率59.0%（23/39）、n=39（十分性の目安を満たす）。
+  - [[wiki/entities/champions/jhin|ジン（Jhin）]] — 対象側勝率57.1%（24/42）、n=42（十分性の目安を満たす）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率50.0%（16/32）、n=32（十分性の目安を満たす）。
+  - [[wiki/entities/champions/ahri|アーリ（Ahri）]] — 対象側勝率57.1%（20/35）、n=35（十分性の目安を満たす）。
 
 ### JUNGLE（対象n=220）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率66.7%（10/15）、サンプル不足（n=15、十分性の目安30未満）。
-- **カウンターピック候補：** [[wiki/entities/champions/viego|ヴィエゴ（Viego）]] — 対象側勝率43.8%（7/16）、サンプル不足（n=16、十分性の目安30未満）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率66.7%（10/15）、サンプル不足（n=15、十分性の目安30未満）。
+  - [[wiki/entities/champions/yunara|ユナラ（Yunara）]] — 対象側勝率60.0%（9/15）、サンプル不足（n=15、十分性の目安30未満）。
+  - [[wiki/entities/champions/jhin|ジン（Jhin）]] — 対象側勝率55.6%（10/18）、サンプル不足（n=18、十分性の目安30未満）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/viego|ヴィエゴ（Viego）]] — 対象側勝率43.8%（7/16）、サンプル不足（n=16、十分性の目安30未満）。
 
 > [!warning] 実測値の限界
 > 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
 <!-- champion-matchup-analysis:end -->
+
+<!-- champion-rune-set-analysis:start -->
+## よく選ばれるルーンセット（実測）
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+- **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
+
+### MIDDLE（対象1,014試合、全体勝率54.1%）
+
+| 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | 主系覇道：電撃／血の味わい・グリスリー メメント・至極の賞金首狩り；副系魔道：追火・至高；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 109/1,014 | 10.7% | 52.3% |
+| 2 | 主系天啓：ファーストストライク／キャッシュバック・トリプル トニック・なんでも屋；副系栄華：レジェンド: ヘイスト・切り崩し；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 70/1,014 | 6.9% | 57.1% |
+| 3 | 主系天啓：ファーストストライク／キャッシュバック・トリプル トニック・なんでも屋；副系栄華：切り崩し・レジェンド: ヘイスト；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 57/1,014 | 5.6% | 66.7% |
+
+- **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
+- **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
+
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+<!-- champion-rune-set-analysis:end -->
 
 ## 関連ページ
 

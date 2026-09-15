@@ -10,6 +10,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
 tags:
   - champion
   - role-mage
@@ -143,18 +144,48 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lux.png
 
 ### UTILITY（対象n=1,043）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/dr-mundo|ドクター・ムンド（DrMundo）]] — 対象側勝率65.6%（21/32）、n=32（十分性の目安を満たす）。
-- **カウンターピック候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率44.3%（43/97）、n=97（十分性の目安を満たす）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/dr-mundo|ドクター・ムンド（DrMundo）]] — 対象側勝率65.6%（21/32）、n=32（十分性の目安を満たす）。
+  - [[wiki/entities/champions/mordekaiser|モルデカイザー（Mordekaiser）]] — 対象側勝率59.2%（45/76）、n=76（十分性の目安を満たす）。
+  - [[wiki/entities/champions/caitlyn|ケイトリン（Caitlyn）]] — 対象側勝率54.2%（150/277）、n=277（十分性の目安を満たす）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/xerath|ゼラス（Xerath）]] — 対象側勝率40.0%（14/35）、n=35（十分性の目安を満たす）。
+  - [[wiki/entities/champions/zyra|ザイラ（Zyra）]] — 対象側勝率41.7%（15/36）、n=36（十分性の目安を満たす）。
+  - [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率44.3%（43/97）、n=97（十分性の目安を満たす）。
 
 ### MIDDLE（対象n=288）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率55.9%（19/34）、n=34（十分性の目安を満たす）。
-- **カウンターピック候補：** [[wiki/entities/champions/ahri|アーリ（Ahri）]] — 対象側勝率44.4%（12/27）、サンプル不足（n=27、十分性の目安30未満）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/nautilus|ノーチラス（Nautilus）]] — 対象側勝率55.9%（19/34）、n=34（十分性の目安を満たす）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/ahri|アーリ（Ahri）]] — 対象側勝率44.4%（12/27）、サンプル不足（n=27、十分性の目安30未満）。
+  - [[wiki/entities/champions/malzahar|マルザハール（Malzahar）]] — 対象側勝率52.9%（9/17）、サンプル不足（n=17、十分性の目安30未満）。
 
 > [!warning] 実測値の限界
 > 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
 <!-- champion-matchup-analysis:end -->
+
+<!-- champion-rune-set-analysis:start -->
+## よく選ばれるルーンセット（実測）
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+- **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
+
+### UTILITY（対象955試合、全体勝率50.8%）
+
+| 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | 主系魔道：秘儀の彗星／マナフローバンド・至高・追火；副系覇道：追い打ち・至極の賞金首狩り；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 506/955 | 53.0% | 48.8% |
+| 2 | 主系魔道：秘儀の彗星／マナフローバンド・至高・追火；副系天啓：ビスケットデリバリー・宇宙の英知；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 124/955 | 13.0% | 51.6% |
+| 3 | 主系覇道：魂の収穫／追い打ち・グリスリー メメント・至極の賞金首狩り；副系魔道：マナフローバンド・至高；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 70/955 | 7.3% | 57.1% |
+
+- **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
+- **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
+
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+<!-- champion-rune-set-analysis:end -->
 
 ## 関連ページ
 

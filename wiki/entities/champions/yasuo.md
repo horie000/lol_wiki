@@ -10,6 +10,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
 tags:
   - champion
   - role-fighter
@@ -143,18 +144,49 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yasuo.p
 
 ### MIDDLE（対象n=811）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/mordekaiser|モルデカイザー（Mordekaiser）]] — 対象側勝率62.2%（51/82）、n=82（十分性の目安を満たす）。
-- **カウンターピック候補：** [[wiki/entities/champions/malzahar|マルザハール（Malzahar）]] — 対象側勝率44.4%（20/45）、n=45（十分性の目安を満たす）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/kayn|ケイン（Kayn）]] — 対象側勝率63.3%（19/30）、n=30（十分性の目安を満たす）。
+  - [[wiki/entities/champions/mordekaiser|モルデカイザー（Mordekaiser）]] — 対象側勝率62.2%（51/82）、n=82（十分性の目安を満たす）。
+  - [[wiki/entities/champions/ziggs|ジグス（Ziggs）]] — 対象側勝率59.5%（22/37）、n=37（十分性の目安を満たす）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/malzahar|マルザハール（Malzahar）]] — 対象側勝率44.4%（20/45）、n=45（十分性の目安を満たす）。
+  - [[wiki/entities/champions/akali|アカリ（Akali）]] — 対象側勝率45.0%（18/40）、n=40（十分性の目安を満たす）。
+  - [[wiki/entities/champions/yone|ヨネ（Yone）]] — 対象側勝率52.3%（23/44）、n=44（十分性の目安を満たす）。
 
 ### TOP（対象n=224）
 
-- **高勝率コンボ候補：** [[wiki/entities/champions/miss-fortune|ミス・フォーチュン（MissFortune）]] — 対象側勝率60.0%（12/20）、サンプル不足（n=20、十分性の目安30未満）。
-- **カウンターピック候補：** [[wiki/entities/champions/yorick|ヨリック（Yorick）]] — 対象側勝率58.8%（10/17）、サンプル不足（n=17、十分性の目安30未満）。
+- **高勝率コンボ候補（最大3件）：**
+  - [[wiki/entities/champions/miss-fortune|ミス・フォーチュン（MissFortune）]] — 対象側勝率60.0%（12/20）、サンプル不足（n=20、十分性の目安30未満）。
+  - [[wiki/entities/champions/jhin|ジン（Jhin）]] — 対象側勝率57.9%（11/19）、サンプル不足（n=19、十分性の目安30未満）。
+  - [[wiki/entities/champions/ezreal|エズリアル（Ezreal）]] — 対象側勝率47.1%（8/17）、サンプル不足（n=17、十分性の目安30未満）。
+- **低勝率カウンターピック候補（最大3件）：**
+  - [[wiki/entities/champions/yorick|ヨリック（Yorick）]] — 対象側勝率58.8%（10/17）、サンプル不足（n=17、十分性の目安30未満）。
 
 > [!warning] 実測値の限界
 > 味方ペアは同一試合・同一チームで同時に出場した組み合わせ、対面はMatch-v5の最終ロールから推定した同ロール候補である。パッチ、観測ランク帯、プレイヤー、試合展開、構成の交絡を調整していない。とくにサンプル不足の行は探索的な参考値に留める。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]、[[wiki/syntheses/champion-combo-counter-ranked-matches|実測コンボ・カウンターピック分析]]
 <!-- champion-matchup-analysis:end -->
+
+<!-- champion-rune-set-analysis:start -->
+## よく選ばれるルーンセット（実測）
+
+- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+- **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
+
+### MIDDLE（対象939試合、全体勝率50.9%）
+
+| 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | 主系栄華：リーサルテンポ／体力吸収・レジェンド: 迅速・背水の陣；副系不滅：超成長・息継ぎ；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 202/939 | 21.5% | 50.5% |
+| 2 | 主系栄華：リーサルテンポ／体力吸収・レジェンド: 迅速・背水の陣；副系不滅：息継ぎ・超成長；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 58/939 | 6.2% | 53.4% |
+| 3 | 主系栄華：フリートフットワーク／体力吸収・レジェンド: 迅速・背水の陣；副系不滅：超成長・息継ぎ；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 39/939 | 4.2% | 38.5% |
+
+- **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
+- **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
+
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
+<!-- champion-rune-set-analysis:end -->
 
 ## 関連ページ
 

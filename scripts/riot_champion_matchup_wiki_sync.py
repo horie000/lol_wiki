@@ -28,7 +28,8 @@ from riot_match_analysis import (
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT_NAME = "scripts/riot_champion_matchup_wiki_sync.py"
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
+DEFAULT_SELECTION_LIMIT = 3
 DEFAULT_ENTITY_ROOT = ROOT / "wiki/entities/champions"
 DEFAULT_OUTPUT_ROOT = ROOT / "reports/riot-champion-matchups"
 SOURCE_REF = "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
@@ -73,6 +74,45 @@ def entity_catalog(entity_root: Path) -> dict[str, dict[str, str | Path]]:
     if not result:
         raise ValueError(f"チャンピオンentityを検出できません: {entity_root}")
     return result
+
+
+def load_analysis_snapshot(path: Path) -> dict[str, Any]:
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(payload, Mapping):
+        raise ValueError(f"analysis.jsonのルートがオブジェクトではありません: {path}")
+    rows = payload.get("candidates")
+    target_games = payload.get("target_games_by_role")
+    target_names = payload.get("target_names")
+    if not isinstance(rows, list) or not isinstance(target_games, Mapping) or not isinstance(target_names, Mapping):
+        raise ValueError("analysis.jsonにcandidates、target_games_by_role、target_namesが必要です")
+    quality_path = path.parent / "quality.json"
+    if not quality_path.exists():
+        raise ValueError(f"analysis.jsonに対応するquality.jsonがありません: {quality_path}")
+    quality = json.loads(quality_path.read_text(encoding="utf-8"))
+    if not isinstance(quality, Mapping) or not isinstance(quality.get("summary"), Mapping):
+        raise ValueError(f"quality.jsonにsummaryがありません: {quality_path}")
+    summary = dict(quality["summary"])
+    target_counts: Counter[tuple[str, str]] = Counter()
+    for raw_key, raw_count in target_games.items():
+        target_id, separator, role = str(raw_key).partition(":")
+        if not separator or not target_id or not role:
+            raise ValueError(f"target_games_by_roleのキーが不正です: {raw_key}")
+        target_counts[(target_id, role)] = int(raw_count)
+    run_rel = str(summary.get("run_dir") or path.parent.relative_to(ROOT).as_posix())
+    required_summary = ("complete_matches", "input_files", "input_records", "unique_matches")
+    missing = [key for key in required_summary if key not in summary]
+    if missing:
+        raise ValueError(f"quality.jsonのsummaryに必要な値がありません: {', '.join(missing)}")
+    return {
+        "analysis": payload,
+        "quality": quality,
+        "rows": [dict(row) for row in rows if isinstance(row, Mapping)],
+        "target_counts": target_counts,
+        "target_names": {str(key): str(value) for key, value in target_names.items()},
+        "summary": summary,
+        "run_rel": run_rel,
+        "generated_at": str(payload.get("generated_at") or ""),
+    }
 
 
 def wilson_interval(wins: int, games: int) -> tuple[Optional[float], Optional[float]]:
@@ -163,6 +203,7 @@ def select_candidates(
     rows: Sequence[Mapping[str, Any]],
     target_counts: Counter[tuple[str, str]],
     sufficient_games: int,
+    selection_limit: int = DEFAULT_SELECTION_LIMIT,
 ) -> dict[str, dict[str, list[dict[str, Any]]]]:
     grouped: defaultdict[tuple[str, str, str], list[dict[str, Any]]] = defaultdict(list)
     for row in rows:
@@ -202,12 +243,13 @@ def select_candidates(
                             str(row["related_champion_name"]),
                         ),
                     )
-                chosen = dict(ordered[0])
-                chosen["sufficient_sample"] = int(chosen["games"]) >= sufficient_games
-                chosen["selection_score"] = (
-                    chosen["wilson_lower_95"] if relation == "ally" else chosen["wilson_upper_95"]
-                )
-                selected[target_id][relation].append(chosen)
+                for candidate in ordered[:selection_limit]:
+                    chosen = dict(candidate)
+                    chosen["sufficient_sample"] = int(chosen["games"]) >= sufficient_games
+                    chosen["selection_score"] = (
+                        chosen["wilson_lower_95"] if relation == "ally" else chosen["wilson_upper_95"]
+                    )
+                    selected[target_id][relation].append(chosen)
     return dict(selected)
 
 
@@ -250,6 +292,7 @@ def build_entity_block(
     unique_matches: int,
     min_games: int,
     sufficient_games: int,
+    selection_limit: int,
 ) -> str:
     lines = [
         START_MARKER,
@@ -268,22 +311,46 @@ def build_entity_block(
         lines.append(f"- **結果：** 対象ロールの参加者数を確認できず、n={min_games}以上の実測候補を掲載できない。サンプル不足のため判断保留。")
     for role in roles:
         lines.extend([f"### {role}（対象n={target_counts[(champion_id, role)]:,}）", ""])
-        ally_rows = selected.get(champion_id, {}).get("ally", [])
-        opponent_rows = selected.get(champion_id, {}).get("opponent", [])
-        ally = next((row for row in ally_rows if row["target_role"] == role), None)
-        opponent = next((row for row in opponent_rows if row["target_role"] == role), None)
-        if ally is None:
-            lines.append(f"- **高勝率コンボ候補：** n={min_games}以上の味方組み合わせなし。サンプル不足のため判断保留。")
-        else:
-            lines.append(
-                f"- **高勝率コンボ候補：** {link_for_champion(str(ally['related_champion_id']), str(ally['related_champion_name']), entity_catalog_data)} — 対象側勝率{percent(ally['target_win_rate'])}（{ally['wins']}/{ally['games']}）、{sample_note(ally, sufficient_games)}。"
+        ally_rows = [
+            row for row in selected.get(champion_id, {}).get("ally", []) if row["target_role"] == role
+        ]
+        opponent_rows = [
+            row for row in selected.get(champion_id, {}).get("opponent", []) if row["target_role"] == role
+        ]
+        ally_rows.sort(
+            key=lambda row: (
+                -(float(row["target_win_rate"]) if row["target_win_rate"] is not None else -1),
+                -int(row["games"]),
+                str(row["related_champion_name"]),
             )
-        if opponent is None:
-            lines.append(f"- **カウンターピック候補：** n={min_games}以上の同ロール対面なし。サンプル不足のため判断保留。")
-        else:
-            lines.append(
-                f"- **カウンターピック候補：** {link_for_champion(str(opponent['related_champion_id']), str(opponent['related_champion_name']), entity_catalog_data)} — 対象側勝率{percent(opponent['target_win_rate'])}（{opponent['wins']}/{opponent['games']}）、{sample_note(opponent, sufficient_games)}。"
+        )
+        opponent_rows.sort(
+            key=lambda row: (
+                float(row["target_win_rate"]) if row["target_win_rate"] is not None else 2,
+                -int(row["games"]),
+                str(row["related_champion_name"]),
             )
+        )
+        if not ally_rows:
+            lines.append(
+                f"- **高勝率コンボ候補（最大{selection_limit}件）：** n={min_games}以上の味方組み合わせなし。サンプル不足のため判断保留。"
+            )
+        else:
+            lines.append(f"- **高勝率コンボ候補（最大{selection_limit}件）：**")
+            for ally in ally_rows:
+                lines.append(
+                    f"  - {link_for_champion(str(ally['related_champion_id']), str(ally['related_champion_name']), entity_catalog_data)} — 対象側勝率{percent(ally['target_win_rate'])}（{ally['wins']}/{ally['games']}）、{sample_note(ally, sufficient_games)}。"
+                )
+        if not opponent_rows:
+            lines.append(
+                f"- **低勝率カウンターピック候補（最大{selection_limit}件）：** n={min_games}以上の同ロール対面なし。サンプル不足のため判断保留。"
+            )
+        else:
+            lines.append(f"- **低勝率カウンターピック候補（最大{selection_limit}件）：**")
+            for opponent in opponent_rows:
+                lines.append(
+                    f"  - {link_for_champion(str(opponent['related_champion_id']), str(opponent['related_champion_name']), entity_catalog_data)} — 対象側勝率{percent(opponent['target_win_rate'])}（{opponent['wins']}/{opponent['games']}）、{sample_note(opponent, sufficient_games)}。"
+                )
         lines.append("")
     lines.extend(
         [
@@ -325,6 +392,43 @@ def add_source_and_block(text: str, block: str, updated: str = "2026-09-15") -> 
         index = text.index(source_anchor)
         return text[:index] + normalized_block + text[index:]
     return text.rstrip() + "\n\n" + normalized_block
+
+
+def sync_entity_blocks(
+    *,
+    entities: Mapping[str, Mapping[str, str | Path]],
+    rows: Sequence[Mapping[str, Any]],
+    target_counts: Counter[tuple[str, str]],
+    selected: Mapping[str, Mapping[str, list[dict[str, Any]]]],
+    run_rel: str,
+    complete_matches: int,
+    input_files: int,
+    input_records: int,
+    unique_matches: int,
+    min_games: int,
+    sufficient_games: int,
+    selection_limit: int,
+) -> None:
+    for target_id, entity in entities.items():
+        block = build_entity_block(
+            champion_id=target_id,
+            target_counts=target_counts,
+            selected=selected,
+            entity_catalog_data=entities,
+            run_rel=run_rel,
+            complete_matches=complete_matches,
+            input_files=input_files,
+            input_records=input_records,
+            unique_matches=unique_matches,
+            min_games=min_games,
+            sufficient_games=sufficient_games,
+            selection_limit=selection_limit,
+        )
+        path = Path(entity["path"])
+        original = path.read_text(encoding="utf-8")
+        updated = add_source_and_block(original, block)
+        if updated != original:
+            path.write_text(updated, encoding="utf-8")
 
 
 def csv_fields() -> tuple[str, ...]:
@@ -419,6 +523,7 @@ def render_report(
     quality: Mapping[str, Any],
     run_rel: str,
     sufficient_games: int,
+    selection_limit: int,
 ) -> str:
     lines = [
         "# 実測チャンピオン・コンボ／カウンターピック分析",
@@ -459,7 +564,7 @@ def render_report(
             "",
             "## 使い方",
             "",
-            f"各チャンピオンの候補全体は `/{run_rel}/champions/` に保存し、entityページにはロールごとに選定候補を最大1件ずつ記載した。n<30の選定結果はentityにもサンプル不足と明記した。",
+            f"各チャンピオンの候補全体は `/{run_rel}/champions/` に保存し、entityページにはロールごとに高勝率コンボと低勝率カウンターピックを最大{selection_limit}件ずつ記載した。n<30の選定結果はentityにもサンプル不足と明記した。",
             "",
             "## 出典",
             "",
@@ -473,20 +578,23 @@ def render_report(
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", action="append", required=True, help="JSON/JSONLまたは探索ディレクトリ")
+    input_group = parser.add_mutually_exclusive_group(required=True)
+    input_group.add_argument("--input", action="append", help="JSON/JSONLまたは探索ディレクトリ")
+    input_group.add_argument("--analysis", help="既存のmatchup analysis.jsonを使ってentityだけを同期")
     parser.add_argument("--output", default=str(DEFAULT_OUTPUT_ROOT), help="レポート出力先")
     parser.add_argument("--entity-root", default=str(DEFAULT_ENTITY_ROOT), help="チャンピオンentityディレクトリ")
     parser.add_argument("--queue-id", type=int, default=420)
     parser.add_argument("--min-games", type=int, default=15)
     parser.add_argument("--sufficient-games", type=int, default=30)
+    parser.add_argument("--selection-limit", type=int, default=DEFAULT_SELECTION_LIMIT, help="各ロール・種別のentity掲載件数")
     parser.add_argument("--dry-run", action="store_true", help="入力と件数だけ検証し、書き込まない")
-    parser.add_argument("--write", action="store_true", help="レポートとentity生成ブロックを書き込む")
+    parser.add_argument("--write", action="store_true", help="レポートまたはentity生成ブロックを書き込む")
     return parser
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:
     args = build_parser().parse_args(argv)
-    if args.min_games <= 0 or args.sufficient_games < args.min_games:
+    if args.min_games <= 0 or args.sufficient_games < args.min_games or args.selection_limit <= 0:
         raise ValueError("--sufficient-games は --min-games 以上の正数が必要です")
     if args.dry_run and args.write:
         raise ValueError("--dry-run と --write は同時指定できません")
@@ -495,7 +603,53 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     entity_root = resolve_path(args.entity_root)
     entities = entity_catalog(entity_root)
-    dataset = load_dataset([resolve_path(value) for value in args.input])
+    if args.analysis:
+        snapshot = load_analysis_snapshot(resolve_path(args.analysis))
+        rows = snapshot["rows"]
+        target_counts = snapshot["target_counts"]
+        selected = select_candidates(rows, target_counts, args.sufficient_games, args.selection_limit)
+        source_summary = snapshot["summary"]
+        summary = {
+            "mode": "analysis_sync",
+            "analysis": str(resolve_path(args.analysis).relative_to(ROOT)),
+            "script": SCRIPT_NAME,
+            "schema_version": SCHEMA_VERSION,
+            "entity_count": len(entities),
+            "target_champion_count": len(snapshot["target_names"]),
+            "candidate_rows": len(rows),
+            "selected_rows": sum(
+                len(data.get(relation, [])) for data in selected.values() for relation in ("ally", "opponent")
+            ),
+            "min_games": args.min_games,
+            "sufficient_games": args.sufficient_games,
+            "selection_limit": args.selection_limit,
+            "complete_matches": int(source_summary["complete_matches"]),
+            "input_files": int(source_summary["input_files"]),
+            "input_records": int(source_summary["input_records"]),
+            "unique_matches": int(source_summary["unique_matches"]),
+            "run_dir": snapshot["run_rel"],
+        }
+        if args.dry_run:
+            print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
+            return 0
+        sync_entity_blocks(
+            entities=entities,
+            rows=rows,
+            target_counts=target_counts,
+            selected=selected,
+            run_rel=snapshot["run_rel"],
+            complete_matches=int(source_summary["complete_matches"]),
+            input_files=int(source_summary["input_files"]),
+            input_records=int(source_summary["input_records"]),
+            unique_matches=int(source_summary["unique_matches"]),
+            min_games=args.min_games,
+            sufficient_games=args.sufficient_games,
+            selection_limit=args.selection_limit,
+        )
+        print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
+        return 0
+
+    dataset = load_dataset([resolve_path(value) for value in args.input or []])
     scopes, filter_stats = select_scopes(
         dataset.matches,
         queue_id=args.queue_id,
@@ -506,7 +660,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         date_to=None,
     )
     rows, target_counts, target_names = aggregate_candidates(scopes, args.min_games)
-    selected = select_candidates(rows, target_counts, args.sufficient_games)
+    selected = select_candidates(rows, target_counts, args.sufficient_games, args.selection_limit)
     complete_matches = sum(1 for scoped in scopes if scoped.match.is_complete())
     candidate_counts = Counter((str(row["relation"]), bool(row.get("games", 0) >= args.sufficient_games)) for row in rows)
     summary = {
@@ -524,6 +678,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "selected_rows": sum(len(data.get(relation, [])) for data in selected.values() for relation in ("ally", "opponent")),
         "min_games": args.min_games,
         "sufficient_games": args.sufficient_games,
+        "selection_limit": args.selection_limit,
         "quality": dataset.quality.as_dict(),
         "filters": filter_stats,
     }
@@ -553,23 +708,20 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         detail_dir = run_dir / "champions"
         detail_dir.mkdir(exist_ok=True)
         (detail_dir / f"champion-{target_id}.md").write_text(detail, encoding="utf-8")
-        block = build_entity_block(
-            champion_id=target_id,
-            target_counts=target_counts,
-            selected=selected,
-            entity_catalog_data=entities,
-            run_rel=run_rel,
-            complete_matches=complete_matches,
-            input_files=len(dataset.input_files),
-            input_records=dataset.quality.counts.get("input_records", 0),
-            unique_matches=dataset.quality.counts.get("unique_matches", 0),
-            min_games=args.min_games,
-            sufficient_games=args.sufficient_games,
-        )
-        path = Path(entity["path"])
-        original = path.read_text(encoding="utf-8")
-        updated = add_source_and_block(original, block)
-        path.write_text(updated, encoding="utf-8")
+    sync_entity_blocks(
+        entities=entities,
+        rows=rows,
+        target_counts=target_counts,
+        selected=selected,
+        run_rel=run_rel,
+        complete_matches=complete_matches,
+        input_files=len(dataset.input_files),
+        input_records=dataset.quality.counts.get("input_records", 0),
+        unique_matches=dataset.quality.counts.get("unique_matches", 0),
+        min_games=args.min_games,
+        sufficient_games=args.sufficient_games,
+        selection_limit=args.selection_limit,
+    )
 
     flattened_selected = []
     for data in selected.values():
@@ -581,7 +733,11 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         "input": dataset.quality.as_dict(),
         "filters": filter_stats,
         "summary": summary,
-        "sample_thresholds": {"report_min_games": args.min_games, "sufficient_games": args.sufficient_games},
+        "sample_thresholds": {
+            "report_min_games": args.min_games,
+            "sufficient_games": args.sufficient_games,
+            "selection_limit": args.selection_limit,
+        },
     }
     summary["run_dir"] = run_rel
     summary["outputs"] = [
@@ -596,6 +752,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "tier_mode": "all",
             "min_games": args.min_games,
             "sufficient_games": args.sufficient_games,
+            "selection_limit": args.selection_limit,
         },
         "target_games_by_role": {f"{target_id}:{role}": count for (target_id, role), count in sorted(target_counts.items())},
         "target_names": dict(sorted(target_names.items())),
@@ -612,6 +769,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "tier_mode": "all",
             "min_games": args.min_games,
             "sufficient_games": args.sufficient_games,
+            "selection_limit": args.selection_limit,
             "entity_root": str(entity_root.relative_to(ROOT)),
         },
         "outputs": summary["outputs"],
@@ -620,7 +778,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     json_write(run_dir / "quality.json", quality)
     json_write(run_dir / "manifest.json", manifest)
     (run_dir / "report.md").write_text(
-        render_report(rows, selected, entities, target_counts, quality, run_rel, args.sufficient_games),
+        render_report(rows, selected, entities, target_counts, quality, run_rel, args.sufficient_games, args.selection_limit),
         encoding="utf-8",
     )
     print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))

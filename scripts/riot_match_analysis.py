@@ -328,6 +328,79 @@ class ParticipantView:
         return result
 
     @property
+    def rune_set(self) -> Optional[dict[str, Any]]:
+        """Match-v5 の主系・副系・シャードを一つの正規化セットとして返す。
+
+        個別ルーンの集計と異なり、ページへ掲載するセットは選択順を意味する
+        キーストーンを先頭に保持し、statPerks は API の slot 順で固定する。
+        必須枠が欠けた参加者は不完全なセットとして ``None`` を返す。
+        """
+        perks = self.raw.get("perks")
+        if not isinstance(perks, Mapping):
+            return None
+        raw_styles = perks.get("styles")
+        if not isinstance(raw_styles, list):
+            return None
+        styles = [style for style in raw_styles if isinstance(style, Mapping)]
+        if len(styles) < 2:
+            return None
+
+        def style_for(description: str, fallback_index: int) -> Optional[Mapping[str, Any]]:
+            for style in styles:
+                if str(style.get("description") or "") == description:
+                    return style
+            return styles[fallback_index] if len(styles) > fallback_index else None
+
+        primary = style_for("primaryStyle", 0)
+        secondary = style_for("subStyle", 1)
+        if primary is None or secondary is None:
+            return None
+
+        def selections(style: Mapping[str, Any]) -> Optional[list[int]]:
+            raw_selections = style.get("selections")
+            if not isinstance(raw_selections, list):
+                return None
+            result: list[int] = []
+            for selection in raw_selections:
+                if not isinstance(selection, Mapping):
+                    return None
+                perk_id = as_int(selection.get("perk"))
+                if perk_id is None or perk_id <= 0:
+                    return None
+                result.append(perk_id)
+            return result
+
+        primary_selections = selections(primary)
+        secondary_selections = selections(secondary)
+        if primary_selections is None or len(primary_selections) != 4:
+            return None
+        if secondary_selections is None or len(secondary_selections) != 2:
+            return None
+
+        stat_perks = perks.get("statPerks")
+        if not isinstance(stat_perks, Mapping):
+            return None
+        shards: list[int] = []
+        for slot_name in ("offense", "flex", "defense"):
+            shard_id = as_int(stat_perks.get(slot_name))
+            if shard_id is None or shard_id <= 0:
+                return None
+            shards.append(shard_id)
+
+        primary_style_id = as_int(primary.get("style"))
+        secondary_style_id = as_int(secondary.get("style"))
+        if primary_style_id is None or secondary_style_id is None:
+            return None
+        return {
+            "primary_style_id": primary_style_id,
+            "primary_keystone_id": primary_selections[0],
+            "primary_rune_ids": primary_selections[1:],
+            "secondary_style_id": secondary_style_id,
+            "secondary_rune_ids": secondary_selections,
+            "shard_ids": shards,
+        }
+
+    @property
     def summoner_spells(self) -> list[int]:
         return [
             spell_id
@@ -747,7 +820,10 @@ def rows_to_csv(path: Path, rows: Sequence[Mapping[str, Any]], fieldnames: Seque
             converted = {}
             for fieldname in fieldnames:
                 value = row.get(fieldname)
-                if isinstance(value, (list, tuple, set)):
+                if isinstance(value, (list, tuple)):
+                    # リスト／タプルはルーン枠などの順序を意味するため保持する。
+                    value = ",".join(str(item) for item in value)
+                elif isinstance(value, set):
                     value = ",".join(str(item) for item in sorted(value, key=str))
                 converted[fieldname] = "" if value is None else value
             writer.writerow(converted)
