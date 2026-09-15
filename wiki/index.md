@@ -18,6 +18,7 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 28ロケールの配布物と、日本語のパッシブ・4スキル詳細の統合範囲、制約。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate|Riotランク戦試合データ：試合時間帯別チャンピオン勝率]] — 4,672件の完全試合を対象にした時間帯別勝率分析の入力範囲、品質、制約。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|Riotランク戦試合データ：チャンピオン別アイテム・ビルド分析]] — 9,736件の完全試合から、個別アイテム、ステータス群、順不同ビルド中核をチャンピオン・ロール別に比較した入力範囲、品質、制約。
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-role-gold-share|Riotランク戦試合データ：ロール別ゴールド獲得シェア]] — 完成済み3,991試合を対象にしたロール別のチーム内累積ゴールドシェア、品質、制約。
 - [[wiki/sources/src-2017-11-26-firstbloodstats-gold-efficiency|アイテムのゴールド効率について改めてまとめた]] — ステータス単価から理論価格とゴールド効率を求める方法、および自動効果を含める際の限界。
 - [[wiki/sources/src-2026-02-28-red-ff-item-gold-efficiency|アイテムの金銭効率ランキング：ファイター編【LoL】]] — 行動妨害耐性、割合貫通、ライフスティール等を含む現行の単価表とファイター系アイテム比較。
 
@@ -1184,4 +1185,5 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割、リソース、主要数値、能力詳細の分布とデータ品質上の注意。
 - [[wiki/syntheses/champion-power-spikes-v16-18-1|チャンピオンのパワースパイク分類 v16.18.1]] — 173件の序盤・中盤・終盤の根拠付きヒューリスティック分類。
 - [[wiki/syntheses/champion-power-spikes-match-duration|チャンピオンのパワースパイク：試合時間帯別勝率の見直し]] — 収集済みランク戦4,672件から見た序盤・中盤・終盤の時間帯別観測と原典分類との差分。
+- [[wiki/syntheses/role-gold-share-ranked-matches|ランク戦におけるロール別ゴールド獲得シェア]] — 完成済みランク戦3,991件におけるロール別シェアと、勝敗・試合時間・観測帯による差の分析。
 - [[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率：ランク戦最終スコアの集計]] — 収集済みランク戦9,971件の完全試合から、ロール別のゴールド/分とチーム内最終ゴールド比率を比較した分析。
