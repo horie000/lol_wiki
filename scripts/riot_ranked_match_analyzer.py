@@ -488,30 +488,41 @@ def duration_rows(
     include_incomplete: bool,
 ) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
+
+    def summary(patch: str, values: Sequence[float]) -> dict[str, Any]:
+        from riot_match_analysis import quantile
+
+        return {
+            "scope": group.scope,
+            "observed_tier": group.observed_tier,
+            "patch": patch,
+            "games": len(values),
+            "avg_duration_seconds": sum(values) / len(values),
+            "median_duration_seconds": quantile(values, 0.5),
+            "p10_duration_seconds": quantile(values, 0.1),
+            "p25_duration_seconds": quantile(values, 0.25),
+            "p75_duration_seconds": quantile(values, 0.75),
+            "p90_duration_seconds": quantile(values, 0.9),
+            "min_duration_seconds": min(values),
+            "max_duration_seconds": max(values),
+        }
+
     for patch, patch_entries in group_by_patch(entries).items():
         eligible = complete_entries(patch_entries, include_incomplete)
         seconds = [as_float(entry.match.info.get("gameDuration")) for entry in eligible]
         values = sorted(value for value in seconds if value is not None and value > 0)
         if not values:
             continue
-        from riot_match_analysis import quantile
+        rows.append(summary(patch, values))
 
-        rows.append(
-            {
-                "scope": group.scope,
-                "observed_tier": group.observed_tier,
-                "patch": patch,
-                "games": len(values),
-                "avg_duration_seconds": sum(values) / len(values),
-                "median_duration_seconds": quantile(values, 0.5),
-                "p10_duration_seconds": quantile(values, 0.1),
-                "p25_duration_seconds": quantile(values, 0.25),
-                "p75_duration_seconds": quantile(values, 0.75),
-                "p90_duration_seconds": quantile(values, 0.9),
-                "min_duration_seconds": min(values),
-                "max_duration_seconds": max(values),
-            }
-        )
+    all_values = sorted(
+        value
+        for entry in complete_entries(entries, include_incomplete)
+        for value in [as_float(entry.match.info.get("gameDuration"))]
+        if value is not None and value > 0
+    )
+    if all_values:
+        rows.insert(0, summary("ALL", all_values))
     return rows
 
 
@@ -549,11 +560,17 @@ def matchup_rows(
                     if related.participant_id == target.participant_id:
                         continue
                     if related.team_id == target.team_id:
+                        target_key = (str(target.champion_id or normalize_alias(target.champion_name)), champion_label(target))
+                        related_key = (str(related.champion_id or normalize_alias(related.champion_name)), champion_label(related))
+                        # 味方ペアは順不同の組み合わせとして集計し、
+                        # A-B と B-A を別行にしない。
+                        if target_key >= related_key:
+                            continue
                         key = (
-                            str(target.champion_id or normalize_alias(target.champion_name)),
-                            champion_label(target),
-                            str(related.champion_id or normalize_alias(related.champion_name)),
-                            champion_label(related),
+                            target_key[0],
+                            target_key[1],
+                            related_key[0],
+                            related_key[1],
                         )
                         ally_counts[key].append(target.win is True)
                     elif related.role == target.role and target.role != "UNKNOWN":
@@ -735,16 +752,152 @@ CSV_FIELDS = {
 }
 
 
-def report_table_rows(rows: Sequence[Mapping[str, Any]], label: str, metric: str = "games") -> list[dict[str, Any]]:
-    filtered = [row for row in rows if row.get("scope") == "overall" and row.get("role", "ALL") == "ALL"]
+def report_overall_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        dict(row)
+        for row in rows
+        if row.get("scope") == "overall"
+        and row.get("observed_tier") == "ALL"
+        and row.get("role", "ALL") == "ALL"
+    ]
+
+
+def aggregate_report_rows(
+    rows: Sequence[Mapping[str, Any]],
+    key_fields: Sequence[str],
+    label_field: str,
+) -> list[dict[str, Any]]:
+    grouped: dict[tuple[Any, ...], dict[str, Any]] = {}
+    for row in report_overall_rows(rows):
+        key = tuple(row.get(field) for field in key_fields)
+        current = grouped.get(key)
+        if current is None:
+            current = dict(row)
+            current["games"] = 0
+            current["wins"] = 0
+            current["losses"] = 0
+            current["pick_rate_denominator"] = 0
+            grouped[key] = current
+        current["games"] += int(row.get("games") or 0)
+        current["wins"] += int(row.get("wins") or 0)
+        current["losses"] += int(row.get("losses") or 0)
+        current["pick_rate_denominator"] += int(row.get("pick_rate_denominator") or 0)
+
+    result: list[dict[str, Any]] = []
+    for row in grouped.values():
+        row["patch"] = "ALL"
+        row["observed_tier"] = "ALL"
+        row["win_rate"] = ratio(row["wins"], row["games"])
+        row["pick_rate"] = ratio(row["games"], row["pick_rate_denominator"])
+        result.append(row)
     return sorted(
-        filtered,
+        result,
         key=lambda row: (
-            -int(row.get(metric) or row.get("participants") or 0),
+            -int(row.get("games") or 0),
             -(float(row.get("win_rate")) if row.get("win_rate") is not None else -1),
-            str(row.get(label) or ""),
+            str(row.get(label_field) or ""),
         ),
     )
+
+
+def report_matchup_rows(
+    rows: Sequence[Mapping[str, Any]],
+    relation: str,
+) -> list[dict[str, Any]]:
+    candidates = [
+        row
+        for row in rows
+        if row.get("scope") == "overall"
+        and row.get("observed_tier") == "ALL"
+        and row.get("relation") == relation
+    ]
+    grouped: dict[tuple[Any, ...], dict[str, Any]] = {}
+    for row in candidates:
+        target_key = (str(row.get("target_champion_id") or ""), str(row.get("target_champion_name") or ""))
+        related_key = (str(row.get("related_champion_id") or ""), str(row.get("related_champion_name") or ""))
+        if relation == "ally":
+            pair = tuple(sorted((target_key, related_key)))
+            # ally_counts contains the same team pair once from each direction;
+            # keep one direction per patch before aggregating across patches.
+            if target_key != pair[0]:
+                continue
+            key = pair
+        else:
+            key = (target_key, related_key)
+        current = grouped.get(key)
+        if current is None:
+            current = {
+                "games": 0,
+                "wins": 0,
+                "losses": 0,
+                "patches": set(),
+                "target_champion_name": target_key[1],
+                "related_champion_name": related_key[1],
+            }
+            if relation == "ally":
+                current["champion_a_name"] = pair[0][1]
+                current["champion_b_name"] = pair[1][1]
+            grouped[key] = current
+        current["games"] += int(row.get("games") or 0)
+        current["wins"] += int(row.get("wins") or 0)
+        current["losses"] += int(row.get("losses") or 0)
+        current["patches"].add(str(row.get("patch") or "UNKNOWN"))
+
+    result: list[dict[str, Any]] = []
+    for row in grouped.values():
+        row["relation"] = relation
+        row["win_rate"] = ratio(row["wins"], row["games"])
+        row["patch_count"] = len(row["patches"])
+        del row["patches"]
+        result.append(row)
+    if relation == "ally":
+        return sorted(
+            result,
+            key=lambda row: (
+                -(float(row.get("win_rate")) if row.get("win_rate") is not None else -1),
+                -int(row.get("games") or 0),
+                str(row.get("champion_a_name") or ""),
+                str(row.get("champion_b_name") or ""),
+            ),
+        )
+    return sorted(
+        result,
+        key=lambda row: (
+            float(row.get("win_rate")) if row.get("win_rate") is not None else 2,
+            -int(row.get("games") or 0),
+            str(row.get("target_champion_name") or ""),
+            str(row.get("related_champion_name") or ""),
+        ),
+    )
+
+
+def format_duration(seconds: Any) -> str:
+    value = as_float(seconds)
+    if value is None:
+        return ""
+    total_seconds = max(0, int(round(value)))
+    minutes, remainder = divmod(total_seconds, 60)
+    return f"{minutes}分{remainder:02d}秒"
+
+
+def report_duration_rows(rows: Sequence[Mapping[str, Any]]) -> list[dict[str, Any]]:
+    filtered = [
+        dict(row)
+        for row in rows
+        if row.get("scope") == "overall" and row.get("observed_tier") == "ALL"
+    ]
+    all_rows = [row for row in filtered if row.get("patch") == "ALL"]
+    patch_rows = sorted(
+        [row for row in filtered if row.get("patch") != "ALL"],
+        key=lambda row: (-int(row.get("games") or 0), str(row.get("patch") or "")),
+    )
+    selected = all_rows[:1] + patch_rows[:9]
+    for row in selected:
+        row["avg_duration"] = format_duration(row.get("avg_duration_seconds"))
+        row["median_duration"] = format_duration(row.get("median_duration_seconds"))
+        row["p10_duration"] = format_duration(row.get("p10_duration_seconds"))
+        row["p90_duration"] = format_duration(row.get("p90_duration_seconds"))
+    return selected
 
 
 def render_report(
@@ -756,6 +909,17 @@ def render_report(
     args: argparse.Namespace,
 ) -> str:
     quality = dataset.quality.as_dict()
+    champion_report = aggregate_report_rows(analysis["champions"], ("champion_id",), "champion_name")
+    rune_report = aggregate_report_rows(analysis["runes"], ("rune_kind", "rune_id"), "rune_name")
+    spell_report = aggregate_report_rows(analysis["spells"], ("spell_id",), "spell_name")
+    duration_report = report_duration_rows(analysis["duration"])
+    ally_report = report_matchup_rows(analysis["matchups"], "ally") if args.include_matchups else []
+    opponent_report = report_matchup_rows(analysis["matchups"], "opponent") if args.include_matchups else []
+    unknown_shard_ids = sorted(
+        str(row.get("rune_id"))
+        for row in rune_report
+        if row.get("rune_kind") == "shard" and str(row.get("rune_name") or "").startswith("UNKNOWN(")
+    )
     lines = [
         "# Riotランク戦試合結果解析レポート",
         "",
@@ -775,51 +939,65 @@ def render_report(
         json.dumps({"input": quality, "filters": filter_stats}, ensure_ascii=False, indent=2, sort_keys=True),
         "```",
         "",
-        "## チャンピオン上位（ゲーム数順）",
+        "## チャンピオン上位（全パッチ合算・ゲーム数順）",
         "",
         markdown_table(
-            report_table_rows(analysis["champions"], "champion_name"),
+            champion_report,
             (("champion_name", "チャンピオン"), ("role", "ロール"), ("games", "試合"), ("win_rate", "勝率"), ("pick_rate", "ピック率")),
-        ),
-        "",
-        "## アイテム上位（所持数順）",
-        "",
-        markdown_table(
-            report_table_rows(analysis["items"], "item_name"),
-            (("item_name", "アイテム"), ("games", "所持試合"), ("win_rate", "勝率"), ("pick_rate", "所持率")),
         ),
         "",
         "## ルーン上位（選択数順）",
         "",
         markdown_table(
-            report_table_rows(analysis["runes"], "rune_name"),
-            (("rune_name", "ルーン"), ("rune_kind", "種類"), ("games", "選択試合"), ("win_rate", "勝率")),
+            rune_report,
+            (("rune_name", "ルーン"), ("rune_kind", "種類"), ("rune_id", "ID"), ("games", "選択試合"), ("win_rate", "勝率")),
         ),
+        "",
+        "## ルーン表示名の注意",
+        "",
+        "Data Dragon v16.18.1 の `runesReforged.json` はルーンツリー内の選択ルーンを収録していますが、Match-v5 の `perks.statPerks` に含まれるステータスシャードの表示名辞書は収録していません。",
+        "そのため、`rune_kind=shard` の `UNKNOWN(<ID>)` は試合データの欠損ではなく、ローカルData Dragonで表示名を解決できないIDです。ID・件数は `rune-summary.csv` と `analysis.json` に残しています。",
+        f"今回確認された未知のステータスシャードID：{', '.join(unknown_shard_ids) if unknown_shard_ids else 'なし'}。",
         "",
         "## サモナースペル上位（選択数順）",
         "",
         markdown_table(
-            report_table_rows(analysis["spells"], "spell_name"),
-            (("spell_name", "スペル"), ("games", "選択試合"), ("win_rate", "勝率")),
+            spell_report,
+            (("spell_name", "スペル"), ("spell_id", "ID"), ("games", "選択試合"), ("win_rate", "勝率"), ("pick_rate", "選択率")),
         ),
         "",
         "## 試合時間",
         "",
+        "この表の1行は、`overall`（全体）・`observed_tier=ALL`（観測帯を分けない）で、`パッチ=ALL` は全パッチ合算、その他はパッチ別の集計です。時間の単位は分・秒です。",
+        "`中央値` は試合の半分がこの時間以内に終了したことを示します。`P10` は短い方から10%地点、`P90` は90%地点で、P10〜P90の間が中央80%の試合時間です。`試合` はその統計の分母です。",
+        "具体例として、`パッチ=ALL` の行では、中央値を典型的な試合時間、P10〜P90を極端に短い・長い試合を除いた範囲として読みます。これはチャンピオンのパワースパイク、勝ちやすい時間帯、試合時間の因果要因を示すものではありません。",
+        "",
         markdown_table(
-            analysis["duration"],
-            (("scope", "範囲"), ("observed_tier", "観測帯"), ("patch", "パッチ"), ("games", "試合"), ("median_duration_seconds", "中央値(秒)"), ("p10_duration_seconds", "P10(秒)"), ("p90_duration_seconds", "P90(秒)")),
+            duration_report,
+            (("patch", "パッチ"), ("games", "試合"), ("avg_duration", "平均"), ("median_duration", "中央値"), ("p10_duration", "P10"), ("p90_duration", "P90")),
         ),
     ]
     if args.include_matchups:
         lines.extend(
             [
                 "",
-                "## 味方・対面ペア",
+                "## 味方になると強い組み合わせ",
                 "",
                 markdown_table(
-                    analysis["matchups"],
-                    (("relation", "関係"), ("target_champion_name", "対象"), ("related_champion_name", "相手/味方"), ("games", "試合"), ("win_rate", "対象側勝率")),
+                    ally_report,
+                    (("champion_a_name", "味方A"), ("champion_b_name", "味方B"), ("games", "試合"), ("win_rate", "チーム勝率"), ("patch_count", "パッチ数")),
                 ),
+                "",
+                "同じチーム内の組み合わせを順不同でまとめ、チーム勝率の高い順に並べています。これは味方シナジーの観測値であり、推奨編成や因果効果を意味しません。",
+                "",
+                "## カウンターピック候補（対象側勝率が低い順）",
+                "",
+                markdown_table(
+                    opponent_report,
+                    (("target_champion_name", "対象"), ("related_champion_name", "相手候補"), ("games", "試合"), ("win_rate", "対象側勝率"), ("patch_count", "パッチ数")),
+                ),
+                "",
+                "同じ正規化ロールの相手候補だけを対象に、対象チャンピオン側の勝率が低い順に並べています。「カウンター」と断定せず、サンプル数・パッチ・観測ランク帯の違いを含む記述統計として読んでください。",
             ]
         )
     lines.extend(["", "## 未解決事項", "", "- Timelineデータがないため、購入時刻や15分時点の差分は分析していない。", "- 最小ゲーム数は表示安定化のための閾値であり、統計的有意性を示さない。", ""])

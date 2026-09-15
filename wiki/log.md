@@ -174,3 +174,21 @@ This file is append-only. Newest entries are appended at the end.
 - 入力：直近のGit変更（解析仕様書、再利用リソース案内、解析スクリプト3本）、`wiki/` 配下のMarkdown 1,148件、`scripts/lint.py`。
 - 変更：`wiki/log.md` に直近3コミットの作業記録を追記した。必須フロントマター、出典リンク、Wikilink、索引収録、孤立ページ、重複識別子を再検証し、構造上の修正は不要だった。
 - 未解決：6件の警告Calloutは原典の制約・解釈上の注意を明示した既存記録であり、矛盾とは判定していない。実データを用いたランク戦解析レポートは未生成。
+
+## [2026-09-15] query | ランク戦試合結果の解析レポート生成
+
+- 入力：`raw/sources/riot-ranked-matches/` の実行時スナップショット、`raw/sources/dragontail-16.18.1.tgz`、`--queue-id 420`、`--tier-mode observed`、`--min-games 15`。
+- 変更：`scripts/riot_ranked_match_analyzer.py --include-matchups --format markdown,csv,json` を実行し、`reports/riot-ranked-match-analysis/run-20260915T003112Z/report.md` と品質・マニフェスト・集計CSV/JSONを生成した。入力4,236レコードから重複除去後3,236試合を集計し、味方・対面ペアも出力した。
+- 未解決：取得処理中のスナップショットのため、後続データは今回のレポートに含まれない。重複レコード1,000件、観測帯UNKNOWN 2,236試合があり、収集時点の観測帯を試合時ランクと解釈しない。Timelineがないため購入時刻・15分時点の差分は未解析。
+
+## [2026-09-15] maintenance | ランク戦解析レポートの表示仕様改訂
+
+- 入力：ユーザーによるレポート表示の修正要件、`docs/riot-ranked-match-analysis-spec.md`、前回レポートの確認結果。
+- 変更：人間向けMarkdownからアイテム上位表を削除し、アイテム集計はCSV/JSONへ保持した。ルーンの `UNKNOWN(<ID>)` が `perks.statPerks` のステータスシャードとData Dragon表示名辞書の範囲差によるものだと説明し、ルーン・スペルを全パッチのID単位で合算した。試合時間の中央値・P10・P90の読み方、全パッチ行、具体的な解釈上の注意を追加した。味方シナジーと同ロール対面を別表に分け、味方ペアは順不同の重複を集計段階から排除した。
+- 未解決：取得継続中のスナップショットで、今回の再生成は3,964試合。入力にはキャッシュとの重複1,000件がある。対面表の逆方向（例：Aを対象にBを見る、Bを対象にAを見る）は対象側が異なるため別結果として残している。
+
+## [2026-09-15] maintenance | チャンピオン上位の重複表示修正
+
+- 入力：ユーザーによる `Yone` の複数表示報告、`scripts/riot_ranked_match_analyzer.py`、前回の解析レポート。
+- 変更：チャンピオン上位のMarkdown表を、全パッチの `overall`・`role=ALL` 行をチャンピオンID単位で合算して表示するよう修正した。パッチ別・ロール別の詳細行は `champion-summary.csv` と `analysis.json` に保持する。
+- 未解決：取得処理中のスナップショットのため、今回の再生成はユニーク試合4,100件。後続取得分は別の実行で反映する必要がある。
