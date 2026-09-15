@@ -1184,3 +1184,4 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割、リソース、主要数値、能力詳細の分布とデータ品質上の注意。
 - [[wiki/syntheses/champion-power-spikes-v16-18-1|チャンピオンのパワースパイク分類 v16.18.1]] — 173件の序盤・中盤・終盤の根拠付きヒューリスティック分類。
 - [[wiki/syntheses/champion-power-spikes-match-duration|チャンピオンのパワースパイク：試合時間帯別勝率の見直し]] — 収集済みランク戦4,672件から見た序盤・中盤・終盤の時間帯別観測と原典分類との差分。
+- [[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率：ランク戦最終スコアの集計]] — 収集済みランク戦9,971件の完全試合から、ロール別のゴールド/分とチーム内最終ゴールド比率を比較した分析。

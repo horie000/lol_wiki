@@ -232,3 +232,10 @@ This file is append-only. Newest entries are appended at the end.
 - 変更：`scripts/riot_champion_item_synergy.py` のステータス群・ビルド中核をData Dragonで `maps["11"]` が真のアイテムへ限定した。`scripts/riot_champion_build_wiki_sync.py` を追加し、選択した `analysis.json` から173件のチャンピオンentityへ、最大2ロール・実測ビルド2件・ステータス群2件・理論仮説2件の生成ブロックを同期した。各ブロックは同一実行の詳細レポートへリンクする。[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis|専用原典要約]]を作成し、仕様書をv0.7、LLM Wikiスキル、統合分析、概要、カタログ、索引を更新した。
 - 結果：`reports/riot-champion-item-synergy/run-20260915T060638Z/` にユニーク完全試合9,736件、個別アイテム4,908行、ステータス群1,908行、完成アイテム中核5,988行、理論仮説25,426行、チャンピオン別173ファイルを生成した。entity同期の `--check` は差分0件、詳細レポート欠落0件で、ビルド・理論候補のマップ11対象外アイテムIDは0件だった。
 - 未解決：複数パッチ、最終所持状態、生存者バイアス、試合時間、対面、構成、購入順・購入時刻を調整していない。理論仮説は共通statsと原典語彙による表示優先度であり、ゲーム内の強さや最適ビルドを確定しない。収集継続後のデータを反映するには、新しい実行結果を明示的に選んで再同期する必要がある。
+
+## [2026-09-15] query | ロール別ゴールド獲得率の集計とパワースパイク分析への反映
+
+- 入力：`raw/sources/riot-ranked-matches/` の読み取り専用スナップショット、queue `420`、`tier-mode all`、`min-games 15`。入力9,980ファイル・13,971レコードを試合IDで統合し、9,971件の完全試合を集計した。
+- 変更：`scripts/riot_ranked_match_analyzer.py` に `role_gold` 集計と `role-gold.csv` 出力を追加し、仕様書をv0.8へ更新した。平均GPM、中央値・P10・P90、加重GPM、チーム内最終ゴールド比率、分母・勝率をロール別に記録し、解析レポートを `reports/riot-ranked-match-analysis/run-20260915T061543Z/` に保存した。[[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率の統合分析]]、既存の[[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別パワースパイク分析]]、概要、索引、既存ランク戦出典要約へ結果と解釈上の注意を反映した。
+- 結果：平均GPMはBOTTOM 423.4、JUNGLE 405.1、MIDDLE 384.1、TOP 384.0、UTILITY 291.2。チーム内最終ゴールド比率はBOTTOM 22.4%、JUNGLE 21.5%、MIDDLE 20.4%、TOP 20.3%、UTILITY 15.5%だった。
+- 未解決：最終ゴールドは勝敗後の状態であり、15分時点の収入、購入時刻、実際のレーン収入、因果的なロール優劣を示さない。時間帯別パワースパイクの再分析では、パッチ・ロール・チャンピオンを固定し、可能ならTimelineを用いる必要がある。
