@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Illaoi.
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 旧神の預言者：** イラオイと、イラオイに「器」にされた者は、周囲の地形に一定時間ごとに触手を発生させる。触手は魂、「器」、イラオイの「過酷なる教訓」をくらった者を攻撃する。触手は命中すると敵に物理ダメージを与え、敵チャンピオンにダメージを与えた場合はイラオイを回復する。
+
+- **Q — 触手の鉄槌：** 触手の与ダメージが増加する。発動すると、触手を叩きつけて物理ダメージを与える。
+- **W — 過酷なる教訓：** 次の通常攻撃で対象に飛びかかって偶像で殴りつけ、物理ダメージを与える。周囲の触手にも対象を攻撃させる。
+- **E — 魂の試練：** 偶像から触手を伸ばし、敵の肉体から魂を引きずり出して、自身の前に立たせる。魂は受けたダメージから一定の割合を、本体に反映させる。魂がキルされるか本体が遠く離れた場合、対象は「器」となり、その周囲に触手が発生するようになる。
+- **R — 信仰震：** 偶像を地面に叩きつけて衝撃波を生み出し、周囲の敵に物理ダメージを与える。命中した敵チャンピオン1体ごとに、触手が1本発生する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Illaoi.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Illaoi` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Illaoi.png)

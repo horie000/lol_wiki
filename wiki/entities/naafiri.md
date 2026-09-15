@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Naafiri
 | `attackspeedperlevel` | 2.1 |
 | `attackspeed` | 0.663 |
 
+## アビリティ
+
+- **パッシブ — 我らは一つ：** 「群れの同胞」を出現させる。「群れの同胞」はナフィーリの通常攻撃およびスキルの対象を攻撃する。
+
+- **Q — ダーキンダガー：** 最大2本の短剣を放つ。短剣はそれぞれ出血を付与し、対象がすでに出血中の場合は、それぞれ追加ダメージを与える。 「群れの同胞」はこのスキルが最初に命中したチャンピオンまたはモンスターに飛びかかって攻撃する。
+- **W — 群れの呼び声：** 対象指定不可状態になって群れを強化し、追加の群れの同胞を出現させて、移動速度と攻撃力が増加する。
+- **E — 獰猛なる刃：** ダッシュして、自身の周囲にいる敵にダメージを与える。その際、「群れの同胞」を呼び寄せて、体力を全回復させる。
+- **R — 猟犬の追跡：** ナフィーリと「群れの同胞」がチャンピオンに向かってダッシュしてダメージを与える。キルまたはアシストを獲得すると自身の周囲の敵が可視化され、このスキルを再発動可能になる。2回目の使用時はシールドを獲得する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Naafiri
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Naafiri` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Naafiri.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lillia.
 | `attackspeedperlevel` | 2.7 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 夢を集める大枝：** スキルでチャンピオンかモンスターを攻撃すると、最大体力に応じた追加ダメージを継続的に与える。
+
+- **Q — 花開く風：** 自動効果で、スキルが敵に命中するたびに増加移動速度のスタックを獲得する。発動効果で周囲の敵に魔法ダメージを与え、端にいる対象には追加確定ダメージを与える。
+- **W — ひゃっ、あぶない！：** 周囲の敵にダメージを与える。中央にいた敵には、より大きなダメージを与える。
+- **E — コロコロの種：** 落下時に当たった敵にダメージとスロウ効果を与える種を投げる。何にも当たらなかった場合は、壁か対象に当たるまで転がり続ける。
+- **R — 夢見の子守唄：** 「夢のかけら」を受けているすべての敵に眠気を付与してから眠らせる。眠った敵は、強制的に目覚めさせられた際に追加ダメージを受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lillia.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Lillia` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lillia.png)

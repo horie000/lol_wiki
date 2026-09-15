@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Volibea
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 無慈悲の嵐：** 通常攻撃およびスキルの使用で攻撃速度が増加していき、最終的に通常攻撃が周囲の敵に追加魔法ダメージを与えるようになる。
+
+- **Q — 稲妻の猛攻：** 敵に向かう際の移動速度が増加し、発動後最初に通常攻撃を行った対象にスタン効果とダメージを与える。
+- **W — 激昂の斬撃：** 敵にダメージと通常攻撃時効果を与えてマークする。同じ対象にもう一度発動すると追加ダメージを与えて自身の体力を回復する。
+- **E — 天破の一撃：** 指定地点に雷を落として周囲の敵にダメージとスロウ効果を与え、自身が範囲内にいた場合はシールドを獲得する。
+- **R — 嵐を起こす者：** 指定地点に飛びかかって踏みつけた敵にスロウ効果とダメージを与え、自身は体力が増加する。着地地点の近くにある敵のタワーは一時的に無効化される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Volibea
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Volibear` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Volibear.png)

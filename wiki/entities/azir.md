@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Azir.pn
 | `attackspeedperlevel` | 5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — シュリーマの遺産：** アジールは敵や味方のタワーの残骸から「太陽の円盤」を召喚できる。
+
+- **Q — 征服の勅命：** すべての砂塵兵を指定地点に集結させる。砂塵兵は進路上でぶつかった全ての敵ユニットに、魔法ダメージと1秒間のスロウ効果を与える。
+- **W — 目覚めよ！：** アジールに代わって敵を攻撃する砂塵兵を1体召喚する。砂塵兵の射程距離内にいる対象にアジールが通常攻撃をすると、砂塵兵が対象の敵に向かって槍を突く。砂塵兵は直線上にいる敵ユニットすべてに魔法ダメージを与える。
+- **E — 流砂の衝撃：** アジールが少しの間だけシールドを獲得して、指定した砂塵兵に向かってダッシュし、触れた敵ユニットにダメージを与える。敵チャンピオンに衝突するとその場で停止し、直ちに新たな砂塵兵のチャージを獲得する。
+- **R — 皇帝の分砂嶺：** 兵士たちの壁を召喚する。兵士たちは前方に突進し、衝突した敵にダメージとノックバックを与えたあと、その場で敵の進行を防ぐ壁となる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Azir.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Azir` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Azir.png)

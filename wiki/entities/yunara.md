@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yunara.
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.65 |
 
+## アビリティ
+
+- **パッシブ — 始まりの地への誓い：** クリティカル攻撃が追加魔法ダメージを与える。
+
+- **Q — 精神修養：** 攻撃速度が増加し、通常攻撃時効果で追加ダメージを与え、通常攻撃が周囲の敵に拡散する。
+- **W — 裁きの弧/滅びの弧：** 回転する珠を撃ち出し、敵にダメージとスロウ効果を与える。超越状態では、レーザー状に精霊魔法を発射して、敵にダメージとスロウ効果を与える。
+- **E — カンメイの歩み/触れ得ぬ影：** 移動速度が増加し、ゴースト化する。超越状態では、代わりに指定方向にダッシュする。
+- **R — 自己超越：** 超越状態になり、通常スキルがアップグレードされる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yunara.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Yunara` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Yunara.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shyvana
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.638 |
 
+## アビリティ
+
+- **パッシブ — スケールメイル：** 敵チャンピオン、大型ミニオン、大型モンスターのキルかアシストで「スケールメイル」のスタックを獲得し、シヴァーナの防御力が向上する。
+
+- **Q — エンバーストライク：** 次の通常攻撃で、対象とその周囲の両方を攻撃する。このスキルは再発動が可能。ドラゴンフォーム中は再発動が1回追加され、単体の敵に大ダメージを与える。
+- **W — インフェルノイージス：** シールドと移動速度を獲得し、少ししてから周囲を爆発させる。ドラゴンフォーム中は、爆発が敵チャンピオンに命中すると自身の体力が回復する。
+- **E — モルテンバースト：** 火球を放ち、大型の対象に命中すると爆発して、スロウ効果を付与する。ドラゴンフォーム中は敵を貫通し、大型の敵に命中すると爆発して、炎の軌跡を残す。
+- **R — 龍の降臨：** ドラゴンに変身して前方にジャンプし、進路上の敵を逃走させる。ドラゴンフォーム中は巨大化し、通常スキルが強化される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shyvana
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Shyvana` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shyvana.png)

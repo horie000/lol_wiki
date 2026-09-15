@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Olaf.pn
 | `attackspeedperlevel` | 2.7 |
 | `attackspeed` | 0.72 |
 
+## アビリティ
+
+- **パッシブ — 狂戦士の怒り：** 減少体力に応じて攻撃速度とライフスティールが増加する。
+
+- **Q — 斧投げ：** 指定地点の地面をめがけて斧を投げ、命中した敵にダメージを与えて、物理防御と移動速度を低下させる。斧を拾うと、このスキルのクールダウンがリセットされる。
+- **W — 根性比べ：** 攻撃速度が増加し、シールドを獲得する。
+- **E — 捨て身切り：** 体力を消費して強烈な攻撃を繰り出し、対象に確定ダメージを与える。対象を倒した場合は消費した体力が回復する。
+- **R — ラグナロク：** 自動効果で物理防御と魔法防御が増加する。このスキルを発動すると、通常攻撃を続けている限りは行動妨害効果を受けなくなる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Olaf.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Olaf` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Olaf.png)

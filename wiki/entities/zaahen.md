@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zaahen.
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 戦威修養：** 敵チャンピオンに対する攻撃およびスキルで「不退転」のスタックを獲得し、スタックごとに攻撃力が増加する。「不退転」が最大スタックになると、攻撃力が増加し、復活できるようになる。
+
+- **Q — ダーキングレイヴ：** 次の通常攻撃で2回斬りつけ、追加ダメージを与え、自身を回復する。スキルを再使用すると、次の通常攻撃で追加ダメージを与え、対象をノックアップさせる。
+- **W — 戦慄の再臨：** 指定方向を突き刺し、命中した敵にダメージを与えた後、自身の方向へ引き寄せる。
+- **E — 絢爛たる進撃：** 前方に突進し、周囲を斬りつける。
+- **R — 無慈悲なる裁き：** 上昇した後、下方へ突き刺し、敵にダメージを与え、与えたダメージの一定割合の体力を回復する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zaahen.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Zaahen` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zaahen.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zed.png
 | `attackspeedperlevel` | 3.3 |
 | `attackspeed` | 0.651 |
 
+## アビリティ
+
+- **パッシブ — 弱者必衰：** 残り体力の少ない敵を通常攻撃した場合、追加魔法ダメージを与える。同じ敵チャンピオンには数秒に1度しか効果が発生しない。
+
+- **Q — 風魔手裏剣：** 自身と影が平型手裏剣を投げる。 手裏剣が命中した敵それぞれにダメージを与える。
+- **W — 影分身：** 自動効果: 自身と影が特定の敵に同一のスキルを命中させるたびに、気が回復する(各スキルの発動中、一度のみ有効)。 発動効果: 影を指定方向に放つ。影は数秒間その場に留まる。再発動で自身と影の位置が入れ替わる。
+- **E — 影薙ぎ：** 自身と影が回転斬りを放ち、周囲の敵にダメージを与える。影の回転斬りが命中した敵はスロウ効果を受ける。
+- **R — 死の刻印：** 対象指定されなくなり、指定した敵チャンピオンにダッシュして印を付与する。3秒後に印が爆発して、印が付与されている間に自身が対象に与えた全ダメージの一定割合のダメージをもう一度与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zed.png
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Zed` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zed.png)

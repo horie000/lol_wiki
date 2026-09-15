@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Camille
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.644 |
 
+## アビリティ
+
+- **パッシブ — アダプティブディフェンス：** 敵チャンピオンに通常攻撃すると、その敵の主なダメージの種類(物理または魔法)に応じて、少しの間だけ自身の最大体力の一定割合にあたるシールドを獲得する。
+
+- **Q — プレシジョンプロトコル：** 次の通常攻撃が追加ダメージを与え、移動速度が増加する。このスキルは少しの間だけ再発動することが可能で、再発動までの間に一定の間隔を置くと追加ダメージが大きく増加する。
+- **W — タクティカルスイープ：** 少し間を置いてから扇状の範囲に攻撃を行ってダメージを与える。攻撃範囲の外側半分にいた敵ユニットにはスロウ効果と追加ダメージを与え、また同時に自身を回復する。
+- **E — フックショット：** 壁に飛びついてから跳躍して、着地時に敵チャンピオンをノックアップする。
+- **R — ヘクステック・アルティメイタム：** 指定した敵チャンピオンに向かってダッシュして、対象を一定エリア内に閉じ込める。さらに通常攻撃がその対象に追加魔法ダメージを与えるようになる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Camille
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Camille` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Camille.png)

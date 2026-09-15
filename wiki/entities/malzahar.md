@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Malzaha
 | `attackspeedperlevel` | 1.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ヴォイドシフト：** 一定時間ダメージか行動妨害を受けていない時、マルザハールは強力なダメージ軽減と行動阻害無効を得る。この効果はダメージを受けた後も短期間継続する。
+
+- **Q — ヴォイドコール：** ヴォイドへ繋がるゲートを2カ所に発生させる。発動から一瞬遅れてゲートからエネルギーが発射され、命中した敵ユニットに魔法ダメージを与える。敵チャンピオンに対しては、さらにサイレンス効果を与える。
+- **W — ヴォイドスワーム：** 近くの敵を攻撃する「ヴォイドリング」を召喚する。
+- **E — 虚性侵蝕：** 指定した対象の精神を痛みに悶え苦しむ幻覚で蝕み、継続ダメージを与える。対象に他のスペルを使用すると幻覚の効果が更新される。 幻覚に侵蝕されている敵が倒れると近くの敵ユニットに効果が伝染し、マルザハールのマナが回復する。幻覚に蝕まれている敵は、マルザハールが召喚した「ヴォイドリング」に狙われる。
+- **R — ネザーグラスプ：** ダメージを与える負のエネルギーに満ちた領域上で敵チャンピオンにヴォイドのエネルギーを注ぎ込み、サプレッション効果を付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Malzaha
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Malzahar` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Malzahar.png)

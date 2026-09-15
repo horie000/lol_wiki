@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/XinZhao
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.645 |
 
+## アビリティ
+
+- **パッシブ — 不退転：** 通常攻撃が3回毎に追加ダメージを与えて自身を回復する。
+
+- **Q — 三槍撃：** 通常攻撃が3回分強化され、3回目で敵をノックアップさせる。
+- **W — 風成雷鳴：** 前方を槍で薙ぎ払い、次に槍を突いて敵ユニットにスロウを与え、挑戦対象としてマークする。
+- **E — 兵貴神速：** 敵に突進して攻撃速度が増加し、範囲内にいるすべての敵にダメージと短時間のスロウ効果を与える。挑戦対象に対しては、このスキルの射程が増加する。
+- **R — 三日月槍守：** 自動効果で、直前にダメージを与えた敵が挑戦対象になる。発動すると、周囲にいる敵に対象の現在体力に応じたダメージを与え、挑戦対象以外をノックバックさせる。発生した円の外にいる敵チャンピオンからはダメージを受けなくなる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/XinZhao
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.XinZhao` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/XinZhao.png)

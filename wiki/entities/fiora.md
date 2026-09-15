@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiora.p
 | `attackspeedperlevel` | 3.2 |
 | `attackspeed` | 0.69 |
 
+## アビリティ
+
+- **パッシブ — デュエリスト・ダンス：** このチャンピオンの「急所」を特定している。「急所」を攻撃すると、自身は体力が回復して、移動速度が増加する。
+
+- **Q — ファント：** 指定地点に向かってダッシュし、移動した地点から一番近くにいる敵ユニットをレイピアで突いて、物理ダメージと通常攻撃時効果を与える。
+- **W — リポスト：** 短時間自身への全ての攻撃を受け流し、指定方向に鋭い突きを行う。反撃が命中した最初の敵チャンピオンにスロウ効果を付与する。このスキルで移動妨害効果を無効化した場合、スロウ効果のかわりにスタン効果を付与する。
+- **E — ブレードワーク：** 次の2回の攻撃速度が増加し、追加効果が付与される。最初の攻撃は対象にスロウ効果を付与し、次の攻撃はクリティカルとなる。
+- **R — グランドチャレンジ：** 敵チャンピオンの「急所」を4カ所特定して、その近くにいる間は移動速度が増加する。4カ所の「急所」をすべて攻撃するか、敵チャンピオンが倒れるまでに「急所」を1 カ所以上攻撃していると、その後数秒間、自身と味方の体力を回復するフィールドが展開される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiora.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Fiora` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiora.png)

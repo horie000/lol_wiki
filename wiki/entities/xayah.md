@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xayah.p
 | `attackspeedperlevel` | 3.9 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — クリーンカット：** スキル使用後、次に行う数回の通常攻撃が軌道上のすべての敵にダメージを与え、「羽根」を落とすようになる。
+
+- **Q — ダブルダガー：** 2枚の羽根の刃を投げてダメージを与え、呼び戻すことができる「羽根」を落とす。
+- **W — デッドリープルーム：** 羽根の刃の嵐を作り出し、攻撃速度とダメージを増加させる。敵チャンピオンを攻撃した場合は移動速度も増加する。
+- **E — ブレードコーラー：** 落とした「羽根」をすべて呼び戻し、敵ユニットにダメージとスネア効果を与える。
+- **R — フェザーストーム：** 空中に飛んでしばらく対象指定されなくなり、複数の羽根の刃を投げ、呼び戻すことができる「羽根」を落とす。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xayah.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Xayah` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xayah.png)

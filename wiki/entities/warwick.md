@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Warwick
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.638 |
 
+## アビリティ
+
+- **パッシブ — 永遠の渇き：** 通常攻撃が追加魔法ダメージを与える。自身の体力が50%未満の場合、追加魔法ダメージと同量の体力を回復する。自身の体力が25%未満の場合、この回復効果は3倍になる。
+
+- **Q — 野獣の牙：** 前方にダッシュして対象に噛みつき、対象の最大体力に応じたダメージを与え、与えたダメージに応じて自身の体力を回復する。
+- **W — 血の追跡：** 体力が50%未満の敵ユニットを感知して、その敵ユニットに向かう際に移動速度と攻撃速度が増加する。その敵ユニットの体力が25%未満に低下した場合は、ワーウィックが狂乱状態になってこれらの効果が3倍になる。
+- **E — 怒りの咆哮：** 2.5秒間、受けるダメージが減少する。効果の終了時、またはスキルを再発動すると、咆哮をあげて周囲の敵ユニットを1秒間逃走させる。
+- **R — 絶狼牙連撃：** 指定方向にジャンプして、最初に接触した敵チャンピオンに1.5秒間サプレッション効果を与える(増加した移動速度に応じて射程が拡大)。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Warwick
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Warwick` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Warwick.png)

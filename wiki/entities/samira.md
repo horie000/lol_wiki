@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Samira.
 | `attackspeedperlevel` | 3.3 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — デアデビルインパルス：** 直前に命中したものとは異なる通常攻撃またはスキルを命中させることでコンボが増加していく。近接攻撃射程の通常攻撃は追加魔法ダメージを与える。移動不能効果を受けた敵に通常攻撃を行うと、自身の射程内までダッシュする。敵がノックアップしていた場合は、少しの間だけノックアップさせたままにする。
+
+- **Q — フレア：** 銃を発砲するか、剣を振ってダメージを与える。「ワイルドラッシュ」中に使用した場合は、ダッシュ後に通り道にいたすべての敵を攻撃する。
+- **W — ブレードワール：** 周囲を斬りつけて敵にダメージを与え、敵の飛翔物を破壊する。
+- **E — ワイルドラッシュ：** 敵(建造物を含む)を通り抜けるようにダッシュし、接触した敵を斬りつけて、攻撃速度が増加する。敵チャンピオンをキルすると、このスキルのクールダウンが解消される。
+- **R — インフェルノトリガー：** 銃から弾丸を高速で連射し、周囲のすべての敵に攻撃を行う。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Samira.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Samira` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Samira.png)

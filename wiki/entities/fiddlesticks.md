@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiddles
 | `attackspeedperlevel` | 2.11 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 無害なカカシ：** トリンケットが「身代わり人形」に置き換わる。
+
+- **Q — テラー：** 敵に見られていない状態からスキルで敵にダメージを与えるか、「テラー」の発動効果の対象に敵を指定すると、対象にフィアー効果を与えて一定時間逃走させる。
+- **W — 豊かな収穫：** 周囲の敵から体力を奪い、効果時間終了時に対象の減少体力に応じた追加ダメージを与える。
+- **E — 刈り取り：** 一定範囲を鎌で斬りつけて、命中したすべての敵にスロウ効果を与える。また、範囲の中心にいた敵にはサイレンス効果を与える。
+- **R — クロウストーム：** 自身の周囲に凶暴なカラスの群れを集め、効果範囲内の敵ユニット全員に毎秒ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiddles
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Fiddlesticks` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Fiddlesticks.png)

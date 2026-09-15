@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nami.pn
 | `attackspeedperlevel` | 2.61 |
 | `attackspeed` | 0.644 |
 
+## アビリティ
+
+- **パッシブ — さざなみの後押し：** スキルが味方チャンピオンに命中するたびに、命中した相手の移動速度が短時間増加する。
+
+- **Q — 水の牢獄：** 指定地点に水泡を飛ばし、着弾時に範囲内の敵ユニットにダメージを与えてスタン効果を付与する。
+- **W — 潮の流れ：** 味方と敵チャンピオンの間を交互に跳ね返る水流を放つ。命中した味方は体力が回復し、敵はダメージを受ける。
+- **E — 潮使いの祝福：** 短時間、味方チャンピオンに力を与える。強化された味方は次の数回の通常攻撃とスキルで、対象に追加魔法ダメージとスロウ効果を付与する。
+- **R — 海神の舞：** ナミが海の力を借りて「海神の舞」を呼び寄せる。波に触れた敵ユニットはダメージを受け、ノックアップされてスロウ状態になる。命中した味方は「さざなみの後押し」の2倍の効果を得る。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nami.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Nami` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nami.png)

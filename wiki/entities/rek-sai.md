@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/RekSai.
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.667 |
 
+## アビリティ
+
+- **パッシブ — ゼル＝サイの怒り：** 通常攻撃または通常スキルを当てると「フューリー」がたまる。地中潜伏中に「フューリー」を消費して自身の体力を回復する。
+
+- **Q — 女王の怒り/獲物定め：** 次の3回の通常攻撃が近接する周囲の敵に追加物理ダメージを与える。 「潜伏」を発動すると、ヴォイドのエネルギーを帯びた大地を打ち上げ、敵にダメージを与えて命中した敵を可視化する。
+- **W — 潜伏/襲撃：** 地中に潜伏して地中専用のスキルを使用できるようになり、移動速度が増加する。視界範囲は狭まり、通常攻撃を行えなくなる。 「潜伏」発動中は、「襲撃」を発動して近接する敵をノックアップさせてダメージを与えることができる。
+- **E — 激情の牙/掘削：** 対象に噛み付いて物理ダメージを与え、「フューリー」が最大の場合は、2倍の確定ダメージを与える。 「潜伏」を発動すると、長時間持続し、何度も使用することができるトンネルを作る。敵は、このトンネルの開口部の上に立つことで、これを崩壊させることができる。
+- **R — ヴォイドラッシュ：** ダメージを与えた対象を自動的にマークする。このスキルを発動させると、少しの間対象指定不可になり、マークした対象に突進して、相手の最大体力に応じた大ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/RekSai.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.RekSai` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/RekSai.png)

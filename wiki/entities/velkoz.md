@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Velkoz.
 | `attackspeedperlevel` | 1.59 |
 | `attackspeed` | 0.643 |
 
+## アビリティ
+
+- **パッシブ — 有機分解：** スキルが命中するたびに対象の「有機分解」が進行していき、3スタックすると確定ダメージを与える。
+
+- **Q — 電離炸裂弾：** 再発動させるか敵に命中するとT字に分裂するプラズマ弾を発射する。この弾は命中した敵にスロウ効果とダメージを与える。
+- **W — ヴォイドの裂谷：** ヴォイドへ通じる裂け目を大地に呼び出し、触れた敵にダメージを与える。裂け目は少ししてから爆発し、再度ダメージを与える。
+- **E — 地殻砕裂：** 指定したエリアを爆発させ、範囲内の敵にダメージを与えてノックアップさせる。 至近距離にいる敵は、わずかにふき飛ばされる。
+- **R — 生体破壊光線：** 指定方向へ2.5秒間、強力なビームを発射し、触れた敵に魔法ダメージを与える。このスキルによって「有機分解」されて解析が完了したチャンピオンは確定ダメージを代わりに受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Velkoz.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Velkoz` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Velkoz.png)

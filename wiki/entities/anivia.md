@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Anivia.
 | `attackspeedperlevel` | 1.68 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 再誕：** アニビアは力尽きると、体力が最大の状態で卵に戻る。
+
+- **Q — フラッシュフロスト：** 指定方向に両翼で力強く羽ばたいて、氷の塊を放つ。氷は触れた敵に魔法ダメージと「チルド」を与える。最大距離に達するかこのスキルを再使用すると氷の塊が炸裂して、範囲内の敵にダメージとスタンを与える。
+- **W — アイスウォール：** 空気中の水分を凝縮して氷の壁をつくり、相手の移動を妨害する。壁は数秒後に溶けて消滅する。
+- **E — フロストバイト：** 翼をはためかせて対象を凍てつく氷柱で攻撃し、ダメージを与える。直前に「フラッシュフロスト」が当たったか、最大範囲の「ブリザード」でダメージを受けた対象には、2倍のダメージを与える。
+- **R — ブリザード：** 指定範囲に激しい吹雪を召喚する。吹雪は範囲内の敵に継続ダメージを与え「チルド」を付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Anivia.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Anivia` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Anivia.png)

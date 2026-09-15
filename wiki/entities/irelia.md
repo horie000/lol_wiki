@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Irelia.
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.656 |
 
+## アビリティ
+
+- **パッシブ — アイオニアの熱情：** 敵にスキルを当てるとスタックを獲得する。スタック数に応じて増加攻撃速度を獲得し、最大スタックになると通常攻撃時に追加ダメージを付与する。
+
+- **Q — 瞬刃：** 前方にダッシュして対象を攻撃し、自身の体力を回復する。これによって対象をキルするか、対象がマークされていた場合は、「瞬刃」のクールダウンが解消される。
+- **W — 不屈の舞：** チャージ攻撃を行う。チャージ時間が長いほど、与えるダメージが増加する。チャージ中は被物理ダメージが減少する。
+- **E — 無欠の連舞：** 2枚の刃を飛ばす。これらの刃は互いの方向に飛んで収束する。2枚の刃に挟まれた敵はダメージとスタン効果を受けてマークされる。
+- **R — 先陣の刃：** 大量の刃を飛ばす。刃は敵チャンピオンに当たると放射状に広がり、当たった敵はダメージを受けてマークされる。その後、刃が壁を形成し、この壁を越えた敵はダメージとスロウ効果を受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Irelia.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Irelia` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Irelia.png)

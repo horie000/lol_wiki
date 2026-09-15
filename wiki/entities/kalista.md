@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kalista
 | `attackspeedperlevel` | 4.5 |
 | `attackspeed` | 0.694 |
 
+## アビリティ
+
+- **パッシブ — 戦の所作：** 通常攻撃または「貫魂の一投」の準備アクション中に移動指示を出すと、攻撃時にその方向へ跳躍して移動する。
+
+- **Q — 貫魂の一投：** 高速で飛ぶ槍を投げる。命中した敵の体力がゼロになると、槍がその敵を貫通する。
+- **W — 執念の霊魂：** カリスタと「魂盟の同志」が同じ対象を攻撃すると追加ダメージを与える。 スキルを発動すると霊魂を飛ばして周辺を偵察させ、霊魂の前方エリアを可視状態にする。
+- **E — 引き裂く遺恨：** 通常攻撃するたびに、対象に槍の幻影が残る。発動すると槍の幻影が炸裂し、対象に刺さった槍の本数に比例するダメージを与え、スロウ効果を付与する。
+- **R — 宿命の呼び声：** 「魂盟の同志」を強制的に自身の近くに吸い寄せる。カリスタの元に吸い寄せられた「魂盟の同志」は自分で指定した地点に突撃でき、範囲内にいる敵ユニットをわずかにノックバックさせる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kalista
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Kalista` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kalista.png)

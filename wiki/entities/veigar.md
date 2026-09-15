@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Veigar.
 | `attackspeedperlevel` | 2.24 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 偉大なる悪の力：** ルーンテラを脅かす強大な悪であるベイガー、その力はとどまるところを知らない！敵チャンピオンからキルまたはアシストを獲得したり、スキルを命中させると、ベイガーの魔力は永続的に増加してゆく。
+
+- **Q — イーヴィルストライク：** 指定方向に闇のエネルギーを発射し、最初に命中した敵2体に魔法ダメージを与える。このスキルで敵ユニットにとどめを刺すと、ベイガーの魔力が永続的に増加する。
+- **W — ダークマター：** 指定地点に巨大な暗黒物質を降らせ、着地時に魔法ダメージを与える。「偉大なる悪の力」のスタックに応じて「ダークマター」のクールダウンが短縮される。
+- **E — イベントホライズン：** 空間の境界をねじ曲げて檻を作り出す。檻を通過した敵はスタンする。
+- **R — メテオバースト：** 敵チャンピオン1体に闇の大魔法を放ち、対象の減少体力に応じて増加する大量の魔法ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Veigar.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Veigar` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Veigar.png)

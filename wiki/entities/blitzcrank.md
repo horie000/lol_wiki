@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Blitzcr
 | `attackspeedperlevel` | 1.13 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — マナバリア：** 体力が低下すると、マナの量に応じたシールドを獲得する。
+
+- **Q — ロケットグラブ：** 指定方向に右手を発射する。最初に触れた敵ユニットを掴んでダメージを与え、スタン効果を付与して自身のそばに引き寄せる。
+- **W — オーバードライブ：** エネルギーをスーパーチャージして、移動速度と攻撃速度を大幅に上げる。効果終了後、エネルギーが切れて一時的にスロウ状態になる。
+- **E — パワーフィスト：** 拳にエネルギーを充填して次の通常攻撃のダメージを2倍にし、対象をノックアップする。
+- **R — イナズマフィールド：** 通常攻撃した敵にマークを付け、1秒後に電撃のダメージを与える。また、発動すると周囲の敵ユニットのシールドを消滅させ、ダメージを与えて短時間のサイレンス効果を与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Blitzcr
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Blitzcrank` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Blitzcrank.png)

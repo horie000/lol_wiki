@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jax.png
 | `attackspeedperlevel` | 3.4 |
 | `attackspeed` | 0.638 |
 
+## アビリティ
+
+- **パッシブ — アサルトアタック：** ジャックスは通常攻撃ごとにスタックが溜まり、そのスタック数に応じて攻撃速度が増加する。
+
+- **Q — リープストライク：** 対象のユニットに跳躍し、敵ユニットの場合は武器で攻撃する。
+- **W — パワーバッシュ：** 武器に力を込め、次の攻撃で追加ダメージを与える。
+- **E — カウンターストライク：** 短時間、その卓越した戦闘技術を用いてあらゆる通常攻撃を回避した後、すばやく反撃に転じて、周囲の敵ユニットにスタン効果を付与する。
+- **R — ウェポングランドマスター：** 3回連続して通常攻撃を行うたびに、追加魔法ダメージを与える。また、このスキルを発動すると周囲にダメージを与え、決意を固めて短時間、物理防御と魔法防御が増加する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jax.png
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Jax` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jax.png)

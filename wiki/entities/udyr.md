@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Udyr.pn
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.65 |
 
+## アビリティ
+
+- **パッシブ — 精霊の繋ぎ手：** 4つの通常スキルで「型」を切り替え、スキルを再発動すると「型」がリフレッシュされて究極の効果を得る。さらに、スキル使用後、次の2回の通常攻撃の攻撃速度が増加する。
+
+- **Q — 野性の爪：** 攻撃速度が増加し、次の2回の通常攻撃が追加物理ダメージを与える。 再発動: 攻撃速度がさらに増加し、次の2回の通常攻撃が対象に電撃を放つようになる。
+- **W — 鉄の外皮：** シールドを獲得し、次の2回の通常攻撃で自身の体力を回復する。 再発動: より耐久値の高いシールドを獲得し、数秒間かけて最大体力の一定割合を回復する。
+- **E — 焔の猛進：** 移動速度が増加し、各対象への最初の通常攻撃が対象をスタンさせる。 再発動: 少しの間、移動速度がさらに増加し、移動不能効果を受けなくなる。
+- **R — 氷翼の嵐：** 極寒の嵐に身を包み、周囲の敵にダメージとスロウ効果を与える。 再発動: 嵐を強化して解き放ち、敵を追跡させて追加ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Udyr.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Udyr` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Udyr.png)

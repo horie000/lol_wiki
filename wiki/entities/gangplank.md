@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gangpla
 | `attackspeedperlevel` | 3.2 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 背水の銃剣：** 数秒毎に近接攻撃で敵に火を点ける。
+
+- **Q — 偽りの発砲：** 対象を撃ち抜き、そのユニットを倒すことでゴールドを奪うことができる。
+- **W — 壊血病治癒：** オレンジをかじり、自身が受けている行動妨害効果を解消し、体力を回復する。
+- **E — 火薬樽：** 指定地点に火薬樽を設置する。火薬樽はガングプランクが攻撃すると爆発し、範囲内の敵にその攻撃と同じダメージを与え、スロウ効果を付与する。
+- **R — 一斉砲撃：** 海賊船に合図を送って指定したエリアを砲撃させ、効果範囲内の敵にスロウ効果とダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gangpla
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Gangplank` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gangplank.png)

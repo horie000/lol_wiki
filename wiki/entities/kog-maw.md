@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KogMaw.
 | `attackspeedperlevel` | 2.65 |
 | `attackspeed` | 0.665 |
 
+## アビリティ
+
+- **パッシブ — イカシアの自爆：** 倒されてから4秒後、コグ＝マウは爆発して周囲の敵に確定ダメージを与える。
+
+- **Q — 腐食粘液：** 苛性の粘液を飛ばし、対象に魔法ダメージを与え、物理防御と魔法防御を短時間低下させる。さらにコグ＝マウの攻撃速度が増加する。
+- **W — 有機性魔力砲：** 通常攻撃の射程距離が増加し、対象の最大体力に比例した魔法ダメージ%i:OnHit%通常攻撃時効果を与える。
+- **E — ヴォイド分泌液：** 敵を貫通する謎の粘液を発射し、命中した敵ユニットにダメージを与える。粘液は通過したエリアにしばらく残り、踏んだ敵にスロウ効果を付与する。
+- **R — 生体空撃砲：** 射程の長い砲弾を発射して魔法ダメージ (体力が低い敵には大幅に増加) を与えるとともに、敵を可視状態にする。ただし、ステルス状態の敵の位置を把握することはできない。このスキルを短時間で連発すると、消費マナが増加する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KogMaw.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.KogMaw` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/KogMaw.png)

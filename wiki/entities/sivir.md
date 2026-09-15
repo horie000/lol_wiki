@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sivir.p
 | `attackspeedperlevel` | 1.6 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 戦駆け：** 敵チャンピオンを攻撃すると移動速度が短時間増加する。
+
+- **Q — ブーメランブレード：** クロスブレードをブーメランのように投げ、往復のそれぞれで命中した敵ユニットすべてにダメージを与える。
+- **W — 跳刃：** 次の数回の通常攻撃は攻撃速度が増加し、対象の周囲に跳ね返るようになる。跳ね返った攻撃は与えるダメージが低下する。
+- **E — スペルシールド：** 魔法のバリアを張り、一度だけ敵のスキル攻撃やその付随効果をブロックする。スキルをブロックすると体力が回復して、少しの間だけ移動速度が増加する。
+- **R — 戦姫の号令：** 発動するとシヴィアの号令により、自身と味方の移動速度を一定時間増加させる。また、自身は通常攻撃するたびに、スキルのクールダウンを短縮できる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sivir.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Sivir` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sivir.png)

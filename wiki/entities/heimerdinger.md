@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Heimerd
 | `attackspeedperlevel` | 1.36 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — ヘクステックの親和性：** 味方のタワーまたは自身が配置した砲台の近くにいると移動速度が増加する。
+
+- **Q — H-28G革新砲：** 砲台を設置する。砲台は通常攻撃だけでなく、一定時間ごとに貫通レーザーを発射する(タワーに対して与えるダメージは半減する)。
+- **W — ヘクステック小型ロケット：** 指定地点へ向け、長射程のロケット弾を5発発射する。
+- **E — CH-2超電磁グレネード：** 指定地点にグレネード弾を投げ、敵ユニットにダメージを与える。さらに中心で直撃した敵をスタンさせ、周囲の敵にスロウを与える。
+- **R — アップグレード！！！：** 天才的なひらめきによってアップグレードを開発し、次に発動するスキルを強化できる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Heimerd
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Heimerdinger` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Heimerdinger.png)

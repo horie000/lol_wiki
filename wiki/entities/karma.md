@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karma.p
 | `attackspeedperlevel` | 2.3 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 寄せ火：** 自身の攻撃スキルが「マントラ」のクールダウンを短縮する。
+
+- **Q — 心炎：** 精神の炎を解き放ち、敵に命中すると爆発してダメージを与える。 マントラボーナス: 爆発の威力が増し、さらに対象の足下に力場を発生させて範囲内に時間差でダメージを与える。
+- **W — 魂縛：** 自身と標的を鎖でつなぎダメージを与え、ステルス状態を見破る。効果終了時まで鎖が破壊されなければ、敵はその場でスネア状態となり再びダメージを受ける。 マントラボーナス: 鎖が強化され自身の体力を回復し、敵に与えるスネア状態の効果時間が延長される。
+- **E — 激励：** 指定した味方ユニットにシールドを付与し、ダメージから守ると同時に移動速度を増加させる。 マントラボーナス: 対象からエネルギーが放射され、初期シールドを強化し、周囲にいる味方チャンピオンにも「激励」の効果を付与する。
+- **R — マントラ：** カルマが次に使用するスキルを強化し追加効果を付与する。 「マントラ」はレベル1から使用でき、スキルポイントを必要としない。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karma.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Karma` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karma.png)

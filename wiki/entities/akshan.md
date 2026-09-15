@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -79,6 +80,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akshan.
 
 - `info` の4項目がすべて `0` である。未収録値か実値かは原典だけでは判定できない。
 
+## アビリティ
+
+- **パッシブ — ダーティーファイト：** 通常攻撃かスキルを3回使用するごとに追加ダメージを与え、対象がチャンピオンだった場合はシールドを獲得する。 通常攻撃時に追加で通常攻撃を行う。ただし、その際のダメージは低下する。追加の通常攻撃をキャンセルすると、代わりに移動速度が増加する。
+
+- **Q — 報復のブーメラン：** ブーメランを投げる。ブーメランは往路と復路でダメージを与え、敵に命中するたびに射程が増加する。
+- **W — 義賊の流儀：** 自動効果で味方チャンピオンを倒した敵チャンピオンを「悪党」としてマークする。自分が「悪党」をキルすると、その「悪党」にキルされていた味方が復活し、追加ゴールドを獲得する。その際、すべてのマークが除去される。 発動するとカモフラージュ状態になり、「悪党」に向かっている間は移動速度とマナ自動回復が増加する。茂みの外に出るか地形から離れると、カモフラージュ状態がすぐに解除される。
+- **E — ヒーロースイング：** 地形に向けてグラップルフックを発射し、その周囲をスイングしながら最も近い敵に繰り返し射撃を行う。チャンピオンか地形に衝突すると、その時点で飛び降りる。自ら早めに飛び降りることもできる。
+- **R — 当然の報い：** 敵チャンピオンをロックオンして弾丸のチャージを開始する。チャージ終了時にすべての弾丸を発射し、最初に命中したチャンピオン、ミニオン、または建造物に減少体力に応じたダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -87,5 +97,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akshan.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Akshan` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akshan.png)

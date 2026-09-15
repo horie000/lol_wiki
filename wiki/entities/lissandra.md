@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lissand
 | `attackspeedperlevel` | 1.5 |
 | `attackspeed` | 0.656 |
 
+## アビリティ
+
+- **パッシブ — アイスボーンへの服従：** リサンドラの近くで倒された敵チャンピオンは「氷の奴隷」になる。「氷の奴隷」は周囲の敵にスロウ効果を与え、少ししてから極度の寒さに砕け散り、周囲の対象に魔法ダメージを与える。
+
+- **Q — アイスシャード：** 氷の槍を放ち、最初に命中した敵に魔法ダメージとスロウ効果を与える。槍は対象に当たると破片になって、背後にいる敵に同量の魔法ダメージを与える。
+- **W — リング・オブ・フロスト：** 周囲にいる敵ユニットを氷漬けにして魔法ダメージを与え、スネア効果を付与する。
+- **E — グラシアルパス：** 前進する氷の爪を召喚し、触れた敵ユニットに魔法ダメージを与える。効果時間内に再度発動すると、爪の位置へワープする。
+- **R — フローズングレイブ：** 敵チャンピオンに使用した場合、対象は凍結してスタン状態になる。自身に使用すると、体が闇の氷で覆われ体力を回復するとともに、対象指定されず無敵になる。発動後対象の足元から闇の氷が広がり、触れた敵ユニットに魔法ダメージとスロウ効果を付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lissand
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Lissandra` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Lissandra.png)

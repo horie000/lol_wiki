@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kayn.pn
 | `attackspeedperlevel` | 2.7 |
 | `attackspeed` | 0.669 |
 
+## アビリティ
+
+- **パッシブ — 緋眼の大鎌：** ケインは自我を持つダーキンの古代武器ラーストを用いており、両者は常に互いの支配権をかけて争っている。この戦いはダーキンがケインを取り込むか、ケインがラーストを使いこなし影の暗殺者となるまで続く。 ダーキン: 敵チャンピオンにスキルで与えたダメージの一定割合にあたる体力を回復する。 影の暗殺者: 敵チャンピオンと戦闘開始直後の数秒間、追加ダメージを与える。
+
+- **Q — 飛影斬：** ダッシュしてから斬りつける。その両方でダメージを与える。
+- **W — 刃影襲：** 直線上にいる敵にダメージとスロウ効果を与える。
+- **E — 影抜き：** ケインが地形を無視して歩くことができる。
+- **R — 真影侵壊：** 敵の体の中に侵入して、出てくる時に大ダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kayn.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Kayn` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kayn.png)

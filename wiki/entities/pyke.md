@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pyke.pn
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.667 |
 
+## アビリティ
+
+- **パッシブ — 沈みし者の力：** 敵の視界外にいると、直前にチャンピオンからの攻撃で失った体力を回復する。また、パイクはいずれのソースからも増加最大体力を得ることはできず、代わりに増加攻撃力を得る。
+
+- **Q — ボーンスキューア：** 前方にいる1体の敵を突き刺すか、1体の敵を引き寄せる。
+- **W — ゴーストウォーター：** カモフラージュ状態になり、移動速度が大きく増加する。移動速度は徐々に元に戻る。
+- **E — 亡者の引き波：** 亡霊を残してダッシュする。亡霊はパイクのところまで戻ってきて触れた敵チャンピオンをスタンさせる。
+- **R — 水底の急襲：** ブリンクして体力の低下した敵にとどめを刺す。とどめを刺すと再度使用可能になり、アシストした味方1人に追加ゴールドを付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pyke.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Pyke` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pyke.png)

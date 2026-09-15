@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gnar.pn
 | `attackspeedperlevel` | 6 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ぷんすこ：** ナーは戦闘中に「怒り」が溜まっていく。「怒り」が最大の状態でスキルを使用するとメガナーに変身し、ステータスとスキルが変化する。
+
+- **Q — ブーメラン/ぽいっ：** ナーが投げるブーメランは、命中した敵にダメージとスロウ効果を与える。戻ってきたブーメランをキャッチすると、クールダウンが短縮される。 メガナーは、ブーメランのかわりに岩石を投げる。敵に命中するとその場に落下して、付近の敵すべてにダメージとスロウ効果を与える。落ちた岩石を拾うとクールダウンが短縮される。
+- **W — ごきげん/こてんぱん：** ナーが通常攻撃とスキルで相手にマークをつけるようになる。マークがたまった敵を攻撃するとナーは興奮し、追加ダメージを与えて移動速度が増加する。 メガナーは興奮を通りこし、怒りが爆発する。片腕を目の前におもいきり振り下ろし、範囲内の敵ユニットにダメージを与えてスタン効果を付与する。
+- **E — ぴょんぴょん/ドーン！：** ナーがジャンプする。ユニットの上に着地すると、頭の上をはねてさらに遠くまでジャンプする。 メガナーは体が大きすぎて弾まない。そのかわり、着地するときに体をたたきつけて衝撃波をうみだし、周囲の敵にダメージを与える。着地地点にいる敵にはスロウ効果を与える。
+- **R — ナー！：** メガナーが周りのモノを根こそぎ指定方向へ投げ、命中した敵にダメージとスロウ効果を与える。投げられた敵が壁にぶつかるとスタン状態になり、追加ダメージを受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gnar.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Gnar` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gnar.png)

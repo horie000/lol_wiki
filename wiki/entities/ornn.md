@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ornn.pn
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 歩く鍛冶場：** オーンが獲得するあらゆる追加物理防御と追加魔法防御は、獲得量が増加する。 オーンはどこにいても、ゴールドを消費して消費アイテム以外のアイテムを作り出せる。 さらに、自身と味方のために名匠アイテムを作り出せる。
+
+- **Q — 溶岩隆起：** 地面を叩きつけて裂け目を発生させ、敵ユニットにダメージを与えて移動速度を低下させる。少ししてから、裂け目の終端に溶岩の柱が発生する。
+- **W — ふいごの息：** 前進し、炎を吐き出す。炎の最後の塊が当たった敵は「脆弱」状態になる。
+- **E — 灼熱の突撃：** ダッシュして当たった敵ユニットにダメージを与える。ダッシュ中に地形にぶつかると周囲に衝撃波が発生し、敵ユニットにダメージを与えてノックアップする。
+- **R — 鍛冶神の呼び声：** 指定地点に巨大な精霊を呼び出す。精霊はどんどん速度を上げながらオーンがいる方向に進んでくる。精霊にぶつかった敵ユニットはダメージを受けて移動速度が低下し、「脆弱」状態になる。スキルを再使用するとオーンが精霊に向かって突撃し、彼がぶつかった方向に精霊の進行方向を変える。この精霊に当たった敵ユニットはノックアップされて、最初と同量のダメージを受け、再び「脆弱」が適用される。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ornn.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ornn` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ornn.png)

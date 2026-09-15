@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Neeko.p
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 駆け巡る色彩：** 味方チャンピオンまたはマップ上の他のユニットの姿に化けることができる。行動妨害効果を受けるか、ダメージスキルを詠唱するか、チャンピオン以外のユニットに擬態した状態で敵タワーにダメージを与えるか、擬態したユニットの体力バーと同量のダメージを受けると擬態が解除される。
+
+- **Q — 弾ける花弁：** 魔法ダメージを与える種を投げる。種はチャンピオンに当たるか敵ユニットをキルすると再度爆発する。
+- **W — シェイプスプリッター：** 自動効果により通常攻撃3回ごとに追加魔法ダメージを与え、少しの間、移動速度が増加する。発動すると指定方向にクローンを送り出し、再発動するとクローンの進行方向を変えられる。
+- **E — からまれ！：** 輪を飛ばして当たった敵すべてにダメージとスネア効果を与える。輪は敵をキルするかチャンピオンに触れると大きくなり、速度とスネア効果時間が増加する。
+- **R — ポップブロッサム：** 少しの間準備してから宙に舞い上がり、周囲のすべての敵をノックアップさせる。さらに着地時に周囲の敵にダメージを与えてスタンさせる。擬態中は密かに準備を行える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Neeko.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Neeko` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Neeko.png)

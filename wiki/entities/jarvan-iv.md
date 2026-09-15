@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/JarvanI
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 武魂の律動：** 最初の通常攻撃が命中する際、対象の現在体力に応じた追加物理ダメージを与えるが、同一の敵に対しては数秒間に一度しか発動できない。
+
+- **Q — ドラゴンストライク：** 槍を伸ばして貫通した敵ユニットに物理ダメージを与え、物理防御を低下させる。さらに「デマーシアの旗印」にこのスキルが命中した場合、自身をそこまで引き寄せ、通り道にいた敵をノックアップさせる。
+- **W — ゴールデンイージス：** デマーシアの歴代王の力を借りて、ダメージを防ぐシールドを発生させ、周囲の敵にスロウを与える。
+- **E — デマーシアの旗印：** デマーシアの誇りを胸に抱き、自動効果で攻撃速度が増加するようになる。発動すると指定地点にデマーシア軍の旗を投げ、地面に突き刺さると同時に魔法ダメージを与える。この旗は味方を鼓舞し、自身を含む味方チャンピオンの攻撃速度が、自動効果と同じ分だけ増加する。
+- **R — 決戦場：** ジャーヴァンⅣが対象に向かって雄々しく跳躍して、物理ダメージを与える。着地と同時に猛烈な力で地面を踏みつけ、周囲の地形を変化させて対象を囲い込む。周囲の敵も着地時にダメージを受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/JarvanI
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.JarvanIV` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/JarvanIV.png)

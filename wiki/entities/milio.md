@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Milio.p
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ファイヤーアップ！：** ミリオのスキルに触れた味方は、次の攻撃で追加のバーストダメージを与え、対象を炎上させる。
+
+- **Q — ウルトラメガファイヤーキック：** 敵1体をノックバックさせるボールをキックする。ボールは敵に命中すると、跳ね上がってから対象に向かって落下し、着地時に範囲内の敵にダメージとスロウ効果を与える。
+- **W — 癒しの焚き火：** 範囲内の味方の体力を回復し、その射程距離を延長するゾーンを作り出す。このゾーンは発動地点から一番近い味方を追従する。
+- **E — 抱擁のぬくもり：** 味方1体にシールドを付与し、一時的に対象の移動速度を上昇させる。このスキルは2回までチャージできる。
+- **R — 生命の息吹：** 穏やかな炎の波動を放ち、範囲内の味方の体力を回復して、行動妨害効果を除去する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Milio.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Milio` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Milio.png)

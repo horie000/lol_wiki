@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pantheo
 | `attackspeedperlevel` | 2.95 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 定命の意志：** スキルまたは通常攻撃を数回行うと、次のスキルが強化される。
+
+- **Q — 彗星の槍：** 指定方向に槍を突く、または槍を投げる。
+- **W — 跳撃の盾：** 対象に向かってダッシュし、ダメージを与えてスタンさせる。
+- **E — イージスの猛攻：** 盾を構え、正面からのダメージを無効化しながら、槍で連続攻撃を繰り出す。
+- **R — 偉大なる星路：** 精神を集中させて空高く跳びあがり、流星となって指定地点に上空から突撃する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pantheo
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Pantheon` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Pantheon.png)

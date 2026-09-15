@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Evelynn
 | `attackspeedperlevel` | 2.1 |
 | `attackspeed` | 0.667 |
 
+## アビリティ
+
+- **パッシブ — 妖魔の影：** 戦闘中以外は「妖魔の影」に包まれ、体力が低下している場合は体力が回復する。レベル6以降は「妖魔の影」でカモフラージュも獲得する。
+
+- **Q — ヘイトスパイク：** 鞭を振って最初に当たった敵ユニットにダメージを与える。その後、地面から一直線に貫通するトゲを近くの敵に数回放つことができる。
+- **W — アリュール：** 対象に呪いをかける。少ししてから次に行う通常攻撃またはスキルがその敵にチャーム効果を与え、魔法防御を低下させる。
+- **E — ウィップラッシュ：** 対象を鞭で打ってダメージを与え、その後少しの間だけ移動速度が増加する。
+- **R — ラストカレス：** 少しの間だけ対象指定不可になり、自身の正面の範囲内にいる敵に大ダメージを与えてから後方に大きくワープする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Evelynn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Evelynn` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Evelynn.png)

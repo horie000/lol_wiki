@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ekko.pn
 | `attackspeedperlevel` | 3.3 |
 | `attackspeed` | 0.688 |
 
+## アビリティ
+
+- **パッシブ — ゼロ・ドライブ：** 同一の敵ユニットに通常攻撃または攻撃スキルが3回命中するたび、追加魔法ダメージを与える。対象がチャンピオンの場合、一時的に移動速度が増加する。
+
+- **Q — タイムワインダー：** 次元を捻じ曲げる一次元的グレネードを投げ、命中した敵ユニットにダメージとスロウ効果を与える。 数秒後、グレネードは巻き戻されて自身の元へ戻ってくる。グレネードは戻る時もダメージ判定を持ち、触れた敵ユニットにダメージを与える。
+- **W — パラレルトラップ：** 残り体力の少ない敵に対する通常攻撃が追加魔法ダメージを与える。「パラレルトラップ」を発動すると時間軸を分岐させて数秒後に次元歪曲空間を出現させ、効果範囲内にいる敵にスロウ効果を与える。この次元歪曲空間へエコーが進入するとシールドを獲得し、範囲内の敵ユニットの時間を停止させてスタン効果を与える。
+- **E — フェイズダイブ：** 指定方向へ短い距離ダッシュし「ゼロ・ドライブ」にエネルギーをチャージする。次の通常攻撃の射程が延び、時空を歪曲させて対象のもとへ瞬間移動すると同時に追加ダメージを与える。
+- **R — クロノブレイク：** エコーが時間軸を砕いて敵から対象指定されなくなり、時を巻き戻して数秒前に自身がいた場所へタイムワープする。数秒前の地点に戻ると、その間に受けたダメージの一部を回復する。到着地点付近にいる敵はエコー出現による時空共振により大ダメージを受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ekko.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ekko` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ekko.png)

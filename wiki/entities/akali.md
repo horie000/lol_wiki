@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akali.p
 | `attackspeedperlevel` | 3.2 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 刺客の刻印：** チャンピオンにスキルでダメージを与えると対象の周囲に気の輪が形成される。輪の外に出るとアカリの次の通常攻撃の射程とダメージが増加する。
+
+- **Q — 五連苦無：** 5本のクナイを投げて自身の増加攻撃力と魔力に応じたダメージを与えてスロウ効果を与える。
+- **W — 黄昏の帳：** 姿を隠すための煙幕を張り、少しの間だけ移動速度が増加する。「帳」の中ではインビジブル状態になり、敵のスキルや通常攻撃で対象指定されなくなる。通常攻撃を行うかスキルを使用すると一時的に可視化される。
+- **E — 翻身手裏剣：** 後方に宙返りして前方に手裏剣を投げ、魔法ダメージを与える。最初に当たった敵または煙幕はマークされる。再発動するとマークされた対象までダッシュして追加でダメージを与える。
+- **R — 完遂：** 指定方向に跳躍して攻撃した敵にダメージを与える。 再発動: 指定方向にダッシュして、攻撃したすべての敵に対象の減少体力に応じたダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akali.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Akali` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Akali.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zilean.
 | `attackspeedperlevel` | 2.13 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — タイムインボトル：** 時間を経験値として溜めて、味方に付与できる。味方のレベルを上げるのに必要な経験値が溜まっている状態で相手を右クリックすると、経験値を与えることができる。同時に、与えた量と同じ経験値を自身も獲得する。
+
+- **Q — タイムボム：** 指定地点に爆弾を投げ、近付いたユニットに付着させる(チャンピオン優先)。付着した爆弾は3秒後に爆発し、範囲ダメージを与える。爆発前にもう一つ「タイムボム」を仕掛けられると即時に爆発し、敵にスタン効果を与える。
+- **W — リワインド：** ジリアンは近い未来の戦いに備え、通常スキルのクールダウンを短縮することができる。
+- **E — タイムワープ：** 対象ユニット周辺の時間軸を短時間ねじ曲げ、対象が敵の場合はスロウを与え、味方の場合は移動速度を増加させる。
+- **R — クロノシフト：** 対象の味方チャンピオンに砂時計の印を付与し、体力がゼロになった瞬間、過去へ遡らせて復活させる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zilean.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Zilean` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zilean.png)

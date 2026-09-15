@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gwen.pn
 | `attackspeedperlevel` | 2.25 |
 | `attackspeed` | 0.69 |
 
+## アビリティ
+
+- **パッシブ — 裁断：** 通常攻撃が対象の体力に応じて追加魔法ダメージを与える。この効果でチャンピオンに与えたダメージの一定割合を体力として回復する。
+
+- **Q — チョキチョキッ！：** ハサミで扇状の範囲を最大6回切りつけて魔法ダメージを与える。範囲の中心にいるユニットには確定ダメージを与え、切るたびに固有スキルの効果を適用する。
+- **W — 聖なる霧：** 霧を召喚して、霧の外にいる敵から身を守る。霧の中にいる敵からしか対象指定されない。
+- **E — スキップスラッシュ：** 短い距離をダッシュして数秒間、攻撃速度と射程が増加し、通常攻撃時効果で魔法ダメージを与える。効果時間中に通常攻撃を命中させた場合、このスキルのクールダウンが一定割合解消される。
+- **R — 針仕事：** 針を投げ、命中した敵にスロウ効果と魔法ダメージを与えて、チャンピオンに命中した場合は「裁断」を適用する。 このスキルは最大2回まで再発動可能で、再発動するたびに投げる針の本数とダメージが増加する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gwen.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Gwen` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gwen.png)

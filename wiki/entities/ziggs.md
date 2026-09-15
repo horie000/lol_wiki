@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ziggs.p
 | `attackspeedperlevel` | 2 |
 | `attackspeed` | 0.656 |
 
+## アビリティ
+
+- **パッシブ — ショートヒューズ：** 一定時間ごとに、次の通常攻撃に追加魔法ダメージがつく。スキルを使用するたびに、次の追加ダメージまでの時間が短くなる。
+
+- **Q — バウンドボム：** 地面にバウンドする爆弾を投げ、魔法ダメージを与える。
+- **W — エンジニアボム：** 発動から少し遅れて、またはスキルを再発動した時に起爆するヨードルグレネードを投げる。爆発は敵に魔法ダメージを与えて弾き飛ばす。ジグスも弾き飛ばされるがダメージは受けない。 体力が減った敵タワーをエンジニアボムで「ヘクスプロード」して破壊できる。
+- **E — ヘクステックマイン：** 地面に地雷を複数設置する。敵が接触すると爆発し、魔法ダメージとスロウ効果を与える。同じ敵が地雷を起爆させた場合は与えるダメージが減少する。
+- **R — メガインフェルノボム：** 究極の発明品「メガインフェルノボム」は射程距離が極めて長く、爆破範囲中央部にいる敵はさらに大ダメージを受ける。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ziggs.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ziggs` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ziggs.png)

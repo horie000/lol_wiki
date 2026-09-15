@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xerath.
 | `attackspeedperlevel` | 1.36 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — マナサージ：** 一定時間ごとに、通常攻撃でダメージを与えると自身のマナを回復する。ユニットをキルするたびに、このクールダウンが短縮される。
+
+- **Q — アルカノパルス：** 長射程のエネルギービームを発射し、命中したすべての敵ユニットに魔法ダメージを与える。
+- **W — デストラクションアイ：** 神秘のエネルギーを空から撃ち落とし、範囲内の敵ユニットにスロウと魔法ダメージを与える。範囲内の中心にいる敵ユニットは、より大きなダメージとスロウを受ける。
+- **E — ショックオーブ：** 敵ユニットに魔法ダメージとスタンを与える。
+- **R — アーケーンライト：** 移動できなくなるかわりに、超長距離射程の攻撃を行えるようになる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xerath.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Xerath` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Xerath.png)

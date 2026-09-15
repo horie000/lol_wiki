@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kaisa.p
 | `attackspeedperlevel` | 1.8 |
 | `attackspeed` | 0.644 |
 
+## アビリティ
+
+- **パッシブ — ヴォイドスキン：** カイ＝サの通常攻撃はプラズマスタックを付与し、スタック数に応じて与える追加魔法ダメージが増加していく。味方の移動不能効果もプラズマスタックを付与する。さらに、アイテム購入によってアルティメット以外のスキルがアップグレードされる。
+
+- **Q — イカシアの雨：** 多数のミサイルを乱射する。ミサイルは周囲の敵を追尾する。 共生兵器: 「イカシアの雨」がアップグレードされて、ミサイル数が増加する。
+- **W — ヴォイドシーカー：** 遠距離ミサイルを発射して、命中した敵にプラズマスタックを付与する。 共生兵器: 「ヴォイドシーカー」がアップグレードされて、付与するスタック数が増加し、チャンピオンに当たるとクールダウンが短縮されるようになる。
+- **E — スーパーチャージ：** 一時的に移動速度が増加し、その後攻撃速度が増加する。 共生兵器: 「スーパーチャージ」がアップグレードされて、一時的にインビジブル状態を獲得できるようになる。
+- **R — キラーヴォイド：** 敵チャンピオンの近くまでダッシュする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kaisa.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Kaisa` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kaisa.png)

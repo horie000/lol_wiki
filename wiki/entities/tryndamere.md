@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tryndam
 | `attackspeedperlevel` | 3.4 |
 | `attackspeed` | 0.67 |
 
+## アビリティ
+
+- **パッシブ — 戦場の咆哮：** 通常攻撃やクリティカル発生、敵にとどめを刺した際に「フューリー」がたまっていく。 自動効果: たまった「フューリー」の量に応じてクリティカル率が増加する。 たまった「フューリー」を消費して「血の欲望」を強化して発動できる。
+
+- **Q — 血の欲望：** 戦闘で負傷するほど攻撃力が増加する。発動させるとたまっている「フューリー」を消費し、体力を回復する。
+- **W — 嘲りの叫び：** 敵を嘲る言葉を叫び、周囲にいる敵チャンピオンの攻撃力を低下させる。トリンダメアに背を向けている敵は、移動速度も低下する。
+- **E — スピンスラッシュ：** 指定地点へ回転しながら移動し、移動中に当たった敵ユニットにダメージを与える。
+- **R — 不死の憤激：** 戦い続けたいという強い欲望に取りつかれ、一定時間はどれだけダメージを受けても体力がゼロにならない。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tryndam
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Tryndamere` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tryndamere.png)

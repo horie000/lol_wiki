@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sejuani
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.688 |
 
+## アビリティ
+
+- **パッシブ — 極北の激憤：** 非戦闘状態が続くと、「氷結の鎧」を獲得して物理防御と魔法防御が増加し、スロウ効果を受けなくなる。「氷結の鎧」はダメージを受けたあとも少しの間だけ継続する。自身がスタンさせた敵を攻撃すると、その氷が砕けて大きな魔法ダメージを与える。
+
+- **Q — 猪突凍進：** 敵に突進してノックアップする。敵チャンピオンをノックアップすると、そこで突進が止まる。﻿
+- **W — 氷河の怒り：** メイスを2回振り、ダメージとスロウ効果を与えて「凍傷」のスタックを付与する。
+- **E — 永久凍土：** 「凍傷」のスタックが最大になった敵チャンピオンを凍らせてスタンさせる。
+- **R — グレイシャルプリズン：** ボーラを投げて、最初に当たった敵チャンピオンを凍らせてスタンさせる。さらに氷の嵐を巻き起こして、他の敵ユニットにスロウ効果を与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sejuani
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Sejuani` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sejuani.png)

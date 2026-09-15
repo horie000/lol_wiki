@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jhin.pn
 | `attackspeedperlevel` | 0 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — この銃の名は｢囁き｣：** ジンの「囁き」は極めて精密に作られた銃である。弾倉は4発、一定の速度でしか発射できないが、最後の弾丸に黒魔術による特殊な効果が生まれ、クリティカル及び減少体力に応じた追加ダメージが発生する。また、クリティカルが発生すると自身の移動速度が増加する。
+
+- **Q — ｢爆ぜ狂う果実｣：** 指定した敵ユニットに特殊なグレネードを放り投げる。グレネードは最大4体まで敵ユニットの上を跳ねながらダメージを与え、ユニットを倒すたびに与えるダメージが増加する。
+- **W — ｢死者への狂奏曲｣：** 持っている杖から長射程の弾丸を1発発射する。この弾はミニオンおよびモンスターを貫通するが、敵チャンピオンは貫通しない。命中した対象がその前に味方チャンピオン、「女神の足跡」、またはジンからのダメージを受けていた場合、スネア効果を付与する。
+- **E — ｢女神の抱擁｣：** 指定地点に、敵ユニットが上を通過すると花開く「女神の足跡」を設置する。「女神の足跡」は発動すると範囲内の敵ユニットをスロウ状態にし、その後爆発して魔法ダメージを与える。 「死とは、かくも美しい…」 - ジンが敵チャンピオンをキルすると、そのユニットの上で「女神の足跡」が発動し爆発する。
+- **R — ｢終演 -フィナーレ-｣：** 詠唱とともに「囁き」と手に持った杖を合体させ、長銃へと変形させる。発射される4発の特殊な弾丸は非常に長い射程距離を持ち、ミニオンおよび中立モンスターを貫通して発射する事ができるが、敵チャンピオンを貫通しない。命中した敵に減少体力に応じたダメージを与え、スロウ効果を付与する。最高の技術で大胆かつ繊細に作り上げられた4発目は、より大きな威力を秘めており確実にクリティカルが発生する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jhin.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Jhin` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Jhin.png)

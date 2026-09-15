@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Teemo.p
 | `attackspeedperlevel` | 3.38 |
 | `attackspeed` | 0.69 |
 
+## アビリティ
+
+- **パッシブ — やぶからヨードル：** 短時間行動せずにいると無限にインビジブル状態になる。茂みの中であれば移動中でもインビジブル状態になり、動き回っても解除されない。インビジブル状態が解除されると「奇襲モード」になり、攻撃速度が数秒間増加する。
+
+- **Q — 目つぶしダーツ：** 強力な毒で敵1体の視力を低下させる。攻撃を受けた敵はダメージを受け、一定時間ブラインド状態になる。
+- **W — 駆け足！：** 移動速度が増加。ただし、敵チャンピオンまたはタワーから攻撃を受けると効果が消滅する。数秒間、移動速度が増加。この間は、攻撃を受けても効果が持続する。
+- **E — 毒たっぷり吹き矢：** 通常攻撃のたびに、対象を毒状態%i:OnHit%通常攻撃時効果にする。攻撃を受けた対象は命中時にダメージを受け、さらにその後4秒にわたって毎秒ダメージを受ける。
+- **R — 毒キノコ：** バックパックに収納した「毒キノコ」を1つ取り出し、破裂性の毒トラップを仕掛ける。敵がトラップを踏むと毒霧が放出され、近くにいる敵ユニットをスロウ状態にし、継続ダメージを与える。毒キノコを他の毒キノコに投げつけると、バウンドしてさらに遠くに飛んでいく。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Teemo.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Teemo` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Teemo.png)

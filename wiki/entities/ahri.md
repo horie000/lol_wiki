@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ahri.pn
 | `attackspeedperlevel` | 2.2 |
 | `attackspeed` | 0.668 |
 
+## アビリティ
+
+- **パッシブ — 生気吸引：** ミニオンまたはモンスターを9体キルすると体力が回復する。 敵チャンピオンからキルまたはアシストを奪うと体力が大幅に回復する。
+
+- **Q — 幻惑のオーブ：** 往復するオーブを放ち、命中した敵に魔法ダメージを与える。戻る時に与えるダメージは確定ダメージになる。
+- **W — フォックスファイア：** 少しの間だけ移動速度が増加し、近くにいる敵を自動的に攻撃する、3つの狐火を放つ。
+- **E — チャーム：** 投げキッスを放ち、最初に触れた敵にダメージとチャーム効果を与える。チャームされた敵は何もできなくなってアーリに引き寄せられ、発動中の移動スキルもただちに無効になる。
+- **R — スピリットラッシュ：** ダッシュしてエネルギーを放ち、周囲にいる敵にダメージを与える。「スピリットラッシュ」はクールダウンに入るまでの間に、最大3回使用できる。敵チャンピオンからキルまたはアシストを奪うと、再発動可能な回数が増える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ahri.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ahri` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ahri.png)

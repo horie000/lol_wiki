@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Cassiop
 | `attackspeedperlevel` | 1.5 |
 | `attackspeed` | 0.647 |
 
+## アビリティ
+
+- **パッシブ — 妖艶な蛇行：** カシオペアは獲得するあらゆる移動速度ボーナスの効果が増加する。
+
+- **Q — ノクサスブラスト：** 発動から一瞬遅れて指定地点に強力な毒を噴出させる。このスキルがチャンピオンに命中すると、自身の移動速度が増加する。
+- **W — ミアズマ：** 多数の毒霧を発生させ、その範囲に足を踏み入れた敵にスロウ効果と釘付け効果に加え、軽度のダメージを与える。釘付け効果を受けた敵は、移動スキルを使用することができない。
+- **E — ツインファング：** 毒に侵された対象に対してダメージが増加する攻撃を繰り出す。与えたダメージの一定割合分、自身の体力を回復する。また、このスキルで対象を倒すと自身のマナを回復する。
+- **R — 石化の魔眼：** 石化の魔眼を開放し、扇形範囲内で自身のほうを向いている敵にスタン効果を付与する。 自身に背を向けている敵にはスロウ効果を付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Cassiop
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Cassiopeia` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Cassiopeia.png)

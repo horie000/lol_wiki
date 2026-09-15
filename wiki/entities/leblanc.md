@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leblanc
 | `attackspeedperlevel` | 1.5 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — 鏡像：** 自身の体力が40%を下回ると1秒間インビジブル状態になり、「鏡像」を発生させる。「鏡像」はダメージを与えず、最大8秒間持続する。
+
+- **Q — シジルマリス：** 刻印を飛ばし、対象にダメージを与えて3.5秒間マークする。マークした対象にスキルでダメージを与えると、刻印が爆発して追加ダメージを与える。どちらかのダメージで対象をキルした場合、マナコストが回復して、このスキルの残りクールダウンの一部が短縮される。
+- **W — ディストーション：** 指定地点にすばやく移動し、周囲の敵にダメージを与える。4秒以内にこのスキルを再使用すると、最初の位置に戻ることができる。
+- **E — エーテルチェイン：** 鎖の幻影を放ち、最初に当たった敵を鎖で繋ぐ。1.5秒間繋いだままにすると、追加ダメージとスネアを与える。
+- **R — 再演：** 選択した通常スキルの偽バージョンを使用する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leblanc
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Leblanc` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Leblanc.png)

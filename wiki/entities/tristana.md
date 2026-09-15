@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tristan
 | `attackspeedperlevel` | 1.5 |
 | `attackspeed` | 0.656 |
 
+## アビリティ
+
+- **パッシブ — ドロー＆グロー：** レベルが上がるごとに射程が増加する。
+
+- **Q — ラピッドファイア：** 高速で連射を行い、攻撃速度が数秒間増加する。
+- **W — ロケットジャンプ：** 地面を砲撃した反動で指定地点へジャンプし、着地と同時に周辺のユニット全員にダメージを与え、短時間スロウ効果を付与する。
+- **E — ヨードルグレネード：** 自動効果: ユニットを倒すと砲弾が炸裂して金属片が飛び散り、周辺の敵ユニットにダメージを与える。 発動効果: 対象にグレネードを付着させる。グレネードは数秒後に起爆し、対象と周囲のユニットにダメージを与える。
+- **R — バスターショット：** 敵ユニット1体へ向けて巨大な砲弾を発射し、魔法ダメージを与えてノックバックさせる。対象に「ヨードルグレネード」が付着していた場合、爆発半径が2倍になる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tristan
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Tristana` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Tristana.png)

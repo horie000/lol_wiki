@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sylas.p
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.645 |
 
+## アビリティ
+
+- **パッシブ — ペトリサイトバースト：** スキル使用後、「ペトリサイトバースト」がチャージされる。通常攻撃でチャージを解放し、魔力のこもった鎖を旋回させて当たった敵に追加魔法ダメージを与える。「ペトリサイトバースト」のチャージを保持している間は攻撃速度が増加する。
+
+- **Q — 鎖の鞭：** 指定地点で交わるように2本の鎖を叩きつけ、敵にダメージとスロウ効果を与える。 少ししてから交差地点で魔法エネルギーが爆発し、ダメージを与える。
+- **W — 王殺し：** 魔法エネルギーを纏って敵に突進し、ダメージを与える。対象がチャンピオンの場合は自身の体力を回復する。
+- **E — 逃亡/拉致：** 指定地点にダッシュする。再発動で鎖を投げつけて命中した敵に向かって自身を引き寄せる。
+- **R — 乗っ取り：** 敵のアルティメットスキルを奪い、自由に発動できる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sylas.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Sylas` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sylas.png)

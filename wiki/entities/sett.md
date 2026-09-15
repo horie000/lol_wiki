@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sett.pn
 | `attackspeedperlevel` | 1.75 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ファイティングスピリット：** 通常攻撃で左右のパンチを交互に繰り出す。右のパンチの方が少し強く、速い。また、セトは負けず嫌いで、減少体力に応じて体力自動回復が増加する。
+
+- **Q — ナックルダウン：** 次の2回の通常攻撃が対象の最大体力に応じた追加ダメージを与える。また、敵チャンピオンに向かう際は移動速度が増加する。
+- **W — ヘイメイカー：** 自動効果により、受けたダメージを「闘魂」として蓄える。発動するとすべての「闘魂」を消費してシールドを獲得し、パンチして一定範囲内の中心にいる敵には確定ダメージ、端にいる敵には物理ダメージを与える。
+- **E — フェイスブレイカー：** 自身の両側にいるすべての敵を引き寄せ、ダメージを与えてスタンさせる。敵が片側のみにいた場合はスタンの代わりにスロウ効果を与える。
+- **R — ショーストッパー：** 敵チャンピオンを担いでジャンプして移動後に地面に叩きつけ、着地時に周囲のすべての敵にダメージとスロウ効果を与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sett.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Sett` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Sett.png)

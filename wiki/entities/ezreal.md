@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ezreal.
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — ライジングスペルフォース：** スキルを連続で命中させるたびに攻撃速度が増加していく。最大5スタック。
+
+- **Q — ミスティックショット：** エネルギービームを発射してダメージを与える。敵ユニットに命中すると、自身の全スキルのクールダウンが少しだけ短縮される。
+- **W — エッセンスフラックス：** 最初に命中したチャンピオンまたはオブジェクトに貼り付くオーブを発射する。オーブの付いた敵を攻撃すると、オーブが爆発してダメージを与える。
+- **E — アーケインシフト：** 近くの指定地点に瞬間移動してエネルギービームを発射する。このエネルギービームは最も近くにいる敵ユニットに向かって発射される。「エッセンスフラックス」のスタックを受けた敵を優先する。
+- **R — トゥルーショットバラージ：** 少しチャージしてから敵を貫通する強力なエネルギービームを発射して、命中した敵ユニットに大ダメージを与える(ミニオンとエピック以外のモンスターに対してはダメージが低下)。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ezreal.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Ezreal` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ezreal.png)

@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kled.pn
 | `attackspeedperlevel` | 3.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 弱虫トカゲ「スカール」：** クレッドが彼の信頼する愛馬、スカールに騎乗している時は、クレッドの代わりにスカールがダメージを受けてくれる。スカールの体力がなくなるとクレッドはスカールから降ろされる。 非騎乗時はクレッドのスキルが変化して敵チャンピオンに与えるダメージが減少する。クレッドは敵と交戦することでスカールの「勇気」を回復できる。「勇気」が最大になると、クレッドは再び騎乗してスカールの体力を獲得する。
+
+- **Q — トラバサミロープ：** ダメージを与えるトラバサミを投げて、敵チャンピオンに引っ掛ける。引っ掛かった状態を少しの間維持すると、対象に追加物理ダメージを与えて自身の方向に引き寄せる。 非騎乗時では、このスキルは「ポケットピストル」に変化する。これは銃を発砲する遠隔攻撃で、反動で自らを後方に飛ばし、「勇気」を回復する。
+- **W — 狂暴の宴：** 次の4回の通常攻撃を繰り出す速度が大きく増加する。4回目の通常攻撃はダメージが増加する。
+- **E — ジャウスト：** ダッシュして物理ダメージを与え、一時的に移動速度が増加する。スキルを再使用すると、最初に攻撃した対象にダッシュで戻り、初回と同量のダメージを与える。
+- **R — チャァァァァァァァジ！！！：** クレッドとスカールが指定した位置に突撃してシールドを獲得し、通り道に移動速度を増加させる効果を残していく。スカールは最初に遭遇した敵チャンピオンにロックオンして体当たりする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kled.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Kled` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Kled.png)

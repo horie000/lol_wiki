@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karthus
 | `attackspeedperlevel` | 2.11 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 怨嗟の叫び：** カーサスは死亡すると同時に霊体化し、その場でスキルを発動できるようになる。
+
+- **Q — 根絶やし：** 指定地点を時間差で爆発させ、周囲の敵にダメージを与える。命中した敵が1体の場合は与えるダメージが増加する。
+- **W — 嘆きの壁：** エネルギーを搾取する霊的な壁を出現させ、そこを通り抜けた敵の移動速度と魔法防御を一定時間低下させる。
+- **E — 冒涜：** 自動効果として、カーサスが倒した敵から生気を奪いマナを回復する。 発動すると自身の周囲に倒した獲物の魂を召喚し、範囲内の敵にダメージを与えるがマナを著しく消耗する。
+- **R — 鎮魂歌：** 3秒間の詠唱後、すべての敵チャンピオンにダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karthus
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Karthus` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Karthus.png)

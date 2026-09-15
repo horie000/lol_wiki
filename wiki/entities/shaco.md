@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shaco.p
 | `attackspeedperlevel` | 3 |
 | `attackspeed` | 0.694 |
 
+## アビリティ
+
+- **パッシブ — バックスタブ：** 対象の背後から攻撃した場合、通常攻撃と「ポイズンダガー」が追加ダメージを与える。
+
+- **Q — 幻惑：** インビジブル状態になり、瞬間移動する。 インビジブル中の最初の通常攻撃は追加ダメージを与え、対象の背後から攻撃した場合はクリティカルになる。
+- **W — びっくり箱：** 隠された「びっくり箱」をフィールド上に設置する。敵が近づくと発動して、周囲の敵すべてを恐怖に陥れて攻撃する。
+- **E — ポイズンダガー：** 「ポイズンダガー」は自動効果により通常攻撃が命中した敵に毒を与え、移動速度を低下させる。発動した場合は対象にナイフを投げ、ダメージと毒を与える。対象の体力が30%未満の場合は追加ダメージが発生する。
+- **R — ハルシネイト：** シャコの分身が生成され周囲の敵を攻撃する(タワーに対してはダメージが減少する)。分身の体力が尽きると爆発して、3つの「ミニびっくり箱」を発生させ、周囲の敵にダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shaco.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Shaco` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Shaco.png)

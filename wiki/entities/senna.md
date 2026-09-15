@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-support
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Senna.p
 | `attackspeedperlevel` | 2.6 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 魂の赦し：** セナの周囲でユニットが倒されると、一定時間ごとにその魂が「黒き霧」に囚われる。セナはこの魂を通常攻撃して解放することで、魂を死の世界に閉じ込めていた「霧」を吸収することができる。「霧」によって「レリックキャノン」が強化されて、攻撃力、射程距離、クリティカル率が増加する。 通常攻撃で「レリックキャノン」を発射するまでにかかる時間は長くなるが、追加ダメージを与えるようになり、さらに一時的に対象の移動速度の一部を獲得する。
+
+- **Q — ピアシングダークネス：** 「レリックキャノン」のツインバレルから光と影が一体となったビームを発射して対象を撃ち抜き、味方は回復して敵にはダメージを与える。
+- **W — 最期の抱擁：** 前方に「黒き霧」を放つ。霧は当たった敵に絡みつき、少ししてから対象と周囲のすべての敵ユニットにスネア効果を付与する。
+- **E — 黒き霧の呪い：** 武器に取り込んだ「霧」を利用して周囲に嵐を引き起こし、闇を受け入れて亡霊に変化する。範囲内に入った味方はカモフラージュ状態になり、「霧」の作用によって亡霊の姿となる。亡霊の姿になると移動速度が増加し、対象指定不可になり、正体が隠される。
+- **R — ドーニングシャドウ：** 亡くなった光の番人のレリックストーンに呼びかけ、「レリックキャノン」が聖なる影と光に分かれる。その後、超大射程のビームを発射して命中した味方にはシールドを展開し、ビームの中心にいた敵にはダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Senna.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Senna` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Senna.png)

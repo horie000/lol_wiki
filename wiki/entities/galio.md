@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Galio.p
 | `attackspeedperlevel` | 1.5 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 巨像の一撃：** 数秒毎に、通常攻撃が一定範囲に追加魔法ダメージを与える。
+
+- **Q — 戦の旋風：** 2つの突風を巻き起こす。突風同士は重なり合い、継続ダメージを与える巨大な竜巻となる。
+- **W — デュランドの守り：** 防御の構えを取り移動速度が低下する。構えを解くと、周囲の敵ユニットにタウント効果とダメージを与える。
+- **E — 正義の鉄拳：** 少し下がってから前方に突進し、最初に当たった敵チャンピオンをノックアップする。
+- **R — 英雄降臨：** 味方1体の位置を着地点として指定し、範囲内のすべての味方に魔法ダメージを防ぐシールドを付与する。少ししてから、着地点に向かって落下し、周囲の敵をノックアップする。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Galio.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Galio` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Galio.png)

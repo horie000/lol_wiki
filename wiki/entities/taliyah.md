@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Taliyah
 | `attackspeedperlevel` | 1.36 |
 | `attackspeed` | 0.658 |
 
+## アビリティ
+
+- **パッシブ — ロックサーフィン：** 壁の近くで移動速度が増加する。
+
+- **Q — スレッドボレー：** 自由に移動しながら、指定された方向に石の欠片を連続して発射する。「スレッドボレー」を使用すると、自身の足元に「加工された地面」を作り出す。「加工された地面」上でこのスキルを使用するとその地面を消費して、敵にスロウ効果を与える大きな石を1発投げる。
+- **W — サイズミックシャーブ：** 一定範囲の地面を隆起させ、範囲内の敵を指定した方向に飛ばす。
+- **E — アンレイベルアース：** 一定範囲内に石をばら撒き、スロウ効果を付与する。この範囲内で敵がダッシュするかノックバックさせられると、石が爆発して対象をスタンさせる。
+- **R — ウィーバーウォール：** 長い壁を作り、その上を移動する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Taliyah
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Taliyah` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Taliyah.png)

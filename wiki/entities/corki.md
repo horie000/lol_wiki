@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Corki.p
 | `attackspeedperlevel` | 2.8 |
 | `attackspeed` | 0.644 |
 
+## アビリティ
+
+- **パッシブ — ヘクステック榴散弾：** 通常攻撃ダメージの一定割合を追加確定ダメージとして与える。
+
+- **Q — 閃光弾：** 爆弾を発射し、範囲内の敵に魔法ダメージを与える。 範囲内の敵は一定時間可視状態になる。
+- **W — ワルキューレ機行：** 爆弾を落しながら短距離を飛行する。通過したエリアには一定時間火炎が残り、エリア内にいる敵にダメージを与える。
+- **E — ガトリングガン：** ガトリングガンを高速連射し、前方の扇形範囲内にいる敵にダメージを与え、物理防御と魔法防御を低下させる。
+- **R — 連発ミサイル：** 指定方向にミサイルを発射する。ミサイルは敵ユニットに命中すると爆発し、範囲内の敵ユニットにダメージを与える。ミサイルのストックは最大に達するまで一定時間ごとにチャージされる。 3発ごとに「ドデカミサイル」が発射され、通常より大きいダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Corki.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Corki` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Corki.png)

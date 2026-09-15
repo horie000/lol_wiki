@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/DrMundo
 | `attackspeedperlevel` | 3.3 |
 | `attackspeed` | 0.67 |
 
+## アビリティ
+
+- **パッシブ — 気ままな往診：** 最初に受ける移動不能効果を無効化する。その際、代わりに体力を失い、近くに薬品の入った容器を落とす。落とした容器の上を歩いて回収すると体力が回復し、このスキルのクールダウンが短縮される。 また、ドクター・ムンドは極めて高い体力自動回復能力を持っている。
+
+- **Q — 骨切りノコギリ：** 骨切りノコギリを投げ、最初に命中した敵に対象の現在体力に応じたダメージを与えて、スロウ効果を付与する。
+- **W — 心臓ビリビリ：** 自身を感電させて、周囲の敵に継続的にダメージを与え、受けたダメージの一部を蓄える。効果時間の最後か再発動時に、周囲の敵に大ダメージを与える。これが敵に命中した場合は、それまでに蓄えていたダメージの一定割合を体力として回復する。
+- **E — 野蛮な痛み：** 自動効果 - 自身の最大体力に応じて増加する、増加攻撃力を獲得する。 発動効果 - “往診用”バッグを敵に叩きつけ、自身の減少体力に応じた追加ダメージを与える。対象をキルした場合はその敵を弾き飛ばし、接触した敵にダメージを与える。
+- **R — マキシマム投与：** 自身に薬品を注入し、減少体力の一定割合を瞬時に回復する。さらに移動速度が増加し、長い時間をかけて最大体力の一部を自動回復する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/DrMundo
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.DrMundo` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/DrMundo.png)

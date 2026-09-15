@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gragas.
 | `attackspeedperlevel` | 2.05 |
 | `attackspeed` | 0.675 |
 
+## アビリティ
+
+- **パッシブ — ハッピーアワー：** 一定時間ごとにスキル使用時に体力を回復する。
+
+- **Q — タル転がし：** 指定地点にタルを転がし、4秒後に爆発させる。タルは自分で起爆させることもできる。時間経過とともに爆発の威力が増加する。爆風を浴びた敵はスロウ状態になる。
+- **W — 飲みすぎ注意：** 最新の醸造酒を1秒間試飲し、飲み終えると騒々しく好戦的になる。効果時間中は受けるダメージが軽減され、次の通常攻撃で付近のすべての敵に魔法ダメージを与える。
+- **E — ボディスラム：** 指定方向へ突進し、最初に衝突した敵ユニットとその周囲の敵にダメージを与え、ノックバックとスタンを付与する。
+- **R — ワシの奢りじゃ！：** 指定地点にタルを放り投げる。着弾したタルは大爆発し、爆発範囲内の敵ユニットにダメージを与えてノックバックさせる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gragas.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Gragas` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Gragas.png)

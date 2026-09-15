@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MasterY
 | `attackspeedperlevel` | 2.5 |
 | `attackspeed` | 0.679 |
 
+## アビリティ
+
+- **パッシブ — ダブルストライク：** 通常攻撃を数回行うごとに、通常攻撃が2回連続攻撃になる。
+
+- **Q — アルファストライク：** 目にもとまらぬ速さで複数の敵を斬り抜け、物理ダメージを与える。この間、マスター・イーは対象指定されない。このスキルの攻撃はクリティカルを発生させる場合もあり、モンスターには追加物理ダメージを与える。通常攻撃をするたびに、このスキルのクールダウンが短縮される。
+- **W — 明鏡止水：** 精神を統一して体力を回復する。また効果時間中、受けるダメージを軽減する。さらに、詠唱中は毎秒「ダブルストライク」のスタックを獲得して、「ウージュースタイル」と「ハイランダー」の残り効果時間を一時停止する。
+- **E — ウージュースタイル：** 通常攻撃が追加確定ダメージを与える。
+- **R — ハイランダー：** 一時的に移動速度と攻撃速度が増加し、あらゆるスロウ効果を受けなくなる。発動中にチャンピオンに対するキルまたはアシストを達成すると「ハイランダー」の効果時間が延びる。またこのスキルは自動効果を持ち、チャンピオンに対するキルまたはアシストを達成すると、他のスキルのクールダウンが短縮されるようになる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MasterY
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.MasterYi` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/MasterYi.png)

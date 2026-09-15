@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-tank
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Singed.
 | `attackspeedperlevel` | 1.9 |
 | `attackspeed` | 0.7 |
 
+## アビリティ
+
+- **パッシブ — スリップストリーム：** 周囲のチャンピオンを利用して空気抵抗を減らし、通り過ぎる際に一時的に移動速度が増加する。
+
+- **Q — 毒の軌跡：** 背中から毒ガスをまき散らし、ガスに接触した敵にダメージを与える。
+- **W — 強力粘着剤：** 強力な粘着剤の入ったビンを地面に投げ、接触した敵にスロウ効果を与えて釘付けにする。
+- **E — すくい投げ：** 対象の敵ユニットにダメージを与え、シンジドの背後へ投げ飛ばす。 「強力粘着剤」の上に着地した場合は、スネア状態になる。
+- **R — 狂人のポーション：** 強力な調合薬を飲んで戦闘能力が一時的に強化され、「毒の軌跡」が「重傷」を付与するようになる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Singed.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Singed` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Singed.png)

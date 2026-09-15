@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Locke.p
 | `attackspeedperlevel` | 3.3 |
 | `attackspeed` | 0.688 |
 
+## アビリティ
+
+- **パッシブ — シルバー・ステイク：** 通常攻撃は命中時に追加魔法ダメージを与える。このダメージは対象の減少体力に応じて増加する。
+
+- **Q — リチュアル・ネイル：** 「魂の釘」を構えて投げ、命中した敵にダメージを与えてマークを付与する。マークを消費して、通常攻撃で追加ダメージを与えられる。
+- **W — ソウル・イグニッション：** 魂を燃やし、攻撃速度と移動速度を増加させ、自身にダメージを与える。効果時間終了時、効果中に受けたダメージの一部を回復する。
+- **E — 灰塵の追撃：** 指定地点にテレポートしてから次の対象へダッシュし、通過した敵にダメージを与える。
+- **R — 煉獄：** 拘束のアーティファクトを投げ、命中した敵にダメージを与え、場合によってはとどめを刺す。敵チャンピオンを封印すると、さらなる力を獲得する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Locke.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Locke` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Locke.png)

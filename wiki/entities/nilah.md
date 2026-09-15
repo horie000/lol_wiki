@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-fighter
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nilah.p
 | `attackspeedperlevel` | 1.25 |
 | `attackspeed` | 0.697 |
 
+## アビリティ
+
+- **パッシブ — 終わりなき喜び：** ラストヒットしたミニオンから得る経験値が増加する。また、周囲の味方の体力回復およびシールド効果を強化し、その味方と共有する。
+
+- **Q — 形なき刃：** 鞭の刃を指定した方向に打ちつけ、直線上にいるすべての敵にダメージを与える。この攻撃が命中すると、少しの間だけ射程距離が増加する。
+- **W — 歓喜のヴェール：** 霧に身を包み、移動速度が増加して、あらゆる通常攻撃を軽やかに回避する。また、霧の効果時間中に接触したすべての味方が、この効果を獲得する。
+- **E — 流撃：** 対象に向かって勢いよくダッシュし、その際に接触したすべての敵にダメージを与える。
+- **R — アポテオシス：** あふれ出る喜びの中で鞭の刃を振り回し、周囲の敵にダメージを与えてから、自身の方向に引き寄せる。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nilah.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Nilah` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Nilah.png)

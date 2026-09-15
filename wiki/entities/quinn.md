@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-marksman
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Quinn.p
 | `attackspeedperlevel` | 3.1 |
 | `attackspeed` | 0.668 |
 
+## アビリティ
+
+- **パッシブ — 鷲匠：** 相棒であるデマーシアの鷲、ヴァロールが定期的に周囲の敵を「鷲匠」でマークする。「鷲匠」のマークが付与された敵に対して、クインの次の通常攻撃が追加物理ダメージを与える。
+
+- **Q — 暗闇の強襲：** ヴァロールを呼び、敵にマークをつけさせた後、その場の対象にダメージを与えるとともに、視界を奪う。
+- **W — 鷲の眼：** 自動効果により「鷲匠」のマークが付与された敵を攻撃すると、クインの攻撃速度と移動速度が増加する。発動すると、ヴァロールが周囲の広範囲を可視化する。
+- **E — 飛翔撃：** 敵に飛びかかり、対象に物理ダメージを与え、移動速度を低下させる。クインは対象に接触すると同時に、一瞬ノックバックさせて飛び離れ、自身の最大射程距離付近に着地する。
+- **R — 相棒：** クインとヴァロールが連携し、高速で飛行する。スキルが終了すると「スカイストライク」が発動して周囲の敵にダメージを与え、敵チャンピオンには「鷲匠」のマークを付与する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Quinn.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Quinn` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Quinn.png)

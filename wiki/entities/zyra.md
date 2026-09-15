@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zyra.pn
 | `attackspeedperlevel` | 2.11 |
 | `attackspeed` | 0.681 |
 
+## アビリティ
+
+- **パッシブ — 茨の楽園：** 定期的に自身の周囲に種を発生させる。その周期はレベルに応じて速くなる。種の近くで「死華の棘」または「捕縛の根」を使用すると種は植物に成長し、自身の味方となって戦う。
+
+- **Q — 死華の棘：** 太いツルが地中に広がって鋭いトゲを生やし、範囲内の敵に魔法ダメージを与える。「死華の棘」を種の近くで使用すると、遠距離の敵を射撃する「棘吹草」に成長させる。
+- **W — 狂い咲き：** 最大60秒間持続する種を生やす。種の近くで「死華の棘」または「捕縛の根」を使用すると種は植物に成長し、味方として戦う。同時に複数の種を蓄えておくことが可能で、敵ユニットを倒すと「狂い咲き」のチャージ時間が短縮される。
+- **E — 捕縛の根：** 地中から伸びる巨大なツタが対象を絡めとり、ダメージを与え移動不能にする。「捕縛の根」を種の近くで使用すると「棘鞭草」に成長させ、近距離の敵を攻撃しダメージを与え、移動速度を低下させる。
+- **R — 茨のゆりかご：** 指定地点から茨を放射状に成長させて範囲内の敵にダメージを与え、茨が地中に戻る際に触れた敵をノックアップさせる。茨の範囲内の植物は怒り狂う。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zyra.pn
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Zyra` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Zyra.png)

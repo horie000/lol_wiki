@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-assassin
@@ -73,6 +74,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Qiyana.
 | `attackspeedperlevel` | 2.1 |
 | `attackspeed` | 0.688 |
 
+## アビリティ
+
+- **パッシブ — 女帝の威風：** それぞれの敵に対する最初の通常攻撃またはスキルに追加ダメージが付与される。
+
+- **Q — エレメントの怒り/イシュタルの切先：** 武器を振り、保持しているエレメントに応じた追加効果の付いたダメージを与える。
+- **W — 大地の力：** 目標地点までダッシュし、武器にエレメントの力を付与する。武器にエレメントの力がついている間は、通常攻撃とスキルに追加ダメージが付与される。
+- **E — 俊烈：** 敵に向かってダッシュし、ダメージを与える。
+- **R — 天賦絢爛：** エレメントに命中すると爆発する衝撃波を放ち、周囲の敵をスタンさせながらダメージを与える。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -81,5 +91,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Qiyana.
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Qiyana` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Qiyana.png)

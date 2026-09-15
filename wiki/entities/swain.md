@@ -6,6 +6,7 @@ created: 2026-09-14
 updated: 2026-09-14
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
+  - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
 tags:
   - champion
   - role-mage
@@ -75,6 +76,15 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Swain.p
 | `attackspeedperlevel` | 2.11 |
 | `attackspeed` | 0.625 |
 
+## アビリティ
+
+- **パッシブ — 恐襲の魔鴉：** 鴉たちが「魂のかけら」を回収し、スウェインの体力を回復して、最大体力を恒久的に上昇させる。
+
+- **Q — 死の手：** この世ならざる力の稲妻を複数放ち、敵を貫通する。当たった稲妻の数に応じて与えるダメージが増加する。
+- **W — 帝国の眼：** 指定地点に悪魔の眼を開いて視界を得て、敵ユニットにダメージとスロウ効果を与える。その後の爆発が当たった敵チャンピオンは可視状態になり、「魂のかけら」を獲得する。
+- **E — 束縛の爪：** 悪魔のエネルギー波を前方に発射する。その後エネルギー波を呼び戻し、命中した敵にスネア効果を与える。スネア効果を与えたすべてのチャンピオンは、任意で引き寄せることができる。「魔帝戴冠」を発動中は、このスキルのクールダウンが短縮される。
+- **R — 魔帝戴冠：** 悪魔に変身して周囲の敵チャンピオン、ミニオン、また中立モンスターから体力を吸収する。その後、「悪魔の紅炎」が発動可能になり、周囲の敵ユニットに魂の炎の爆発を浴びせて、スロウ効果を与える。この形態は敵チャンピオンから体力を吸収している間は無限に持続する。
+
 ## 関連ページ
 
 - [[wiki/concepts/champion-dataset-schema|チャンピオンデータのスキーマ]]
@@ -83,5 +93,7 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Swain.p
 ## 出典
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]] — `data.Swain` のレコード。
+- [[wiki/sources/src-2026-09-14-dragontail-16-18-1]] — `ja_JP` 個別レコードのパッシブと4スキル。
 - 原典：[[raw/sources/champion.json.md|champion.json.md]]
+- 原典：[[raw/sources/dragontail-16.18.1.tgz|dragontail-16.18.1.tgz]]
 - 画像：[Data Dragon CDN](https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Swain.png)
