@@ -7,6 +7,7 @@ updated: 2026-09-15
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
+  - "[[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]"
 tags:
   - champion
   - role-fighter
@@ -96,6 +97,19 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Renekto
 - **限界：** スキル基礎ダメージ・係数・アイテム完成時刻を全チャンピオンで統一比較できる原典値がないため、実戦の強さや購入優先度を断定しない。
 
 <!-- power-spike:end -->
+
+<!-- power-spike-match:start -->
+## 試合時間別の観測
+
+- **観測分類：** 明瞭な傾向なし
+- **対象試合：** 320試合、全体勝率 49.1%
+- **時間帯別勝率：** 〜20分 50.0%（n=56）、20〜25分 54.8%（n=42）、25〜30分 55.9%（n=68）、30〜35分 36.0%（n=75）、35分〜 51.9%（n=79）
+- **最高帯：** 25〜30分（判定差 19.9ポイント）
+- **判定根拠：** 5つの時間帯を比較できるが、最高帯と端点の差が8ポイント未満、または勝率が非単調だった。
+- **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
+- **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
+
+<!-- power-spike-match:end -->
 
 ## 関連ページ
 

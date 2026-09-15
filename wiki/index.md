@@ -16,6 +16,7 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 
 - [[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1|チャンピオンデータセット v16.18.1]] — 173件のチャンピオン情報を含むJSONデータの構造、内容、制約。
 - [[wiki/sources/src-2026-09-14-dragontail-16-18-1|Data Dragon 配布アーカイブ v16.18.1]] — 28ロケールの配布物と、日本語のパッシブ・4スキル詳細の統合範囲、制約。
+- [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate|Riotランク戦試合データ：試合時間帯別チャンピオン勝率]] — 4,672件の完全試合を対象にした時間帯別勝率分析の入力範囲、品質、制約。
 - [[wiki/sources/src-2017-11-26-firstbloodstats-gold-efficiency|アイテムのゴールド効率について改めてまとめた]] — ステータス単価から理論価格とゴールド効率を求める方法、および自動効果を含める際の限界。
 - [[wiki/sources/src-2026-02-28-red-ff-item-gold-efficiency|アイテムの金銭効率ランキング：ファイター編【LoL】]] — 行動妨害耐性、割合貫通、ライフスティール等を含む現行の単価表とファイター系アイテム比較。
 
@@ -1176,8 +1177,9 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 
 ## 統合・分析
 
-- [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類 v16.18.1]] — 868件のアイテムを、相性のよいチャンピオン系統・利用位置のタグで検索できるようにした分類。
+- [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類 v16.18.1]] — 868件の原典候補タグと、実試合データによるチャンピオン・ロール・アイテム所持時／非所持時差の再評価。
 - [[wiki/syntheses/gold-efficiency-stat-values|アイテム金銭効率の基準単価]] — 現行のステータス別 gold/stat、算定式、根拠と対象外項目。
 - [[wiki/syntheses/gold-efficiency-high-low-examples|アイテム金銭効率の高低例と総合評価]] — サモナーズリフト向けの上位・下位10例、効果、数値と実用価値の違い。
 - [[wiki/syntheses/champion-roster-profile-v16-18-1|チャンピオンデータ概況 v16.18.1]] — 役割、リソース、主要数値、能力詳細の分布とデータ品質上の注意。
 - [[wiki/syntheses/champion-power-spikes-v16-18-1|チャンピオンのパワースパイク分類 v16.18.1]] — 173件の序盤・中盤・終盤の根拠付きヒューリスティック分類。
+- [[wiki/syntheses/champion-power-spikes-match-duration|チャンピオンのパワースパイク：試合時間帯別勝率の見直し]] — 収集済みランク戦4,672件から見た序盤・中盤・終盤の時間帯別観測と原典分類との差分。

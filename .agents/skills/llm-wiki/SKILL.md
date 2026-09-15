@@ -1,6 +1,6 @@
 ---
 name: llm-wiki
-description: Maintain this Obsidian knowledge base by ingesting raw sources, answering evidence-grounded questions, filing durable syntheses, or linting wiki health. Use for work on the LLM wiki; do not use for unrelated Markdown editing.
+description: Maintain this Obsidian knowledge base by ingesting raw sources, answering evidence-grounded questions, filing durable syntheses, analyzing collected Riot match data, or linting wiki health. Use for work on the LLM wiki; do not use for unrelated Markdown editing.
 ---
 
 # LLM Wiki
@@ -15,6 +15,17 @@ Before creating or substantially updating a content page, read [references/page-
 - **Query** when the user asks a question whose answer should come from this knowledge base.
 - **File a synthesis** when the user requests a durable analysis, comparison, or connection page.
 - **Lint** when the user asks to audit, clean, reconcile, or health-check the wiki.
+- **Match analysis** when the user asks to aggregate or compare collected Riot ranked-match results.
+
+## Match analysis resources
+
+For Riot ranked-match analysis, read [the analysis specification](../../../docs/riot-ranked-match-analysis-spec.md) before changing the scripts. Reuse the checked-in tools instead of rewriting the normalization logic:
+
+- `scripts/riot_match_analysis.py` — shared Match-v5/cache loader, deduplication, tier handling, participant normalization, and local Data Dragon name resolution.
+- `scripts/riot_ranked_match_analyzer.py` — aggregate champion, item, rune, summoner-spell, performance, duration, and optional matchup reports.
+- `scripts/riot_champion_query.py` — champion-specific ally-pair and opponent queries. The default minimum sample is 15 games; opponent results are same-role by default.
+
+Run `--dry-run` first when checking a new input set. Keep `raw/` read-only and write reports to `reports/` or another non-raw output directory. Do not expose PUUIDs, summoner IDs, summoner names, or Riot IDs in generated reports.
 
 ## Ingest
 

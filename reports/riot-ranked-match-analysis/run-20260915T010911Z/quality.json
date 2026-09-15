@@ -1,0 +1,59 @@
+{
+  "filters": {
+    "selected_scopes": 4672,
+    "selected_unique_matches": 4672
+  },
+  "include_incomplete": false,
+  "input": {
+    "counts": {
+      "complete_matches": 4672,
+      "conflicting_matches": 0,
+      "duplicate_match": 2000,
+      "ignored_non_match_json": 3,
+      "incomplete_matches": 0,
+      "input_files": 4677,
+      "input_records": 6672,
+      "unique_matches": 4672
+    },
+    "examples": {
+      "duplicate_match": [
+        "JP1_602430937",
+        "JP1_602426872",
+        "JP1_602424434",
+        "JP1_602418788",
+        "JP1_602369487",
+        "JP1_602364564",
+        "JP1_602356164",
+        "JP1_602344838",
+        "JP1_602343194",
+        "JP1_602339411"
+      ]
+    }
+  },
+  "result_counts": {
+    "champions": 1362,
+    "duration": 49,
+    "items": 8478,
+    "matchups": 0,
+    "performance": 646,
+    "runes": 7767,
+    "spells": 1030
+  },
+  "selected": {
+    "champion_filter_ids": [],
+    "input_files": 4677,
+    "input_records": 6672,
+    "min_games": 15,
+    "queue_id": 420,
+    "scope_groups": [
+      {
+        "matches": 4672,
+        "observed_tier": "MIXED",
+        "scope": "overall"
+      }
+    ],
+    "selected_scopes": 4672,
+    "tier_mode": "all",
+    "unique_matches": 4672
+  }
+}
