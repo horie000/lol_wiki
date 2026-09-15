@@ -150,3 +150,27 @@ This file is append-only. Newest entries are appended at the end.
 - 入力：ユーザーによる収集進捗と完了時間の標準出力表示要件
 - 変更：`scripts/riot_ranked_match_collector.py` に全体・ランク帯別処理のシーケンスバーを追加し、PUUID解決、試合ID候補取得、試合詳細取得の進捗を標準出力へ即時表示するようにした。全ランク帯の収集完了時に日本語の所要時間を表示し、仕様書へ出力形式を追記した。
 - 未解決：なし。
+
+## [2026-09-15] maintenance | ランク戦試合結果解析の仕様確定
+
+- 入力：ユーザー確認済みの「取得した試合結果を解析する」要件と、チャンピオン指定の組み合わせ・対面クエリ要件。
+- 変更：`docs/riot-ranked-match-analysis-spec.md` を作成し、ローカル入力・`raw/` 読み取り専用・共通正規化・集計項目・品質情報・レポート形式・受け入れ条件を定義した。通常集計と専用クエリの最小ゲーム数は `15` とした。
+- 未解決：Timeline APIを用いた時系列解析、試合時点の厳密なランク復元、勝率から因果関係や絶対的な相性を断定すること。
+
+## [2026-09-15] maintenance | ランク戦解析リソースをLLM Wikiスキルへ登録
+
+- 入力：確定した `docs/riot-ranked-match-analysis-spec.md` と解析スクリプトの再利用要件。
+- 変更：`.agents/skills/llm-wiki/SKILL.md` に Match analysis のルート、仕様書、共通モジュール、集計CLI、チャンピオン指定CLI、`--dry-run`、`raw/` 読み取り専用、個人識別情報を出力しない運用を追記した。
+- 未解決：実データを用いた解析結果の検証は、API収集済みデータの品質確認後に行う。
+
+## [2026-09-15] maintenance | Riotランク戦解析スクリプトを追加
+
+- 入力：`docs/riot-ranked-match-analysis-spec.md`、`raw/sources/riot-ranked-matches/` の収集形式、ローカルData Dragonアーカイブ。
+- 変更：`scripts/riot_match_analysis.py`（共通ローダー・正規化）、`scripts/riot_ranked_match_analyzer.py`（チャンピオン・アイテム・ルーン・スペル・性能・時間・任意の構成分析）、`scripts/riot_champion_query.py`（チャンピオン指定の味方組み合わせ・相手別低勝率）を追加した。既定の最小ゲーム数は `15`、専用クエリは味方上位20件・相手下位20件とし、出力先を `raw/` 外へ限定した。
+- 未解決：実データに対する集計レポートは未生成。`scripts/riot_match_analysis.py` の共有ロジックを利用し、APIキーなしで `--help`、`--dry-run`、構文チェックを実行できる設計とした。
+
+## [2026-09-15] lint | 直近のランク戦解析変更とWiki全体の検証
+
+- 入力：直近のGit変更（解析仕様書、再利用リソース案内、解析スクリプト3本）、`wiki/` 配下のMarkdown 1,148件、`scripts/lint.py`。
+- 変更：`wiki/log.md` に直近3コミットの作業記録を追記した。必須フロントマター、出典リンク、Wikilink、索引収録、孤立ページ、重複識別子を再検証し、構造上の修正は不要だった。
+- 未解決：6件の警告Calloutは原典の制約・解釈上の注意を明示した既存記録であり、矛盾とは判定していない。実データを用いたランク戦解析レポートは未生成。
