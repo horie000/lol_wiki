@@ -1,10 +1,10 @@
 # Riot API ランク戦試合結果解析スクリプト仕様書
 
-- 仕様バージョン：1.1（チャンピオン別ルーンセット上位3件のentity掲載）
+- 仕様バージョン：1.2（観測ランク帯別比較を追加）
 - 作成日：2026-09-15
-- 改訂日：2026-09-15
+- 改訂日：2026-09-16
 - 対象ゲーム：League of Legends
-- 実装：`scripts/riot_ranked_match_analyzer.py`
+- 実装：`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_ranked_tier_analyzer.py`
 - 関連実装：`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`、`scripts/riot_champion_matchup_wiki_sync.py`、`scripts/riot_champion_rune_wiki_sync.py`
 - 関連仕様：[Riot API ランク戦データ収集仕様書](riot-ranked-match-collector-spec.md)
 
@@ -555,6 +555,25 @@ reports/riot-ranked-match-analysis/
 
 ランキング表は、原則として `games` 降順、`win_rate` 降順、表示名昇順で安定ソートする。最小ゲーム数で除外した候補は、可能なら品質欄に件数だけ示す。
 
+### 7.4 観測ランク帯別比較（`riot_ranked_tier_analyzer.py`）
+
+ランク帯ごとの特徴を比較する場合は、`ranked-solo-5x5/**/matches.jsonl` を入力し、`observed` 固定で次を出力する。
+
+```bash
+python3 scripts/riot_ranked_tier_analyzer.py \
+  --input raw/sources/riot-ranked-matches/jp1/ranked-solo-5x5 \
+  --output reports/riot-ranked-tier-analysis \
+  --queue-id 420 \
+  --min-games 15 \
+  --format markdown,csv,json
+```
+
+`observed_tier` ごとに、試合時間（平均、中央値、P10、P90）、平均総キル、first blood・first tower・投了関連率、最終スコア由来のGPM・DPM・CS/分・視界・KDA、チャンピオン分布、ロール別最終ゴールド比率を集計する。加えて、観測帯別のチャンピオン選択・勝率、キーストーン、順不同かつ重複表示を排除したサモナースペル構成、高低勝率の探索候補を出力する。
+
+出力先は `reports/riot-ranked-tier-analysis/run-YYYYMMDDTHHMMSSZ/` とし、`tier-summary.csv`、`role-summary.csv`、`champion-tier.csv`、`champion-extremes.csv`、`keystone-tier.csv`、`spell-pair-tier.csv`、`analysis.json`、`quality.json`、`report.md` を生成する。`analysis.json` には全観測帯の上位選択の共通部分も保存する。
+
+各帯の試合数をそろえて比較しても、観測帯は試合時点の10人全員のランクを表さず、帯別試合は同じ試合の重複観測を含み得る。したがって、レポートは「観測経路から得た試合の特徴」として記述し、ランク差、技能差、勝率差の因果効果や推奨を断定しない。高低候補の既定 `min-games=15` は探索上の閾値であり、有意性検定や信頼区間を意味しない。
+
 ## 8. データ品質と解釈上の限界
 
 - 収集器の `observed_tier` は収集時点のプレイヤー所属帯であり、試合時点の全参加者のランクではない。
@@ -611,6 +630,8 @@ reports/riot-ranked-match-analysis/
 - `riot_champion_build_wiki_sync.py` が `--dry-run`、`--write`、`--check` を提供し、各チャンピオンentityへ短い生成ブロックを1つだけ同期して同一実行の詳細レポートへリンクできる。
 - entity同期が既存のアイテムentityをIDで解決し、ビルド名・理論仮説の全アイテム名を対応するアイテムページへのWikilinkとして出力できる。アイテムentityが不足する場合は書き込まない。
 - entity同期を再実行しても生成ブロック外の本文を変更せず、専用原典要約を `sources` に重複なく追加できる。
+- `riot_ranked_tier_analyzer.py` が `ranked-solo-5x5/**/matches.jsonl` を観測帯別に集計し、各帯の試合時間、最終スコア、ロール、チャンピオン、キーストーン、順不同スペル構成、高低候補、全帯共通性をCSV/JSON/Markdownへ出力できる。
+- 観測帯別レポートが、入力件数、ユニーク試合数、帯をまたぐ重複試合数、パッチ数、取得日範囲、観測ランク帯の解釈上の注意を表示できる。
 
 ## 11. 確認済みの仕様
 
@@ -630,5 +651,6 @@ reports/riot-ranked-match-analysis/
 12. チャンピオン情報の入口はentityとし、そこには短い生成ブロックだけを置く。詳細な候補と表は時刻付きの `reports/` に残し、選択した解析結果から明示的に同期する。
 13. チャンピオン別ルーン選択は `champion_id × role` の参加者を分母にし、パッチ重複を除いて全パッチを合算する。選択率と勝率は記述統計として扱う。
 14. 完全ルーンセットは主系・副系・キーストーン・主系3枠・副系2枠・3シャードの順序付きIDをキーに集計し、観測数最多ロールの上位3件をentityへ掲載する。選択時勝率は記述統計として扱い、推奨と解釈しない。
+15. 観測ランク帯の比較は `scripts/riot_ranked_tier_analyzer.py` に分離し、各帯の特徴と全帯共通性を同一実行のレポートへ保存する。`observed_tier` を試合時点の全参加者ランクと解釈せず、帯をまたぐ重複とパッチ・取得期間の差を明示する。
 
-この仕様に基づき、`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`、`scripts/riot_champion_rune_wiki_sync.py` を実装する。
+この仕様に基づき、`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_ranked_tier_analyzer.py`、`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`、`scripts/riot_champion_rune_wiki_sync.py` を実装する。

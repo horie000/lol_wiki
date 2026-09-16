@@ -1,7 +1,7 @@
 ---
 title: Wiki 索引
 type: index
-updated: 2026-09-15
+updated: 2026-09-16
 ---
 
 # Wiki 索引
@@ -21,8 +21,21 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-role-gold-share|Riotランク戦試合データ：ロール別ゴールド獲得シェア]] — 完成済み3,991試合を対象にしたロール別のチーム内累積ゴールドシェア、品質、制約。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups|Riotランク戦試合データ：チャンピオン別コンボ・カウンターピック分析]] — 13,107件の完全試合から、実測の味方コンボと同ロール対面候補を選定した入力範囲、品質、制約。
 - [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]] — 20,010件の完全試合から、個別ルーンと完全ルーンセットの選択率・選択時勝率を集計した入力範囲、品質、制約。
+- [[wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis|Riotランク戦試合データ：観測ランク帯別特徴]] — 10観測帯各1,000試合を比較し、試合時間、最終スコア、ロール、チャンピオン、ルーン、スペルの特徴とデータ制約を整理した入力範囲。
 - [[wiki/sources/src-2017-11-26-firstbloodstats-gold-efficiency|アイテムのゴールド効率について改めてまとめた]] — ステータス単価から理論価格とゴールド効率を求める方法、および自動効果を含める際の限界。
 - [[wiki/sources/src-2026-02-28-red-ff-item-gold-efficiency|アイテムの金銭効率ランキング：ファイター編【LoL】]] — 行動妨害耐性、割合貫通、ライフスティール等を含む現行の単価表とファイター系アイテム比較。
+- [[wiki/sources/src-2023-05-09-frugalgpt|FrugalGPT：コスト削減と性能向上のLLM利用]] — プロンプト適応、LLM近似、カスケードを用いた大量クエリの費用削減策。
+- [[wiki/sources/src-2023-05-23-qlora|QLoRA：量子化LLMの効率的ファインチューニング]] — 4ビット量子化とLoRAによるローカル適応時の学習メモリ削減。
+- [[wiki/sources/src-2023-07-06-lost-in-the-middle|Lost in the Middle：長文入力の位置バイアス]] — 長いコンテキストで重要情報の位置により性能が変わる評価。
+- [[wiki/sources/src-2023-09-12-pagedattention|PagedAttention：LLMサービングの効率的メモリ管理]] — KVキャッシュのページ管理・共有とvLLMのスループット評価。
+- [[wiki/sources/src-2023-10-09-llmlingua|LLMLingua：LLM推論を高速化するプロンプト圧縮]] — 最大20倍の入力圧縮を掲げる粗密プロンプト圧縮法。
+- [[wiki/sources/src-2023-10-10-longllmlingua|LongLLMLingua：長文コンテキスト向けプロンプト圧縮]] — 質問依存圧縮、位置バイアス緩和、コスト・遅延評価。
+- [[wiki/sources/src-2024-01-31-raptor|RAPTOR：木構造検索のための再帰的抽象処理]] — 再帰要約木から長文を多段階検索するRAG方式。
+- [[wiki/sources/src-2024-03-18-routerbench|RouterBench：マルチLLMルーティング評価ベンチマーク]] — 40万件超の推論結果によるモデルルータの費用・品質評価。
+- [[wiki/sources/src-2024-03-19-llmlingua-2|LLMLingua-2：タスク非依存プロンプト圧縮]] — 小型Transformer圧縮器とトークン分類による高速化。
+- [[wiki/sources/src-2024-04-24-graphrag|GraphRAG：ローカルからグローバルへのクエリ指向要約]] — エンティティグラフとコミュニティ要約による大規模コーパス分析。
+- [[wiki/sources/src-2024-06-26-routellm|RouteLLM：選好データによるLLMルーティング]] — 強弱モデルを問い合わせごとに選ぶ選好学習ルータ。
+- [[wiki/sources/src-2026-09-16-llama-cpp-readme|llama.cpp README：ローカルLLM推論ランタイム]] — 量子化、CPU+GPUハイブリッド、CLI／APIサーバの公式案内。
 
 ## エンティティ
 
@@ -1181,6 +1194,7 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 
 ## 統合・分析
 
+- [[wiki/syntheses/local-llm-large-scale-analysis|大量データ解析向けローカルLLM運用：トークン削減・検索・モデル切り替え]] — プロンプト圧縮、階層検索、モデルルーティング、量子化・サービングを本プロジェクト向けに統合した読書・運用分析。
 - [[wiki/syntheses/item-champion-synergy-tags-v16-18-1|アイテムのチャンピオン相性タグ分類 v16.18.1]] — 868件の原典候補タグと、実試合データによる個別アイテム・ステータス群・完成アイテム中核の再評価、およびチャンピオン別の実測候補／理論仮説。
 - [[wiki/syntheses/gold-efficiency-stat-values|アイテム金銭効率の基準単価]] — 現行のステータス別 gold/stat、算定式、根拠と対象外項目。
 - [[wiki/syntheses/gold-efficiency-high-low-examples|アイテム金銭効率の高低例と総合評価]] — サモナーズリフト向けの上位・下位10例、効果、数値と実用価値の違い。
@@ -1191,3 +1205,4 @@ Wiki 内の知識を探すときは、最初にこのページを確認する。
 - [[wiki/syntheses/role-gold-acquisition-rate|ロール別ゴールド獲得率：ランク戦最終スコアの集計]] — ロール別GPM・チーム内シェアと、完成済み3,991試合による勝敗・時間帯・観測帯別の感度分析。
 - [[wiki/syntheses/champion-combo-counter-ranked-matches|実測チャンピオン・コンボ／カウンターピック分析]] — 13,107件の完全試合から、サンプル数を加味して選定した味方コンボと同ロール対面候補、および173件のentityへの反映。
 - [[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]] — 20,010件の完全試合から、チャンピオン・ロール別の定番ルーン、完全セット上位3件、ロール差、選択率と勝率の分離を整理した記述分析。
+- [[wiki/syntheses/ranked-tier-characteristics|ランク帯別の試合特徴と全帯共通傾向]] — 10観測帯の試合時間、最終スコア、ロール構造、メタ分布、全帯共通の選択と、観測帯・パッチ差による解釈上の限界を整理した比較分析。

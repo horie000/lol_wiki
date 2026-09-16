@@ -3,3 +3,8 @@ __pycache__/
 .trash/
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
+
+# 大容量・個人識別情報を含み得るローカル収集物と派生レポート
+raw/sources/*.tgz
+raw/sources/riot-ranked-matches/
+reports/

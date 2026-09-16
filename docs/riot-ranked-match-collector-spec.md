@@ -2,8 +2,10 @@
 
 - 仕様バージョン：1.1
 - 実装：`scripts/riot_ranked_match_collector.py`
+- Timeline実装：`scripts/riot_match_timeline_collector.py`
 - 作成日：2026-09-15
 - 対象ゲーム：League of Legends
+- 関連仕様：[Riot API Match-v5 Timelineデータ取得仕様書](riot-match-timeline-collector-spec.md)
 
 ## 1. 目的
 

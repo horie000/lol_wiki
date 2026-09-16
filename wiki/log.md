@@ -294,3 +294,45 @@ This file is append-only. Newest entries are appended at the end.
 - 変更：Match-v5 `perks` の主系・キーストーン・主系3枠・副系2枠・3シャードを完全一致セットとして `riot_ranked_match_analyzer.py` に追加し、`champion-rune-set-summary.csv` と `results.rune_sets` へ保存した。`riot_champion_rune_wiki_sync.py` の `--dry-run` → `--write` → `--check` を実行し、173件のチャンピオンentityへ、観測数最多ロールの選択数上位3セット、選択率、選択時勝率を同期した。ソース要約、統合分析、仕様書v1.1、概要、スキル説明を更新した。
 - 結果：入力20,034ファイル・30,013レコードを試合IDで統合し、20,013ユニーク試合からキュー420の完全試合20,010件を分析した。完全セット行は137,667件（ロール別62,675件）、172チャンピオンに実測セット行があり、1チャンピオンは分母不足のためページ上で掲載保留とした。例としてエイトロックスTOPの上位3セットは607/1,635（選択時勝率50.1%）、94/1,635（57.4%）、68/1,635（44.1%）である。
 - 未解決：47パッチを横断し、ロールは最終スコアから正規化している。シャード表示名はData Dragonに辞書がなく`UNKNOWN(<ID>)`を残す。選択時勝率は未調整の記述統計で、因果効果、最適セット、推奨を示さない。ページには観測数最多ロールだけを表示し、別ロールと全候補はレポートで確認する。
+
+## [2026-09-16] ingest | 大量データ解析向けローカルLLM運用の原典群
+
+- 入力：ユーザー指定の「ローカルLLMの運用・利用」、追加指定の「大量データ解析・トークン利用量削減・モデル切り替え」。arXivの研究論文11件と、ggml-org/llama.cpp公式READMEの取得時点スナップショットを `raw/sources/` に保存した。
+- 変更：プロンプト圧縮（LLMLingua、LongLLMLingua、LLMLingua-2）、階層・グラフ検索（RAPTOR、GraphRAG）、長文位置バイアス（Lost in the Middle）、推論サービング（PagedAttention/vLLM、llama.cpp）、量子化適応（QLoRA）、モデル切り替え（FrugalGPT、RouteLLM、RouterBench）の各原典分析レポートを `wiki/sources/` に作成した。[[wiki/syntheses/local-llm-large-scale-analysis|大量データ解析向けローカルLLM運用：トークン削減・検索・モデル切り替え]] に統合し、概要と索引を更新した。
+- 結果：各原典の要旨・メタデータを保持し、トークン削減率・コスト削減率・速度・メモリの数値を、外部ベンチマークの結果として本プロジェクトの実測値と区別した。統合版には、構造化前処理→検索／階層要約→品質ゲート付き圧縮→軽量モデル既定・高性能モデルへのエスカレーションという運用仮説と、トークン数・出典リンク率・正確性・遅延・ピークメモリ・フォールバック率の計測項目を記録した。
+- 未解決：圧縮器の日本語・表・JSONでの忠実性、要約インデックスの差分更新、ローカルモデルのルータ校正、Apple SiliconとGPUサーバの費用・電力・スループット比較は未検証である。原典の最大値をそのまま運用保証や推奨へ昇格させない。
+
+## [2026-09-16] maintenance | 非編集エージェントへのWiki知識提供契約
+
+- 入力：ユーザー指定の「llm-wikiのドメイン知識を別エージェントが参照する観点」、「AGENTS.mdの利用」、「編集者ではないことの明示」。既存の `AGENTS.md`、`.agents/skills/llm-wiki/SKILL.md`、ローカルLLM運用統合版を確認した。
+- 変更：`docs/agent-role-contracts.md` に `llm-wiki-reader` の最小役割契約、読み取り範囲、`write_scope: []`、禁止操作、出力形式、editorとの差分、呼び出しフローを追加した。ルート `AGENTS.md` にeditor／readerの役割境界を追記し、ローカルLLM統合版、概要、索引への導線を更新した。
+- 結果：readerには「`llm-wiki-editor`ではない」という否定形のidentity、read-only権限、空の書き込み範囲をsystem/developerメッセージで渡し、`wiki/index.md`から必要ページだけを参照させる設計を記録した。更新候補は編集提案として返し、実編集は明示的なeditorタスクに限定する。
+- 未解決：実際の別エージェント実行で、契約の遵守率、コンテキスト削減量、回答の出典リンク率・数値一致率を測定していない。reader契約をVault内の別 `AGENTS.md` へ置く場合の階層探索挙動も、呼び出し環境ごとに確認が必要である。
+
+## [2026-09-16] maintenance | Riot Match-v5 Timeline取得スクリプトを追加
+
+- 入力：既存の`raw/sources/riot-ranked-matches/**/matches.jsonl`、Riot Match-v5 Timeline API仕様、既存の`riot_ranked_match_collector.py`のHTTPクライアント。
+- 変更：`scripts/riot_match_timeline_collector.py`を追加し、試合IDの重複排除、キュー・パッチ・UTC日付・件数フィルター、地域ルート解決、Timelineキャッシュ、429/5xx再試行、個人識別情報の除去、`timelines.jsonl`・`errors.jsonl`・`manifest.json`の出力を実装した。仕様を`docs/riot-match-timeline-collector-spec.md`へ記録し、収集仕様とLLM Wikiスキルから参照できるようにした。
+- 結果：`--help`、Python構文チェック、GOLD 1,000件を入力にした`--limit 10 --dry-run`、個人識別情報除去テストは成功した。実取得コマンドも実行したが、環境に`RIOT_API_KEY`がないためAPI接続前に終了し、Timelineレポートはまだ生成していない。
+- 未解決：実APIキーを環境変数へ設定した後、少数件で実取得し、404件数、Timelineフレーム完全性、取得時間、後続の固定時点ゴールド・購入イベント分析への利用可能性を確認する必要がある。
+
+## [2026-09-16] maintenance | reader契約の実行境界を補強
+
+- 入力：`llm-wiki-reader` を別エージェントへ渡す際の役割混同防止と、`write_scope: []` の実効性に関する設計確認。
+- 変更：`AGENTS.md` にプロンプト契約とOS・ツール権限の違い、Vault外起動・read-only公開・書き込みツール無効化の方針を追記した。`docs/agent-role-contracts.md` に実行時の強制境界と短縮呼び出しテンプレートを追加し、統合版にも二重化の注意を反映した。
+- 結果：readerのidentity、読み取り範囲、空の書き込み範囲、禁止操作を短い固定契約で渡し、質問固有の参照候補だけを後置する運用を明文化した。
+- 未解決：実際の実行基盤でread-onlyマウント、ツール許可リスト、終了後の変更検査を設定した際の遵守率とコンテキスト削減量は未測定である。
+
+## [2026-09-16] query | 実施内容と評価の内部分析を統合版へ追記
+
+- 入力：これまでに収集・分析したローカルLLM原典群と、別エージェント向け `llm-wiki-reader` 役割契約の実装結果。
+- 変更：[[wiki/syntheses/local-llm-large-scale-analysis|大量データ解析向けローカルLLM運用：トークン削減・検索・モデル切り替え]] に、実施事実、知識鮮度・コンテキスト効率・安全性・追跡可能性の評価、未検証事項を「内部分析」として追記した。
+- 結果：外部原典の実証結果、本プロジェクトの構造検査、運用上の推論を分離し、現段階を「境界と評価計画を整えた段階」と明記した。
+- 未解決：reader遵守率、入力トークン削減量、出典リンク率・数値一致率、圧縮・ルーティング・量子化の日本語データでの再現値は未測定である。
+
+## [2026-09-16] query | 取得済みランク戦の観測ランク帯別分析
+
+- 入力：`raw/sources/riot-ranked-matches/jp1/ranked-solo-5x5/**/matches.jsonl`、キュー420、IRON〜CHALLENGERの10観測帯、各1,000試合。既存の共通Match-v5ローダーで試合IDを統合した。
+- 変更：`scripts/riot_ranked_tier_analyzer.py` を追加し、観測帯別の試合時間、最終GPM・DPM・CS/分・視界・KDA、ロール別ゴールド比率、チャンピオン、キーストーン、順不同サモナースペル構成、高低勝率の探索候補、全帯共通性を再利用可能なCSV/JSON/Markdown出力として実装した。`docs/riot-ranked-match-analysis-spec.md`をv1.2へ更新し、入力要約と統合分析を `wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis.md`、`wiki/syntheses/ranked-tier-characteristics.md` に追加し、索引を更新した。
+- 結果：10,000観測スコープ、9,761ユニーク試合、完全試合9,761件、不完全・競合本体0件を確認した。観測帯をまたぐ重複試合は229件、重複レコードは239件だった。すべての帯でBOTTOMの最終GPMが最高、UTILITYが最低で、共通上位キーストーン4種とサモナースペル構成5種を確認した。生成先は `reports/riot-ranked-tier-analysis/run-20260916T083219Z/`。
+- 未解決：`observed_tier` は試合時点の10人全員のランクではなく、帯別標本の取得期間・パッチも一致しない。GPM等は最終スコア由来で、因果効果、固定時点の資源差、ランク母集団の推定を示さない。TimelineはAPIキー未設定のため未取得で、10分・15分・20分時点の比較は未実施である。
