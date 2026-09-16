@@ -13,6 +13,7 @@ from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Mapping, Optional, Sequence
+from zoneinfo import ZoneInfo
 
 from riot_match_analysis import (
     as_int,
@@ -375,8 +376,16 @@ def add_source_and_block(text: str, block: str, updated: str = "2026-09-15") -> 
         tag_index = next((index for index, line in enumerate(lines) if line.startswith("tags:")), len(lines))
         lines.insert(tag_index, f'  - "{SOURCE_REF}"')
         frontmatter = "\n".join(lines) + "\n"
-    if re.search(r"^updated:", frontmatter, flags=re.MULTILINE):
-        frontmatter = re.sub(r"^updated:.*$", f"updated: {updated}", frontmatter, count=1, flags=re.MULTILINE)
+    updated_match = re.search(r"^updated:\s*(.*?)\s*$", frontmatter, flags=re.MULTILINE)
+    if updated_match:
+        effective_updated = max(updated_match.group(1), updated)
+        frontmatter = re.sub(
+            r"^updated:.*$",
+            f"updated: {effective_updated}",
+            frontmatter,
+            count=1,
+            flags=re.MULTILINE,
+        )
     text = text[: first + 3] + frontmatter + text[second:]
     normalized_block = block.rstrip() + "\n\n"
     if START_MARKER in text:
@@ -394,6 +403,16 @@ def add_source_and_block(text: str, block: str, updated: str = "2026-09-15") -> 
     return text.rstrip() + "\n\n" + normalized_block
 
 
+def analysis_updated_date(generated_at: str) -> str:
+    try:
+        parsed = datetime.fromisoformat(generated_at.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError("analysis.jsonのgenerated_atを日時として解釈できません") from error
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=ZoneInfo("UTC"))
+    return parsed.astimezone(ZoneInfo("Asia/Tokyo")).date().isoformat()
+
+
 def sync_entity_blocks(
     *,
     entities: Mapping[str, Mapping[str, str | Path]],
@@ -408,7 +427,10 @@ def sync_entity_blocks(
     min_games: int,
     sufficient_games: int,
     selection_limit: int,
-) -> None:
+    updated: str = "2026-09-15",
+    write: bool = True,
+) -> list[tuple[Path, str]]:
+    changes: list[tuple[Path, str]] = []
     for target_id, entity in entities.items():
         block = build_entity_block(
             champion_id=target_id,
@@ -426,9 +448,13 @@ def sync_entity_blocks(
         )
         path = Path(entity["path"])
         original = path.read_text(encoding="utf-8")
-        updated = add_source_and_block(original, block)
-        if updated != original:
-            path.write_text(updated, encoding="utf-8")
+        expected = add_source_and_block(original, block, updated=updated)
+        if expected != original:
+            changes.append((path, expected))
+    if write:
+        for path, expected in changes:
+            path.write_text(expected, encoding="utf-8")
+    return changes
 
 
 def csv_fields() -> tuple[str, ...]:
@@ -587,8 +613,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--min-games", type=int, default=15)
     parser.add_argument("--sufficient-games", type=int, default=30)
     parser.add_argument("--selection-limit", type=int, default=DEFAULT_SELECTION_LIMIT, help="各ロール・種別のentity掲載件数")
-    parser.add_argument("--dry-run", action="store_true", help="入力と件数だけ検証し、書き込まない")
-    parser.add_argument("--write", action="store_true", help="レポートまたはentity生成ブロックを書き込む")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--dry-run", action="store_true", help="入力と件数だけ検証し、書き込まない")
+    mode.add_argument("--write", action="store_true", help="レポートまたはentity生成ブロックを書き込む")
+    mode.add_argument("--check", action="store_true", help="entityが期待内容と一致するか検証する")
     return parser
 
 
@@ -596,10 +624,10 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = build_parser().parse_args(argv)
     if args.min_games <= 0 or args.sufficient_games < args.min_games or args.selection_limit <= 0:
         raise ValueError("--sufficient-games は --min-games 以上の正数が必要です")
-    if args.dry_run and args.write:
-        raise ValueError("--dry-run と --write は同時指定できません")
-    if not args.dry_run and not args.write:
-        raise ValueError("--dry-run または --write を指定してください")
+    if not args.dry_run and not args.write and not args.check:
+        raise ValueError("--dry-run、--write、または--checkを指定してください")
+    if args.check and not args.analysis:
+        raise ValueError("--checkは--analysisと組み合わせて指定してください")
 
     entity_root = resolve_path(args.entity_root)
     entities = entity_catalog(entity_root)
@@ -609,6 +637,23 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         target_counts = snapshot["target_counts"]
         selected = select_candidates(rows, target_counts, args.sufficient_games, args.selection_limit)
         source_summary = snapshot["summary"]
+        updated_date = analysis_updated_date(snapshot["generated_at"])
+        changes = sync_entity_blocks(
+            entities=entities,
+            rows=rows,
+            target_counts=target_counts,
+            selected=selected,
+            run_rel=snapshot["run_rel"],
+            complete_matches=int(source_summary["complete_matches"]),
+            input_files=int(source_summary["input_files"]),
+            input_records=int(source_summary["input_records"]),
+            unique_matches=int(source_summary["unique_matches"]),
+            min_games=args.min_games,
+            sufficient_games=args.sufficient_games,
+            selection_limit=args.selection_limit,
+            updated=updated_date,
+            write=args.write,
+        )
         summary = {
             "mode": "analysis_sync",
             "analysis": str(resolve_path(args.analysis).relative_to(ROOT)),
@@ -628,25 +673,15 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
             "input_records": int(source_summary["input_records"]),
             "unique_matches": int(source_summary["unique_matches"]),
             "run_dir": snapshot["run_rel"],
+            "entities_changed": len(changes),
         }
-        if args.dry_run:
-            print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
-            return 0
-        sync_entity_blocks(
-            entities=entities,
-            rows=rows,
-            target_counts=target_counts,
-            selected=selected,
-            run_rel=snapshot["run_rel"],
-            complete_matches=int(source_summary["complete_matches"]),
-            input_files=int(source_summary["input_files"]),
-            input_records=int(source_summary["input_records"]),
-            unique_matches=int(source_summary["unique_matches"]),
-            min_games=args.min_games,
-            sufficient_games=args.sufficient_games,
-            selection_limit=args.selection_limit,
-        )
         print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
+        if args.check and changes:
+            print(
+                "不一致: " + ", ".join(str(path.relative_to(ROOT)) for path, _ in changes[:20]),
+                file=sys.stderr,
+            )
+            return 1
         return 0
 
     dataset = load_dataset([resolve_path(value) for value in args.input or []])
@@ -685,6 +720,8 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if args.dry_run:
         print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
         return 0
+    if args.check:
+        raise ValueError("raw入力の集計結果に対する--checkは利用できません。--analysisを指定してください")
 
     output_root = resolve_path(args.output)
     output_root.mkdir(parents=True, exist_ok=True)

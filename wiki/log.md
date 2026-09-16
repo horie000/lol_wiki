@@ -336,3 +336,17 @@ This file is append-only. Newest entries are appended at the end.
 - 変更：`scripts/riot_ranked_tier_analyzer.py` を追加し、観測帯別の試合時間、最終GPM・DPM・CS/分・視界・KDA、ロール別ゴールド比率、チャンピオン、キーストーン、順不同サモナースペル構成、高低勝率の探索候補、全帯共通性を再利用可能なCSV/JSON/Markdown出力として実装した。`docs/riot-ranked-match-analysis-spec.md`をv1.2へ更新し、入力要約と統合分析を `wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis.md`、`wiki/syntheses/ranked-tier-characteristics.md` に追加し、索引を更新した。
 - 結果：10,000観測スコープ、9,761ユニーク試合、完全試合9,761件、不完全・競合本体0件を確認した。観測帯をまたぐ重複試合は229件、重複レコードは239件だった。すべての帯でBOTTOMの最終GPMが最高、UTILITYが最低で、共通上位キーストーン4種とサモナースペル構成5種を確認した。生成先は `reports/riot-ranked-tier-analysis/run-20260916T083219Z/`。
 - 未解決：`observed_tier` は試合時点の10人全員のランクではなく、帯別標本の取得期間・パッチも一致しない。GPM等は最終スコア由来で、因果効果、固定時点の資源差、ランク母集団の推定を示さない。TimelineはAPIキー未設定のため未取得で、10分・15分・20分時点の比較は未実施である。
+
+## [2026-09-16] maintenance | 観測ランク帯別チャンピオン候補をentityへ同期
+
+- 入力：`reports/riot-ranked-tier-analysis/run-20260916T083219Z/analysis.json`、キュー420、観測10帯・各1,000試合、`min-games=15`。既存の観測帯別分析結果を使い、新しい試合レポートは生成していない。
+- 変更：`scripts/riot_champion_tier_wiki_sync.py` と `docs/riot-ranked-tier-entity-sync-spec.md` を追加し、`champion_key` で対応する88件のチャンピオンentityへ、各帯のピック数上位5件・高勝率候補5件・低勝率候補5件から該当する行を同期した。生成ブロック外の本文を保持し、観測帯分析のsource summaryをfrontmatterの`sources`へ追加した。LLM Wikiスキルと総合分析仕様から再利用手順を参照できるようにした。
+- 結果：上位50行、高勝率50行、低勝率50行、合計150行を反映した。同一帯・同一分類内の重複champion IDは0件だった。`--dry-run` → `--write` を実行済みで、詳細レポートへのリンクと探索的候補である旨を各ブロックへ記載した。
+- 未解決：`observed_tier` は試合発見者の収集時点の所属帯であり、参加者10人全員の試合時ランクではない。候補は未調整の記述統計で、`min-games=15`は有意性を保証しない。パッチ、ロール、構成、プレイヤー、対面を調整したチャンピオン別の因果比較は未実施である。
+
+## [2026-09-16] maintenance | lintの最新レポート連動entity同期
+
+- 入力：既存の完了済みRiot解析レポートを系列ごとに探索し、manifestの`generated_at`が最新で、宣言済み`outputs`と`quality.json`・`report.md`・必要な機械可読結果がそろう実行だけを対象にした。今回選択した実行は、試合時間帯が`run-20260915T010911Z`、ビルドが`run-20260915T060638Z`、コンボ・カウンターピックが`run-20260915T071824Z`、ルーンが`run-20260916T081004Z`、観測ランク帯が`run-20260916T083219Z`である。
+- 変更：`scripts/lint.py`を、レポートの`--dry-run`→`--write`→`--check`と既存静的Lintを一体で実行する入口へ変更した。試合時間帯別の`power-spike-match`ブロックを同期する`riot_champion_duration_wiki_sync.py`を追加し、matchup同期へ`--check`を追加した。古いレポート処理でentityの`updated`を巻き戻さないよう各同期を調整し、詳細仕様を`docs/riot-lint-report-sync-spec.md`へ記録した。
+- 結果：通常の`python3 scripts/lint.py`を実行し、時間帯観測173件、ルーンセット173件、ビルド1件の差分を同期した後、Data Dragonタグ、ゴールド効率、アイテム分類、原典ベースのパワースパイク、5系列のentity同期チェックがすべて成功した。`--check-only`で書き込みを抑止する経路も追加した。Data Dragonタグ未変更ページの日時だけを更新しないよう修正し、今回対象外のアイテム・ルーン・スペルページへの日時だけの変更は戻した。
+- 未解決：自動同期される候補は最新スナップショットの機械的・未調整な記述統計であり、推奨や因果効果ではない。完了条件を満たすレポートが存在しない系列はスキップされる。Timelineによる固定時点特徴や、候補を質的推奨へ昇格するレビューは別途必要である。

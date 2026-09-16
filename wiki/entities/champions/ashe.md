@@ -3,7 +3,7 @@ title: "アッシュ"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-15
+updated: 2026-09-16
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
@@ -11,6 +11,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
+  - "[[wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis]]"
 tags:
   - champion
   - role-marksman
@@ -104,11 +105,12 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ashe.pn
 <!-- power-spike-match:start -->
 ## 試合時間別の観測
 
+- **スナップショット：** 2026-09-15生成、キュー420、完全試合4,672件、[[reports/riot-ranked-match-analysis/run-20260915T010911Z/report|詳細レポート]]。
 - **観測分類：** 明瞭な傾向なし
 - **対象試合：** 930試合、全体勝率 48.4%
 - **時間帯別勝率：** 〜20分 45.6%（n=149）、20〜25分 52.6%（n=135）、25〜30分 47.7%（n=220）、30〜35分 48.4%（n=221）、35分〜 48.3%（n=205）
 - **最高帯：** 20〜25分（判定差 7.0ポイント）
-- **判定根拠：** 5つの時間帯を比較できるが、最高帯と端点の差が8ポイント未満、または勝率が非単調だった。
+- **判定根拠：** 最高帯と端点の差が8ポイント未満、または非単調。
 - **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
 
@@ -166,23 +168,47 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Ashe.pn
 <!-- champion-rune-set-analysis:start -->
 ## よく選ばれるルーンセット（実測）
 
-- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **スナップショット：** 2026-09-16生成、キュー420、ユニーク試合10,000件、[[reports/riot-ranked-match-analysis/run-20260916T081004Z/report|ルーンセットの詳細レポート]]。
 - **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
 - **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
 
-### BOTTOM（対象2,600試合、全体勝率49.2%）
+### BOTTOM（対象1,173試合、全体勝率49.7%）
 
 | 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | 主系栄華：リーサルテンポ／冷静沈着・レジェンド: 迅速・切り崩し；副系天啓：疾駆・ビスケットデリバリー；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5011) | 1,275/2,600 | 49.0% | 49.5% |
-| 2 | 主系栄華：リーサルテンポ／冷静沈着・レジェンド: 迅速・切り崩し；副系天啓：ビスケットデリバリー・疾駆；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5011) | 371/2,600 | 14.3% | 50.7% |
-| 3 | 主系栄華：リーサルテンポ／冷静沈着・レジェンド: 迅速・切り崩し；副系天啓：キャッシュバック・疾駆；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5011) | 205/2,600 | 7.9% | 45.4% |
+| 1 | 主系栄華：リーサルテンポ／冷静沈着・レジェンド: 迅速・切り崩し；副系天啓：疾駆・ビスケットデリバリー；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5011) | 569/1,173 | 48.5% | 49.9% |
+| 2 | 主系栄華：リーサルテンポ／冷静沈着・レジェンド: 迅速・切り崩し；副系天啓：ビスケットデリバリー・疾駆；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5011) | 147/1,173 | 12.5% | 48.3% |
+| 3 | 主系栄華：リーサルテンポ／冷静沈着・レジェンド: 迅速・切り崩し；副系天啓：キャッシュバック・疾駆；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5011) | 110/1,173 | 9.4% | 50.0% |
 
 - **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
 - **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
 
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
 <!-- champion-rune-set-analysis:end -->
+
+<!-- champion-tier-analysis:start -->
+## 観測ランク帯別チャンピオン候補
+
+- **スナップショット：** 2026-09-16生成、キュー420、観測10帯、各1,000試合、統合後9,761試合、min-games 15、[[reports/riot-ranked-tier-analysis/run-20260916T083219Z/report|ランク帯別詳細レポート]]。
+- **根拠：** [[wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis|Riotランク戦試合データ：観測ランク帯別特徴]]、[[wiki/syntheses/ranked-tier-characteristics|ランク帯別の試合特徴と全帯共通傾向]]。
+- **読み方：** `observed_tier` はその試合を発見したプレイヤーの収集時点の所属帯であり、10人全員の試合時ランクではない。以下は各帯の上位選択と、min-games以上で機械的に抽出した高低勝率の探索候補で、推奨・因果効果・有意差を示さない。
+
+### ピック数上位5に入った帯
+
+| 観測帯 | 帯内順位 | 試合数 | ピック率 | 勝敗 | 勝率 |
+| --- | ---: | ---: | ---: | --- | ---: |
+| SILVER | 3 | 185 | 1.8% | 92勝/93敗 | 49.7% |
+| GOLD | 2 | 192 | 1.9% | 96勝/96敗 | 50.0% |
+| PLATINUM | 5 | 166 | 1.7% | 70勝/96敗 | 42.2% |
+| EMERALD | 4 | 138 | 1.4% | 69勝/69敗 | 50.0% |
+
+### 低勝率候補（下位5）
+
+| 観測帯 | 候補順位 | 試合数 | 勝敗 | 勝率 |
+| --- | ---: | ---: | --- | ---: |
+| GRANDMASTER | 3 | 30 | 9勝/21敗 | 30.0% |
+
+<!-- champion-tier-analysis:end -->
 
 ## 関連ページ
 

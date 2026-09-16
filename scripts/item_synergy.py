@@ -345,7 +345,10 @@ def write_pages(pages: list[tuple[Path, Classification]]) -> int:
     changed = 0
     for path, classification in pages:
         original = path.read_text(encoding="utf-8")
-        updated = with_updated_date(replace_tags(original, classification.tags))
+        tagged = replace_tags(original, classification.tags)
+        if tagged == original:
+            continue
+        updated = with_updated_date(tagged)
         if updated != original:
             path.write_text(updated, encoding="utf-8")
             changed += 1

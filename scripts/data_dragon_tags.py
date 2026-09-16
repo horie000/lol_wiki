@@ -86,7 +86,10 @@ def write_pages(paths: list[Path]) -> int:
     changed = 0
     for path in paths:
         original = path.read_text(encoding="utf-8")
-        updated = with_updated_date(replace_tags(original))
+        tagged = replace_tags(original)
+        if tagged == original:
+            continue
+        updated = with_updated_date(tagged)
         if updated != original:
             path.write_text(updated, encoding="utf-8")
             changed += 1

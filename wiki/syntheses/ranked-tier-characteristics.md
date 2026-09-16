@@ -126,7 +126,7 @@ BRONZEは5パッチ、MASTERとGRANDMASTERは6パッチ、IRONは16パッチを�
 
 ## 利用上の指針と未解決事項
 
-- 各帯のチャンピオン上位・高低勝率候補は、`reports/riot-ranked-tier-analysis/run-20260916T083219Z/champion-tier.csv` と `champion-extremes.csv` で確認できる。15試合以上の閾値だけを適用した探索候補なので、少数候補を推奨としてentityへ同期しない。
+- 各帯のチャンピオン上位・高低勝率候補は、`reports/riot-ranked-tier-analysis/run-20260916T083219Z/champion-tier.csv` と `champion-extremes.csv` で確認できる。15試合以上の閾値だけを適用した探索候補であり、少数候補を推奨として扱わない。現在はナビゲーション用の短い機械生成ブロックを該当champion entityへ同期するが、entity上の候補も推奨ではない。
 - ロール差の詳細は `role-summary.csv` に保存している。最終ゴールドは勝敗後の状態であり、15分時点の有利不利を表すものではない。
 - Timeline取得後は10分・15分・20分時点のゴールド、経験値、アイテム完成、主要イベントを観測帯別に追加する。ただし、APIキー未設定のため今回の分析には含めていない。
 - 次回はパッチを固定した帯別比較、同一期間の再抽出、可能なら参加者個別の実ランク結合を行い、観測帯と実際のランクを分離する必要がある。

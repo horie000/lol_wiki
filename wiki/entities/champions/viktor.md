@@ -3,7 +3,7 @@ title: "ビクター"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-15
+updated: 2026-09-16
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
@@ -11,6 +11,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
+  - "[[wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis]]"
 tags:
   - champion
   - role-mage
@@ -102,11 +103,12 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Viktor.
 <!-- power-spike-match:start -->
 ## 試合時間別の観測
 
+- **スナップショット：** 2026-09-15生成、キュー420、完全試合4,672件、[[reports/riot-ranked-match-analysis/run-20260915T010911Z/report|詳細レポート]]。
 - **観測分類：** 中盤寄り
 - **対象試合：** 408試合、全体勝率 50.7%
 - **時間帯別勝率：** 〜20分 43.3%（n=67）、20〜25分 51.6%（n=64）、25〜30分 57.3%（n=82）、30〜35分 59.1%（n=93）、35分〜 42.2%（n=102）
 - **最高帯：** 30〜35分（判定差 15.9ポイント）
-- **判定根拠：** 中間帯が最高、端点との差 15.9%
+- **判定根拠：** 中間帯が最高、端点との差 15.9%。
 - **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
 
@@ -164,23 +166,39 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Viktor.
 <!-- champion-rune-set-analysis:start -->
 ## よく選ばれるルーンセット（実測）
 
-- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **スナップショット：** 2026-09-16生成、キュー420、ユニーク試合10,000件、[[reports/riot-ranked-match-analysis/run-20260916T081004Z/report|ルーンセットの詳細レポート]]。
 - **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
 - **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
 
-### MIDDLE（対象1,546試合、全体勝率51.4%）
+### MIDDLE（対象905試合、全体勝率48.6%）
 
 | 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | 主系魔道：死神の残り火／マナフローバンド・至高・追火；副系不滅：ボーンアーマー・シールドバッシュ；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 369/1,546 | 23.9% | 51.5% |
-| 2 | 主系魔道：エアリー召喚／マナフローバンド・至高・追火；副系不滅：ボーンアーマー・シールドバッシュ；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 224/1,546 | 14.5% | 55.4% |
-| 3 | 主系魔道：死神の残り火／マナフローバンド・至高・追火；副系不滅：シールドバッシュ・ボーンアーマー；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 83/1,546 | 5.4% | 45.8% |
+| 1 | 主系魔道：死神の残り火／マナフローバンド・至高・追火；副系不滅：ボーンアーマー・シールドバッシュ；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 320/905 | 35.4% | 50.9% |
+| 2 | 主系魔道：死神の残り火／マナフローバンド・至高・追火；副系不滅：シールドバッシュ・ボーンアーマー；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5001) | 73/905 | 8.1% | 43.8% |
+| 3 | 主系魔道：死神の残り火／マナフローバンド・追い風・追火；副系栄華：切り崩し・レジェンド: ヘイスト；シャードUNKNOWN(5005)・UNKNOWN(5008)・UNKNOWN(5011) | 66/905 | 7.3% | 40.9% |
 
 - **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
 - **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
 
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
 <!-- champion-rune-set-analysis:end -->
+
+<!-- champion-tier-analysis:start -->
+## 観測ランク帯別チャンピオン候補
+
+- **スナップショット：** 2026-09-16生成、キュー420、観測10帯、各1,000試合、統合後9,761試合、min-games 15、[[reports/riot-ranked-tier-analysis/run-20260916T083219Z/report|ランク帯別詳細レポート]]。
+- **根拠：** [[wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis|Riotランク戦試合データ：観測ランク帯別特徴]]、[[wiki/syntheses/ranked-tier-characteristics|ランク帯別の試合特徴と全帯共通傾向]]。
+- **読み方：** `observed_tier` はその試合を発見したプレイヤーの収集時点の所属帯であり、10人全員の試合時ランクではない。以下は各帯の上位選択と、min-games以上で機械的に抽出した高低勝率の探索候補で、推奨・因果効果・有意差を示さない。
+
+### ピック数上位5に入った帯
+
+| 観測帯 | 帯内順位 | 試合数 | ピック率 | 勝敗 | 勝率 |
+| --- | ---: | ---: | ---: | --- | ---: |
+| MASTER | 5 | 171 | 1.7% | 82勝/89敗 | 48.0% |
+| CHALLENGER | 5 | 174 | 1.7% | 82勝/92敗 | 47.1% |
+
+<!-- champion-tier-analysis:end -->
 
 ## 関連ページ
 

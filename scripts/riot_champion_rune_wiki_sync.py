@@ -325,7 +325,8 @@ def ensure_source_and_updated(text: str, source_ref: str, updated: str) -> str:
     updated_found = False
     for index, line in enumerate(front_lines):
         if line.startswith("updated:"):
-            front_lines[index] = f"updated: {updated}"
+            existing = line.split(":", 1)[1].strip()
+            front_lines[index] = f"updated: {max(existing, updated)}"
             updated_found = True
             break
     if not updated_found:

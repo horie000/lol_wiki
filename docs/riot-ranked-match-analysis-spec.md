@@ -1,11 +1,12 @@
 # Riot API ランク戦試合結果解析スクリプト仕様書
 
-- 仕様バージョン：1.2（観測ランク帯別比較を追加）
+- 仕様バージョン：1.4（最新レポート連動Lintを追加）
 - 作成日：2026-09-15
 - 改訂日：2026-09-16
 - 対象ゲーム：League of Legends
 - 実装：`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_ranked_tier_analyzer.py`
-- 関連実装：`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`、`scripts/riot_champion_matchup_wiki_sync.py`、`scripts/riot_champion_rune_wiki_sync.py`
+- 関連実装：`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`、`scripts/riot_champion_matchup_wiki_sync.py`、`scripts/riot_champion_rune_wiki_sync.py`、`scripts/riot_champion_tier_wiki_sync.py`、`scripts/riot_champion_duration_wiki_sync.py`、`scripts/lint.py`
+- 関連仕様：[Riotレポート連動Lint仕様書](riot-lint-report-sync-spec.md)
 - 関連仕様：[Riot API ランク戦データ収集仕様書](riot-ranked-match-collector-spec.md)
 
 ## 1. 目的
@@ -468,6 +469,18 @@ python3 scripts/riot_champion_matchup_wiki_sync.py \
   --write
 ```
 
+### 6.13 最新レポート連動Lint
+
+`scripts/lint.py` は、各レポート系列の `manifest.json`、宣言済み `outputs`、品質情報、同期に必要な機械可読結果がそろった実行だけを完了済みとみなし、`manifest.json` の `generated_at` が最も新しい実行を選択する。ファイル更新時刻や実行ディレクトリ名は選択基準にしない。
+
+- 試合時間帯別の `champion-duration-winrate.json` は `scripts/riot_champion_duration_wiki_sync.py` で `power-spike-match` ブロックへ同期する。
+- ビルド、コンボ・カウンターピック、ルーン、観測ランク帯候補は、それぞれ対応する既存の `*_wiki_sync.py` でentityへ同期する。
+- 通常の `python3 scripts/lint.py` は、レポート同期の `--dry-run`、静的生成物の更新、レポート同期の `--write`、静的生成物とレポート同期の `--check` を順に実行する。レポートやrawの再生成・変更は行わない。
+- `python3 scripts/lint.py --check-only` は書き込みを行わず、最新レポートから再現されるentity内容を検証する。
+- 複数系列の生成日が異なっても、entityの `updated` を古いレポートの日付へ巻き戻さない。候補表示は記述統計であり、推奨や因果効果を自動的に確定しない。
+
+詳細な選択条件、未完了実行の扱い、実行順序は [Riotレポート連動Lint仕様書](riot-lint-report-sync-spec.md) に記載する。
+
 ## 7. 出力仕様
 
 1回の実行ごとに、時刻付きのディレクトリを作成する。
@@ -599,7 +612,7 @@ python3 scripts/riot_ranked_tier_analyzer.py \
 - 実試合の所持時／非所持時差からの自動的な相性タグ書き換え、最適ビルド推薦、因果推論
 - 実測候補またはステータス群だけから、ゲーム内での最適ビルドを確定すること
 - 機械学習モデルの学習・予測
-- 解析実行に伴うWikiページの暗黙更新（選択した `analysis.json` を使う明示的なentity同期は対象内）
+- 解析実行に伴うWikiページの暗黙更新。`scripts/lint.py` は明示的な保守コマンドとして、既存の完了済みレポートから生成ブロックを同期する
 
 ## 10. 受け入れ条件
 
@@ -632,6 +645,9 @@ python3 scripts/riot_ranked_tier_analyzer.py \
 - entity同期を再実行しても生成ブロック外の本文を変更せず、専用原典要約を `sources` に重複なく追加できる。
 - `riot_ranked_tier_analyzer.py` が `ranked-solo-5x5/**/matches.jsonl` を観測帯別に集計し、各帯の試合時間、最終スコア、ロール、チャンピオン、キーストーン、順不同スペル構成、高低候補、全帯共通性をCSV/JSON/Markdownへ出力できる。
 - 観測帯別レポートが、入力件数、ユニーク試合数、帯をまたぐ重複試合数、パッチ数、取得日範囲、観測ランク帯の解釈上の注意を表示できる。
+- `riot_champion_tier_wiki_sync.py` が、選択した観測帯分析 `analysis.json` から各帯のピック数上位5件、高勝率候補5件、低勝率候補5件を `champion_key` で対応するentityへ同期できる。同期前後に `--dry-run`、`--write`、`--check` を実行でき、同一分類内のチャンピオン重複を表示しない。
+- `riot_champion_duration_wiki_sync.py` が、選択した時間帯別勝率 `champion-duration-winrate.json` から全チャンピオンの試合時間帯別観測ブロックを同期でき、`--dry-run`、`--write`、`--check` を提供する。
+- `lint.py` がmanifestの完了条件と `generated_at` に基づき最新レポートを系列ごとに選択し、試合時間帯、ビルド、コンボ・カウンターピック、ルーン、観測ランク帯候補を同期してから静的Lintと再現性チェックを実行できる。`--check-only` では書き込まない。
 
 ## 11. 確認済みの仕様
 
@@ -652,5 +668,6 @@ python3 scripts/riot_ranked_tier_analyzer.py \
 13. チャンピオン別ルーン選択は `champion_id × role` の参加者を分母にし、パッチ重複を除いて全パッチを合算する。選択率と勝率は記述統計として扱う。
 14. 完全ルーンセットは主系・副系・キーストーン・主系3枠・副系2枠・3シャードの順序付きIDをキーに集計し、観測数最多ロールの上位3件をentityへ掲載する。選択時勝率は記述統計として扱い、推奨と解釈しない。
 15. 観測ランク帯の比較は `scripts/riot_ranked_tier_analyzer.py` に分離し、各帯の特徴と全帯共通性を同一実行のレポートへ保存する。`observed_tier` を試合時点の全参加者ランクと解釈せず、帯をまたぐ重複とパッチ・取得期間の差を明示する。
+16. 観測帯別のチャンピオン候補は `scripts/riot_champion_tier_wiki_sync.py` で、選択した `analysis.json` の各帯上位5件・高勝率5件・低勝率5件を、候補が登場するchampion entityへ短い生成ブロックとして同期する。最小ゲーム数は分析結果の `filters.min_games`（今回15）を引き継ぎ、候補は推奨ではなく探索的な記述統計として扱う。
 
-この仕様に基づき、`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_ranked_tier_analyzer.py`、`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`、`scripts/riot_champion_rune_wiki_sync.py` を実装する。
+この仕様に基づき、`scripts/riot_ranked_match_analyzer.py`、`scripts/riot_ranked_tier_analyzer.py`、`scripts/riot_champion_query.py`、`scripts/riot_champion_item_synergy.py`、`scripts/riot_champion_build_wiki_sync.py`、`scripts/riot_champion_matchup_wiki_sync.py`、`scripts/riot_champion_rune_wiki_sync.py`、`scripts/riot_champion_tier_wiki_sync.py`、`scripts/riot_champion_duration_wiki_sync.py`、`scripts/lint.py` を実装する。

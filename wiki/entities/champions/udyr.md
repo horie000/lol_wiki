@@ -3,7 +3,7 @@ title: "ウディア"
 type: entity
 status: active
 created: 2026-09-14
-updated: 2026-09-15
+updated: 2026-09-16
 sources:
   - "[[wiki/sources/src-2026-09-14-champion-dataset-v16-18-1]]"
   - "[[wiki/sources/src-2026-09-14-dragontail-16-18-1]]"
@@ -11,6 +11,7 @@ sources:
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-item-build-analysis]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-matchups]]"
   - "[[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection]]"
+  - "[[wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis]]"
 tags:
   - champion
   - role-fighter
@@ -104,11 +105,12 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Udyr.pn
 <!-- power-spike-match:start -->
 ## 試合時間別の観測
 
+- **スナップショット：** 2026-09-15生成、キュー420、完全試合4,672件、[[reports/riot-ranked-match-analysis/run-20260915T010911Z/report|詳細レポート]]。
 - **観測分類：** 判定保留（分母不足）
 - **対象試合：** 95試合、全体勝率 55.8%
 - **時間帯別勝率：** 〜20分 53.3%（n=15）、20〜25分 66.7%（n=12）、25〜30分 45.5%（n=22）、30〜35分 63.0%（n=27）、35分〜 52.6%（n=19）
-- **最高帯：** 20〜25分（判定差 —）
-- **判定根拠：** 5つの時間帯のいずれかで15試合未満のため、時間帯の比較を保留する。
+- **最高帯：** 20〜25分（判定差 不明）
+- **判定根拠：** 全5帯で各15試合未満の帯がある。
 - **解釈上の限界：** [[wiki/syntheses/champion-power-spikes-match-duration|試合時間帯別勝率の見直し]] に基づく記述統計。試合時間は勝敗後に確定するため、因果的なパワースパイク、推奨ビルド、特定時点での強さを示さない。
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-duration-winrate]]
 
@@ -165,23 +167,38 @@ image_url: "https://ddragon.leagueoflegends.com/cdn/16.18.1/img/champion/Udyr.pn
 <!-- champion-rune-set-analysis:start -->
 ## よく選ばれるルーンセット（実測）
 
-- **スナップショット：** 2026-09-15生成、キュー420、ユニーク試合20,010件、[[reports/riot-ranked-match-analysis/run-20260915T103154Z/report|ルーンセットの詳細レポート]]。
+- **スナップショット：** 2026-09-16生成、キュー420、ユニーク試合10,000件、[[reports/riot-ranked-match-analysis/run-20260916T081004Z/report|ルーンセットの詳細レポート]]。
 - **根拠と方法：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
 - **読み方：** 主系・キーストーン・主系3枠・副系2枠・3シャードが完全一致する組み合わせを、同じチャンピオン・正規化ロールの参加者を分母に集計した。選択時勝率は記述統計であり、因果効果や推奨を示さない。
 
-### TOP（対象106試合、全体勝率56.6%）
+### JUNGLE（対象100試合、全体勝率42.0%）
 
 | 順位 | 完全ルーンセット | 選択数 | 選択率 | 選択時勝率 |
 | ---: | --- | ---: | ---: | ---: |
-| 1 | 主系不滅：不死者の握撃／シールドバッシュ・息継ぎ・生気付与；副系天啓：ビスケットデリバリー・疾駆；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5011) | 26/106 | 24.5% | 73.1% |
-| 2 | 主系不滅：不死者の握撃／シールドバッシュ・息継ぎ・生気付与；副系天啓：ビスケットデリバリー・疾駆；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 13/106 | 12.3% | 46.2% |
-| 3 | 主系不滅：不死者の握撃／シールドバッシュ・息継ぎ・生気付与；副系天啓：疾駆・ビスケットデリバリー；シャードUNKNOWN(5008)・UNKNOWN(5001)・UNKNOWN(5001) | 10/106 | 9.4% | 70.0% |
+| 1 | 主系栄華：プレスアタック／凱旋・レジェンド: ヘイスト・最期の慈悲；副系天啓：疾駆・魔法の靴；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 12/100 | 12.0% | 66.7% |
+| 2 | 主系栄華：征服者／凱旋・レジェンド: ヘイスト・背水の陣；副系天啓：疾駆・魔法の靴；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 8/100 | 8.0% | 50.0% |
+| 3 | 主系栄華：プレスアタック／凱旋・レジェンド: ヘイスト・最期の慈悲；副系天啓：魔法の靴・疾駆；シャードUNKNOWN(5008)・UNKNOWN(5008)・UNKNOWN(5001) | 7/100 | 7.0% | 28.6% |
 
 - **選定ロール：** チャンピオン・ロール別の完全試合数が最も多いロールを1つ選んだ。別ロールや全候補は詳細レポートで確認できる。
 - **シャード表示：** Data Dragonで表示名を解決できない場合は`UNKNOWN(<ID>)`としてIDを保持する。
 
 - **出典：** [[wiki/sources/src-2026-09-15-riot-ranked-match-champion-rune-selection|Riotランク戦試合データ：チャンピオン別ルーン選択]]、[[wiki/syntheses/champion-rune-selection-ranked-matches|実測チャンピオン別ルーン選択分析]]。
 <!-- champion-rune-set-analysis:end -->
+
+<!-- champion-tier-analysis:start -->
+## 観測ランク帯別チャンピオン候補
+
+- **スナップショット：** 2026-09-16生成、キュー420、観測10帯、各1,000試合、統合後9,761試合、min-games 15、[[reports/riot-ranked-tier-analysis/run-20260916T083219Z/report|ランク帯別詳細レポート]]。
+- **根拠：** [[wiki/sources/src-2026-09-16-riot-ranked-match-tier-analysis|Riotランク戦試合データ：観測ランク帯別特徴]]、[[wiki/syntheses/ranked-tier-characteristics|ランク帯別の試合特徴と全帯共通傾向]]。
+- **読み方：** `observed_tier` はその試合を発見したプレイヤーの収集時点の所属帯であり、10人全員の試合時ランクではない。以下は各帯の上位選択と、min-games以上で機械的に抽出した高低勝率の探索候補で、推奨・因果効果・有意差を示さない。
+
+### 低勝率候補（下位5）
+
+| 観測帯 | 候補順位 | 試合数 | 勝敗 | 勝率 |
+| --- | ---: | ---: | --- | ---: |
+| PLATINUM | 2 | 23 | 6勝/17敗 | 26.1% |
+
+<!-- champion-tier-analysis:end -->
 
 ## 関連ページ
 
